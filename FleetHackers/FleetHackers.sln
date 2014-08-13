@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetHackers", "FleetHackers\FleetHackers\FleetHackers.csproj", "{F0725170-A25F-4BD4-BF5E-CC9A12C94EB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetHackersContent", "FleetHackers\FleetHackersContent\FleetHackersContent.contentproj", "{9234A657-8830-4EF0-89C4-619BD2D754F3}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs31
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FleetHackers\\FleetHackers\\FleetHackers.csproj
+		SccProjectName1 = FleetHackers/FleetHackers
+		SccLocalPath1 = FleetHackers\\FleetHackers
+		SccProjectUniqueName2 = FleetHackers\\FleetHackersContent\\FleetHackersContent.contentproj
+		SccProjectName2 = FleetHackers/FleetHackersContent
+		SccLocalPath2 = FleetHackers\\FleetHackersContent
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0725170-A25F-4BD4-BF5E-CC9A12C94EB2}.Debug|x86.ActiveCfg = Debug|x86
+		{F0725170-A25F-4BD4-BF5E-CC9A12C94EB2}.Debug|x86.Build.0 = Debug|x86
+		{F0725170-A25F-4BD4-BF5E-CC9A12C94EB2}.Release|x86.ActiveCfg = Release|x86
+		{F0725170-A25F-4BD4-BF5E-CC9A12C94EB2}.Release|x86.Build.0 = Release|x86
+		{9234A657-8830-4EF0-89C4-619BD2D754F3}.Debug|x86.ActiveCfg = Debug|x86
+		{9234A657-8830-4EF0-89C4-619BD2D754F3}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
