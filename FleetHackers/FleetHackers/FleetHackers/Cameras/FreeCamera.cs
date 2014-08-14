@@ -45,7 +45,11 @@ namespace FleetHackers.Cameras
 			translation = Vector3.Zero;
 
 			Vector3 forward = Vector3.Transform(Vector3.Up, rotation);
+			Target = Position + forward;
 
+			Vector3 up = Vector3.Transform(translation, rotation);
+
+			View = Matrix.CreateLookAt(Position, Target, up);
 		}
 
 		/// <summary>
