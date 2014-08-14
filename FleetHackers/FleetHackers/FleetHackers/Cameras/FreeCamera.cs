@@ -27,15 +27,25 @@ namespace FleetHackers.Cameras
 			this.Position = position;
 			this.Yaw = yaw;
 			this.Position = position;
+			this.Roll = 0;
 
 			translation = Vector3.Zero;
 		}
 
 		/// <summary>
 		/// Update method required by the abstract class.
+		/// This class also allows player input to control where to look.
 		/// </summary>
 		public override void Update()
 		{
+			Matrix rotation = Matrix.CreateFromYawPitchRoll(Yaw, Pitch, Roll);
+
+			translation = Vector3.Transform(translation, rotation);
+			Position += translation;
+			translation = Vector3.Zero;
+
+			Vector3 forward = Vector3.Transform(Vector3.Up, rotation);
+
 		}
 
 		/// <summary>
