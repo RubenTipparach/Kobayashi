@@ -37,7 +37,7 @@ namespace FleetHackers.Cameras
 		{
 			PresentationParameters presentationParameters = graphicsDevice.PresentationParameters;
 			float aspectRatio = (float)presentationParameters.BackBufferWidth / (float)presentationParameters.BackBufferHeight;
-			this.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), aspectRatio, 0.1f, 10000000.0f);
+			this.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), aspectRatio, 1f, 100000.0f);
 		}
 
 		/// <summary>
