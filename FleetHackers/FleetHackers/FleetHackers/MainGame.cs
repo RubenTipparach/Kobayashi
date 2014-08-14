@@ -19,12 +19,22 @@ namespace FleetHackers
 	public class MainGame : Microsoft.Xna.Framework.Game
 	{
 		/// <summary>
+		/// Screen width. TODO: Make this configurable.
+		/// </summary>
+		private const int WIDTH = 1600;
+
+		/// <summary>
+		/// Screen Height. TODO: Make this configurable also.
+		/// </summary>
+		private const int HEIGHT = 900;
+
+		/// <summary>
 		/// Graphics device object.
 		/// </summary>
 		private GraphicsDeviceManager graphicsDeviceManager;
 
 		/// <summary>
-		/// Idk what this is for, maybe we can make stars out of it.
+		/// Idk what this is for, maybe we can make stars out of it. 
 		/// </summary>
 		private SpriteBatch spriteBatch;
 		
@@ -40,14 +50,9 @@ namespace FleetHackers
 		private AbstractCamera camera;
 
 		/// <summary>
-		/// Screen width. TODO: Make this configurable.
+		/// This is used to show that the mouse has moved.
 		/// </summary>
-		private const int WIDTH = 1600;
-
-		/// <summary>
-		/// Screen Height. TODO: Make this configurable also.
-		/// </summary>
-		private const int HEIGHT = 900;
+		private MouseState lastMouseState;
 
 		/// <summary>
 		/// Constructor for this class.
@@ -84,9 +89,15 @@ namespace FleetHackers
 					new Vector3(.4f),
 					GraphicsDevice));
 
-			camera = new TargetCamera(
+			//camera = new TargetCamera(
+			//		(new Vector3(500, 600, 1300)) * 10,
+			//		Vector3.Zero, GraphicsDevice);
+
+			camera = new FreeCamera(
 					(new Vector3(500, 600, 1300)) * 10,
-					Vector3.Zero, GraphicsDevice);
+					MathHelper.ToRadians(153),
+					MathHelper.ToRadians(5),
+					GraphicsDevice);
 		}
 
 		/// <summary>
