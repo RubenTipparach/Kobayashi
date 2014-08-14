@@ -89,15 +89,15 @@ namespace FleetHackers
 					new Vector3(.4f),
 					GraphicsDevice));
 
-			//camera = new TargetCamera(
-			//		(new Vector3(500, 600, 1300)) * 10,
-			//		Vector3.Zero, GraphicsDevice);
-
-			camera = new FreeCamera(
+			camera = new TargetCamera(
 					(new Vector3(500, 600, 1300)) * 10,
-					MathHelper.ToRadians(153),
-					MathHelper.ToRadians(5),
-					GraphicsDevice);
+					Vector3.Zero, GraphicsDevice);
+
+			//camera = new FreeCamera(
+			//        (new Vector3(500, 600, 1300)) * 10,
+			//        MathHelper.ToRadians(153),
+			//        MathHelper.ToRadians(5),
+			//        GraphicsDevice);
 		}
 
 		/// <summary>
