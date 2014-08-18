@@ -20,6 +20,11 @@ namespace FleetHackers.Models
 		private GraphicsDevice graphicsDevice;
 
 		/// <summary>
+		/// Bounding sphere to be used for culling.
+		/// </summary>
+		private BoundingSphere boundingSphere;
+
+		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		/// <param name="model">Pass in a loaded model object.</param>
@@ -37,6 +42,7 @@ namespace FleetHackers.Models
 
 			modelTransforms = new Matrix[model.Bones.Count];
 			model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+			BuildBoundingSphere();
 		}
 
 		/// <summary>
@@ -66,6 +72,38 @@ namespace FleetHackers.Models
 				}
 
 				mesh.Draw();
+			}
+		}
+
+		/// <summary>
+		/// Create a bounding sphere for this model object.
+		/// </summary>
+		private void BuildBoundingSphere()
+		{
+			BoundingSphere boundingSphere = new BoundingSphere(Vector3.Zero, 0);
+
+			foreach(ModelMesh mesh in Model.Meshes)
+			{
+				BoundingSphere transformed = mesh.BoundingSphere.Transform(
+					modelTransforms[mesh.ParentBone.Index]);
+				boundingSphere = BoundingSphere.CreateMerged(boundingSphere, transformed);
+			}
+
+			this.boundingSphere = boundingSphere;
+		}
+
+		/// <summary>
+		/// Gets the bounding sphere object.
+		/// </summary>
+		public BoundingSphere BoundingSphere
+		{
+			get
+			{
+				Matrix worldTransforms = Matrix.CreateScale(Scale) * Matrix.CreateTranslation(Position);
+				BoundingSphere transformed = boundingSphere;
+				transformed = transformed.Transform(worldTransforms);
+
+				return transformed;
 			}
 		}
 
