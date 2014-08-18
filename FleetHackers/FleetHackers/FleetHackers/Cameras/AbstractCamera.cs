@@ -15,6 +15,16 @@ namespace FleetHackers.Cameras
 		protected GraphicsDevice graphicsDevice;
 
 		/// <summary>
+		/// Hide this view variable.
+		/// </summary>
+		protected Matrix view;
+
+		/// <summary>
+		/// Hide this projection variable.
+		/// </summary>
+		protected Matrix projection;
+
+		/// <summary>
 		/// Default constructor for the camera.
 		/// </summary>
 		/// <param name="graphicsDevice">Pass in the graphics device parameter.</param>
@@ -41,12 +51,47 @@ namespace FleetHackers.Cameras
 		}
 
 		/// <summary>
+		/// Generate bounding frustrum to use for culling objects.
+		/// </summary>
+		private void GenerateFrustrum()
+		{
+			Matrix viewProjection = View * Projection;
+			BoundingFrustrum = new BoundingFrustum(viewProjection);
+		}
+
+		public bool BoundingVolumeIsInView(BoundingSphere sphere)
+		{
+			return (BoundingFrustrum.Contains(sphere) != ContainmentType.Disjoint);
+		}
+
+		public bool BoundingVolumeIsInView(BoundingBox box)
+		{
+			return (BoundingFrustrum.Contains(box) != ContainmentType.Disjoint);
+		}
+
+		/// <summary>
+		/// A frustrum used for culling objects not in the view.
+		/// </summary>
+		public BoundingFrustum BoundingFrustrum
+		{
+			get;
+			private set;
+		}
+
+		/// <summary>
 		/// Gets or sets the camera position and orientation.
 		/// </summary>
 		public Matrix View
 		{
-			get;
-			set;
+			get
+			{
+				return view;
+			}
+			protected set
+			{
+				view = value;
+				GenerateFrustrum();
+			}
 		}
 
 		/// <summary>
@@ -54,8 +99,15 @@ namespace FleetHackers.Cameras
 		/// </summary>
 		public Matrix Projection
 		{
-			get;
-			set;
+			get
+			{
+				return projection;
+			}
+			protected set
+			{
+				projection = value;
+				GenerateFrustrum();
+			}
 		}
 	}
 }

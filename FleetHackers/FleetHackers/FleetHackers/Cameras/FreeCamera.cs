@@ -44,12 +44,28 @@ namespace FleetHackers.Cameras
 			Position += translation;
 			translation = Vector3.Zero;
 
-			Vector3 forward = Vector3.Transform(Vector3.Up, rotation);
+			Vector3 forward = Vector3.Transform(Vector3.Forward, rotation);
 			Target = Position + forward;
 
-			Vector3 up = Vector3.Transform(translation, rotation);
+			Vector3 up = Vector3.Transform(Vector3.Up, rotation);
 
 			View = Matrix.CreateLookAt(Position, Target, up);
+		}
+
+		/// <summary>
+		/// Rotation for the camera.
+		/// </summary>
+		/// <param name="yawChange">Change of horizontal rotation.</param>
+		/// <param name="pitchChange">Change of vertical rotation.</param>
+		public void Rotate(float yawChange, float pitchChange)
+		{
+			this.Yaw += yawChange;
+			this.Pitch += pitchChange;
+		}
+
+		public void Move(Vector3 translation)
+		{
+			this.translation += translation;
 		}
 
 		/// <summary>

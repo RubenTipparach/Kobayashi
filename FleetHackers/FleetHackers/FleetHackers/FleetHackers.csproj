@@ -77,8 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cameras\AbstractCamera.cs" />
+    <Compile Include="Cameras\ArcBallCamera.cs" />
     <Compile Include="Cameras\FreeCamera.cs" />
     <Compile Include="Cameras\TargetCamera.cs" />
+    <Compile Include="DrawingHelpers\LineDrawer.cs" />
     <Compile Include="Models\BasicModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
