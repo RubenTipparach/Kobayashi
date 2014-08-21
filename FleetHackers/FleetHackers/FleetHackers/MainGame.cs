@@ -109,7 +109,7 @@ namespace FleetHackers
 			if (cameraType == CameraType.TargetCamera)
 			{
 				camera = new TargetCamera(
-						(new Vector3(500, 1000, 600)) * 30,
+						(new Vector3(0, 1000, 1000)) * 30,
 						Vector3.Zero, GraphicsDevice);
 			}
 

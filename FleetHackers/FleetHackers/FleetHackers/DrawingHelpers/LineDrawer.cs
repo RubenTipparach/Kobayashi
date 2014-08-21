@@ -149,6 +149,17 @@ namespace FleetHackers.DrawingHelpers
 			int xSize = (int)gridSize.X;
 			int ySize = (int)gridSize.Y;
 			Vector2 gridPosition = gridStartingPosition;
+
+			float angleDown = 2 * MathHelper.Pi / 6 * (0 + 0.5f);
+			float angleUp = 2 * MathHelper.Pi / 6 * (3 + 0.5f);
+			float height1 = size * (float)Math.Sin(angleDown) - size * (float)Math.Sin(angleUp);
+			//Console.WriteLine(height1);
+
+			float angleSideRight = 2 * MathHelper.Pi / 6 * (1 + 0.5f);
+			float angleSideLeft = 2 * MathHelper.Pi / 6 * (5 + 0.5f);
+			float diameter = size * (float)Math.Cos(angleSideLeft) - size * (float)Math.Cos(angleSideRight);
+			//Console.WriteLine(diameter);
+
 			for (int i = 0; i <= xSize; i++)
 			{
 				for (int j = 0; j < ySize; j++ )
@@ -169,12 +180,15 @@ namespace FleetHackers.DrawingHelpers
 						if (k == 5)
 						{
 							DrawLine(hexPoints[0], hexPoints[5], color);
-							gridPosition = new Vector2(hexPoints[0].X, hexPoints[0].Z + size);
+							gridPosition.Y += 3 * size;
 						}
 					}
 				}
-				float yOffset = (i % 2);
-				gridPosition = new Vector2(gridStartingPosition.X + size  * 1.74f* i, gridStartingPosition.Y);
+				float yOffset = ((i +1) % 2);
+				gridPosition.Y = gridStartingPosition.Y + yOffset * 1.5f * size;
+				gridPosition.X += diameter;
+				
+				//gridPosition = new Vector2(gridStartingPosition.X + size  * 1.74f* i, gridStartingPosition.Y);
 			}
 		}
 
