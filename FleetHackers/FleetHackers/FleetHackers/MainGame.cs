@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using FleetHackers.Cards;
 
 namespace FleetHackers
 {
@@ -87,6 +88,28 @@ namespace FleetHackers
 		protected override void Initialize()
 		{
 			lineDrawer = new LineDrawer(GraphicsDevice);
+
+			// TEST DESERIALIZATION
+			/*List<string> jsonStrings = new List<string>()
+			{
+				@"{ ""title"": ""Big Fighter"", ""energyCost"": 7, ""alignment"": ""Crystal"", ""influenceRequirement"": 2,
+					""supertype"": ""Ship"", ""subtype"": ""Fighter"", ""range"": 3, ""attack"": 7, ""defense"": 5 }",
+				@"{
+					""title"": ""Counterassault"",
+					""energyCost"": 4,
+					""alignment"": ""Crystal"",
+					""influenceRequirement"": 1,
+					""supertype"": ""Maneuver"",
+					""subtype"": ""Trap"",
+					""abilities"": [
+						""
+					]
+				}"
+			};
+			foreach (string json in jsonStrings)
+			{
+				Card c = Card.Deserialize(json);
+			}*/
 
 			base.Initialize();
 		}
