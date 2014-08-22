@@ -70,6 +70,7 @@
     <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -80,11 +81,25 @@
     <Compile Include="Cameras\ArcBallCamera.cs" />
     <Compile Include="Cameras\FreeCamera.cs" />
     <Compile Include="Cameras\TargetCamera.cs" />
+    <Compile Include="Cards\Abilities\Ability.cs" />
+    <Compile Include="Cards\Abilities\AbilityType.cs" />
+    <Compile Include="Cards\Alignment.cs" />
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\Effects\DamageEffect.cs" />
+    <Compile Include="Cards\Effects\DivideMethod.cs" />
+    <Compile Include="Cards\Effects\Effect.cs" />
+    <Compile Include="Cards\Effects\EffectType.cs" />
+    <Compile Include="Cards\Supertype.cs" />
+    <Compile Include="Cards\Target.cs" />
+    <Compile Include="Cards\Abilities\Trigger.cs" />
+    <Compile Include="Cards\Abilities\TriggeredAbility.cs" />
+    <Compile Include="Cards\Abilities\TriggerType.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />
     <Compile Include="Models\BasicModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
+    <Compile Include="Cards\Subtype.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
