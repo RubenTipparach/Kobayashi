@@ -11,6 +11,8 @@ namespace FleetHackers.Cards
 		YourHomeBase,
 		OpponentShip,
 		AttackingShips,
-		This
+		This,
+		AnyShip,
+		UpTo2OtherShips
 	}
 }

@@ -97,19 +97,5 @@ namespace FleetHackers.Cards
 
 			return string.Join(Environment.NewLine, rulesTextStrings);
 		}
-
-		public static Card Deserialize(string json)
-		{
-			Card obj = Activator.CreateInstance<Card>();
-			using (var memoryStream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
-			{
-				var serializer = new DataContractJsonSerializer(obj.GetType());
-				obj = (Card)serializer.ReadObject(memoryStream);
-				return obj;
-			}
-		}
-
-		// The next time a ship controlled by an opponent attacks a ship you control or your home base, Counterassault inflicts
-		// up to 3 damage divided however you choose among the attacking ships.
 	}
 }

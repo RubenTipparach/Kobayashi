@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FleetHackers.Cards.Abilities
+namespace FleetHackers.Cards.Effects
 {
-	public enum AbilityType
+	public enum PointInTime
 	{
-		Unknown,
-		Triggered,
-		Immediate
+		EndOfTurn,
+		BeginningOfYourTurn
 	}
 }
