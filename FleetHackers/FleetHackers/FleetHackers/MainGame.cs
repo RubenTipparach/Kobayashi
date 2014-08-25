@@ -34,52 +34,57 @@ namespace FleetHackers
 		/// <summary>
 		/// Graphics device object.
 		/// </summary>
-		private GraphicsDeviceManager graphicsDeviceManager;
+		private GraphicsDeviceManager _graphicsDeviceManager;
 
 		/// <summary>
 		/// Idk what this is for, maybe we can make stars out of it. 
 		/// </summary>
-		private SpriteBatch spriteBatch;
+		private SpriteBatch _spriteBatch;
 		
 		/// <summary>
 		/// List of models to be loaded.
 		/// TODO: Do we need mor complex models? Animation, dynamic lighting, and such?
 		/// </summary>
-		private List<BasicModel> models = new List<BasicModel>();
+		private List<BasicModel> _models = new List<BasicModel>();
 
 		/// <summary>
 		/// Provides a camera template. Can create concrete camera classes.
 		/// </summary>
-		private AbstractCamera camera;
+		private AbstractCamera _camera;
 
 		/// <summary>
 		/// This is used to show that the mouse has moved.
 		/// </summary>
-		private MouseState lastMouseState;
+		private MouseState _lastMouseState;
 
 		/// <summary>
 		/// Chooses what kind of camera to use.
 		/// </summary>
-		private CameraType cameraType;
+		private CameraType _cameraType;
 
 		/// <summary>
 		/// This will be used to help draw lines in the game.
 		/// This is considered a quick and easy way to show overlay stuff.
 		/// </summary>
-		private LineDrawer lineDrawer;
+		private LineDrawer _lineDrawer;
+
+		/// <summary>
+		/// Stars that make up the background.
+		/// </summary>
+		private BillboardSystem _stars;
 
 		/// <summary>
 		/// Constructor for this class.
 		/// </summary>
 		public MainGame()
 		{
-			graphicsDeviceManager = new GraphicsDeviceManager(this);
+			_graphicsDeviceManager = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
 
-			graphicsDeviceManager.PreferredBackBufferWidth = WIDTH;
-			graphicsDeviceManager.PreferredBackBufferHeight = HEIGHT;
+			_graphicsDeviceManager.PreferredBackBufferWidth = WIDTH;
+			_graphicsDeviceManager.PreferredBackBufferHeight = HEIGHT;
 
-			cameraType = CameraType.TargetCamera;
+			_cameraType = CameraType.TargetCamera;
 		}
 
 		/// <summary>
@@ -87,7 +92,7 @@ namespace FleetHackers
 		/// </summary>
 		protected override void Initialize()
 		{
-			lineDrawer = new LineDrawer(GraphicsDevice);
+			_lineDrawer = new LineDrawer(GraphicsDevice);
 
 			// TEST DESERIALIZATION
 			/*List<string> jsonStrings = new List<string>()
@@ -119,9 +124,27 @@ namespace FleetHackers
 		/// </summary>
 		protected override void LoadContent()
 		{
-			spriteBatch = new SpriteBatch(GraphicsDevice);
+			_spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			models.Add(
+			//Load camera.
+			if (_cameraType == CameraType.TargetCamera)
+			{
+				_camera = new TargetCamera(
+						(new Vector3(0, 1000, 1000)) * 30,
+						Vector3.Zero, GraphicsDevice);
+			}
+
+			if (_cameraType == CameraType.FreeCamera)
+			{
+				_camera = new FreeCamera(
+						(new Vector3(500, 600, 1300)) * 10,
+						MathHelper.ToRadians(153),
+						MathHelper.ToRadians(5),
+						GraphicsDevice);
+			}
+
+			//Load models.
+			_models.Add(
 				new BasicModel(
 					Content.Load<Model>("blueship"),
 					Vector3.UnitY * 2500,
@@ -129,21 +152,21 @@ namespace FleetHackers
 					new Vector3(.4f),
 					GraphicsDevice));
 
-			if (cameraType == CameraType.TargetCamera)
+			//Load stars.
+			Random r = new Random();
+			Vector3[] postions = new Vector3[30000];
+			float dispersalRate = 700000;
+			float height = -40000;
+
+			for (int i  = 0; i < postions.Length; i++)
 			{
-				camera = new TargetCamera(
-						(new Vector3(0, 1000, 1000)) * 30,
-						Vector3.Zero, GraphicsDevice);
+				postions[i] = new Vector3((float)r.NextDouble() * dispersalRate - dispersalRate / 2, (float)r.NextDouble() * (height) - height/2, (float)r.NextDouble() * dispersalRate - dispersalRate / 2);
+
+				//postions[i] = new Vector3(10000, 400, 10000);
 			}
 
-			if (cameraType == CameraType.FreeCamera)
-			{
-				camera = new FreeCamera(
-						(new Vector3(500, 600, 1300)) * 10,
-						MathHelper.ToRadians(153),
-						MathHelper.ToRadians(5),
-						GraphicsDevice);
-			}
+
+			_stars = new BillboardSystem(GraphicsDevice, Content, Content.Load<Texture2D>(@"BillboardTextures\flare-blue-purple1"), new Vector2(800), postions);
 		}
 
 		/// <summary>
@@ -166,12 +189,12 @@ namespace FleetHackers
 				this.Exit();
 			}
 
-			if (cameraType == CameraType.TargetCamera)
+			if (_cameraType == CameraType.TargetCamera)
 			{
 				TargetCameraUpdate();
 			}
 
-			if(cameraType == CameraType.FreeCamera)
+			if(_cameraType == CameraType.FreeCamera)
 			{
 				FreeCameraUpdate(gameTime);			
 			}
@@ -187,18 +210,20 @@ namespace FleetHackers
 		{
 			GraphicsDevice.Clear(Color.Black);
 
-			foreach (BasicModel model in models)
+			foreach (BasicModel model in _models)
 			{
-				if (camera.BoundingVolumeIsInView(model.BoundingSphere))
+				if (_camera.BoundingVolumeIsInView(model.BoundingSphere))
 				{
-					model.Draw(camera.View, camera.Projection);
+					model.Draw(_camera.View, _camera.Projection);
 				}
 			}
 
-			lineDrawer.Begin(camera.View, camera.Projection);
-			lineDrawer.DrawHexagonGrid(Vector2.One*(-40000), Vector2.One*40, 2000, Color.Red);
-			lineDrawer.DrawLine(models[0].Position, new Vector3(models[0].Position.X, 0, models[0].Position.Z), Color.CornflowerBlue);
-			lineDrawer.End();
+			_lineDrawer.Begin(_camera.View, _camera.Projection);
+			_lineDrawer.DrawHexagonGrid(Vector2.One, Vector2.One*40, 2000, Color.Red);
+			_lineDrawer.DrawLine(_models[0].Position, new Vector3(_models[0].Position.X, 0, _models[0].Position.Z), Color.CornflowerBlue);
+			_lineDrawer.End();
+
+			_stars.Draw(_camera.View, _camera.Projection, _camera.Up, _camera.Right);
 
 			base.Draw(gameTime);
 		}
@@ -208,7 +233,7 @@ namespace FleetHackers
 		/// </summary>
 		private void TargetCameraUpdate()
 		{
-			camera.Update();
+			_camera.Update();
 		}
 
 		/// <summary>
@@ -220,10 +245,10 @@ namespace FleetHackers
 			MouseState mouseState = Mouse.GetState();
 			KeyboardState keyState = Keyboard.GetState();
 
-			float deltaX = (float)lastMouseState.X - (float)mouseState.X;
-			float deltaY = (float)lastMouseState.Y - (float)mouseState.Y;
+			float deltaX = (float)_lastMouseState.X - (float)mouseState.X;
+			float deltaY = (float)_lastMouseState.Y - (float)mouseState.Y;
 
-			((FreeCamera)camera).Rotate(deltaX * .01f, deltaY * .01f);
+			((FreeCamera)_camera).Rotate(deltaX * .01f, deltaY * .01f);
 
 			Vector3 translation = Vector3.Zero;
 
@@ -234,11 +259,11 @@ namespace FleetHackers
 
 			translation *= 10 * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-			((FreeCamera)camera).Move(translation);
+			((FreeCamera)_camera).Move(translation);
 
-			camera.Update();
+			_camera.Update();
 
-			lastMouseState = mouseState;
+			_lastMouseState = mouseState;
 		}
 
 		/// <summary>

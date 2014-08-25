@@ -12,17 +12,17 @@ namespace FleetHackers.Cameras
 		/// <summary>
 		/// Class variable for graphics device access.
 		/// </summary>
-		protected GraphicsDevice graphicsDevice;
+		protected GraphicsDevice _graphicsDevice;
 
 		/// <summary>
 		/// Hide this view variable.
 		/// </summary>
-		protected Matrix view;
+		protected Matrix _view;
 
 		/// <summary>
 		/// Hide this projection variable.
 		/// </summary>
-		protected Matrix projection;
+		protected Matrix _projection;
 
 		/// <summary>
 		/// Default constructor for the camera.
@@ -30,7 +30,7 @@ namespace FleetHackers.Cameras
 		/// <param name="graphicsDevice">Pass in the graphics device parameter.</param>
 		public AbstractCamera(GraphicsDevice graphicsDevice)
 		{
-			this.graphicsDevice = graphicsDevice;
+			_graphicsDevice = graphicsDevice;
 			GeneratePerspectiveProjectionMatrix(MathHelper.PiOver4);
 		}
 
@@ -45,7 +45,7 @@ namespace FleetHackers.Cameras
 		/// <param name="fieldOfView">Specify the parameter for field of view.</param>
 		private void GeneratePerspectiveProjectionMatrix(float fieldOfView)
 		{
-			PresentationParameters presentationParameters = graphicsDevice.PresentationParameters;
+			PresentationParameters presentationParameters = _graphicsDevice.PresentationParameters;
 			float aspectRatio = (float)presentationParameters.BackBufferWidth / (float)presentationParameters.BackBufferHeight;
 			this.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), aspectRatio, 1f, 100000.0f);
 		}
@@ -85,11 +85,11 @@ namespace FleetHackers.Cameras
 		{
 			get
 			{
-				return view;
+				return _view;
 			}
 			protected set
 			{
-				view = value;
+				_view = value;
 				GenerateFrustrum();
 			}
 		}
@@ -101,13 +101,31 @@ namespace FleetHackers.Cameras
 		{
 			get
 			{
-				return projection;
+				return _projection;
 			}
 			protected set
 			{
-				projection = value;
+				_projection = value;
 				GenerateFrustrum();
 			}
+		}
+
+		/// <summary>
+		/// Camera up vector.
+		/// </summary>
+		public Vector3 Up
+		{
+			get;
+			protected set;
+		}
+
+		/// <summary>
+		/// Camera right vector.
+		/// </summary>
+		public Vector3 Right
+		{
+			get;
+			protected set;
 		}
 	}
 }

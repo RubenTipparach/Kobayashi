@@ -12,7 +12,7 @@ namespace FleetHackers.Cameras
 		/// <summary>
 		/// Translate the camera variable.
 		/// </summary>
-		private Vector3 translation;
+		private Vector3 _translation;
 
 		/// <summary>
 		/// Main constructor.
@@ -26,10 +26,10 @@ namespace FleetHackers.Cameras
 		{
 			this.Position = position;
 			this.Yaw = yaw;
-			this.Position = position;
+			this.Pitch = pitch;
 			this.Roll = 0;
 
-			translation = Vector3.Zero;
+			_translation = Vector3.Zero;
 		}
 
 		/// <summary>
@@ -40,9 +40,9 @@ namespace FleetHackers.Cameras
 		{
 			Matrix rotation = Matrix.CreateFromYawPitchRoll(Yaw, Pitch, Roll);
 
-			translation = Vector3.Transform(translation, rotation);
-			Position += translation;
-			translation = Vector3.Zero;
+			_translation = Vector3.Transform(_translation, rotation);
+			Position += _translation;
+			_translation = Vector3.Zero;
 
 			Vector3 forward = Vector3.Transform(Vector3.Forward, rotation);
 			Target = Position + forward;
@@ -50,6 +50,9 @@ namespace FleetHackers.Cameras
 			Vector3 up = Vector3.Transform(Vector3.Up, rotation);
 
 			View = Matrix.CreateLookAt(Position, Target, up);
+
+			this.Up = up;
+			this.Right = Vector3.Cross(forward, up);
 		}
 
 		/// <summary>
@@ -65,7 +68,7 @@ namespace FleetHackers.Cameras
 
 		public void Move(Vector3 translation)
 		{
-			this.translation += translation;
+			this._translation += translation;
 		}
 
 		/// <summary>
