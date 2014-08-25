@@ -12,17 +12,17 @@ namespace FleetHackers.Models
 		/// <summary>
 		/// Used to hold transformation operations.
 		/// </summary>
-		private Matrix[] modelTransforms;
+		private Matrix[] _modelTransforms;
 
 		/// <summary>
 		/// Graphics device for controling graphics. Modularizing this class.
 		/// </summary>
-		private GraphicsDevice graphicsDevice;
+		private GraphicsDevice _graphicsDevice;
 
 		/// <summary>
 		/// Bounding sphere to be used for culling.
 		/// </summary>
-		private BoundingSphere boundingSphere;
+		private BoundingSphere _boundingSphere;
 
 		/// <summary>
 		/// Default constructor.
@@ -38,10 +38,10 @@ namespace FleetHackers.Models
 			this.Position = position;
 			this.Rotation = rotation;
 			this.Scale = scale;
-			this.graphicsDevice = graphicsDevice;
+			_graphicsDevice = graphicsDevice;
 
-			modelTransforms = new Matrix[model.Bones.Count];
-			model.CopyAbsoluteBoneTransformsTo(modelTransforms);
+			_modelTransforms = new Matrix[model.Bones.Count];
+			model.CopyAbsoluteBoneTransformsTo(_modelTransforms);
 			BuildBoundingSphere();
 		}
 
@@ -59,7 +59,7 @@ namespace FleetHackers.Models
 
 			foreach (ModelMesh mesh in Model.Meshes)
 			{
-				Matrix localWorld = modelTransforms[mesh.ParentBone.Index] * baseWorld;
+				Matrix localWorld = _modelTransforms[mesh.ParentBone.Index] * baseWorld;
 
 				foreach ( ModelMeshPart meshpart in mesh.MeshParts)
 				{
@@ -85,11 +85,11 @@ namespace FleetHackers.Models
 			foreach(ModelMesh mesh in Model.Meshes)
 			{
 				BoundingSphere transformed = mesh.BoundingSphere.Transform(
-					modelTransforms[mesh.ParentBone.Index]);
+					_modelTransforms[mesh.ParentBone.Index]);
 				boundingSphere = BoundingSphere.CreateMerged(boundingSphere, transformed);
 			}
 
-			this.boundingSphere = boundingSphere;
+			_boundingSphere = boundingSphere;
 		}
 
 		/// <summary>
@@ -100,7 +100,7 @@ namespace FleetHackers.Models
 			get
 			{
 				Matrix worldTransforms = Matrix.CreateScale(Scale) * Matrix.CreateTranslation(Position);
-				BoundingSphere transformed = boundingSphere;
+				BoundingSphere transformed = _boundingSphere;
 				transformed = transformed.Transform(worldTransforms);
 
 				return transformed;

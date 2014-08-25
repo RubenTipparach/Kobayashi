@@ -22,37 +22,37 @@ namespace FleetHackers.DrawingHelpers
 		/// <summary>
 		/// Basic effect used for rendering polygon lines.
 		/// </summary>
-		private BasicEffect basicEffect;
+		private BasicEffect _basicEffect;
 
 		/// <summary>
 		/// Dynamic vertex buffer.
 		/// </summary>
-		private DynamicVertexBuffer vertexBuffer;
+		private DynamicVertexBuffer _vertexBuffer;
 
 		/// <summary>
 		/// Dynamic index buffer.
 		/// </summary>
-		private DynamicIndexBuffer indexBuffer;
+		private DynamicIndexBuffer _indexBuffer;
 
 		/// <summary>
 		/// An array of indices.
 		/// </summary>
-		private ushort[] indices = new ushort[MAX_INDICES];
+		private ushort[] _indices = new ushort[MAX_INDICES];
 
 		/// <summary>
 		/// A bunch of vertices.
 		/// </summary>
-		private VertexPositionColor[] vertices = new VertexPositionColor[MAX_VERTS];
+		private VertexPositionColor[] _vertices = new VertexPositionColor[MAX_VERTS];
 
 		/// <summary>
 		/// Number of used indices.
 		/// </summary>
-		private int indexCount;
+		private int _indexCount;
 
 		/// <summary>
 		/// Number of vertices.
 		/// </summary>
-		private int vertexCount;
+		private int _vertexCount;
 
 		/// <summary>
 		/// Main line drawer constructor.
@@ -60,13 +60,13 @@ namespace FleetHackers.DrawingHelpers
 		/// <param name="graphicsDevice">Graphics device for rendering.</param>
 		public LineDrawer(GraphicsDevice graphicsDevice)
 		{
-			vertexBuffer = new DynamicVertexBuffer(graphicsDevice, typeof(VertexPositionColor), MAX_VERTS, BufferUsage.WriteOnly);
-			indexBuffer = new DynamicIndexBuffer(graphicsDevice, typeof(ushort), MAX_INDICES, BufferUsage.WriteOnly);
+			_vertexBuffer = new DynamicVertexBuffer(graphicsDevice, typeof(VertexPositionColor), MAX_VERTS, BufferUsage.WriteOnly);
+			_indexBuffer = new DynamicIndexBuffer(graphicsDevice, typeof(ushort), MAX_INDICES, BufferUsage.WriteOnly);
 
-			basicEffect = new BasicEffect(graphicsDevice);
-			basicEffect.LightingEnabled = false;
-			basicEffect.VertexColorEnabled = true;
-			basicEffect.TextureEnabled = false;
+			_basicEffect = new BasicEffect(graphicsDevice);
+			_basicEffect.LightingEnabled = false;
+			_basicEffect.VertexColorEnabled = true;
+			_basicEffect.TextureEnabled = false;
 		}
 
 		/// <summary>
@@ -76,12 +76,12 @@ namespace FleetHackers.DrawingHelpers
 		/// <param name="projection">Camera projection.</param>
 		public void Begin(Matrix view, Matrix projection)
 		{
-			basicEffect.World = Matrix.Identity;
-			basicEffect.View = view;
-			basicEffect.Projection = projection;
+			_basicEffect.World = Matrix.Identity;
+			_basicEffect.View = view;
+			_basicEffect.Projection = projection;
 
-			vertexCount = 0;
-			indexCount = 0;
+			_vertexCount = 0;
+			_indexCount = 0;
 		}
 
 		/// <summary>
@@ -97,7 +97,7 @@ namespace FleetHackers.DrawingHelpers
 				return false;
 			}
 
-			if (vertexCount + numVerts > MAX_VERTS || indexCount + numIndices >= MAX_INDICES)
+			if (_vertexCount + numVerts > MAX_VERTS || _indexCount + numIndices >= MAX_INDICES)
 			{
 				End();
 			}
@@ -202,10 +202,10 @@ namespace FleetHackers.DrawingHelpers
 		{
 			if (Reserve(2,2))
 			{
-				indices[indexCount++] = (ushort)vertexCount;
-				indices[indexCount++] = (ushort)(vertexCount + 1);
-				vertices[vertexCount++] = new VertexPositionColor(startVector, color);
-				vertices[vertexCount++] = new VertexPositionColor(endVector, color);
+				_indices[_indexCount++] = (ushort)_vertexCount;
+				_indices[_indexCount++] = (ushort)(_vertexCount + 1);
+				_vertices[_vertexCount++] = new VertexPositionColor(startVector, color);
+				_vertices[_vertexCount++] = new VertexPositionColor(endVector, color);
 			}
 		}
 
@@ -222,12 +222,12 @@ namespace FleetHackers.DrawingHelpers
 			{
 				for (int i = 0; i < indexArray.Length; i++)
 				{
-					indices[indexCount] = (ushort)(vertexCount + indexArray[i]);
+					_indices[_indexCount] = (ushort)(_vertexCount + indexArray[i]);
 				}
 
 				for (int i = 0; i < postionArray.Length; i++)
 				{
-					vertices[vertexCount++] = new VertexPositionColor(postionArray[i], color);
+					_vertices[_vertexCount++] = new VertexPositionColor(postionArray[i], color);
 				}
 			}
 		}
@@ -237,27 +237,27 @@ namespace FleetHackers.DrawingHelpers
 		/// </summary>
 		public void End()
 		{
-			if (indexCount > 0)
+			if (_indexCount > 0)
 			{
-				vertexBuffer.SetData(vertices, 0, vertexCount, SetDataOptions.Discard);
-				indexBuffer.SetData(indices, 0, indexCount, SetDataOptions.Discard);
+				_vertexBuffer.SetData(_vertices, 0, _vertexCount, SetDataOptions.Discard);
+				_indexBuffer.SetData(_indices, 0, _indexCount, SetDataOptions.Discard);
 
-				GraphicsDevice graphicsDevice = basicEffect.GraphicsDevice;
-				graphicsDevice.SetVertexBuffer(vertexBuffer);
-				graphicsDevice.Indices = indexBuffer;
+				GraphicsDevice graphicsDevice = _basicEffect.GraphicsDevice;
+				graphicsDevice.SetVertexBuffer(_vertexBuffer);
+				graphicsDevice.Indices = _indexBuffer;
 
-				foreach(EffectPass pass in basicEffect.CurrentTechnique.Passes)
+				foreach(EffectPass pass in _basicEffect.CurrentTechnique.Passes)
 				{
 					pass.Apply();
-					graphicsDevice.DrawIndexedPrimitives(PrimitiveType.LineList, 0, 0, vertexCount, 0, indexCount / 2);
+					graphicsDevice.DrawIndexedPrimitives(PrimitiveType.LineList, 0, 0, _vertexCount, 0, _indexCount / 2);
 				}
 
 				graphicsDevice.SetVertexBuffer(null);
 				graphicsDevice.Indices = null;
 			}
 
-			indexCount = 0;
-			vertexCount = 0;
+			_indexCount = 0;
+			_vertexCount = 0;
 		}
 
 		/// <summary>
@@ -285,19 +285,19 @@ namespace FleetHackers.DrawingHelpers
 		{
 			if(disposing)
 			{
-				if (vertexBuffer != null)
+				if (_vertexBuffer != null)
 				{
-					vertexBuffer.Dispose();
+					_vertexBuffer.Dispose();
 				}
 
-				if (indexBuffer != null)
+				if (_indexBuffer != null)
 				{
-					indexBuffer.Dispose();
+					_indexBuffer.Dispose();
 				}
 
-				if (basicEffect != null)
+				if (_basicEffect != null)
 				{
-					basicEffect.Dispose();
+					_basicEffect.Dispose();
 				}
 			}
 		}

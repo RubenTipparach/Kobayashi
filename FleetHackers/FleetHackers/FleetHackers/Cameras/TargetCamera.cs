@@ -32,6 +32,16 @@ namespace FleetHackers.Cameras
 			Vector3 side = Vector3.Cross(forward, Vector3.Up);
 			Vector3 up = Vector3.Cross(side, forward);
 			this.View = Matrix.CreateLookAt(Position, Target, up);
+
+			//Matrix rotation = Matrix.CreateFromAxisAngle(forward, 0);
+
+			float pitch = (float)Math.Asin(forward.Y);
+			//float yaw = (float)Math.Acos(forward.X / Math.Cos(Math.Cos(pitch)));
+
+			Matrix rotation = Matrix.CreateFromYawPitchRoll(0, 200, 0);
+
+			this.Up = Vector3.Transform(Vector3.Up, rotation);
+			this.Right = Vector3.Cross(Vector3.Transform(Vector3.Forward, rotation), Vector3.Transform(Vector3.Up, rotation));
 		}
 
 		/// <summary>
@@ -40,26 +50,28 @@ namespace FleetHackers.Cameras
 		private void PanCamera()
 		{
 			KeyboardState keystate = Keyboard.GetState();
+			
+			float cameraPanSpeed = 1000;
 
 			if (keystate.IsKeyDown(Keys.W))
 			{
-				this.Position -= Vector3.UnitZ * 100;
-				this.Target -= Vector3.UnitZ * 100;
+				this.Position -= Vector3.UnitZ * cameraPanSpeed;
+				this.Target -= Vector3.UnitZ * cameraPanSpeed;
 			}
 			if (keystate.IsKeyDown(Keys.S))
 			{
-				this.Position += Vector3.UnitZ * 100;
-				this.Target += Vector3.UnitZ * 100;
+				this.Position += Vector3.UnitZ * cameraPanSpeed;
+				this.Target += Vector3.UnitZ * cameraPanSpeed;
 			}
 			if (keystate.IsKeyDown(Keys.A))
 			{
-				this.Position -= Vector3.UnitX * 100;
-				this.Target -= Vector3.UnitX * 100;
+				this.Position -= Vector3.UnitX * cameraPanSpeed;
+				this.Target -= Vector3.UnitX * cameraPanSpeed;
 			}
 			if (keystate.IsKeyDown(Keys.D))
 			{
-				this.Position += Vector3.UnitX * 100;
-				this.Target += Vector3.UnitX * 100;
+				this.Position += Vector3.UnitX * cameraPanSpeed;
+				this.Target += Vector3.UnitX * cameraPanSpeed;
 			}
 		}
 
