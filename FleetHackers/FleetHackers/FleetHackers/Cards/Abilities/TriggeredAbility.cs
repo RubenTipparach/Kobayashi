@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FleetHackers.Cards.Effects;
+using System.Runtime.Serialization;
 
 namespace FleetHackers.Cards.Abilities
 {
+	[DataContract]
 	public class TriggeredAbility : Ability
 	{
 		public override AbilityType AbilityType
 		{
 			get
 			{
-				return AbilityType.Trigger;
+				return AbilityType.Triggered;
 			}
 		}
 
+		[DataMember(Name="trigger")]
 		public Trigger Trigger { get; set; }
+
+		[DataMember(Name="effect")]
 		public Effect Effect { get; set; }
 
 		public override string ToString(Card card)
@@ -31,9 +36,19 @@ namespace FleetHackers.Cards.Abilities
 
 				return toStringBuilder.ToString();
 			}
+			else if (card.Supertype != Supertype.Maneuver)
+			{
+				StringBuilder toStringBuilder = new StringBuilder("Whenever ");
+				toStringBuilder.Append(Trigger.ToString(card));
+				toStringBuilder.Append(", ");
+				toStringBuilder.Append(Effect.ToString(card));
+				toStringBuilder.Append(".");
+
+				return toStringBuilder.ToString();
+			}
 			else
 			{
-				throw new InvalidOperationException("Unsupported Card Subtype for TriggeredAbility.");
+				throw new InvalidOperationException("Unsupported Card Type for TriggeredAbility.");
 			}
 		}
 	}

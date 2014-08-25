@@ -7,6 +7,8 @@ namespace FleetHackers.Cards.Abilities
 {
 	public enum TriggerType
 	{
-		Attack
+		Attack,
+		Interception,
+		EntersTheBattleZone
 	}
 }

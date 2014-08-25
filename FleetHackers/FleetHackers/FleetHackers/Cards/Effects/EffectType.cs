@@ -7,6 +7,7 @@ namespace FleetHackers.Cards.Effects
 {
 	public enum EffectType
 	{
-		Damage
+		Damage,
+		StatPump
 	}
 }

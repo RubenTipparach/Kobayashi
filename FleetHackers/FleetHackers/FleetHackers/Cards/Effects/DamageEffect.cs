@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.Runtime.Serialization;
+using System.Reflection;
 
 namespace FleetHackers.Cards.Effects
 {
+	[DataContract]
 	public class DamageEffect : Effect
 	{
 		public override EffectType EffectType
@@ -30,14 +33,73 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
+		[DataMember(Name = "targets")]
+		private List<String> TargetsStrings
+		{
+			get
+			{
+				List<string> stringList = new List<string>();
+				foreach (Target tgt in _targets)
+				{
+					stringList.Add(tgt.ToString());
+				}
+				return stringList;
+			}
+			set
+			{
+				_targets.Clear();
+				foreach (string str in value)
+				{
+					_targets.Add((Target)Enum.Parse(typeof(Target), str));
+				}
+			}
+		}
+
+		[OnDeserializing]
+		private void OnDeserializing(StreamingContext c)
+		{
+			if (_targets == null)
+			{
+				var field = GetType().GetField("_targets", BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.NonPublic);
+				field.SetValue(this, new List<Target>());
+			}
+		}
+
 		public Target Actor { get; set; }
+
+		[DataMember(Name="actor")]
+		public string ActorString
+		{
+			get { return Actor.ToString(); }
+			set { Actor = (Target)Enum.Parse(typeof(Target), value); }
+		}
+
+		[DataMember(Name = "amount")]
 		public int Amount { get; set; }
+
+		[DataMember(Name = "exact")]
 		public bool Exact { get; set; }
+
+		[DataMember(Name = "optional")]
+		public bool Optional { get; set; }
+
 		public DivideMethod DivideMethod { get; set; }
 
-		public override string ToString(Card card)
+		[DataMember(Name = "divideMethod")]
+		public string DivideMethodString
+		{
+			get { return DivideMethod.ToString(); }
+			set { DivideMethod = (DivideMethod)Enum.Parse(typeof(DivideMethod), value); }
+		}
+
+		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
+
+			if (Optional)
+			{
+				toStringBuilder.Append("you may have ");
+			}
 
 			switch (Actor)
 			{
@@ -49,20 +111,41 @@ namespace FleetHackers.Cards.Effects
 					throw new InvalidOperationException("Unsupported Actor for DamageEffect.");
 			}
 
-			toStringBuilder.Append("inflicts ");
+			if (Optional)
+			{
+				toStringBuilder.Append("inflict ");
+			}
+			else
+			{
+				toStringBuilder.Append("inflicts ");
+			}
 
 			if (!Exact)
 			{
 				toStringBuilder.Append("up to ");
 			}
 
-			toStringBuilder.Append(Amount.ToString());
+			if (Amount < 0)
+			{
+				toStringBuilder.Append("X");
+				for (int i = 1; i < Math.Abs(Amount); i++)
+				{
+					toStringBuilder.Append("+X");
+				}
+			}
+			else
+			{
+				toStringBuilder.Append(Amount.ToString());
+			}
 			toStringBuilder.Append(" damage ");
 
 			switch (DivideMethod)
 			{
 				case DivideMethod.YouChooseAny:
 					toStringBuilder.Append("divided however you choose among ");
+					break;
+				case DivideMethod.None:
+					toStringBuilder.Append("to ");
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported DivideMethod for DamageEffect.");
@@ -75,6 +158,12 @@ namespace FleetHackers.Cards.Effects
 				{
 					case Target.AttackingShips:
 						targetStrings.Add("the attacking ships");
+						break;
+					case Target.AnyShip:
+						targetStrings.Add("target ship");
+						break;
+					case Target.UpTo2OtherShips:
+						targetStrings.Add("up to 2 other target ships");
 						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for DamageEffect.");
