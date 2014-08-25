@@ -1,0 +1,175 @@
+﻿[
+	{
+		"title": "Big Fighter",
+		"energyCost": 7,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Fighter",
+		"range": 3,
+		"attack": 7,
+		"defense": 5
+	},
+	{
+		"title": "Counterassault",
+		"energyCost": 4,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"subtype": "Trap",
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Attack",
+					"actor": "OpponentShip",
+					"targets":
+					[
+						"YourShip",
+						"YourHomeBase"
+					]
+				},
+				"effect":
+				{
+					"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+					"actor": "This",
+					"divideMethod": "YouChooseAny",
+					"amount": 3,
+					"exact": false,
+					"targets":
+					[
+						"AttackingShips"
+					]
+				}
+			}
+		]
+	},
+	{
+		"title": "Defense Trooper",
+		"energyCost": 4,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Trooper",
+		"range": 2,
+		"attack": 5,
+		"defense": 3
+	},
+	{
+		"title": "Deputy Command Ship",
+		"energyCost": 1,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Command",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Interception",
+					"actor": "AnyShip",
+					"targets":
+					[
+						"This"
+					]
+				},
+				"effect":
+				{
+					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"attackPump": 2,
+					"defensePump": 2,
+					"effectEnds": "EndOfTurn",
+					"target": "This"
+				}
+			}
+		]
+	},
+	{
+		"title": "Dreadnought Boost",
+		"energyCost": 2,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"attackPump": 5,
+					"defensePump": 0,
+					"effectEnds": "BeginningOfYourTurn",
+					"target": "AnyShip"
+				}
+			}
+		]
+	},
+	{
+		"title": "Energy Blaze",
+		"energyCost": -2,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+					"actor": "This",
+					"divideMethod": "None",
+					"amount": -1,
+					"exact": true,
+					"targets":
+					[
+						"AnyShip"
+					]
+				}
+			}
+		]
+	},
+	{
+		"title": "Flaming Dreadnought",
+		"energyCost": 3,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Dreadnought",
+		"range": 2,
+		"attack": 1,
+		"defense": 1,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+					"actor": "This",
+					"divideMethod": "YouChooseAny",
+					"amount": 2,
+					"exact": false,
+					"optional": true,
+					"targets":
+					[
+						"UpTo2OtherShips"
+					]
+				}
+			}
+		]
+	},
+]
