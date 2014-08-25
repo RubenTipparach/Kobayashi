@@ -21,6 +21,51 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelEditor", "LevelEditor\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetHackersServer", "FleetHackersServer\FleetHackersServer.csproj", "{B9F76BA5-A51B-49A1-AA49-37B0D2CCAFB8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{CF02B7F4-1C06-4267-9750-785A670FF9C5}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Fleet_Hackers _design_2.docx = Documents\Fleet_Hackers _design_2.docx
+		text.txt = text.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pictures", "Pictures", "{2CFCE529-300C-42D9-A8CE-FDF978F7184A}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Pictures\tumblr_mv1wl8rTWd1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv1wl8rTWd1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mv1wlpIZJw1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv1wlpIZJw1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mv1wmgI1SA1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv1wmgI1SA1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mv1wn1xElq1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv1wn1xElq1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mv2rv8Xhk61sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv2rv8Xhk61sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mv506qbp8s1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv506qbp8s1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mv507hZBy51sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv507hZBy51sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mv508mcPSf1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv508mcPSf1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mv509p4yYj1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mv509p4yYj1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mvcrvqTWNP1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mvcrvqTWNP1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mvcyfvVbzw1sm15veo1_1280.png = Documents\Pictures\tumblr_mvcyfvVbzw1sm15veo1_1280.png
+		Documents\Pictures\tumblr_mvdxfnU9Mk1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mvdxfnU9Mk1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mvil7y0fOV1sm15veo1_1280.png = Documents\Pictures\tumblr_mvil7y0fOV1sm15veo1_1280.png
+		Documents\Pictures\tumblr_mvil7y0fOV1sm15veo2_r1_1280.png = Documents\Pictures\tumblr_mvil7y0fOV1sm15veo2_r1_1280.png
+		Documents\Pictures\tumblr_mvil7y0fOV1sm15veo3_r1_1280.png = Documents\Pictures\tumblr_mvil7y0fOV1sm15veo3_r1_1280.png
+		Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo2_1280.jpg = Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo2_1280.jpg
+		Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo3_1280.jpg = Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo3_1280.jpg
+		Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo4_250.jpg = Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo4_250.jpg
+		Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo5_1280.jpg = Documents\Pictures\tumblr_mvrf0yZRUb1sm15veo5_1280.jpg
+		Documents\Pictures\tumblr_mvvobhqKXF1sm15veo3_1280.jpg = Documents\Pictures\tumblr_mvvobhqKXF1sm15veo3_1280.jpg
+		Documents\Pictures\tumblr_mvxasiOidP1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mvxasiOidP1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mw0cars0t71sm15veo1_1280.jpg = Documents\Pictures\tumblr_mw0cars0t71sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mw0cars0t71sm15veo2_1280.jpg = Documents\Pictures\tumblr_mw0cars0t71sm15veo2_1280.jpg
+		Documents\Pictures\tumblr_mw0cc9F61O1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mw0cc9F61O1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mw0cgx00St1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mw0cgx00St1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mw8pujFzai1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mw8pujFzai1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mwfc0w2nba1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mwfc0w2nba1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mwhnp9CAuT1sm15veo1_1280.jpg = Documents\Pictures\tumblr_mwhnp9CAuT1sm15veo1_1280.jpg
+		Documents\Pictures\tumblr_mwho3aMOGj1sm15veo1_500.png = Documents\Pictures\tumblr_mwho3aMOGj1sm15veo1_500.png
+		Documents\Pictures\tumblr_mwho3aMOGj1sm15veo2_500.png = Documents\Pictures\tumblr_mwho3aMOGj1sm15veo2_500.png
+		Documents\Pictures\tumblr_mwho3aMOGj1sm15veo3_500.png = Documents\Pictures\tumblr_mwho3aMOGj1sm15veo3_500.png
+		Documents\Pictures\tumblr_mws14ePvq31sm15veo2_1280.jpg = Documents\Pictures\tumblr_mws14ePvq31sm15veo2_1280.jpg
+		Documents\Pictures\tumblr_mwwalxxxeV1sm15veo1_r1_1280.jpg = Documents\Pictures\tumblr_mwwalxxxeV1sm15veo1_r1_1280.jpg
+		Documents\Pictures\tumblr_mwwalxxxeV1sm15veo2_r1_500.jpg = Documents\Pictures\tumblr_mwwalxxxeV1sm15veo2_r1_500.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 7
@@ -124,5 +169,6 @@ Global
 		{0B83C032-9EF4-4B5F-8673-021005095CA4} = {5E3ADEB8-E329-401E-ABDE-8C81A951E481}
 		{1C1C0CB7-FCFF-49E8-A6C7-1041D4DAFCB8} = {5E3ADEB8-E329-401E-ABDE-8C81A951E481}
 		{B9F76BA5-A51B-49A1-AA49-37B0D2CCAFB8} = {3F8DF296-F088-4626-BB52-3C6215C90CA1}
+		{2CFCE529-300C-42D9-A8CE-FDF978F7184A} = {CF02B7F4-1C06-4267-9750-785A670FF9C5}
 	EndGlobalSection
 EndGlobal
