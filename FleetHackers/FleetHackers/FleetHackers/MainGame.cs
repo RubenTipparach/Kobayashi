@@ -26,12 +26,12 @@ namespace FleetHackers
 		/// <summary>
 		/// Screen width. TODO: Make this configurable.
 		/// </summary>
-		private const int WIDTH = 1920;
+		private const int WIDTH = 1280;
 
 		/// <summary>
 		/// Screen Height. TODO: Make this configurable also.
 		/// </summary>
-		private const int HEIGHT = 1080;
+		private const int HEIGHT = 720;
 
 		/// <summary>
 		/// Graphics device object.
@@ -91,6 +91,7 @@ namespace FleetHackers
 			_graphicsDeviceManager.PreferredBackBufferWidth = WIDTH;
 			_graphicsDeviceManager.PreferredBackBufferHeight = HEIGHT;
 
+			// Use this line to switch camera. TODO: switch camera in game.
 			_cameraType = CameraType.TargetCamera;
 		}
 
@@ -183,12 +184,12 @@ namespace FleetHackers
 
 			if (_cameraType == CameraType.TargetCamera)
 			{
-				TargetCameraUpdate();
+				_camera.Update();
 			}
 
 			if(_cameraType == CameraType.FreeCamera)
 			{
-				((FreeCamera)_camera).FreeCameraUpdate(gameTime, _camera, _lastMouseState);			
+				_lastMouseState = ((FreeCamera)_camera).FreeCameraUpdate(gameTime, _camera, _lastMouseState);			
 			}
 
 			base.Update(gameTime);
@@ -222,15 +223,6 @@ namespace FleetHackers
 
 			base.Draw(gameTime);
 		}
-
-		/// <summary>
-		/// Controls the behavior of the Target camera.
-		/// </summary>
-		private void TargetCameraUpdate()
-		{
-			_camera.Update();
-		}
-
 
 		/// <summary>
 		/// Type of camera to use.
