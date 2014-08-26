@@ -158,7 +158,7 @@ namespace FleetHackers
 
 				
 			// TEST DESERIALIZATION
-			CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards.json"));
+			CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
 			foreach (Card c in cards)
 			{
 				Debug.WriteLine(c.Title);
