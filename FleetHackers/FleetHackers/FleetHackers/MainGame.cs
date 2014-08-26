@@ -148,8 +148,13 @@ namespace FleetHackers
 			float dispersalRate = 700000;
 			float height = -400000;
 
-			for (int i  = 0; i < postions.Length; i++)
-				_stars = new BillboardSystem(GraphicsDevice, Content, Content.Load<Texture2D>("BillboardTextures\\flare-blue-purple1"), new Vector2(800), postions);
+			for (int i = 0; i < postions.Length; i++)
+			{
+				postions[i] = new Vector3((float)r.NextDouble() * dispersalRate - dispersalRate / 2, (float)r.NextDouble() * (height) - height / 2, (float)r.NextDouble() * dispersalRate - dispersalRate / 2);
+				//postions[i] = new Vector3(10000, 400, 10000);
+			}
+
+			_stars = new BillboardSystem(GraphicsDevice, Content, Content.Load<Texture2D>("BillboardTextures\\flare-blue-purple1"), new Vector2(800), postions);
 
 				
 			// TEST DESERIALIZATION
