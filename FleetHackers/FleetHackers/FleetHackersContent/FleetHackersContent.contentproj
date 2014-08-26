@@ -113,7 +113,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cards.json">
+    <None Include="Cards\Cards.json">
       <Name>Cards</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
