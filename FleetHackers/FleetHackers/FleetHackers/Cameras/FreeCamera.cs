@@ -60,7 +60,7 @@ namespace FleetHackers.Cameras
 		/// Controls the behavoir of the Free camera.
 		/// TODO: Move input logic to Free Camera class.
 		/// </summary>
-		public void FreeCameraUpdate(GameTime gameTime, AbstractCamera camera, MouseState lastMouseState)
+		public MouseState FreeCameraUpdate(GameTime gameTime, AbstractCamera camera, MouseState lastMouseState)
 		{
 			MouseState mouseState = Mouse.GetState();
 			KeyboardState keyState = Keyboard.GetState();
@@ -84,6 +84,8 @@ namespace FleetHackers.Cameras
 			camera.Update();
 
 			lastMouseState = mouseState;
+
+			return lastMouseState;
 		}
 
 
