@@ -8,7 +8,7 @@ namespace FleetHackers.Cards.Effects
 {
 	[DataContract]
 	[KnownType(typeof(DamageEffect))]
-	[KnownType(typeof(StatPumpEffect))]
+	//[KnownType(typeof(StatPumpEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }

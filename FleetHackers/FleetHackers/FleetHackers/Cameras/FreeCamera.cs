@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace FleetHackers.Cameras
 {
@@ -56,6 +57,37 @@ namespace FleetHackers.Cameras
 		}
 
 		/// <summary>
+		/// Controls the behavoir of the Free camera.
+		/// TODO: Move input logic to Free Camera class.
+		/// </summary>
+		public void FreeCameraUpdate(GameTime gameTime, AbstractCamera camera, MouseState lastMouseState)
+		{
+			MouseState mouseState = Mouse.GetState();
+			KeyboardState keyState = Keyboard.GetState();
+
+			float deltaX = (float)lastMouseState.X - (float)mouseState.X;
+			float deltaY = (float)lastMouseState.Y - (float)mouseState.Y;
+
+			((FreeCamera)camera).Rotate(deltaX * .01f, deltaY * .01f);
+
+			Vector3 translation = Vector3.Zero;
+
+			if (keyState.IsKeyDown(Keys.W)) translation += Vector3.Forward;
+			if (keyState.IsKeyDown(Keys.S)) translation += Vector3.Backward;
+			if (keyState.IsKeyDown(Keys.A)) translation += Vector3.Left;
+			if (keyState.IsKeyDown(Keys.D)) translation += Vector3.Right;
+
+			translation *= 10 * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+			((FreeCamera)camera).Move(translation);
+
+			camera.Update();
+
+			lastMouseState = mouseState;
+		}
+
+
+		/// <summary>
 		/// Rotation for the camera.
 		/// </summary>
 		/// <param name="yawChange">Change of horizontal rotation.</param>
@@ -69,15 +101,6 @@ namespace FleetHackers.Cameras
 		public void Move(Vector3 translation)
 		{
 			this._translation += translation;
-		}
-
-		/// <summary>
-		/// Gets or sets the current position.
-		/// </summary>
-		public Vector3 Position
-		{
-			get;
-			set;
 		}
 
 		/// <summary>

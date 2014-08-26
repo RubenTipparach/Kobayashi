@@ -8,7 +8,7 @@ namespace FleetHackers.Cards.Abilities
 {
 	[DataContract]
 	[KnownType(typeof(TriggeredAbility))]
-	[KnownType(typeof(ImmediateAbility))]
+	//[KnownType(typeof(ImmediateAbility))]
 	public abstract class Ability
 	{
 		public abstract AbilityType AbilityType { get; }

@@ -47,7 +47,7 @@ namespace FleetHackers.Cameras
 		{
 			PresentationParameters presentationParameters = _graphicsDevice.PresentationParameters;
 			float aspectRatio = (float)presentationParameters.BackBufferWidth / (float)presentationParameters.BackBufferHeight;
-			this.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), aspectRatio, 1f, 100000.0f);
+			this.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), aspectRatio, 1f, 1000000.0f);
 		}
 
 		/// <summary>
@@ -126,6 +126,15 @@ namespace FleetHackers.Cameras
 		{
 			get;
 			protected set;
+		}
+
+		/// <summary>
+		/// Gets or sets the current position.
+		/// </summary>
+		public Vector3 Position
+		{
+			get;
+			set;
 		}
 	}
 }

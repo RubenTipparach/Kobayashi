@@ -24,12 +24,12 @@ namespace FleetHackers
 		/// <summary>
 		/// Screen width. TODO: Make this configurable.
 		/// </summary>
-		private const int WIDTH = 1280;
+		private const int WIDTH = 1920;
 
 		/// <summary>
 		/// Screen Height. TODO: Make this configurable also.
 		/// </summary>
-		private const int HEIGHT = 720;
+		private const int HEIGHT = 1080;
 
 		/// <summary>
 		/// Graphics device object.
@@ -72,6 +72,11 @@ namespace FleetHackers
 		/// Stars that make up the background.
 		/// </summary>
 		private BillboardSystem _stars;
+
+		/// <summary>
+		/// The _skybox
+		/// </summary>
+		private Skybox _skybox;
 
 		/// <summary>
 		/// Constructor for this class.
@@ -130,14 +135,14 @@ namespace FleetHackers
 			if (_cameraType == CameraType.TargetCamera)
 			{
 				_camera = new TargetCamera(
-						(new Vector3(0, 1000, 1000)) * 30,
+						(new Vector3(0, 1000, 1000)) * 3,
 						Vector3.Zero, GraphicsDevice);
 			}
 
 			if (_cameraType == CameraType.FreeCamera)
 			{
 				_camera = new FreeCamera(
-						(new Vector3(500, 600, 1300)) * 10,
+						(new Vector3(500, 600, 1300)) * 1,
 						MathHelper.ToRadians(153),
 						MathHelper.ToRadians(5),
 						GraphicsDevice);
@@ -147,16 +152,20 @@ namespace FleetHackers
 			_models.Add(
 				new BasicModel(
 					Content.Load<Model>("blueship"),
-					Vector3.UnitY * 2500,
+					Vector3.UnitY * 250,
 					Vector3.Zero,
-					new Vector3(.4f),
+					new Vector3(.04f),
 					GraphicsDevice));
+
+			//Load sky box.
+			_skybox = new Skybox(Content, GraphicsDevice, Content.Load<TextureCube>("Textures\\greensky"));
+
 
 			//Load stars.
 			Random r = new Random();
 			Vector3[] postions = new Vector3[30000];
 			float dispersalRate = 700000;
-			float height = -40000;
+			float height = -400000;
 
 			for (int i  = 0; i < postions.Length; i++)
 			{
@@ -166,7 +175,7 @@ namespace FleetHackers
 			}
 
 
-			_stars = new BillboardSystem(GraphicsDevice, Content, Content.Load<Texture2D>(@"BillboardTextures\flare-blue-purple1"), new Vector2(800), postions);
+			_stars = new BillboardSystem(GraphicsDevice, Content, Content.Load<Texture2D>("BillboardTextures\\flare-blue-purple1"), new Vector2(800), postions);
 		}
 
 		/// <summary>
@@ -196,7 +205,7 @@ namespace FleetHackers
 
 			if(_cameraType == CameraType.FreeCamera)
 			{
-				FreeCameraUpdate(gameTime);			
+				((FreeCamera)_camera).FreeCameraUpdate(gameTime, _camera, _lastMouseState);			
 			}
 
 			base.Update(gameTime);
@@ -210,16 +219,19 @@ namespace FleetHackers
 		{
 			GraphicsDevice.Clear(Color.Black);
 
+
+			_skybox.Draw(_camera.View, _camera.Projection, _camera.Position);
+
 			foreach (BasicModel model in _models)
 			{
 				if (_camera.BoundingVolumeIsInView(model.BoundingSphere))
 				{
-					model.Draw(_camera.View, _camera.Projection);
+					model.Draw(_camera.View, _camera.Projection, _camera.Position);
 				}
 			}
 
 			_lineDrawer.Begin(_camera.View, _camera.Projection);
-			_lineDrawer.DrawHexagonGrid(Vector2.One, Vector2.One*40, 2000, Color.Red);
+			_lineDrawer.DrawHexagonGrid(Vector2.One, (new Vector2(80,40)), 200, Color.Red);
 			_lineDrawer.DrawLine(_models[0].Position, new Vector3(_models[0].Position.X, 0, _models[0].Position.Z), Color.CornflowerBlue);
 			_lineDrawer.End();
 
@@ -236,35 +248,6 @@ namespace FleetHackers
 			_camera.Update();
 		}
 
-		/// <summary>
-		/// Controls the behavoir of the Free camera.
-		/// TODO: Move input logic to Free Camera class.
-		/// </summary>
-		private void FreeCameraUpdate(GameTime gameTime)
-		{
-			MouseState mouseState = Mouse.GetState();
-			KeyboardState keyState = Keyboard.GetState();
-
-			float deltaX = (float)_lastMouseState.X - (float)mouseState.X;
-			float deltaY = (float)_lastMouseState.Y - (float)mouseState.Y;
-
-			((FreeCamera)_camera).Rotate(deltaX * .01f, deltaY * .01f);
-
-			Vector3 translation = Vector3.Zero;
-
-			if (keyState.IsKeyDown(Keys.W)) translation += Vector3.Forward;
-			if (keyState.IsKeyDown(Keys.S)) translation += Vector3.Backward;
-			if (keyState.IsKeyDown(Keys.A)) translation += Vector3.Left;
-			if (keyState.IsKeyDown(Keys.D)) translation += Vector3.Right;
-
-			translation *= 10 * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-			((FreeCamera)_camera).Move(translation);
-
-			_camera.Update();
-
-			_lastMouseState = mouseState;
-		}
 
 		/// <summary>
 		/// Type of camera to use.

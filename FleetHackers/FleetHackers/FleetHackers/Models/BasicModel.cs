@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FleetHackers.Materials;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -25,6 +26,14 @@ namespace FleetHackers.Models
 		private BoundingSphere _boundingSphere;
 
 		/// <summary>
+		/// Gets or sets the material.
+		/// </summary>
+		/// <value>
+		/// The material.
+		/// </value>
+		public Material Material { get; set; }
+
+		/// <summary>
 		/// Default constructor.
 		/// </summary>
 		/// <param name="model">Pass in a loaded model object.</param>
@@ -35,14 +44,35 @@ namespace FleetHackers.Models
 		public BasicModel(Model model, Vector3 position, Vector3 rotation, Vector3 scale, GraphicsDevice graphicsDevice)
 		{
 			this.Model = model;
+			this.Material = new Material();
+
 			this.Position = position;
 			this.Rotation = rotation;
 			this.Scale = scale;
+
 			_graphicsDevice = graphicsDevice;
 
 			_modelTransforms = new Matrix[model.Bones.Count];
 			model.CopyAbsoluteBoneTransformsTo(_modelTransforms);
+
 			BuildBoundingSphere();
+			GenerateTags();
+		}
+
+		/// <summary>
+		/// Generates the tags.
+		/// </summary>
+		private void GenerateTags()
+		{
+			foreach (ModelMesh mesh in Model.Meshes)
+				foreach (ModelMeshPart part in mesh.MeshParts)
+					if (part.Effect is BasicEffect)
+					{
+						BasicEffect effect = (BasicEffect)part.Effect;
+						MeshTag tag = new MeshTag(effect.DiffuseColor, effect.Texture,
+							effect.SpecularPower);
+						part.Tag = tag;
+					}
 		}
 
 		/// <summary>
@@ -51,7 +81,7 @@ namespace FleetHackers.Models
 		/// </summary>
 		/// <param name="view">Camera postion and rotation.</param>
 		/// <param name="projection">Camera viewing angle and depth.</param>
-		public void Draw(Matrix view, Matrix projection)
+		public void Draw(Matrix view, Matrix projection, Vector3 CameraPosition)
 		{
 			Matrix baseWorld = Matrix.CreateScale(Scale)
 				* Matrix.CreateFromYawPitchRoll(Rotation.Y, Rotation.X, Rotation.Z)
@@ -61,18 +91,86 @@ namespace FleetHackers.Models
 			{
 				Matrix localWorld = _modelTransforms[mesh.ParentBone.Index] * baseWorld;
 
-				foreach ( ModelMeshPart meshpart in mesh.MeshParts)
+				foreach (ModelMeshPart meshpart in mesh.MeshParts)
 				{
-					BasicEffect effect = (BasicEffect)meshpart.Effect;
-					effect.World = localWorld;
-					effect.View = view;
-					effect.Projection = projection;
+					Effect effect = meshpart.Effect;
+					if (effect is BasicEffect)
+					{
+						((BasicEffect)effect).World = localWorld;
+						((BasicEffect)effect).View = view;
+						((BasicEffect)effect).Projection = projection;
+						((BasicEffect)effect).EnableDefaultLighting();
+					}
+					else
+					{
+						SetEffectParameter(effect, "World", localWorld);
+						SetEffectParameter(effect, "View", view);
+						SetEffectParameter(effect, "Projection", projection);
+						SetEffectParameter(effect, "CameraPosition", CameraPosition);
 
-					effect.EnableDefaultLighting();
+						Material.SetEffectParameters(effect);
+					}
 				}
 
 				mesh.Draw();
 			}
+		}
+
+		/// <summary>
+		/// Sets the model effect.
+		/// </summary>
+		/// <param name="effect">The effect.</param>
+		/// <param name="CopyEffect">if set to <c>true</c> [copy effect].</param>
+		public void SetModelEffect(Effect effect, bool CopyEffect)
+		{
+			foreach (ModelMesh mesh in Model.Meshes)
+				foreach (ModelMeshPart part in mesh.MeshParts)
+				{
+					Effect toSet = effect;
+
+					//Copy the effect if necessary
+					if (CopyEffect)
+						toSet = effect.Clone();
+
+					MeshTag tag = ((MeshTag)part.Tag);
+
+					//If this ModelMeshPart has a texture, set it to the effect
+					if (tag.Texture != null)
+					{
+						SetEffectParameter(toSet, "BasicTexture", tag.Texture);
+						SetEffectParameter(toSet, "TextureEnabled", true);
+					}
+					else
+						SetEffectParameter(toSet, "TexeturedEnabled", false);
+
+					//Set our remaining parameters to the effect
+					SetEffectParameter(toSet, "DiffuseColor", tag.Color);
+					SetEffectParameter(toSet, "SpecularPower", tag.SpecularPower);
+
+					part.Effect = toSet;
+				}
+		}
+
+
+		/// <summary>
+		/// Sets the effect parameter.
+		/// </summary>
+		/// <param name="effect">The effect.</param>
+		/// <param name="paramName">Name of the parameter.</param>
+		/// <param name="val">The value.</param>
+		private void SetEffectParameter(Effect effect, string paramName, object val)
+		{
+			if (effect.Parameters[paramName] == null)
+				return;
+
+			if (val is Vector3)
+				effect.Parameters[paramName].SetValue((Vector3)val);
+			else if (val is bool)
+				effect.Parameters[paramName].SetValue((bool)val);
+			else if (val is Matrix)
+				effect.Parameters[paramName].SetValue((Matrix)val);
+			else if (val is Texture2D)
+				effect.Parameters[paramName].SetValue((Texture2D)val);
 		}
 
 		/// <summary>
