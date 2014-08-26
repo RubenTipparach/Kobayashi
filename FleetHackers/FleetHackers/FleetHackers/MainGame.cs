@@ -12,6 +12,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using FleetHackers.Cards;
+using System.Diagnostics;
+using System.IO;
 
 namespace FleetHackers
 {
@@ -99,28 +101,6 @@ namespace FleetHackers
 		{
 			_lineDrawer = new LineDrawer(GraphicsDevice);
 
-			// TEST DESERIALIZATION
-			/*List<string> jsonStrings = new List<string>()
-			{
-				@"{ ""title"": ""Big Fighter"", ""energyCost"": 7, ""alignment"": ""Crystal"", ""influenceRequirement"": 2,
-					""supertype"": ""Ship"", ""subtype"": ""Fighter"", ""range"": 3, ""attack"": 7, ""defense"": 5 }",
-				@"{
-					""title"": ""Counterassault"",
-					""energyCost"": 4,
-					""alignment"": ""Crystal"",
-					""influenceRequirement"": 1,
-					""supertype"": ""Maneuver"",
-					""subtype"": ""Trap"",
-					""abilities"": [
-						""
-					]
-				}"
-			};
-			foreach (string json in jsonStrings)
-			{
-				Card c = Card.Deserialize(json);
-			}*/
-
 			base.Initialize();
 		}
 
@@ -168,14 +148,17 @@ namespace FleetHackers
 			float height = -400000;
 
 			for (int i  = 0; i < postions.Length; i++)
-			{
-				postions[i] = new Vector3((float)r.NextDouble() * dispersalRate - dispersalRate / 2, (float)r.NextDouble() * (height) - height/2, (float)r.NextDouble() * dispersalRate - dispersalRate / 2);
+				_stars = new BillboardSystem(GraphicsDevice, Content, Content.Load<Texture2D>("BillboardTextures\\flare-blue-purple1"), new Vector2(800), postions);
 
-				//postions[i] = new Vector3(10000, 400, 10000);
+				
+			// TEST DESERIALIZATION
+			CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards.json"));
+			foreach (Card c in cards)
+			{
+				Debug.WriteLine(c.Title);
 			}
 
-
-			_stars = new BillboardSystem(GraphicsDevice, Content, Content.Load<Texture2D>("BillboardTextures\\flare-blue-purple1"), new Vector2(800), postions);
+			Debug.WriteLine(cards[cards.Count - 1].Abilities[0].ToString(cards[cards.Count - 1]));
 		}
 
 		/// <summary>
