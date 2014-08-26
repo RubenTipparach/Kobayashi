@@ -83,12 +83,16 @@
     <Compile Include="Cameras\TargetCamera.cs" />
     <Compile Include="Cards\Abilities\Ability.cs" />
     <Compile Include="Cards\Abilities\AbilityType.cs" />
+    <Compile Include="Cards\Abilities\ImmediateAbility.cs" />
     <Compile Include="Cards\Alignment.cs" />
     <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardCollection.cs" />
     <Compile Include="Cards\Effects\DamageEffect.cs" />
     <Compile Include="Cards\Effects\DivideMethod.cs" />
     <Compile Include="Cards\Effects\Effect.cs" />
     <Compile Include="Cards\Effects\EffectType.cs" />
+    <Compile Include="Cards\Effects\PointInTime.cs" />
+    <Compile Include="Cards\Effects\StatPumpEffect.cs" />
     <Compile Include="Cards\Supertype.cs" />
     <Compile Include="Cards\Target.cs" />
     <Compile Include="Cards\Abilities\Trigger.cs" />
