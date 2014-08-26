@@ -99,8 +99,13 @@
     <Compile Include="Cards\Abilities\TriggeredAbility.cs" />
     <Compile Include="Cards\Abilities\TriggerType.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />
+    <Compile Include="Materials\Material.cs" />
+    <Compile Include="Materials\MultilightMaterial.cs" />
+    <Compile Include="Materials\PointLightMaterial.cs" />
     <Compile Include="Models\BasicModel.cs" />
     <Compile Include="Models\BillboardSystem.cs" />
+    <Compile Include="Models\MeshTag.cs" />
+    <Compile Include="Models\Skybox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
