@@ -38,7 +38,16 @@ namespace FleetHackers.Cards.Abilities
 			}
 			else if (card.Supertype != Supertype.Maneuver)
 			{
-				StringBuilder toStringBuilder = new StringBuilder("Whenever ");
+				StringBuilder toStringBuilder = new StringBuilder();
+				if (Trigger.TriggerType == TriggerType.EntersTheBattleZone)
+				{
+					toStringBuilder.Append("When ");
+				}
+				else if (Trigger.TriggerType == TriggerType.Attack || Trigger.TriggerType == TriggerType.Interception)
+				{
+					toStringBuilder.Append("Whenever ");
+				}
+
 				toStringBuilder.Append(Trigger.ToString(card));
 				toStringBuilder.Append(", ");
 				toStringBuilder.Append(Effect.ToString(card));

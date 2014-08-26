@@ -101,14 +101,16 @@
 		[
 			{
 				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
-				"effect":
-				{
-					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
-					"attackPump": 5,
-					"defensePump": 0,
-					"effectEnds": "BeginningOfYourTurn",
-					"target": "AnyShip"
-				}
+				"effects":
+				[
+					{
+						"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+						"attackPump": 5,
+						"defensePump": 0,
+						"effectEnds": "BeginningOfYourTurn",
+						"target": "AnyShip"
+					}
+				]
 			}
 		]
 	},
@@ -122,18 +124,20 @@
 		[
 			{
 				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
-				"effect":
-				{
-					"__type": "DamageEffect:#FleetHackers.Cards.Effects",
-					"actor": "This",
-					"divideMethod": "None",
-					"amount": -1,
-					"exact": true,
-					"targets":
-					[
-						"AnyShip"
-					]
-				}
+				"effects":
+				[
+					{
+						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"actor": "This",
+						"divideMethod": "None",
+						"amount": -1,
+						"exact": true,
+						"targets":
+						[
+							"AnyShip"
+						]
+					}
+				]
 			}
 		]
 	},
@@ -172,4 +176,171 @@
 			}
 		]
 	},
+	{
+		"title": "Gadget Smash",
+		"energyCost": 2,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"target": "AnyDevice"
+					},
+					{
+						"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
+						"winEffect":
+						{
+							"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+							"target": "OtherDevice",
+							"optional": true
+						},
+						"loseEffect": null
+					}
+				]
+			}
+		]
+	},
+	{
+		"title": "Intimidating Kamikaze",
+		"energyCost": 3,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Kamikaze",
+		"range": 3,
+		"attack": 2,
+		"defense": 1,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Attack",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "ExhaustEffect:#FleetHackers.Cards.Effects",
+					"target": "AnyShip",
+					"optional": true
+				}
+			}
+		]
+	},
+	{
+		"title": "Liege Troopship",
+		"energyCost": 3,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Kamikaze",
+		"range": 3,
+		"attack": 2,
+		"defense": 2,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Attack",
+					"actor": "This",
+					"condition": "OneOtherShip"
+				},
+				"effect":
+				{
+					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"attackPump": 1,
+					"defensePump": 1,
+					"effectEnds": "EndOfTurn"
+				}
+			}
+		]
+	},
+	{
+		"title": "Ping Troopship",
+		"energyCost": 2,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Trooper",
+		"range": 3,
+		"attack": 2,
+		"defense": 1,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+					"actor": "This",
+					"divideMethod": "None",
+					"amount": 1,
+					"exact": true,
+					"optional": false,
+					"targets":
+					[
+						"OpponentHomeBase"
+					]
+				}
+			}
+		]
+	},
+	{
+		"title": "Reckless Fighter",
+		"energyCost": 4,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Fighter",
+		"range": 3,
+		"attack": 7,
+		"defense": 1,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EndOfYourTurn",
+					"actor": "None"
+				},
+				"effect":
+				{
+					"__type": "StateCheckEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"checks":
+					[
+						{
+							"state": "SummoningSick",
+							"test": false
+						},
+						{
+							"state": "AttackedThisTurn",
+							"test": false
+						}
+					],
+					"resultEffect":
+					{
+						"__type": "ForfeitEffect:#FleetHackers.Cards.Effects",
+						"target": "This"
+					}
+				}
+			}
+		]
+	}
 ]

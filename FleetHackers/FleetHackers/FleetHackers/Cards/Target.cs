@@ -7,12 +7,16 @@ namespace FleetHackers.Cards
 {
 	public enum Target
 	{
+		None,
 		YourShip,
 		YourHomeBase,
 		OpponentShip,
+		OpponentHomeBase,
 		AttackingShips,
 		This,
 		AnyShip,
-		UpTo2OtherShips
+		UpTo2OtherShips,
+		AnyDevice,
+		OtherDevice
 	}
 }
