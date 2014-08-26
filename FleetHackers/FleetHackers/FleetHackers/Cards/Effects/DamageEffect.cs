@@ -165,6 +165,9 @@ namespace FleetHackers.Cards.Effects
 					case Target.UpTo2OtherShips:
 						targetStrings.Add("up to 2 other target ships");
 						break;
+					case Target.OpponentHomeBase:
+						targetStrings.Add("target opponent's home base");
+						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for DamageEffect.");
 				}

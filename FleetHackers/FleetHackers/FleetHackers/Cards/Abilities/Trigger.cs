@@ -76,6 +76,15 @@ namespace FleetHackers.Cards.Abilities
 			set { Actor = (Target)Enum.Parse(typeof(Target), value); }
 		}
 
+		public Condition Condition { get; set; }
+
+		[DataMember(Name = "condition")]
+		public string ConditionString
+		{
+			get { return Condition.ToString(); }
+			set { Condition = (Condition)Enum.Parse(typeof(Condition), value); }
+		}
+
 		public string ToString(Card card)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -92,6 +101,8 @@ namespace FleetHackers.Cards.Abilities
 					toStringBuilder.Append(card.Title);
 					toStringBuilder.Append(" ");
 					break;
+				case Target.None:
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Actor for Trigger.");
 			}
@@ -106,6 +117,9 @@ namespace FleetHackers.Cards.Abilities
 					break;
 				case TriggerType.EntersTheBattleZone:
 					toStringBuilder.Append("enters the battle zone");
+					break;
+				case TriggerType.EndOfYourTurn:
+					toStringBuilder.Append("At the end of your turn");
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported TriggerType for Trigger.");
@@ -134,6 +148,17 @@ namespace FleetHackers.Cards.Abilities
 				toStringBuilder.Append(" ");
 			}
 			toStringBuilder.Append(string.Join(" or ", targetStrings));
+
+			switch (Condition)
+			{
+				case Condition.None:
+					break;
+				case Condition.OneOtherShip:
+					toStringBuilder.Append(" with at least 1 other ship");
+					break;
+				default:
+						throw new InvalidOperationException("Unsupported Condition for Trigger.");
+			}
 
 			return toStringBuilder.ToString();
 		}

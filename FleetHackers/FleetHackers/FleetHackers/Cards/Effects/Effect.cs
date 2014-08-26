@@ -9,6 +9,11 @@ namespace FleetHackers.Cards.Effects
 	[DataContract]
 	[KnownType(typeof(DamageEffect))]
 	[KnownType(typeof(StatPumpEffect))]
+	[KnownType(typeof(AnnihilateEffect))]
+	[KnownType(typeof(CoinFlipEffect))]
+	[KnownType(typeof(ExhaustEffect))]
+	[KnownType(typeof(ForfeitEffect))]
+	[KnownType(typeof(StateCheckEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }
