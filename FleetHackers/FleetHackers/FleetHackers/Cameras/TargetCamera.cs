@@ -51,7 +51,7 @@ namespace FleetHackers.Cameras
 		{
 			KeyboardState keystate = Keyboard.GetState();
 			
-			float cameraPanSpeed = 1000;
+			float cameraPanSpeed = 50;
 
 			if (keystate.IsKeyDown(Keys.W))
 			{
@@ -73,15 +73,6 @@ namespace FleetHackers.Cameras
 				this.Position += Vector3.UnitX * cameraPanSpeed;
 				this.Target += Vector3.UnitX * cameraPanSpeed;
 			}
-		}
-
-		/// <summary>
-		/// Position of the camera.
-		/// </summary>
-		public Vector3 Position
-		{
-			get;
-			set;
 		}
 
 		/// <summary>
