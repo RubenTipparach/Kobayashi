@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FleetHackers.Cards.Effects
+namespace FleetHackers.Cards.Effects.Enums
 {
 	public enum EffectType
 	{
