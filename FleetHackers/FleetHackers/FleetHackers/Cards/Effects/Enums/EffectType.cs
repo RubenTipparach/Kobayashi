@@ -13,6 +13,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		CoinFlip,
 		Exhaust,
 		Forfeit,
-		StateCheck
+		StateCheck,
+		Truefire
 	}
 }

@@ -98,6 +98,7 @@
     <Compile Include="Cards\Effects\ExhaustEffect.cs" />
     <Compile Include="Cards\Effects\ForfeitEffect.cs" />
     <Compile Include="Cards\Effects\Enums\PointInTime.cs" />
+    <Compile Include="Cards\Effects\TruefireEffect.cs" />
     <Compile Include="Cards\StateCheck.cs" />
     <Compile Include="Cards\Effects\StateCheckEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpEffect.cs" />

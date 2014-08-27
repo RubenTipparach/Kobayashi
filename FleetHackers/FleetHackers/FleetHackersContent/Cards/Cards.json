@@ -342,5 +342,170 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Scout Troopship",
+		"energyCost": 4,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Trooper",
+		"range": 5,
+		"attack": 3,
+		"defense": 3
+	},
+	{
+		"title": "Secret Weapon",
+		"energyCost": 3,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"subtype": "Trap",
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Interception",
+					"actor": "OpponentShip",
+					"targets":
+					[
+						"YourShip"
+					]
+				},
+				"effect":
+				{
+					"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+					"actor": "This",
+					"divideMethod": "None",
+					"amount": 3,
+					"exact": true,
+					"targets":
+					[
+						"InterceptingShip"
+					]
+				}
+			}
+		]
+	},
+	{
+		"title": "Short-Range Troopship",
+		"energyCost": 3,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Trooper",
+		"range": 2,
+		"attack": 3,
+		"defense": 2
+	},
+	{
+		"title": "Truefire Dreadnought",
+		"energyCost": 6,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Dreadnought",
+		"range": 3,
+		"attack": 4,
+		"defense": 4,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Interception",
+					"actor": "AnyShip",
+					"targets":
+					[
+						"This"
+					]
+				},
+				"effect":
+				{
+					"__type": "TruefireEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"optional": true
+				}
+			}
+		]
+	},
+	{
+		"title": "War Troopship",
+		"energyCost": 2,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Trooper",
+		"range": 3,
+		"attack": 2,
+		"defense": 2
+	},
+	{
+		"title": "Weak Troopship",
+		"energyCost": 1,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Trooper",
+		"range": 3,
+		"attack": 2,
+		"defense": 1
+	},
+	{
+		"title": "Wild Shot",
+		"energyCost": 2,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"actor": "This",
+						"divideMethod": "None",
+						"amount": 2,
+						"exact": true,
+						"targets":
+						[
+							"AnyShip"
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"title": "Zap",
+		"energyCost": 0,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"actor": "This",
+						"divideMethod": "None",
+						"amount": 1,
+						"exact": true,
+						"targets":
+						[
+							"AnyShip"
+						]
+					}
+				]
+			}
+		]
 	}
 ]
