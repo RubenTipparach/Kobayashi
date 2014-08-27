@@ -169,6 +169,9 @@ namespace FleetHackers.Cards.Effects
 					case Target.OpponentHomeBase:
 						targetStrings.Add("target opponent's home base");
 						break;
+					case Target.InterceptingShip:
+						targetStrings.Add("target intercepting ship");
+						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for DamageEffect.");
 				}
