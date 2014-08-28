@@ -108,6 +108,9 @@
     <Compile Include="Cards\Abilities\TriggeredAbility.cs" />
     <Compile Include="Cards\Abilities\TriggerType.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />
+    <Compile Include="Load\CardsLoader.cs" />
+    <Compile Include="Load\LevelLoader.cs" />
+    <Compile Include="Load\ShipLoader.cs" />
     <Compile Include="Materials\Material.cs" />
     <Compile Include="Materials\MultilightMaterial.cs" />
     <Compile Include="Materials\PointLightMaterial.cs" />
