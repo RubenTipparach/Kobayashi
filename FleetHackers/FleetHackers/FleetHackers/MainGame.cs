@@ -81,6 +81,18 @@ namespace FleetHackers
 		private Skybox _skybox;
 
 		/// <summary>
+		/// The board plane
+		/// </summary>
+		private Plane boardPlane;
+
+		/// <summary>
+		/// The new coordiantes
+		/// </summary>
+		private Vector3 newCoordiantes = Vector3.Zero;
+
+		private bool traveling = false;
+
+		/// <summary>
 		/// Constructor for this class.
 		/// </summary>
 		public MainGame()
@@ -101,6 +113,9 @@ namespace FleetHackers
 		protected override void Initialize()
 		{
 			_lineDrawer = new LineDrawer(GraphicsDevice);
+			IsMouseVisible = true;
+
+			boardPlane = new Plane(new Vector3(0, 1, 0), 0);
 
 			base.Initialize();
 		}
@@ -139,7 +154,7 @@ namespace FleetHackers
 					GraphicsDevice));
 
 			//Load sky box.
-			_skybox = new Skybox(Content, GraphicsDevice, Content.Load<TextureCube>("Textures\\greensky"));
+			_skybox = new Skybox(Content, GraphicsDevice, Content.Load<TextureCube>("Textures\\bluestreak"));
 
 
 			//Load stars.
@@ -182,6 +197,19 @@ namespace FleetHackers
 		{
 			KeyboardState keystate = Keyboard.GetState();
 
+			if(traveling)
+			{
+				Vector3 moveTowards = (newCoordiantes - _models[0].Position);
+				moveTowards.Normalize();
+
+				_models[0].Position += moveTowards*10;
+
+				if (Vector3.Distance(_models[0].Position, newCoordiantes) < 5)
+				{
+					traveling = false;
+				}
+			}
+
 			if (keystate.IsKeyDown(Keys.Escape))
 			{
 				this.Exit();
@@ -196,6 +224,8 @@ namespace FleetHackers
 			{
 				_lastMouseState = ((FreeCamera)_camera).FreeCameraUpdate(gameTime, _camera, _lastMouseState);			
 			}
+
+			CheckMouseClicked();
 
 			base.Update(gameTime);
 		}
@@ -220,13 +250,80 @@ namespace FleetHackers
 			}
 
 			_lineDrawer.Begin(_camera.View, _camera.Projection);
-			_lineDrawer.DrawHexagonGrid(Vector2.One, (new Vector2(80,40)), 200, Color.Red);
+			_lineDrawer.DrawHexagonGrid(Vector2.One * - 9930, (new Vector2(80,40)), 200, Color.Red);
 			_lineDrawer.DrawLine(_models[0].Position, new Vector3(_models[0].Position.X, 0, _models[0].Position.Z), Color.CornflowerBlue);
 			_lineDrawer.End();
 
 			_stars.Draw(_camera.View, _camera.Projection, _camera.Up, _camera.Right);
 
 			base.Draw(gameTime);
+		}
+
+		/// <summary>
+		/// Checks the mouse clicked.
+		/// </summary>
+		private void CheckMouseClicked()
+		{
+			MouseState mouseState = Mouse.GetState();
+
+			if(mouseState.LeftButton == ButtonState.Pressed)
+			{
+				Ray pickRay = GetPickRay();
+
+				// Ray collides with a model.
+				foreach (BasicModel model in _models)
+				{
+					Nullable<float> result = pickRay.Intersects(model.BoundingSphere);
+					float selectedDistance = float.MaxValue;
+
+					if (result.HasValue)
+					{
+						selectedDistance = result.Value;
+						Console.WriteLine(string.Format("Slected ship, {0} units away.", selectedDistance));
+						return;
+					}
+				}
+
+				// Ray collides with the game board's plane.
+				float collisionAt = float.MaxValue;
+				Nullable<float> boardCollision  = pickRay.Intersects(boardPlane);
+				if (boardCollision.HasValue)
+				{
+					collisionAt = boardCollision.Value;
+					Vector3 pointOfContact = pickRay.Position + pickRay.Direction * boardCollision.Value;
+					traveling = true;
+					newCoordiantes = pointOfContact;
+					Console.WriteLine(string.Format("Slected board space, {0} units away. At position {1}", collisionAt, pointOfContact));
+					return;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Gets the pick ray.
+		/// </summary>
+		/// <returns></returns>
+		private Ray GetPickRay()
+		{
+			MouseState mouseState = Mouse.GetState();
+
+			int mouseX = mouseState.X;
+			int mouseY = mouseState.Y;
+
+			// Reminder that these are clipping planes. The ray goes from the camera outwards.
+			Vector3 nearSource = new Vector3((float)mouseX, mouseY, 0f);
+			Vector3 farSource = new Vector3((float)mouseX, mouseY, 1f);
+
+			Matrix world = Matrix.CreateTranslation(0, 0, 0);
+
+			Vector3 nearPoint = GraphicsDevice.Viewport.Unproject(nearSource, _camera.Projection, _camera.View, world);
+			Vector3 farPoint = GraphicsDevice.Viewport.Unproject(farSource, _camera.Projection, _camera.View, world);
+
+			// Direction is thease two points make up a line.
+			Vector3 direction = farPoint - nearPoint;
+			direction.Normalize();
+
+			return new Ray(nearPoint, direction);
 		}
 
 		/// <summary>
