@@ -14,6 +14,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		Exhaust,
 		Forfeit,
 		StateCheck,
-		Truefire
+		CardDraw,
+		PutCounter
 	}
 }

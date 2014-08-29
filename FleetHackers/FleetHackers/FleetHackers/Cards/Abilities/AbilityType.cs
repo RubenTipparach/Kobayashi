@@ -9,6 +9,8 @@ namespace FleetHackers.Cards.Abilities
 	{
 		Unknown,
 		Triggered,
-		Immediate
+		Immediate,
+		Cloak,
+		Truefire
 	}
 }

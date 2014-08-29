@@ -83,13 +83,16 @@
     <Compile Include="Cameras\TargetCamera.cs" />
     <Compile Include="Cards\Abilities\Ability.cs" />
     <Compile Include="Cards\Abilities\AbilityType.cs" />
+    <Compile Include="Cards\Abilities\CloakAbility.cs" />
     <Compile Include="Cards\Abilities\ImmediateAbility.cs" />
+    <Compile Include="Cards\Abilities\TruefireAbility.cs" />
     <Compile Include="Cards\Alignment.cs" />
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\CardCollection.cs" />
     <Compile Include="Cards\CheckStateType.cs" />
     <Compile Include="Cards\Condition.cs" />
     <Compile Include="Cards\Effects\AnnihilateEffect.cs" />
+    <Compile Include="Cards\Effects\CardDrawEffect.cs" />
     <Compile Include="Cards\Effects\CoinFlipEffect.cs" />
     <Compile Include="Cards\Effects\DamageEffect.cs" />
     <Compile Include="Cards\Effects\Enums\DivideMethod.cs" />
@@ -98,7 +101,7 @@
     <Compile Include="Cards\Effects\ExhaustEffect.cs" />
     <Compile Include="Cards\Effects\ForfeitEffect.cs" />
     <Compile Include="Cards\Effects\Enums\PointInTime.cs" />
-    <Compile Include="Cards\Effects\TruefireEffect.cs" />
+    <Compile Include="Cards\Effects\PutCounterEffect.cs" />
     <Compile Include="Cards\StateCheck.cs" />
     <Compile Include="Cards\Effects\StateCheckEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpEffect.cs" />
