@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FleetHackers.Cards
+namespace FleetHackers.Cards.Enums
 {
-	public enum Condition
+	public enum CheckStateType
 	{
-		None,
-		OneOtherShip
+		SummoningSick,
+		AttackedThisTurn
 	}
 }

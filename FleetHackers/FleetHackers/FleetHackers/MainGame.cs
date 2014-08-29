@@ -182,9 +182,8 @@ namespace FleetHackers
 			foreach (Card c in cards)
 			{
 				Debug.WriteLine(c.Title);
+				Debug.WriteLine(c.RulesText);
 			}
-
-			Debug.WriteLine(cards[cards.Count - 1].Abilities[0].ToString(cards[cards.Count - 1]));
 		}
 
 		/// <summary>

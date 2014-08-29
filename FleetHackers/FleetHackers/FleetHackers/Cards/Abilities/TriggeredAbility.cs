@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using FleetHackers.Cards.Effects;
 using System.Runtime.Serialization;
+using FleetHackers.Cards.Enums;
 
 namespace FleetHackers.Cards.Abilities
 {

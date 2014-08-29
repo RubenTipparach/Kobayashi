@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FleetHackers.Cards
+namespace FleetHackers.Cards.Enums
 {
 	public enum Target
 	{
@@ -19,6 +19,7 @@ namespace FleetHackers.Cards
 		AnyDevice,
 		OtherDevice,
 		InterceptingShip,
-		NonInfluence
+		NonInfluence,
+		YourChargedShips
 	}
 }
