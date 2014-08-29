@@ -30,12 +30,12 @@ namespace FleetHackers
 		/// <summary>
 		/// Screen width. TODO: Make this configurable.
 		/// </summary>
-		private const int WIDTH = 5760;
+		private const int WIDTH = 1280;
 
 		/// <summary>
 		/// Screen Height. TODO: Make this configurable also.
 		/// </summary>
-		private const int HEIGHT = 1080;
+		private const int HEIGHT = 720;
 
 		/// <summary>
 		/// Graphics device object.
