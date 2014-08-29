@@ -413,22 +413,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
-				"trigger":
-				{
-					"triggerType": "Interception",
-					"actor": "AnyShip",
-					"targets":
-					[
-						"This"
-					]
-				},
-				"effect":
-				{
-					"__type": "TruefireEffect:#FleetHackers.Cards.Effects",
-					"target": "This",
-					"optional": true
-				}
+				"__type": "TruefireAbility:#FleetHackers.Cards.Abilities"
 			}
 		]
 	},
@@ -505,6 +490,67 @@
 						]
 					}
 				]
+			}
+		]
+	},
+	{
+		"title": "Bigger Darkship",
+		"energyCost": 7,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Shadow",
+		"range": 3,
+		"attack": 5,
+		"defense": 4,
+		"abilities": [
+			{
+				"__type": "CloakAbility:#FleetHackers.Cards.Abilities"
+			}
+		]
+	},
+	{
+		"title": "Biprong Manipulation",
+		"energyCost": 3,
+		"alignment": "Cryo",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+						"numCounters": 2,
+						"divideMethod": "YouChooseAny",
+						"countersExact": false,
+						"numTargets": 2,
+						"targetsExact": false,
+						"target": "NonInfluence"
+					},
+					{
+						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"numCards": 1
+					}
+				]
+			}
+		]
+	},
+	{
+		"title": "Cloacked Darkship",
+		"energyCost": 5,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Shadow",
+		"range": 3,
+		"attack": 4,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "CloakAbility:#FleetHackers.Cards.Abilities"
 			}
 		]
 	}
