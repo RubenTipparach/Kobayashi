@@ -108,6 +108,11 @@
     <Compile Include="Cards\Abilities\TriggeredAbility.cs" />
     <Compile Include="Cards\Abilities\TriggerType.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />
+    <Compile Include="EngineEnums\CameraType.cs" />
+    <Compile Include="EngineStructs\MovementReport.cs" />
+    <Compile Include="Input\MouseGestures.cs" />
+    <Compile Include="Lighting\DirectionalLight.cs" />
+    <Compile Include="Lighting\PointLight.cs" />
     <Compile Include="Load\CardsLoader.cs" />
     <Compile Include="Load\LevelLoader.cs" />
     <Compile Include="Load\ShipLoader.cs" />
@@ -122,6 +127,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
     <Compile Include="Cards\Subtype.cs" />
+    <Compile Include="Input\RayPick.cs" />
+    <Compile Include="UpdateHelpers\ShipMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -157,10 +164,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Lighting\" />
-    <Folder Include="UpdateHelpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
