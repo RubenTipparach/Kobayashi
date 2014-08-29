@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LevelEditor
+namespace ShipEditor
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml

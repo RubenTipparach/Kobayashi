@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2352A3BA-86A3-412C-873E-9FA8BDD1C8E5}</ProjectGuid>
+    <ProjectGuid>{49BC5DFF-0ADD-4A48-9D67-3B29AB14C5DE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LevelEditor</RootNamespace>
-    <AssemblyName>LevelEditor</AssemblyName>
+    <RootNamespace>ShipEditor</RootNamespace>
+    <AssemblyName>ShipEditor</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
