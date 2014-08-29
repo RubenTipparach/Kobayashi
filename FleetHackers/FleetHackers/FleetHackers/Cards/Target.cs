@@ -18,6 +18,7 @@ namespace FleetHackers.Cards
 		UpTo2OtherShips,
 		AnyDevice,
 		OtherDevice,
-		InterceptingShip
+		InterceptingShip,
+		NonInfluence
 	}
 }
