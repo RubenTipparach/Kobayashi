@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FleetHackers.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -51,7 +52,7 @@ namespace FleetHackers.Cameras
 		{
 			KeyboardState keystate = Keyboard.GetState();
 			
-			float cameraPanSpeed = 50;
+			float cameraPanSpeed = 14;
 
 			if (keystate.IsKeyDown(Keys.W))
 			{
@@ -73,6 +74,10 @@ namespace FleetHackers.Cameras
 				this.Position += Vector3.UnitX * cameraPanSpeed;
 				this.Target += Vector3.UnitX * cameraPanSpeed;
 			}
+
+			Vector3 deltaPosition = MouseGestures.RightMouseDown(cameraPanSpeed);
+			this.Position += deltaPosition;
+			this.Target += deltaPosition;
 		}
 
 		/// <summary>

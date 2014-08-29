@@ -14,6 +14,10 @@ using Microsoft.Xna.Framework.Media;
 using FleetHackers.Cards;
 using System.Diagnostics;
 using System.IO;
+using FleetHackers.EngineEnums;
+using FleetHackers.EngineStructs;
+using FleetHackers.Input;
+using FleetHackers.UpdateHelpers;
 
 namespace FleetHackers
 {
@@ -26,12 +30,12 @@ namespace FleetHackers
 		/// <summary>
 		/// Screen width. TODO: Make this configurable.
 		/// </summary>
-		private const int WIDTH = 1280;
+		private const int WIDTH = 5760;
 
 		/// <summary>
 		/// Screen Height. TODO: Make this configurable also.
 		/// </summary>
-		private const int HEIGHT = 720;
+		private const int HEIGHT = 1080;
 
 		/// <summary>
 		/// Graphics device object.
@@ -83,14 +87,12 @@ namespace FleetHackers
 		/// <summary>
 		/// The board plane
 		/// </summary>
-		private Plane boardPlane;
+		private Plane _boardPlane;
 
 		/// <summary>
-		/// The new coordiantes
+		/// The movement data reporter
 		/// </summary>
-		private Vector3 newCoordiantes = Vector3.Zero;
-
-		private bool traveling = false;
+		private MovementReport _movementDataReporter;
 
 		/// <summary>
 		/// Constructor for this class.
@@ -115,7 +117,10 @@ namespace FleetHackers
 			_lineDrawer = new LineDrawer(GraphicsDevice);
 			IsMouseVisible = true;
 
-			boardPlane = new Plane(new Vector3(0, 1, 0), 0);
+			_boardPlane = new Plane(new Vector3(0, 1, 0), 0);
+
+			_movementDataReporter.traveling = false;
+			_movementDataReporter.newCoordinates = Vector3.Zero;
 
 			base.Initialize();
 		}
@@ -197,18 +202,9 @@ namespace FleetHackers
 		{
 			KeyboardState keystate = Keyboard.GetState();
 
-			if(traveling)
-			{
-				Vector3 moveTowards = (newCoordiantes - _models[0].Position);
-				moveTowards.Normalize();
-
-				_models[0].Position += moveTowards*10;
-
-				if (Vector3.Distance(_models[0].Position, newCoordiantes) < 5)
-				{
-					traveling = false;
-				}
-			}
+			BasicModel tempModel = _models[0];
+			_movementDataReporter = ShipMovement.MoveShip(_movementDataReporter, ref tempModel);
+			_models[0] = tempModel;
 
 			if (keystate.IsKeyDown(Keys.Escape))
 			{
@@ -225,7 +221,9 @@ namespace FleetHackers
 				_lastMouseState = ((FreeCamera)_camera).FreeCameraUpdate(gameTime, _camera, _lastMouseState);			
 			}
 
-			CheckMouseClicked();
+			_movementDataReporter = MouseGestures.CheckMouseClicked(_models, _boardPlane, _movementDataReporter, _camera, GraphicsDevice);
+			
+	
 
 			base.Update(gameTime);
 		}
@@ -257,82 +255,6 @@ namespace FleetHackers
 			_stars.Draw(_camera.View, _camera.Projection, _camera.Up, _camera.Right);
 
 			base.Draw(gameTime);
-		}
-
-		/// <summary>
-		/// Checks the mouse clicked.
-		/// </summary>
-		private void CheckMouseClicked()
-		{
-			MouseState mouseState = Mouse.GetState();
-
-			if(mouseState.LeftButton == ButtonState.Pressed)
-			{
-				Ray pickRay = GetPickRay();
-
-				// Ray collides with a model.
-				foreach (BasicModel model in _models)
-				{
-					Nullable<float> result = pickRay.Intersects(model.BoundingSphere);
-					float selectedDistance = float.MaxValue;
-
-					if (result.HasValue)
-					{
-						selectedDistance = result.Value;
-						Console.WriteLine(string.Format("Slected ship, {0} units away.", selectedDistance));
-						return;
-					}
-				}
-
-				// Ray collides with the game board's plane.
-				float collisionAt = float.MaxValue;
-				Nullable<float> boardCollision  = pickRay.Intersects(boardPlane);
-				if (boardCollision.HasValue)
-				{
-					collisionAt = boardCollision.Value;
-					Vector3 pointOfContact = pickRay.Position + pickRay.Direction * boardCollision.Value;
-					traveling = true;
-					newCoordiantes = pointOfContact;
-					Console.WriteLine(string.Format("Slected board space, {0} units away. At position {1}", collisionAt, pointOfContact));
-					return;
-				}
-			}
-		}
-
-		/// <summary>
-		/// Gets the pick ray.
-		/// </summary>
-		/// <returns></returns>
-		private Ray GetPickRay()
-		{
-			MouseState mouseState = Mouse.GetState();
-
-			int mouseX = mouseState.X;
-			int mouseY = mouseState.Y;
-
-			// Reminder that these are clipping planes. The ray goes from the camera outwards.
-			Vector3 nearSource = new Vector3((float)mouseX, mouseY, 0f);
-			Vector3 farSource = new Vector3((float)mouseX, mouseY, 1f);
-
-			Matrix world = Matrix.CreateTranslation(0, 0, 0);
-
-			Vector3 nearPoint = GraphicsDevice.Viewport.Unproject(nearSource, _camera.Projection, _camera.View, world);
-			Vector3 farPoint = GraphicsDevice.Viewport.Unproject(farSource, _camera.Projection, _camera.View, world);
-
-			// Direction is thease two points make up a line.
-			Vector3 direction = farPoint - nearPoint;
-			direction.Normalize();
-
-			return new Ray(nearPoint, direction);
-		}
-
-		/// <summary>
-		/// Type of camera to use.
-		/// </summary>
-		public enum CameraType
-		{
-			TargetCamera,
-			FreeCamera
 		}
 	}
 }
