@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.Collections.ObjectModel;
 using System.Reflection;
 using FleetHackers.Cards.Effects.Enums;
+using FleetHackers.Cards.Enums;
 
 namespace FleetHackers.Cards.Effects
 {
@@ -73,9 +74,17 @@ namespace FleetHackers.Cards.Effects
 				case Target.OtherDevice:
 					toStringBuilder.Append("another target device");
 					break;
+				case Target.AnyShip:
+					toStringBuilder.Append("target ship");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for AnnihilateEffect.");
 			}
+
+			/*if (Condition != null)
+			{
+
+			}*/
 
 			return toStringBuilder.ToString();
 		}

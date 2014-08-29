@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using System.Reflection;
 using FleetHackers.Cards.Effects.Enums;
+using FleetHackers.Cards.Enums;
 
 namespace FleetHackers.Cards.Effects
 {
@@ -78,6 +79,24 @@ namespace FleetHackers.Cards.Effects
 		[DataMember(Name = "amount")]
 		public int Amount { get; set; }
 
+		public AmountType AmountType { get; set; }
+
+		[DataMember(Name = "amountType")]
+		public string AmountTypeString
+		{
+			get { return AmountType.ToString(); }
+			set { AmountType = (AmountType)Enum.Parse(typeof(AmountType), value); }
+		}
+
+		public Variable AmountVar { get; set; }
+
+		[DataMember(Name = "amountVar")]
+		public string AmountVarString
+		{
+			get { return AmountVar.ToString(); }
+			set { AmountVar = (Variable)Enum.Parse(typeof(Variable), value); }
+		}
+
 		[DataMember(Name = "exact")]
 		public bool Exact { get; set; }
 
@@ -126,13 +145,9 @@ namespace FleetHackers.Cards.Effects
 				toStringBuilder.Append("up to ");
 			}
 
-			if (Amount < 0)
+			if (AmountType == AmountType.Variable)
 			{
-				toStringBuilder.Append("X");
-				for (int i = 1; i < Math.Abs(Amount); i++)
-				{
-					toStringBuilder.Append("+X");
-				}
+				toStringBuilder.Append(Description.ToDescription(AmountType));
 			}
 			else
 			{

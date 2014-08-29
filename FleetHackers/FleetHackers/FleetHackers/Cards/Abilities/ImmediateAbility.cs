@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using FleetHackers.Cards.Effects;
 using System.Collections.ObjectModel;
+using FleetHackers.Cards.Enums;
 
 namespace FleetHackers.Cards.Abilities
 {

@@ -116,7 +116,8 @@
 	},
 	{
 		"title": "Energy Blaze",
-		"energyCost": -2,
+		"energyCostType": "Variable",
+		"energyCostVar": "XPlusX",
 		"alignment": "Crystal",
 		"influenceRequirement": 1,
 		"supertype": "Maneuver",
@@ -130,7 +131,8 @@
 						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "None",
-						"amount": -1,
+						"amountType": "Variable",
+						"amountVar": "X",
 						"exact": true,
 						"targets":
 						[
@@ -551,6 +553,43 @@
 		"abilities": [
 			{
 				"__type": "CloakAbility:#FleetHackers.Cards.Abilities"
+			}
+		]
+	},
+	{
+		"title": "Doom Maneuver",
+		"energyCost": 2,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"additionalCost": {
+			"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+			"target": "YourChargedShips",
+			"numTargetsType": "Variable",
+			"numTargetsVar": "X"
+		},
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"target": "AnyShip",
+						"condition":
+						{
+							"attribute": "Attack",
+							"comparison": "LessThanOrEqual",
+							"valueType": "Variable",
+							"valueVar": "XPlusX"
+						}
+					},
+					{
+						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"numCards": 1
+					}
+				]
 			}
 		]
 	}

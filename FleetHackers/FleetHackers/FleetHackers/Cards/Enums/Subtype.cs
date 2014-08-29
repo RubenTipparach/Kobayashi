@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FleetHackers.Cards
+namespace FleetHackers.Cards.Enums
 {
 	[Flags]
 	public enum Subtype

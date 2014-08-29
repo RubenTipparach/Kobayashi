@@ -86,11 +86,16 @@
     <Compile Include="Cards\Abilities\CloakAbility.cs" />
     <Compile Include="Cards\Abilities\ImmediateAbility.cs" />
     <Compile Include="Cards\Abilities\TruefireAbility.cs" />
-    <Compile Include="Cards\Alignment.cs" />
+    <Compile Include="Cards\AlternateCosts\AlternateCost.cs" />
+    <Compile Include="Cards\AlternateCosts\AlternateCostType.cs" />
+    <Compile Include="Cards\AlternateCosts\ExhaustShipCost.cs" />
+    <Compile Include="Cards\Enums\Description.cs" />
+    <Compile Include="Cards\Enums\Alignment.cs" />
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\CardCollection.cs" />
-    <Compile Include="Cards\CheckStateType.cs" />
-    <Compile Include="Cards\Condition.cs" />
+    <Compile Include="Cards\Enums\CheckStateType.cs" />
+    <Compile Include="Cards\Enums\Condition.cs" />
+    <Compile Include="Cards\Enums\AmountType.cs" />
     <Compile Include="Cards\Effects\AnnihilateEffect.cs" />
     <Compile Include="Cards\Effects\CardDrawEffect.cs" />
     <Compile Include="Cards\Effects\CoinFlipEffect.cs" />
@@ -105,11 +110,12 @@
     <Compile Include="Cards\StateCheck.cs" />
     <Compile Include="Cards\Effects\StateCheckEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpEffect.cs" />
-    <Compile Include="Cards\Supertype.cs" />
-    <Compile Include="Cards\Target.cs" />
+    <Compile Include="Cards\Enums\Supertype.cs" />
+    <Compile Include="Cards\Enums\Target.cs" />
     <Compile Include="Cards\Abilities\Trigger.cs" />
     <Compile Include="Cards\Abilities\TriggeredAbility.cs" />
     <Compile Include="Cards\Abilities\TriggerType.cs" />
+    <Compile Include="Cards\Enums\Variable.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />
     <Compile Include="EngineEnums\CameraType.cs" />
     <Compile Include="EngineStructs\MovementReport.cs" />
@@ -129,7 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
-    <Compile Include="Cards\Subtype.cs" />
+    <Compile Include="Cards\Enums\Subtype.cs" />
     <Compile Include="Input\RayPick.cs" />
     <Compile Include="UpdateHelpers\ShipMovement.cs" />
   </ItemGroup>
@@ -167,7 +173,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Cards\Effects\Conditions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

@@ -7,6 +7,8 @@ using FleetHackers.Cards.Abilities;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Json;
+using FleetHackers.Cards.Enums;
+using FleetHackers.Cards.AlternateCosts;
 
 namespace FleetHackers.Cards
 {
@@ -18,6 +20,24 @@ namespace FleetHackers.Cards
 
 		[DataMember(Name="energyCost")]
 		public int EnergyCost { get; set; }
+
+		public AmountType EnergyCostType { get; set; }
+
+		[DataMember(Name="energyCostType")]
+		public string EnergyCostTypeString
+		{
+			get { return EnergyCostType.ToString(); }
+			set { EnergyCostType = (AmountType)Enum.Parse(typeof(AmountType), value); }
+		}
+
+		public Variable EnergyCostVar { get; set; }
+
+		[DataMember(Name = "energyCostVar")]
+		public string EnergyCostVarString
+		{
+			get { return EnergyCostVar.ToString(); }
+			set { EnergyCostVar = (Variable)Enum.Parse(typeof(Variable), value); }
+		}
 
 		public Alignment Alignment { get; set; }
 
@@ -58,6 +78,9 @@ namespace FleetHackers.Cards
 		[DataMember(Name="defense")]
 		public int Defense { get; set; }
 
+		[DataMember(Name="additionalCost")]
+		public AlternateCost AdditionalCost { get; set; }
+
 		[DataMember(Name="abilities")]
 		private readonly List<Ability> _abilities = new List<Ability>();
 		private ReadOnlyCollection<Ability> _abilitiesView;
@@ -90,9 +113,31 @@ namespace FleetHackers.Cards
 		{
 			List<string> rulesTextStrings = new List<string>();
 
-			foreach (Ability ability in _abilities)
+			if (AdditionalCost != null)
 			{
-				rulesTextStrings.Add(ability.ToString(this));
+				StringBuilder additionalCostBuilder = new StringBuilder("As an additional cost to ");
+
+				if ((Supertype & Supertype.Maneuver) > 0)
+				{
+					additionalCostBuilder.Append("initiate ");
+				}
+				else
+				{
+					additionalCostBuilder.Append("deploy ");
+				}
+
+				additionalCostBuilder.Append(Title);
+				additionalCostBuilder.Append(", ");
+				additionalCostBuilder.Append(AdditionalCost.ToString(this));
+				rulesTextStrings.Add(additionalCostBuilder.ToString());
+			}
+
+			if (_abilities != null)
+			{
+				foreach (Ability ability in _abilities)
+				{
+					rulesTextStrings.Add(ability.ToString(this));
+				}
 			}
 
 			return string.Join(Environment.NewLine, rulesTextStrings);
