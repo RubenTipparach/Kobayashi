@@ -38,11 +38,12 @@ namespace FleetHackers.UpdateHelpers
 				
 				Quaternion sample = Quaternion.CreateFromRotationMatrix(rotationTo);
 
-				model.Rotation = Quaternion.Slerp(model.Rotation, sample, .25f);
+				model.Rotation = Quaternion.Slerp(model.Rotation, sample, .2f);
 
-				model.Position += Vector3.Transform(Vector3.Forward, model.Rotation) * (float)gameTime.ElapsedGameTime.TotalMilliseconds * .2f;
-				
-				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 5)
+				//model.Position += Vector3.Transform(Vector3.Forward, model.Rotation) * (float)gameTime.ElapsedGameTime.TotalMilliseconds * .5f;
+				model.Position = Vector3.Lerp(model.Position, movementDataReporter.newCoordinates, .01f);
+
+				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 10)
 				{
 					movementDataReporter.traveling = false;
 				}
