@@ -153,7 +153,7 @@ namespace FleetHackers
 			_models.Add(
 				new BasicModel(
 					Content.Load<Model>("blueship"),
-					Vector3.UnitY * 250,
+					Vector3.Zero,
 					Vector3.Zero,
 					new Vector3(.04f),
 					GraphicsDevice));
@@ -184,6 +184,10 @@ namespace FleetHackers
 				Debug.WriteLine(c.Title);
 				Debug.WriteLine(c.RulesText);
 			}
+
+			//initialize debug stuff
+			DebugDraw._camera = _camera;
+			DebugDraw._lineDrawer = _lineDrawer;
 		}
 
 		/// <summary>
@@ -202,7 +206,7 @@ namespace FleetHackers
 			KeyboardState keystate = Keyboard.GetState();
 
 			BasicModel tempModel = _models[0];
-			_movementDataReporter = ShipMovement.MoveShip(_movementDataReporter, ref tempModel);
+			_movementDataReporter = ShipMovement.MoveShip(_movementDataReporter, gameTime, ref tempModel);
 			_models[0] = tempModel;
 
 			if (keystate.IsKeyDown(Keys.Escape))
@@ -235,6 +239,7 @@ namespace FleetHackers
 		{
 			GraphicsDevice.Clear(Color.Black);
 
+			
 
 			_skybox.Draw(_camera.View, _camera.Projection, _camera.Position);
 
@@ -247,8 +252,13 @@ namespace FleetHackers
 			}
 
 			_lineDrawer.Begin(_camera.View, _camera.Projection);
+
 			_lineDrawer.DrawHexagonGrid(Vector2.One * - 9930, (new Vector2(80,40)), 200, Color.Red);
 			_lineDrawer.DrawLine(_models[0].Position, new Vector3(_models[0].Position.X, 0, _models[0].Position.Z), Color.CornflowerBlue);
+			
+			ShipMovement.DrawHeading();
+			ShipMovement.DrawMarker();
+
 			_lineDrawer.End();
 
 			_stars.Draw(_camera.View, _camera.Projection, _camera.Up, _camera.Right);

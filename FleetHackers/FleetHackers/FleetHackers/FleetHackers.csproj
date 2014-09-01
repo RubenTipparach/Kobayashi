@@ -116,6 +116,7 @@
     <Compile Include="Cards\Abilities\TriggeredAbility.cs" />
     <Compile Include="Cards\Abilities\TriggerType.cs" />
     <Compile Include="Cards\Enums\Variable.cs" />
+    <Compile Include="DrawingHelpers\DebugDraw.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />
     <Compile Include="EngineEnums\CameraType.cs" />
     <Compile Include="EngineStructs\MovementReport.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Materials\Material.cs" />
     <Compile Include="Materials\MultilightMaterial.cs" />
     <Compile Include="Materials\PointLightMaterial.cs" />
+    <Compile Include="MathHelpers\AdvancedMath.cs" />
     <Compile Include="Models\BasicModel.cs" />
     <Compile Include="Models\BillboardSystem.cs" />
     <Compile Include="Models\MeshTag.cs" />

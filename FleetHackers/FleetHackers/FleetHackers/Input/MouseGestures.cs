@@ -32,6 +32,12 @@ namespace FleetHackers.Input
 		/// <summary>
 		/// Checks the mouse clicked.
 		/// </summary>
+		/// <param name="models">The models.</param>
+		/// <param name="boardPlane">The board plane.</param>
+		/// <param name="mouseDataReporter">The mouse data reporter.</param>
+		/// <param name="camera">The camera.</param>
+		/// <param name="graphicsDevice">The graphics device.</param>
+		/// <returns></returns>
 		public static MovementReport CheckMouseClicked(List<BasicModel> models, Plane boardPlane, MovementReport mouseDataReporter, AbstractCamera camera, GraphicsDevice graphicsDevice)
 		{
 			MouseState mouseState = Mouse.GetState();
