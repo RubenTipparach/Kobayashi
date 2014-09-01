@@ -33,15 +33,43 @@ namespace FleetHackers.Models
 		/// </value>
 		public Material Material { get; set; }
 
+
 		/// <summary>
-		/// Default constructor.
+		/// Initializes a new instance of the <see cref="BasicModel"/> class.
 		/// </summary>
-		/// <param name="model">Pass in a loaded model object.</param>
-		/// <param name="position">Position of the object.</param>
-		/// <param name="Rotation">Orientation of the object.</param>
-		/// <param name="Scale">The size of the object with relation to its absolute size.</param>
-		/// <param name="graphicsDevice">Allows contol of the graphics device object.</param>
+		/// <param name="model">The model.</param>
+		/// <param name="position">The position.</param>
+		/// <param name="rotation">The rotation in Quaternions.</param>
+		/// <param name="scale">The scale.</param>
+		/// <param name="graphicsDevice">The graphics device.</param>
 		public BasicModel(Model model, Vector3 position, Vector3 rotation, Vector3 scale, GraphicsDevice graphicsDevice)
+		{
+			Quaternion quaternionRotation = Quaternion.CreateFromYawPitchRoll(rotation.Y, rotation.X, rotation.Z);
+			Initialize(model, position, quaternionRotation, scale, graphicsDevice);
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="BasicModel"/> class.
+		/// </summary>
+		/// <param name="model">The model.</param>
+		/// <param name="position">The position.</param>
+		/// <param name="rotation">The rotation in Euler Angles.</param>
+		/// <param name="scale">The scale.</param>
+		/// <param name="graphicsDevice">The graphics device.</param>
+		public BasicModel(Model model, Vector3 position, Quaternion rotation, Vector3 scale, GraphicsDevice graphicsDevice)
+		{
+			Initialize(model, position, rotation, scale, graphicsDevice);
+		}
+
+		/// <summary>
+		/// Initializes the specified model.
+		/// </summary>
+		/// <param name="model">The model.</param>
+		/// <param name="position">The position.</param>
+		/// <param name="rotation">The rotation.</param>
+		/// <param name="scale">The scale.</param>
+		/// <param name="graphicsDevice">The graphics device.</param>
+		public void Initialize(Model model, Vector3 position, Quaternion rotation, Vector3 scale, GraphicsDevice graphicsDevice)
 		{
 			this.Model = model;
 			this.Material = new Material();
@@ -83,8 +111,12 @@ namespace FleetHackers.Models
 		/// <param name="projection">Camera viewing angle and depth.</param>
 		public void Draw(Matrix view, Matrix projection, Vector3 CameraPosition)
 		{
+			//Matrix baseWorld = Matrix.CreateScale(Scale)
+			//	* Matrix.CreateFromYawPitchRoll(Rotation.Y, Rotation.X, Rotation.Z)
+			//	* Matrix.CreateTranslation(Position);
+
 			Matrix baseWorld = Matrix.CreateScale(Scale)
-				* Matrix.CreateFromYawPitchRoll(Rotation.Y, Rotation.X, Rotation.Z)
+				* Matrix.CreateFromQuaternion(Rotation)
 				* Matrix.CreateTranslation(Position);
 
 			foreach (ModelMesh mesh in Model.Meshes)
@@ -214,10 +246,16 @@ namespace FleetHackers.Models
 			set;
 		}
 
-		/// <summary>
-		/// Gets or sets the rotation of the model.
-		/// </summary>
-		public Vector3 Rotation
+		///// <summary>
+		///// Gets or sets the rotation of the model.
+		///// </summary>
+		//public Vector3 Rotation
+		//{
+		//	get;
+		//	set;
+		//}
+
+		public Quaternion Rotation
 		{
 			get;
 			set;

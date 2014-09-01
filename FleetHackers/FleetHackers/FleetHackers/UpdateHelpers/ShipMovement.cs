@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FleetHackers.DrawingHelpers;
 using FleetHackers.EngineStructs;
+using FleetHackers.MathHelpers;
 using FleetHackers.Models;
 using Microsoft.Xna.Framework;
 
@@ -10,16 +12,34 @@ namespace FleetHackers.UpdateHelpers
 {
 	public class ShipMovement
 	{
-		public static MovementReport MoveShip(MovementReport movementDataReporter, ref BasicModel model)
-		{
+		public static Nullable<Vector3> _source;
 
+		public static Nullable<Vector3> _destination;
+
+		public static Nullable<Vector3> _point;
+
+		/// <summary>
+		/// Moves the ship.
+		/// </summary>
+		/// <param name="movementDataReporter">The movement data reporter.</param>
+		/// <param name="model">The model.</param>
+		/// <returns></returns>
+		public static MovementReport MoveShip(MovementReport movementDataReporter, GameTime gameTime, ref BasicModel model)
+		{
 			if (movementDataReporter.traveling)
 			{
-				Vector3 moveTowards = (movementDataReporter.newCoordinates - model.Position);
-				moveTowards.Normalize();
+				Vector3 flatNewCoords = new Vector3(-movementDataReporter.newCoordinates.X, model.Position.Y, movementDataReporter.newCoordinates.Z);
 
-				model.Position += moveTowards * 10;
+				_source = model.Position;
+				_destination = movementDataReporter.newCoordinates;
+				_point = flatNewCoords;
 
+				Matrix rotationTo = Matrix.CreateLookAt(model.Position, flatNewCoords, Vector3.Up);
+				Quaternion sample = Quaternion.CreateFromRotationMatrix(rotationTo);
+
+				model.Rotation = Quaternion.Slerp(model.Rotation, sample, .25f);
+				model.Position += Vector3.Transform(Vector3.Forward, model.Rotation) * (float)gameTime.ElapsedGameTime.TotalMilliseconds * .2f;
+				
 				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 5)
 				{
 					movementDataReporter.traveling = false;
@@ -27,5 +47,22 @@ namespace FleetHackers.UpdateHelpers
 			}
 			return movementDataReporter;
 		}
+
+		public static void DrawHeading()
+		{
+			if (_source.HasValue && _destination.HasValue)
+			{
+				DebugDraw.DrawLine(_source.Value, _destination.Value, Color.Green);
+			}
+		}
+
+		public static void DrawMarker()
+		{
+			if (_point.HasValue)
+			{
+				DebugDraw.DrawX(_point.Value, 100, Color.Orange);
+			}
+		}
+		
 	}
 }
