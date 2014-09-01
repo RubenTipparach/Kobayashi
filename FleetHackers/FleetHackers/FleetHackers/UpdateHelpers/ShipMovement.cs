@@ -28,16 +28,18 @@ namespace FleetHackers.UpdateHelpers
 		{
 			if (movementDataReporter.traveling)
 			{
-				Vector3 flatNewCoords = new Vector3(-movementDataReporter.newCoordinates.X, model.Position.Y, movementDataReporter.newCoordinates.Z);
+				Vector3 flatNewCoords = new Vector3(movementDataReporter.newCoordinates.X, model.Position.Y, movementDataReporter.newCoordinates.Z);
 
 				_source = model.Position;
 				_destination = movementDataReporter.newCoordinates;
 				_point = flatNewCoords;
 
-				Matrix rotationTo = Matrix.CreateLookAt(model.Position, flatNewCoords, Vector3.Up);
+				Matrix rotationTo = Matrix.CreateLookAt(model.Position, flatNewCoords, Vector3.Down);
+				
 				Quaternion sample = Quaternion.CreateFromRotationMatrix(rotationTo);
 
 				model.Rotation = Quaternion.Slerp(model.Rotation, sample, .25f);
+
 				model.Position += Vector3.Transform(Vector3.Forward, model.Rotation) * (float)gameTime.ElapsedGameTime.TotalMilliseconds * .2f;
 				
 				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 5)
