@@ -154,7 +154,7 @@ namespace FleetHackers
 				new BasicModel(
 					Content.Load<Model>("blueship"),
 					Vector3.Zero,
-					Vector3.Zero,
+					Quaternion.Identity,
 					new Vector3(.04f),
 					GraphicsDevice));
 
