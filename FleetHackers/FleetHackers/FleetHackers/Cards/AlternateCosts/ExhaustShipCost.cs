@@ -66,11 +66,18 @@ namespace FleetHackers.Cards.AlternateCosts
 			}
 		}
 
-		public override string ToString(Card card)
+		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
 
-			toStringBuilder.Append("exhaust ");
+			if (capitalize)
+			{
+				toStringBuilder.Append("Exhaust ");
+			}
+			else
+			{
+				toStringBuilder.Append("exhaust ");
+			}
 
 			if (NumTargetsType == AmountType.Numeric)
 			{

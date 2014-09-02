@@ -11,6 +11,8 @@ namespace FleetHackers.Cards.Abilities
 		Triggered,
 		Immediate,
 		Cloak,
-		Truefire
+		Truefire,
+		EntersWithCounters,
+		Activated
 	}
 }
