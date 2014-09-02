@@ -122,6 +122,7 @@
     <Compile Include="Cards\Abilities\TriggeredAbility.cs" />
     <Compile Include="Cards\Abilities\TriggerType.cs" />
     <Compile Include="Cards\Enums\Variable.cs" />
+    <Compile Include="Cards\VariableDefinition.cs" />
     <Compile Include="DrawingHelpers\DebugDraw.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />
     <Compile Include="EngineEnums\CameraType.cs" />
