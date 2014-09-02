@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using FleetHackers.Cards.Effects.Enums;
 using FleetHackers.Cards.Enums;
+using FleetHackers.Cards.Effects.Conditions;
 
 namespace FleetHackers.Cards.Effects
 {
@@ -38,6 +39,9 @@ namespace FleetHackers.Cards.Effects
 
 		[DataMember(Name = "optional")]
 		public bool Optional { get; set; }
+
+		[DataMember(Name = "condition")]
+		public EffectCondition Condition { get; set; }
 
 		public override string ToString(Card card, bool capitalize = false)
 		{
@@ -81,10 +85,11 @@ namespace FleetHackers.Cards.Effects
 					throw new InvalidOperationException("Unsupported Target for AnnihilateEffect.");
 			}
 
-			/*if (Condition != null)
+			if (Condition != null)
 			{
-
-			}*/
+				toStringBuilder.Append(" ");
+				toStringBuilder.Append(Condition.ToString());
+			}
 
 			return toStringBuilder.ToString();
 		}

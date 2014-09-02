@@ -584,10 +584,6 @@
 							"valueType": "Variable",
 							"valueVar": "XPlusX"
 						}
-					},
-					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
-						"numCards": 1
 					}
 				]
 			}
