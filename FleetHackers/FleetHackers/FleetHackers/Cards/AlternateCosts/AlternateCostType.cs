@@ -8,6 +8,7 @@ namespace FleetHackers.Cards.AlternateCosts
 	public enum AlternateCostType
 	{
 		Unknown,
-		ExhaustShip
+		ExhaustShip,
+		RemoveCounters
 	}
 }

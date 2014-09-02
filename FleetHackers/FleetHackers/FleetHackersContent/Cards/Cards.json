@@ -648,5 +648,36 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Mentat Ejector",
+		"energyCost": 3,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Mentat",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "EntersWithCountersAbility:#FleetHackers.Cards.Abilities",
+				"numCounters": 2
+			},
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"cost":
+				{
+					"__type": "RemoveCountersCost:#FleetHackers.Cards.AlternateCosts",
+					"target": "This",
+					"numCounters": 2
+				},
+				"effect":
+				{
+					"__type": "BounceEffect:#FleetHackers.Cards.Effects",
+					"target": "NonInfluence"
+				}
+			}
+		]
 	}
 ]
