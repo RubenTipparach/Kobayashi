@@ -7,6 +7,10 @@ namespace FleetHackers.Cards.Enums
 {
 	public enum CardAttribute
 	{
-		Attack
+		[Description("{0} attack")]
+		Attack,
+
+		[Description("the number of influence cards controlled by {0} controller")]
+		ControllersInfluence
 	}
 }
