@@ -89,6 +89,9 @@
     <Compile Include="Cards\AlternateCosts\AlternateCost.cs" />
     <Compile Include="Cards\AlternateCosts\AlternateCostType.cs" />
     <Compile Include="Cards\AlternateCosts\ExhaustShipCost.cs" />
+    <Compile Include="Cards\Effects\Conditions\Comparison.cs" />
+    <Compile Include="Cards\Effects\Conditions\EffectCondition.cs" />
+    <Compile Include="Cards\Enums\CardAttribute.cs" />
     <Compile Include="Cards\Enums\Description.cs" />
     <Compile Include="Cards\Enums\Alignment.cs" />
     <Compile Include="Cards\Card.cs" />
@@ -175,9 +178,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Cards\Effects\Conditions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

@@ -101,6 +101,7 @@ namespace FleetHackers.Cards.AlternateCosts
 			{
 				if (!((card.EnergyCostType == AmountType.Variable) && (Description.ToDescription(card.EnergyCostVar).Contains(NumTargetsVar.ToString()))))
 				{
+					toStringBuilder.Append(" ");
 					toStringBuilder.Append(Description.ToDescription(NumTargetsVar));
 					toStringBuilder.Append(" is the number of ");
 
