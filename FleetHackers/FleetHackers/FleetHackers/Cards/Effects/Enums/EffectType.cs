@@ -15,6 +15,8 @@ namespace FleetHackers.Cards.Effects.Enums
 		Forfeit,
 		StateCheck,
 		CardDraw,
-		PutCounter
+		PutCounter,
+		Bounce,
+		Discard
 	}
 }

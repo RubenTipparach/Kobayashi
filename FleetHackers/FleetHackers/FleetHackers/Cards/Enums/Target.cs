@@ -20,6 +20,7 @@ namespace FleetHackers.Cards.Enums
 		OtherDevice,
 		InterceptingShip,
 		NonInfluence,
-		YourChargedShips
+		YourChargedShips,
+		Opponent
 	}
 }
