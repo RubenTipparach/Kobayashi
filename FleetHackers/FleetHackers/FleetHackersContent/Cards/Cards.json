@@ -588,5 +588,30 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Doubletage",
+		"energyCost": 5,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "BounceEffect:#FleetHackers.Cards.Effects",
+						"target": "NonInfluence"
+					},
+					{
+						"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+						"target": "Opponent",
+						"chooseMethod": "YouChoose"
+					}
+				]
+			}
+		]
 	}
 ]
