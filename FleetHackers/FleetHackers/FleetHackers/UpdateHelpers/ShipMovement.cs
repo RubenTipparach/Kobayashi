@@ -34,7 +34,7 @@ namespace FleetHackers.UpdateHelpers
 				_destination = movementDataReporter.newCoordinates;
 				_point = flatNewCoords;
 
-				Matrix rotationTo = Matrix.CreateLookAt(model.Position, flatNewCoords, Vector3.Down);
+				Matrix rotationTo = Matrix.Invert(Matrix.CreateLookAt(model.Position, flatNewCoords, Vector3.Up));
 				
 				Quaternion sample = Quaternion.CreateFromRotationMatrix(rotationTo);
 
