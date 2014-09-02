@@ -91,7 +91,7 @@ namespace FleetHackers.Input
 			MouseState mouseState = Mouse.GetState();
 			Vector2 mousePosition = new Vector2(mouseState.X, mouseState.Y);
 
-			if (mouseState.RightButton == ButtonState.Pressed)
+			if (mouseState.RightButton == ButtonState.Pressed || mouseState.MiddleButton.Equals(ButtonState.Pressed))
 			{
 				Vector2 delta = mousePosition - _lastMousePosition;
 				deltaPosition += new Vector3(delta.X, 0, delta.Y) * -(float)moveSpeed;
