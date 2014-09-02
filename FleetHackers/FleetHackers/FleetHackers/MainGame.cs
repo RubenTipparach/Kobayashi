@@ -136,7 +136,7 @@ namespace FleetHackers
 			if (_cameraType == CameraType.TargetCamera)
 			{
 				_camera = new TargetCamera(
-						(new Vector3(0, 1000, 1000)) * 3,
+						(new Vector3(0, 500, 500)) * 3,
 						Vector3.Zero, GraphicsDevice);
 			}
 
@@ -155,7 +155,7 @@ namespace FleetHackers
 					Content.Load<Model>("blueship"),
 					Vector3.Zero,
 					Quaternion.Identity,
-					new Vector3(.04f),
+					new Vector3(.01f),
 					GraphicsDevice));
 
 			//Load sky box.

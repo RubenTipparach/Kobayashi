@@ -11,6 +11,11 @@ namespace FleetHackers.Cameras
 {
 	public class TargetCamera : AbstractCamera
 	{
+		private int lastScrollValue = 0;
+
+		private float cameraHeight;
+
+		private float resetView;
 		/// <summary>
 		/// Default constructor for the target camera.
 		/// </summary>
@@ -20,6 +25,9 @@ namespace FleetHackers.Cameras
 		{
 			this.Position = position;
 			this.Target = target;
+
+			cameraHeight = this.Position.Y;
+			resetView = this.Position.Y;
 		}
 
 		/// <summary>
@@ -51,31 +59,34 @@ namespace FleetHackers.Cameras
 		private void PanCamera()
 		{
 			KeyboardState keystate = Keyboard.GetState();
-			
-			float cameraPanSpeed = 14;
+			MouseState mouseState = Mouse.GetState();
 
-			if (keystate.IsKeyDown(Keys.W))
+			float cameraPanSpeed = 14;
+			float cameraUpDownSpeed = 500;
+			if(mouseState.ScrollWheelValue < lastScrollValue)
 			{
-				this.Position -= Vector3.UnitZ * cameraPanSpeed;
-				this.Target -= Vector3.UnitZ * cameraPanSpeed;
+				cameraHeight += cameraUpDownSpeed;
 			}
-			if (keystate.IsKeyDown(Keys.S))
+
+			if (mouseState.ScrollWheelValue > lastScrollValue && cameraHeight > 0)
 			{
-				this.Position += Vector3.UnitZ * cameraPanSpeed;
-				this.Target += Vector3.UnitZ * cameraPanSpeed;
-			}
-			if (keystate.IsKeyDown(Keys.A))
-			{
-				this.Position -= Vector3.UnitX * cameraPanSpeed;
-				this.Target -= Vector3.UnitX * cameraPanSpeed;
-			}
-			if (keystate.IsKeyDown(Keys.D))
-			{
-				this.Position += Vector3.UnitX * cameraPanSpeed;
-				this.Target += Vector3.UnitX * cameraPanSpeed;
+				cameraHeight -= cameraUpDownSpeed;
 			}
 
 			Vector3 deltaPosition = MouseGestures.RightMouseDown(cameraPanSpeed);
+
+			if(mouseState.MiddleButton.Equals(ButtonState.Pressed))
+			{
+				cameraHeight = resetView;
+			}
+
+			lastScrollValue = mouseState.ScrollWheelValue;
+
+			this.Position = Vector3.Lerp(this.Position,
+				new Vector3(this.Position.X, cameraHeight, this.Position.Z),
+				.1f);
+
+
 			this.Position += deltaPosition;
 			this.Target += deltaPosition;
 		}
