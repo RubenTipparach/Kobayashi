@@ -18,6 +18,8 @@ namespace FleetHackers.Cards.Effects.Enums
 		PutCounter,
 		Bounce,
 		Discard,
-		StaticCostReduction
+		StaticCostReduction,
+		StatPumpForCounters,
+		AttachToShip
 	}
 }

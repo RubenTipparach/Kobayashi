@@ -14,6 +14,7 @@ namespace FleetHackers.Cards.Abilities
 		Truefire,
 		EntersWithCounters,
 		Activated,
-		Static
+		Static,
+		AttachToShip
 	}
 }

@@ -99,7 +99,7 @@ namespace FleetHackers.Cards.Effects
 			{
 				toStringBuilder.Append("target ");
 			}
-			else
+			else if(NumTargets > 1)
 			{
 				toStringBuilder.Append(NumTargets.ToString());
 				toStringBuilder.Append(" target ");
@@ -113,6 +113,9 @@ namespace FleetHackers.Cards.Effects
 					{
 						toStringBuilder.Append("s");
 					}
+					break;
+				case Target.AttachedShip:
+					toStringBuilder.Append("attached ship");
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for PutCounterEffect.");

@@ -81,7 +81,14 @@ namespace FleetHackers.Cards.AlternateCosts
 
 			if (NumTargetsType == AmountType.Numeric)
 			{
-				toStringBuilder.Append(NumTargets.ToString());
+				if (NumTargets == 1)
+				{
+					toStringBuilder.Append("target");
+				}
+				else
+				{
+					toStringBuilder.Append(NumTargets.ToString());
+				}
 			}
 			else
 			{
@@ -98,7 +105,7 @@ namespace FleetHackers.Cards.AlternateCosts
 			switch (Target)
 			{
 				case Target.YourChargedShips:
-					toStringBuilder.Append(" charged ships you control.");
+					toStringBuilder.Append(string.Format(" charged ship{0} you control", NumTargets == 1 ? string.Empty : "s"));
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for ExhaustShipCost.");
@@ -108,7 +115,7 @@ namespace FleetHackers.Cards.AlternateCosts
 			{
 				if (!((card.EnergyCostType == AmountType.Variable) && (Description.ToDescription(card.EnergyCostVar).Contains(NumTargetsVar.ToString()))))
 				{
-					toStringBuilder.Append(" ");
+					toStringBuilder.Append(". ");
 					toStringBuilder.Append(Description.ToDescription(NumTargetsVar));
 					toStringBuilder.Append(" is the number of ");
 
@@ -121,7 +128,7 @@ namespace FleetHackers.Cards.AlternateCosts
 							throw new InvalidOperationException("Unsupported Target for ExhaustShipCost.");
 					}
 
-					toStringBuilder.Append(" you exhausted this way.");
+					toStringBuilder.Append(" you exhausted this way");
 				}
 			}
 

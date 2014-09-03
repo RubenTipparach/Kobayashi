@@ -129,6 +129,7 @@ namespace FleetHackers.Cards
 				additionalCostBuilder.Append(Title);
 				additionalCostBuilder.Append(", ");
 				additionalCostBuilder.Append(AdditionalCost.ToString(this));
+				additionalCostBuilder.Append(".");
 				rulesTextStrings.Add(additionalCostBuilder.ToString());
 			}
 
