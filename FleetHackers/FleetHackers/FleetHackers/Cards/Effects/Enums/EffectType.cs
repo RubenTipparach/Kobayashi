@@ -17,6 +17,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		CardDraw,
 		PutCounter,
 		Bounce,
-		Discard
+		Discard,
+		StaticCostReduction
 	}
 }

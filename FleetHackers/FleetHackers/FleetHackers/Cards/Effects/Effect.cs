@@ -19,6 +19,7 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(PutCounterEffect))]
 	[KnownType(typeof(BounceEffect))]
 	[KnownType(typeof(DiscardEffect))]
+	[KnownType(typeof(StaticCostReductionEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }

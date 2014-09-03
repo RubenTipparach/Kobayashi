@@ -7,6 +7,8 @@ namespace FleetHackers.Cards.Enums
 {
 	public enum CardAttribute
 	{
+		None,
+
 		[Description("{0} attack")]
 		Attack,
 

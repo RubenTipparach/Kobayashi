@@ -25,6 +25,21 @@ namespace FleetHackers.Cards.Effects.Conditions
 			}
 		}
 
+		public ActivePlayerAttribute ActivePlayerAttribute { get; set; }
+
+		[DataMember(Name = "activePlayerAttribute")]
+		public string ActivePlayerAttributeString
+		{
+			get
+			{
+				return ActivePlayerAttribute.ToString();
+			}
+			set
+			{
+				ActivePlayerAttribute = (ActivePlayerAttribute)Enum.Parse(typeof(ActivePlayerAttribute), value);
+			}
+		}
+
 		public Comparison Comparison { get; set; }
 
 		[DataMember(Name = "comparison")]
@@ -75,35 +90,54 @@ namespace FleetHackers.Cards.Effects.Conditions
 
 		public override string ToString()
 		{
-			StringBuilder toStringBuilder = new StringBuilder("with ");
+			StringBuilder toStringBuilder = new StringBuilder();
 
-			switch (Comparison)
+			if (Attribute != CardAttribute.None)
 			{
-				case Comparison.LessThanOrEqual:
-					break;
-				default:
-					throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
-			}
+				toStringBuilder.Append("with ");
 
-			if (ValueType == AmountType.Numeric)
-			{
-				toStringBuilder.Append(Value.ToString());
+				switch (Comparison)
+				{
+					case Comparison.LessThanOrEqual:
+						break;
+					default:
+						throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
+				}
+
+				if (ValueType == AmountType.Numeric)
+				{
+					toStringBuilder.Append(Value.ToString());
+				}
+				else
+				{
+					toStringBuilder.Append(Description.ToDescription(ValueVar));
+				}
+
+				switch (Comparison)
+				{
+					case Comparison.LessThanOrEqual:
+						toStringBuilder.Append(" or less ");
+						break;
+					default:
+						throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
+				}
+
+				toStringBuilder.Append(Attribute.ToString().ToLower());
 			}
 			else
 			{
-				toStringBuilder.Append(Description.ToDescription(ValueVar));
-			}
+				string comparisonString = string.Empty;
+				switch (Comparison)
+				{
+					case Comparison.IsEven:
+						comparisonString = "an even number of";
+						break;
+					default:
+						throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
+				}
 
-			switch (Comparison)
-			{
-				case Comparison.LessThanOrEqual:
-					toStringBuilder.Append(" or less ");
-					break;
-				default:
-					throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
+				toStringBuilder.Append(string.Format(Description.ToDescription(ActivePlayerAttribute), comparisonString));
 			}
-
-			toStringBuilder.Append(Attribute.ToString().ToLower());
 
 			return toStringBuilder.ToString();
 		}
