@@ -541,7 +541,7 @@
 		]
 	},
 	{
-		"title": "Cloacked Darkship",
+		"title": "Cloaked Darkship",
 		"energyCost": 5,
 		"alignment": "Cryo",
 		"influenceRequirement": 2,
@@ -760,6 +760,38 @@
 				{
 					"__type": "AttachToShipEffect:#FleetHackers.Cards.Effects",
 					"target": "TargettedShip"
+				}
+			}
+		]
+	},
+	{
+		"title": "Psionic Manipulator",
+		"energyCost": 5,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Manipulator",
+		"range": 3,
+		"attack": 3,
+		"defense": 3,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+					"numCounters": 2,
+					"divideMethod": "None",
+					"countersExact": true,
+					"numTargets": 1,
+					"targetsExact": true,
+					"target": "OtherShipYouControl"
 				}
 			}
 		]
