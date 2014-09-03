@@ -19,8 +19,11 @@ namespace FleetHackers.Cards.Abilities
 			}
 		}
 
-		[DataMember(Name = "cost")]
-		public AlternateCost Cost { get; set; }
+		[DataMember(Name = "energyCost")]
+		public int EnergyCost { get; set; }
+
+		[DataMember(Name = "additionalCost")]
+		public AlternateCost AdditionalCost { get; set; }
 
 		[DataMember(Name = "effect")]
 		public Effect Effect { get; set; }
@@ -29,7 +32,20 @@ namespace FleetHackers.Cards.Abilities
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
 
-			toStringBuilder.Append(Cost.ToString(card, true));
+			if ((EnergyCost > 0) || (AdditionalCost == null))
+			{
+				toStringBuilder.Append("{");
+				toStringBuilder.Append(EnergyCost.ToString());
+				toStringBuilder.Append("}");
+				if (AdditionalCost != null)
+				{
+					toStringBuilder.Append(", ");
+				}
+			}
+			if (AdditionalCost != null)
+			{
+				toStringBuilder.Append(AdditionalCost.ToString(card, true));
+			}
 			toStringBuilder.Append(": ");
 			toStringBuilder.Append(Effect.ToString(card, true));
 

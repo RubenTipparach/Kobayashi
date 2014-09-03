@@ -707,5 +707,61 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Psionic Armor",
+		"energyCost": 3,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Device",
+		"subtype": "Upgrade",
+		"abilities": [
+			{
+				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+					"numCounters": 1,
+					"countersExact": true,
+					"numTargets": 0,
+					"targetsExact": true,
+					"target": "AttachedShip"
+				}
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"target": "AttachedShip",
+					"attackPump": 1,
+					"defensePump": 1
+				}
+			},
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"energyCost": 1,
+				"additionalCost":
+				{
+					"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+					"target": "YourChargedShips",
+					"numTargetsType": "Numeric",
+					"numTargets": 1
+				},
+				"effect":
+				{
+					"__type": "AttachToShipEffect:#FleetHackers.Cards.Effects",
+					"target": "TargettedShip"
+				}
+			}
+		]
 	}
 ]
