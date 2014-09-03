@@ -95,20 +95,16 @@ namespace FleetHackers.Cards.Effects
 				toStringBuilder.Append("up to ");
 			}
 
-			if (NumTargets == 1)
-			{
-				toStringBuilder.Append("target ");
-			}
-			else if(NumTargets > 1)
+			if(NumTargets > 1)
 			{
 				toStringBuilder.Append(NumTargets.ToString());
-				toStringBuilder.Append(" target ");
+				toStringBuilder.Append(" ");
 			}
 
 			switch (Target)
 			{
 				case Target.NonInfluence:
-					toStringBuilder.Append("non-influence card");
+					toStringBuilder.Append("target non-influence card");
 					if (NumTargets > 1)
 					{
 						toStringBuilder.Append("s");
@@ -116,6 +112,9 @@ namespace FleetHackers.Cards.Effects
 					break;
 				case Target.AttachedShip:
 					toStringBuilder.Append("attached ship");
+					break;
+				case Target.OtherShipYouControl:
+					toStringBuilder.Append("another target ship you control");
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for PutCounterEffect.");

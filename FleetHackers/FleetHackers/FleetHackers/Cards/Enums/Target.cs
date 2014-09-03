@@ -23,6 +23,7 @@ namespace FleetHackers.Cards.Enums
 		YourChargedShips,
 		Opponent,
 		AttachedShip,
-		TargettedShip
+		TargettedShip,
+		OtherShipYouControl
 	}
 }
