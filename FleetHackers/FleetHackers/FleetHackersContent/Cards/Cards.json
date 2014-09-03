@@ -679,5 +679,33 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Obsessive Enabler",
+		"energyCost": 2,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Enabler",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"condition":
+				{
+					"attribute": "None",
+					"activePlayerAttribute": "NumShipsYouControl",
+					"comparison": "IsEven"
+				},
+				"effect":
+				{
+					"__type": "StaticCostReductionEffect:#FleetHackers.Cards.Effects",
+					"cardType": "Maneuver",
+					"reductionAmount": 1
+				}
+			}
+		]
 	}
 ]

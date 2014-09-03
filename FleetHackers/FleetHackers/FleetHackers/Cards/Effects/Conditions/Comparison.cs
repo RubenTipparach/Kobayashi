@@ -12,6 +12,8 @@ namespace FleetHackers.Cards.Effects.Conditions
 		LessThan,
 		GreaterThan,
 		LessThanOrEqual,
-		GreaterThanOrEqual
+		GreaterThanOrEqual,
+		IsEven,
+		IsOdd
 	}
 }

@@ -13,6 +13,7 @@ namespace FleetHackers.Cards.Abilities
 	[KnownType(typeof(CloakAbility))]
 	[KnownType(typeof(EntersWithCountersAbility))]
 	[KnownType(typeof(ActivatedAbility))]
+	[KnownType(typeof(StaticAbility))]
 	public abstract class Ability
 	{
 		public abstract AbilityType AbilityType { get; }

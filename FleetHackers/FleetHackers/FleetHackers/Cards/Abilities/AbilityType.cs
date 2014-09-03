@@ -13,6 +13,7 @@ namespace FleetHackers.Cards.Abilities
 		Cloak,
 		Truefire,
 		EntersWithCounters,
-		Activated
+		Activated,
+		Static
 	}
 }

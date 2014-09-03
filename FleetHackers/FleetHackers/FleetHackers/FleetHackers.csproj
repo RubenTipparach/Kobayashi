@@ -87,6 +87,7 @@
     <Compile Include="Cards\Abilities\CloakAbility.cs" />
     <Compile Include="Cards\Abilities\EntersWithCountersAbility.cs" />
     <Compile Include="Cards\Abilities\ImmediateAbility.cs" />
+    <Compile Include="Cards\Abilities\StaticAbility.cs" />
     <Compile Include="Cards\Abilities\TruefireAbility.cs" />
     <Compile Include="Cards\AlternateCosts\AlternateCost.cs" />
     <Compile Include="Cards\AlternateCosts\AlternateCostType.cs" />
@@ -96,6 +97,8 @@
     <Compile Include="Cards\Effects\Conditions\Comparison.cs" />
     <Compile Include="Cards\Effects\Conditions\EffectCondition.cs" />
     <Compile Include="Cards\Effects\DiscardEffect.cs" />
+    <Compile Include="Cards\Effects\StaticCostReductionEffect.cs" />
+    <Compile Include="Cards\Enums\ActivePlayerAttribute.cs" />
     <Compile Include="Cards\Enums\CardAttribute.cs" />
     <Compile Include="Cards\Effects\Enums\ChooseMethod.cs" />
     <Compile Include="Cards\Enums\Description.cs" />
