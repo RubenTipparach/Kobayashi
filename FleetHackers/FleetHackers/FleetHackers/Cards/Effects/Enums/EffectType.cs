@@ -20,6 +20,8 @@ namespace FleetHackers.Cards.Effects.Enums
 		Discard,
 		StaticCostReduction,
 		StatPumpForCounters,
-		AttachToShip
+		AttachToShip,
+		Scry,
+		Draw
 	}
 }

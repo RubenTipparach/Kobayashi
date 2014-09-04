@@ -99,6 +99,8 @@
     <Compile Include="Cards\Effects\Conditions\Comparison.cs" />
     <Compile Include="Cards\Effects\Conditions\EffectCondition.cs" />
     <Compile Include="Cards\Effects\DiscardEffect.cs" />
+    <Compile Include="Cards\Effects\DrawEffect.cs" />
+    <Compile Include="Cards\Effects\ScryEffect.cs" />
     <Compile Include="Cards\Effects\StaticCostReductionEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpForCountersEffect.cs" />
     <Compile Include="Cards\Enums\ActivePlayerAttribute.cs" />
