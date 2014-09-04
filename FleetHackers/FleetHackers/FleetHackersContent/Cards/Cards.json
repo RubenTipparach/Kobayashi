@@ -815,5 +815,29 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Rearrange",
+		"energyCost": 1,
+		"alignment": "Cryo",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "ScryEffect:#FleetHackers.Cards.Effects",
+						"numCards": 3
+					},
+					{
+						"__type": "DrawEffect:#FleetHackers.Cards.Effects",
+						"numCards": 1
+					}
+				]
+			}
+		]
 	}
 ]
