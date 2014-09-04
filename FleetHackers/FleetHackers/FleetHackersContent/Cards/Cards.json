@@ -839,5 +839,26 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Restraining Bolt",
+		"energyCost": 3,
+		"alignment": "Cryo",
+		"influenceRequirement": 1,
+		"supertype": "Device",
+		"subtype": "Upgrade",
+		"abilities": [
+			{
+				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "PacifismEffect:#FleetHackers.Cards.Effects",
+					"target": "AttachedShip"
+				}
+			}
+		]
 	}
 ]
