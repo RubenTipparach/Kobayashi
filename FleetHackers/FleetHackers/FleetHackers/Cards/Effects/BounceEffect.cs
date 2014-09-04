@@ -52,6 +52,9 @@ namespace FleetHackers.Cards.Effects
 				case Target.NonInfluence:
 					toStringBuilder.Append("target non-influence card ");
 					break;
+				case Target.AnyShip:
+					toStringBuilder.Append("target ship ");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for BounceEffect.");
 			}

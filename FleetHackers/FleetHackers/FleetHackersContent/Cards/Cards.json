@@ -795,5 +795,25 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Psionic Setback",
+		"energyCost": 2,
+		"alignment": "Cryo",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "BounceEffect:#FleetHackers.Cards.Effects",
+						"target": "AnyShip"
+					}
+				]
+			}
+		]
 	}
 ]
