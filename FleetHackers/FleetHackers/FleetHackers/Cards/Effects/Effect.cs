@@ -24,6 +24,7 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(StatPumpForCountersEffect))]
 	[KnownType(typeof(ScryEffect))]
 	[KnownType(typeof(DrawEffect))]
+	[KnownType(typeof(PacifismEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }

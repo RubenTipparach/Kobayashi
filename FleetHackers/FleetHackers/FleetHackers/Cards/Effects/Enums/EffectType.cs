@@ -22,6 +22,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		StatPumpForCounters,
 		AttachToShip,
 		Scry,
-		Draw
+		Draw,
+		Pacifism
 	}
 }
