@@ -104,6 +104,7 @@
     <Compile Include="Cards\Effects\ScryEffect.cs" />
     <Compile Include="Cards\Effects\StaticCostReductionEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpForCountersEffect.cs" />
+    <Compile Include="Cards\Effects\TutorEffect.cs" />
     <Compile Include="Cards\Enums\ActivePlayerAttribute.cs" />
     <Compile Include="Cards\Enums\CardAttribute.cs" />
     <Compile Include="Cards\Effects\Enums\ChooseMethod.cs" />

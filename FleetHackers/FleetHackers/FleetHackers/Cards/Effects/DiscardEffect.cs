@@ -15,7 +15,7 @@ namespace FleetHackers.Cards.Effects
 		{
 			get
 			{
-				return EffectType.Bounce;
+				return EffectType.Discard;
 			}
 		}
 
