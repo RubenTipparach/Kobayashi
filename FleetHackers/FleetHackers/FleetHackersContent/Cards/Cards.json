@@ -888,5 +888,47 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Shadow Swarm",
+		"energyCost": 4,
+		"alignment": "Crystal",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Shadow",
+		"range": 2,
+		"attack": 2,
+		"defense": 3,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+					"target": "Opponent",
+					"chooseMethod": "TargetChooses"
+				}
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "LeavesTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+					"target": "Opponent",
+					"chooseMethod": "TargetChooses"
+				}
+			}
+		]
 	}
 ]
