@@ -930,5 +930,34 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Shadow Tactician",
+		"energyCost": 4,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Shadow",
+		"range": 3,
+		"attack": 1,
+		"defense": 3,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+					"target": "You",
+					"cardType": "Maneuver",
+					"optional": "true"
+				}
+			}
+		]
 	}
 ]

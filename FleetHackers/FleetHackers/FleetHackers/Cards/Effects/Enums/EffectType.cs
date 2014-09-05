@@ -23,6 +23,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		AttachToShip,
 		Scry,
 		Draw,
-		Pacifism
+		Pacifism,
+		Tutor
 	}
 }
