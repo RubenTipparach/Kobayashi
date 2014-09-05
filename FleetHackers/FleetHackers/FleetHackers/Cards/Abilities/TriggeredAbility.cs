@@ -40,7 +40,7 @@ namespace FleetHackers.Cards.Abilities
 			else if (card.Supertype != Supertype.Maneuver)
 			{
 				StringBuilder toStringBuilder = new StringBuilder();
-				if (Trigger.TriggerType == TriggerType.EntersTheBattleZone)
+				if (Trigger.TriggerType == TriggerType.EntersTheBattleZone || Trigger.TriggerType == TriggerType.LeavesTheBattleZone)
 				{
 					toStringBuilder.Append("When ");
 				}

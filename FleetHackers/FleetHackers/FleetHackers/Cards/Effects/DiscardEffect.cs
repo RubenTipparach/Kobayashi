@@ -67,7 +67,18 @@ namespace FleetHackers.Cards.Effects
 							{
 								toStringBuilder.Append("l");
 							}
-							toStringBuilder.Append("ook at target opponent's and and choose a card in it. That player discards the chosen card");
+							toStringBuilder.Append("ook at target opponent's hand and choose a card in it. That player discards the chosen card");
+							break;
+						case ChooseMethod.TargetChooses:
+							if (capitalize)
+							{
+								toStringBuilder.Append("Target ");
+							}
+							else
+							{
+								toStringBuilder.Append("target ");
+							}
+							toStringBuilder.Append("opponent discards a card");
 							break;
 						default:
 							throw new InvalidOperationException("Unsupported ChooseMethod for DiscardEffect.");
