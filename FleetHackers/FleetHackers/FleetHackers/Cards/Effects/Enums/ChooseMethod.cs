@@ -8,6 +8,7 @@ namespace FleetHackers.Cards.Effects.Enums
 	public enum ChooseMethod
 	{
 		None,
-		YouChoose
+		YouChoose,
+		TargetChooses
 	}
 }

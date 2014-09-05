@@ -122,6 +122,9 @@ namespace FleetHackers.Cards.Abilities
 				case TriggerType.EndOfYourTurn:
 					toStringBuilder.Append("At the end of your turn");
 					break;
+				case TriggerType.LeavesTheBattleZone:
+					toStringBuilder.Append("leaves the battle zone");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported TriggerType for Trigger.");
 			}
