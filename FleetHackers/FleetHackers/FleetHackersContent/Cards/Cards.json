@@ -959,5 +959,21 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Smaller Darkship",
+		"energyCost": 3,
+		"alignment": "Cryo",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Shadow",
+		"range": 3,
+		"attack": 2,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "CloakAbility:#FleetHackers.Cards.Abilities"
+			}
+		]
 	}
 ]
