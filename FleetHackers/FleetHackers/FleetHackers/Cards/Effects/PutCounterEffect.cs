@@ -116,6 +116,9 @@ namespace FleetHackers.Cards.Effects
 				case Target.OtherShipYouControl:
 					toStringBuilder.Append("another target ship you control");
 					break;
+				case Target.YourNonInfluence:
+					toStringBuilder.Append("target non-influence card you control");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for PutCounterEffect.");
 			}

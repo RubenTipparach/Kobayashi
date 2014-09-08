@@ -666,7 +666,7 @@
 			},
 			{
 				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
-				"cost":
+				"additionalCost":
 				{
 					"__type": "RemoveCountersCost:#FleetHackers.Cards.AlternateCosts",
 					"target": "This",
@@ -973,6 +973,39 @@
 		"abilities": [
 			{
 				"__type": "CloakAbility:#FleetHackers.Cards.Abilities"
+			}
+		]
+	},
+	{
+		"title": "Stingy Manipulator",
+		"energyCost": 2,
+		"alignment": "Cryo",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Manipulator",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"additionalCost":
+				{
+					"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+					"target": "This",
+					"numTargetsType": "Numeric",
+					"numTargets": 1
+				},
+				"effect":
+				{
+					"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+					"numCounters": 1,
+					"divideMethod": "None",
+					"countersExact": true,
+					"numTargets": 1,
+					"targetsExact": true,
+					"target": "YourNonInfluence"
+				}
 			}
 		]
 	}
