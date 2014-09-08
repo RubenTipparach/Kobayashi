@@ -79,26 +79,29 @@ namespace FleetHackers.Cards.AlternateCosts
 				toStringBuilder.Append("exhaust ");
 			}
 
-			if (NumTargetsType == AmountType.Numeric)
+			if (Target != Target.This)
 			{
-				if (NumTargets == 1)
+				if (NumTargetsType == AmountType.Numeric)
 				{
-					toStringBuilder.Append("target");
+					if (NumTargets == 1)
+					{
+						toStringBuilder.Append("target");
+					}
+					else
+					{
+						toStringBuilder.Append(NumTargets.ToString());
+					}
 				}
 				else
 				{
-					toStringBuilder.Append(NumTargets.ToString());
-				}
-			}
-			else
-			{
-				if ((card.EnergyCostType == AmountType.Variable) && (Description.ToDescription(card.EnergyCostVar).Contains(NumTargetsVar.ToString())))
-				{
-					toStringBuilder.Append("any number of");
-				}
-				else
-				{
-					toStringBuilder.Append(Description.ToDescription(NumTargetsVar));
+					if ((card.EnergyCostType == AmountType.Variable) && (Description.ToDescription(card.EnergyCostVar).Contains(NumTargetsVar.ToString())))
+					{
+						toStringBuilder.Append("any number of");
+					}
+					else
+					{
+						toStringBuilder.Append(Description.ToDescription(NumTargetsVar));
+					}
 				}
 			}
 
@@ -106,6 +109,9 @@ namespace FleetHackers.Cards.AlternateCosts
 			{
 				case Target.YourChargedShips:
 					toStringBuilder.Append(string.Format(" charged ship{0} you control", NumTargets == 1 ? string.Empty : "s"));
+					break;
+				case Target.This:
+					toStringBuilder.Append(card.Title);
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for ExhaustShipCost.");

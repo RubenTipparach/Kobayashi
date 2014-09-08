@@ -59,8 +59,6 @@ namespace FleetHackers.Cards.Effects
 					throw new InvalidOperationException("Unsupported Target for AttachToShipEffect.");
 			}
 
-			toStringBuilder.Append(".");
-
 			return toStringBuilder.ToString();
 		}
 	}
