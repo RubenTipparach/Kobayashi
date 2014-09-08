@@ -96,13 +96,10 @@ namespace FleetHackers.Cards.Effects.Conditions
 			{
 				toStringBuilder.Append("with ");
 
-				switch (Comparison)
-				{
-					case Comparison.LessThanOrEqual:
-						break;
-					default:
-						throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
-				}
+				toStringBuilder.Append(Description.ToDescription(Attribute));
+
+				toStringBuilder.Append(" of ");
+
 
 				if (ValueType == AmountType.Numeric)
 				{
@@ -121,8 +118,6 @@ namespace FleetHackers.Cards.Effects.Conditions
 					default:
 						throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
 				}
-
-				toStringBuilder.Append(Attribute.ToString().ToLower());
 			}
 			else
 			{

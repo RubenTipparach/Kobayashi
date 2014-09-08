@@ -26,9 +26,12 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(DrawEffect))]
 	[KnownType(typeof(PacifismEffect))]
 	[KnownType(typeof(TutorEffect))]
+	[KnownType(typeof(FreePlayEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }
 		public abstract string ToString(Card card, bool capitalize = false);
+		public virtual bool HasReminderText { get { return false; } }
+		public virtual string ReminderText { get { return string.Empty; } }
 	}
 }

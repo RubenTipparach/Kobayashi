@@ -9,10 +9,13 @@ namespace FleetHackers.Cards.Enums
 	{
 		None,
 
-		[Description("{0} attack")]
+		[Description("attack")]
 		Attack,
 
 		[Description("the number of influence cards controlled by {0} controller")]
-		ControllersInfluence
+		ControllersInfluence,
+
+		[Description("energy cost")]
+		EnergyCost
 	}
 }

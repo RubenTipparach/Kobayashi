@@ -44,7 +44,7 @@ namespace FleetHackers.Cards.Abilities
 				List<string> effectStrings = new List<string>();
 				foreach (Effect effect in Effects)
 				{
-					effectStrings.Add(effect.ToString(card, true) + ".");
+					effectStrings.Add(effect.ToString(card, true) + "." + (effect.HasReminderText ? " " + effect.ReminderText : string.Empty));
 				}
 				toStringBuilder.Append(string.Join(Environment.NewLine, effectStrings));
 
