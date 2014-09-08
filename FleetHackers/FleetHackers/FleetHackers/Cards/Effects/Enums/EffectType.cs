@@ -25,6 +25,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		Draw,
 		Pacifism,
 		Tutor,
-		FreePlay
+		FreePlay,
+		Cloak
 	}
 }
