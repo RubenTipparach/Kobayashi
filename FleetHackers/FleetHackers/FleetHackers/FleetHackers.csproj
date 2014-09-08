@@ -96,6 +96,7 @@
     <Compile Include="Cards\AlternateCosts\RemoveCountersCost.cs" />
     <Compile Include="Cards\Effects\AttachToShipEffect.cs" />
     <Compile Include="Cards\Effects\BounceEffect.cs" />
+    <Compile Include="Cards\Effects\CloakEffect.cs" />
     <Compile Include="Cards\Effects\Conditions\Comparison.cs" />
     <Compile Include="Cards\Effects\Conditions\EffectCondition.cs" />
     <Compile Include="Cards\Effects\DiscardEffect.cs" />

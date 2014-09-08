@@ -1047,5 +1047,30 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Temporary Cloak",
+		"energyCost": 2,
+		"alignment": "Cryo",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "CloakEffect:#FleetHackers.Cards.Effects",
+						"effectEnds": "BeginningOfYourTurn",
+						"target": "AnyShip"
+					},
+					{
+						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"numCards": 1
+					}
+				]
+			}
+		]
 	}
 ]
