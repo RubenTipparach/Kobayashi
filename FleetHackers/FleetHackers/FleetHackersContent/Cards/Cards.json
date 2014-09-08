@@ -1008,5 +1008,44 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Stolen Intentions",
+		"energyCost": 3,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+						"target": "Opponent",
+						"chooseMethod": "YouChoose",
+						"cardRestriction": "NonInfluence",
+						"variableBinding":
+						{
+							"variable": "X",
+							"attribute": "EnergyCost",
+							"valueModifier": "HalfRoundedUp"
+						}
+					},
+					{
+						"__type": "FreePlayEffect:#FleetHackers.Cards.Effects",
+						"target": "NonInfluence",
+						"condition":
+						{
+							"attribute": "EnergyCost",
+							"comparison": "LessThanOrEqual",
+							"valueType": "Variable",
+							"valueVar": "X"
+						}
+					}
+				]
+			}
+		]
 	}
 ]

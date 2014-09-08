@@ -100,6 +100,7 @@
     <Compile Include="Cards\Effects\Conditions\EffectCondition.cs" />
     <Compile Include="Cards\Effects\DiscardEffect.cs" />
     <Compile Include="Cards\Effects\DrawEffect.cs" />
+    <Compile Include="Cards\Effects\FreePlayEffect.cs" />
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />
     <Compile Include="Cards\Effects\ScryEffect.cs" />
     <Compile Include="Cards\Effects\StaticCostReductionEffect.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Cards\Effects\ForfeitEffect.cs" />
     <Compile Include="Cards\Effects\Enums\PointInTime.cs" />
     <Compile Include="Cards\Effects\PutCounterEffect.cs" />
+    <Compile Include="Cards\Enums\ValueModifier.cs" />
     <Compile Include="Cards\StateCheck.cs" />
     <Compile Include="Cards\Effects\StateCheckEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpEffect.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="Cards\Abilities\TriggeredAbility.cs" />
     <Compile Include="Cards\Abilities\TriggerType.cs" />
     <Compile Include="Cards\Enums\Variable.cs" />
+    <Compile Include="Cards\VariableBinding.cs" />
     <Compile Include="Cards\VariableDefinition.cs" />
     <Compile Include="DrawingHelpers\DebugDraw.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />

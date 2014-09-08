@@ -34,6 +34,21 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
+		public Target CardRestriction { get; set; }
+
+		[DataMember(Name = "cardRestriction")]
+		public string CardRestrictionString
+		{
+			get
+			{
+				return CardRestriction.ToString();
+			}
+			set
+			{
+				CardRestriction = (Target)Enum.Parse(typeof(Target), value);
+			}
+		}
+
 		public ChooseMethod ChooseMethod { get; set; }
 
 		[DataMember(Name = "chooseMethod")]
@@ -49,9 +64,24 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
+		[DataMember(Name = "variableBinding")]
+		public VariableBinding VariableBinding { get; set; }
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
+
+			string cardRestriction = string.Empty;
+			switch (CardRestriction)
+			{
+				case Target.None:
+					break;
+				case Target.NonInfluence:
+					cardRestriction = "non-influence ";
+					break;
+				default:
+					throw new InvalidOperationException("Unsupported CardRestriction for DiscardEffect.");
+			}
 
 			switch (Target)
 			{
@@ -67,7 +97,7 @@ namespace FleetHackers.Cards.Effects
 							{
 								toStringBuilder.Append("l");
 							}
-							toStringBuilder.Append("ook at target opponent's hand and choose a card in it. That player discards the chosen card");
+							toStringBuilder.Append(string.Format("ook at target opponent's hand and choose a {0}card in it. That player discards the chosen card", cardRestriction));
 							break;
 						case ChooseMethod.TargetChooses:
 							if (capitalize)
@@ -86,6 +116,14 @@ namespace FleetHackers.Cards.Effects
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for DiscardEffect.");
+			}
+
+			if (VariableBinding != null)
+			{
+				toStringBuilder.Append(". ");
+				toStringBuilder.Append(Description.ToDescription(VariableBinding.Variable));
+				toStringBuilder.Append(" is ");
+				toStringBuilder.Append(string.Format(Description.ToDescription(VariableBinding.ValueModifier), "the energy cost of the discarded card"));
 			}
 
 			return toStringBuilder.ToString();
