@@ -28,6 +28,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		FreePlay,
 		Cloak,
 		LifeGain,
-		RemoveCounter
+		RemoveCounter,
+		Fog
 	}
 }
