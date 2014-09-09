@@ -26,6 +26,7 @@ namespace FleetHackers.Cards.Enums
 		TargettedShip,
 		OtherShipYouControl,
 		You,
-		YourNonInfluence
+		YourNonInfluence,
+		TargetShipController
 	}
 }

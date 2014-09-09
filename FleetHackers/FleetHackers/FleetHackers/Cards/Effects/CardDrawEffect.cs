@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 using FleetHackers.Cards.Effects.Enums;
+using FleetHackers.Cards.Enums;
 
 namespace FleetHackers.Cards.Effects
 {
@@ -21,17 +22,50 @@ namespace FleetHackers.Cards.Effects
 		[DataMember(Name = "numCards")]
 		public int NumCards { get; set; }
 
+		public Target Target { get; set; }
+
+		[DataMember(Name = "target")]
+		public string TargetString
+		{
+			get
+			{
+				return Target.ToString();
+			}
+			set
+			{
+				Target = (Target)Enum.Parse(typeof(Target), value);
+			}
+		}
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
 
-			if (capitalize)
+			if ((Target == Target.You) || (Target == Target.None))
 			{
-				toStringBuilder.Append("Draw ");
+				if (capitalize)
+				{
+					toStringBuilder.Append("Draw ");
+				}
+				else
+				{
+					toStringBuilder.Append("draw ");
+				}
+			}
+			else if (Target == Target.TargetShipController)
+			{
+				if (capitalize)
+				{
+					toStringBuilder.Append("That ship's controller draws ");
+				}
+				else
+				{
+					toStringBuilder.Append("that ship's controller draws ");
+				}
 			}
 			else
 			{
-				toStringBuilder.Append("draw ");
+				throw new InvalidOperationException("Unsupported Target for CardDrawEffect.");
 			}
 
 			if (NumCards == 1)

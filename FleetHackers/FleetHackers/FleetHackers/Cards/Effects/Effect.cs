@@ -23,7 +23,6 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(AttachToShipEffect))]
 	[KnownType(typeof(StatPumpForCountersEffect))]
 	[KnownType(typeof(ScryEffect))]
-	[KnownType(typeof(DrawEffect))]
 	[KnownType(typeof(PacifismEffect))]
 	[KnownType(typeof(TutorEffect))]
 	[KnownType(typeof(FreePlayEffect))]
