@@ -7,6 +7,7 @@ namespace FleetHackers.Cards.Enums
 {
 	public enum ValueModifier
 	{
+		[Description("{0}")]
 		None,
 
 		[Description("half {0}, rounded up")]

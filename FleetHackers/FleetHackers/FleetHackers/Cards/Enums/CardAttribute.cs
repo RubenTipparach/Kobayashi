@@ -12,6 +12,9 @@ namespace FleetHackers.Cards.Enums
 		[Description("attack")]
 		Attack,
 
+		[Description("defense")]
+		Defense,
+
 		[Description("the number of influence cards controlled by {0} controller")]
 		ControllersInfluence,
 

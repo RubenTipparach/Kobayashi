@@ -123,7 +123,8 @@ namespace FleetHackers.Cards.Effects
 				toStringBuilder.Append(". ");
 				toStringBuilder.Append(Description.ToDescription(VariableBinding.Variable));
 				toStringBuilder.Append(" is ");
-				toStringBuilder.Append(string.Format(Description.ToDescription(VariableBinding.ValueModifier), "the energy cost of the discarded card"));
+				string attributeDescription = Description.ToDescription(VariableBinding.Attribute);
+				toStringBuilder.Append(string.Format(Description.ToDescription(VariableBinding.ValueModifier), "the " + attributeDescription + " of the discarded card"));
 			}
 
 			return toStringBuilder.ToString();

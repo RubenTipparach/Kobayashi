@@ -58,6 +58,9 @@ namespace FleetHackers.Cards.Effects
 		[DataMember(Name = "condition")]
 		public EffectCondition Condition { get; set; }
 
+		[DataMember(Name = "variableBinding")]
+		public VariableBinding VariableBinding { get; set; }
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -138,6 +141,15 @@ namespace FleetHackers.Cards.Effects
 							throw new InvalidOperationException("Unsupported AmountType for VariableDefinition.");
 					}
 				}
+			}
+
+			if (VariableBinding != null)
+			{
+				toStringBuilder.Append(". ");
+				toStringBuilder.Append(Description.ToDescription(VariableBinding.Variable));
+				toStringBuilder.Append(" is ");
+				string attributeDescription = Description.ToDescription(VariableBinding.Attribute);
+				toStringBuilder.Append(string.Format(Description.ToDescription(VariableBinding.ValueModifier), targetOwns + " " + attributeDescription));
 			}
 
 			return toStringBuilder.ToString();

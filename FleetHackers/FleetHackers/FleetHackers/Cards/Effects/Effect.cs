@@ -27,6 +27,7 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(TutorEffect))]
 	[KnownType(typeof(FreePlayEffect))]
 	[KnownType(typeof(CloakEffect))]
+	[KnownType(typeof(LifeGainEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }

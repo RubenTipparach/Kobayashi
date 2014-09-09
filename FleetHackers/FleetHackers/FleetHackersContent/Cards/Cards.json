@@ -1097,5 +1097,36 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Bribery",
+		"energyCost": 3,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"target": "AnyShip",
+						"variableBinding":
+						{
+							"variable": "X",
+							"attribute": "Defense"
+						}
+					},
+					{
+						"__type": "LifeGainEffect:#FleetHackers.Cards.Effects",
+						"amountType": "Variable",
+						"amountVar": "X",
+						"target": "Opponent"
+					}
+				]
+			}
+		]
 	}
 ]
