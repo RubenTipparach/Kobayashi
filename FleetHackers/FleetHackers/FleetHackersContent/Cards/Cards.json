@@ -1196,5 +1196,27 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Gaining Influence",
+		"energyCost": 1,
+		"alignment": "Shadow",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+						"target": "You",
+						"cardType": "Influence",
+						"optional": "false"
+					}
+				]
+			}
+		]
 	}
 ]

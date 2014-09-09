@@ -80,7 +80,15 @@ namespace FleetHackers.Cards.Effects
 				toStringBuilder.Append("may ");
 			}
 
-			toStringBuilder.Append("put target ");
+			if ((!Optional) && capitalize)
+			{
+				toStringBuilder.Append("Put target ");
+			}
+			else
+			{
+				toStringBuilder.Append("put target ");
+			}
+
 			toStringBuilder.Append(CardType.ToString().ToLower());
 			toStringBuilder.Append(" from your deck into your hand");
 
