@@ -1128,5 +1128,32 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Cloaking Lawkeeper",
+		"energyCost": 6,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Lawkeeper, Hani",
+		"range": 3,
+		"attack": 4,
+		"defense": 3,
+		"abilities": [
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"additionalCost":
+				{
+					"__type": "DiscardCost:#FleetHackers.Cards.AlternateCosts",
+					"numCards": 1
+				},
+				"effect":
+				{
+					"__type": "CloakEffect:#FleetHackers.Cards.Effects",
+					"effectEnds": "BeginningOfYourTurn",
+					"target": "This"
+				}
+			}
+		]
 	}
 ]
