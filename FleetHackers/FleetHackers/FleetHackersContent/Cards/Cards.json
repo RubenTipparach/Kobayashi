@@ -1155,5 +1155,46 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Damaged Wingship",
+		"energyCost": 2,
+		"alignment": "Shadow",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Minion",
+		"range": 3,
+		"attack": 3,
+		"defense": 4,
+		"abilities": [
+			{
+				"__type": "EntersWithCountersAbility:#FleetHackers.Cards.Abilities",
+				"numCounters": 2
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"attackPump": -1,
+					"defensePump": -1
+				}
+			},
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"energyCost": 2,
+				"effect":
+				{
+					"__type": "RemoveCounterEffect:#FleetHackers.Cards.Effects",
+					"numCounters": 1,
+					"divideMethod": "None",
+					"countersExact": true,
+					"numTargets": 1,
+					"targetsExact": true,
+					"target": "This"
+				}
+			}
+		]
 	}
 ]

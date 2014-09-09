@@ -104,6 +104,7 @@
     <Compile Include="Cards\Effects\FreePlayEffect.cs" />
     <Compile Include="Cards\Effects\LifeGainEffect.cs" />
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />
+    <Compile Include="Cards\Effects\RemoveCounterEffect.cs" />
     <Compile Include="Cards\Effects\ScryEffect.cs" />
     <Compile Include="Cards\Effects\StaticCostReductionEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpForCountersEffect.cs" />

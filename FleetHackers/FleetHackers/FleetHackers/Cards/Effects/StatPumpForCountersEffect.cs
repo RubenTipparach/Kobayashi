@@ -45,18 +45,21 @@ namespace FleetHackers.Cards.Effects
 				case Target.AttachedShip:
 					if (capitalize)
 					{
-						toStringBuilder.Append("Attached ship ");
+						toStringBuilder.Append("Attached ship");
 					}
 					else
 					{
-						toStringBuilder.Append("attached ship ");
+						toStringBuilder.Append("attached ship");
 					}
 					break;
+				case Target.This:
+					toStringBuilder.Append(card.Title);
+					break;
 				default:
-					throw new InvalidOperationException("Unsupported Target for StatPumpEffect.");
+					throw new InvalidOperationException("Unsupported Target for StatPumpForCountersEffect.");
 			}
 
-			toStringBuilder.Append("gets ");
+			toStringBuilder.Append(" gets ");
 			if (AttackPump > 0)
 			{
 				toStringBuilder.Append("+");
