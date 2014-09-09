@@ -833,7 +833,7 @@
 						"numCards": 3
 					},
 					{
-						"__type": "DrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
 						"numCards": 1
 					}
 				]
@@ -1068,6 +1068,31 @@
 					{
 						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
 						"numCards": 1
+					}
+				]
+			}
+		]
+	},
+	{
+		"title": "Anesthetic Maneuver",
+		"energyCost": 4,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"target": "AnyShip"
+					},
+					{
+						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"numCards": 1,
+						"target": "TargetShipController"
 					}
 				]
 			}
