@@ -101,6 +101,7 @@
     <Compile Include="Cards\Effects\Conditions\Comparison.cs" />
     <Compile Include="Cards\Effects\Conditions\EffectCondition.cs" />
     <Compile Include="Cards\Effects\DiscardEffect.cs" />
+    <Compile Include="Cards\Effects\FogEffect.cs" />
     <Compile Include="Cards\Effects\FreePlayEffect.cs" />
     <Compile Include="Cards\Effects\LifeGainEffect.cs" />
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />

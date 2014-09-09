@@ -1218,5 +1218,25 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Group Insurance",
+		"energyCost": 2,
+		"alignment": "Shadow",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "FogEffect:#FleetHackers.Cards.Effects",
+						"effectEnds": "BeginningOfYourTurn"
+					}
+				]
+			}
+		]
 	}
 ]
