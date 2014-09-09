@@ -92,6 +92,7 @@
     <Compile Include="Cards\Abilities\TruefireAbility.cs" />
     <Compile Include="Cards\AlternateCosts\AlternateCost.cs" />
     <Compile Include="Cards\AlternateCosts\AlternateCostType.cs" />
+    <Compile Include="Cards\AlternateCosts\DiscardCost.cs" />
     <Compile Include="Cards\AlternateCosts\ExhaustShipCost.cs" />
     <Compile Include="Cards\AlternateCosts\RemoveCountersCost.cs" />
     <Compile Include="Cards\Effects\AttachToShipEffect.cs" />

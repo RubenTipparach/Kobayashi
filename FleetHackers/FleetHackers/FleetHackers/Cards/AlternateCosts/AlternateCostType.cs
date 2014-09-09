@@ -9,6 +9,7 @@ namespace FleetHackers.Cards.AlternateCosts
 	{
 		Unknown,
 		ExhaustShip,
-		RemoveCounters
+		RemoveCounters,
+		Discard
 	}
 }

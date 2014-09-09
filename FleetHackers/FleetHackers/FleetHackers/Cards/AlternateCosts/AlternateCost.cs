@@ -9,6 +9,7 @@ namespace FleetHackers.Cards.AlternateCosts
 	[DataContract]
 	[KnownType(typeof(ExhaustShipCost))]
 	[KnownType(typeof(RemoveCountersCost))]
+	[KnownType(typeof(DiscardCost))]
 	public abstract class AlternateCost
 	{
 		public abstract AlternateCostType AlternateCostType { get; }
