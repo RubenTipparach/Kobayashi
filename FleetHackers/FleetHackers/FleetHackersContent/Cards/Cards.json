@@ -1290,5 +1290,16 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Long-Range Hani",
+		"energyCost": 4,
+		"alignment": "Shadow",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Hani",
+		"range": 4,
+		"attack": 1,
+		"defense": 5
 	}
 ]
