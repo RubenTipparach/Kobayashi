@@ -8,6 +8,7 @@ namespace FleetHackers.Cards.Enums
 	public enum Condition
 	{
 		None,
-		OneOtherShip
+		OneOtherShip,
+		DuringCombat
 	}
 }

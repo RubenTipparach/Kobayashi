@@ -1238,5 +1238,57 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Hired Lawkeeper",
+		"energyCost": 4,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Mercenary, Lawkeeper, Hani",
+		"range": 3,
+		"attack": 3,
+		"defense": 3,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "LifeLossEffect:#FleetHackers.Cards.Effects",
+					"amountType": "Numeric",
+					"amount": 2,
+					"target": "You"
+				}
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Annihilated",
+					"actor": "This",
+					"condition": "DuringCombat"
+				},
+				"effect":
+				{
+					"__type": "LifeGainEffect:#FleetHackers.Cards.Effects",
+					"amountType": "Variable",
+					"amountVar": "X",
+					"target": "You",
+					"varDefinitions":
+					[
+						{
+							"variable": "X",
+							"valueType": "Attribute",
+							"valueAttribute": "OpposingShipDefense"
+						}
+					]
+				}
+			}
+		]
 	}
 ]
