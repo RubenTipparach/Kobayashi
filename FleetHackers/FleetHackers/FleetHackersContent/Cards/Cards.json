@@ -1301,5 +1301,16 @@
 		"range": 4,
 		"attack": 1,
 		"defense": 5
+	},
+	{
+		"title": "Massive Hani",
+		"energyCost": 7,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Hani",
+		"range": 3,
+		"attack": 5,
+		"defense": 8
 	}
 ]
