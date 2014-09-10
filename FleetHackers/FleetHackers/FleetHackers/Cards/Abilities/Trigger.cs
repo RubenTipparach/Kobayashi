@@ -125,6 +125,9 @@ namespace FleetHackers.Cards.Abilities
 				case TriggerType.LeavesTheBattleZone:
 					toStringBuilder.Append("leaves the battle zone");
 					break;
+				case TriggerType.Annihilated:
+					toStringBuilder.Append("is annihilated");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported TriggerType for Trigger.");
 			}
@@ -159,6 +162,9 @@ namespace FleetHackers.Cards.Abilities
 					break;
 				case Condition.OneOtherShip:
 					toStringBuilder.Append(" with at least 1 other ship");
+					break;
+				case Condition.DuringCombat:
+					toStringBuilder.Append(" during a battle");
 					break;
 				default:
 						throw new InvalidOperationException("Unsupported Condition for Trigger.");

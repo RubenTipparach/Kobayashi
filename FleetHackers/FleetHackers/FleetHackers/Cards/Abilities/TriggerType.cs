@@ -11,6 +11,7 @@ namespace FleetHackers.Cards.Abilities
 		Interception,
 		EntersTheBattleZone,
 		EndOfYourTurn,
-		LeavesTheBattleZone
+		LeavesTheBattleZone,
+		Annihilated
 	}
 }

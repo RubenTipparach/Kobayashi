@@ -19,6 +19,9 @@ namespace FleetHackers.Cards.Enums
 		ControllersInfluence,
 
 		[Description("energy cost")]
-		EnergyCost
+		EnergyCost,
+
+		[Description("the combined defense of any opposing ships")]
+		OpposingShipDefense
 	}
 }
