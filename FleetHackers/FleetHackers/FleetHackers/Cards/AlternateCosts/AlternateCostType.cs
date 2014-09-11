@@ -10,6 +10,7 @@ namespace FleetHackers.Cards.AlternateCosts
 		Unknown,
 		ExhaustShip,
 		RemoveCounters,
-		Discard
+		Discard,
+		PutCounters
 	}
 }

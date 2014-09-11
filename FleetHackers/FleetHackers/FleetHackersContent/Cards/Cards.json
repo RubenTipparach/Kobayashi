@@ -1312,5 +1312,61 @@
 		"range": 3,
 		"attack": 5,
 		"defense": 8
+	},
+	{
+		"title": "Prudent Trader",
+		"energyCost": 5,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Mercenary, Trader",
+		"range": 3,
+		"attack": 4,
+		"defense": 5,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "LifeLossEffect:#FleetHackers.Cards.Effects",
+					"amountType": "Numeric",
+					"amount": 3,
+					"target": "You"
+				}
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"attackPump": -1,
+					"defensePump": -1
+				}
+			},
+			{
+				"__type": "SingleAttackAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"energyCost": 1,
+				"additionalCost":
+				{
+					"__type": "PutCountersCost:#FleetHackers.Cards.AlternateCosts",
+					"target": "This",
+					"numCounters": 1
+				},
+				"effect":
+				{
+					"__type": "RechargeEffect:#FleetHackers.Cards.Effects",
+					"target": "This"
+				}
+			}
+		]
 	}
 ]

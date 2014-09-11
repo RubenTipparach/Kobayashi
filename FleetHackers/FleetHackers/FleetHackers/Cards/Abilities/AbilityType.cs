@@ -15,6 +15,7 @@ namespace FleetHackers.Cards.Abilities
 		EntersWithCounters,
 		Activated,
 		Static,
-		AttachToShip
+		AttachToShip,
+		SingleAttack
 	}
 }
