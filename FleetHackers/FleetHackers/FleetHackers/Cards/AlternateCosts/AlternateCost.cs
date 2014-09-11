@@ -10,6 +10,7 @@ namespace FleetHackers.Cards.AlternateCosts
 	[KnownType(typeof(ExhaustShipCost))]
 	[KnownType(typeof(RemoveCountersCost))]
 	[KnownType(typeof(DiscardCost))]
+	[KnownType(typeof(PutCountersCost))]
 	public abstract class AlternateCost
 	{
 		public abstract AlternateCostType AlternateCostType { get; }
