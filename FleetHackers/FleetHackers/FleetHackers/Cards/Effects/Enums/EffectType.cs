@@ -32,6 +32,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		Fog,
 		LifeLoss,
 		Recharge,
-		Restore
+		Restore,
+		TapDown
 	}
 }

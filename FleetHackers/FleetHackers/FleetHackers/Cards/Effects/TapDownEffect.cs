@@ -9,13 +9,13 @@ using FleetHackers.Cards.Enums;
 namespace FleetHackers.Cards.Effects
 {
 	[DataContract]
-	public class ExhaustEffect : Effect
+	public class TapDownEffect : Effect
 	{
 		public override EffectType EffectType
 		{
 			get
 			{
-				return EffectType.Exhaust;
+				return EffectType.TapDown;
 			}
 		}
 
@@ -34,47 +34,27 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
-		[DataMember(Name = "optional")]
-		public bool Optional { get; set; }
-
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
 
-			if (Optional)
-			{
-				if (capitalize)
-				{
-					toStringBuilder.Append("You may exhaust ");
-				}
-				else
-				{
-					toStringBuilder.Append("you may exhaust ");
-				}
-			}
-			else
-			{
-				if (capitalize)
-				{
-					toStringBuilder.Append("Exhaust ");
-				}
-				else
-				{
-					toStringBuilder.Append("exhaust ");
-				}
-			}
-
 			switch (Target)
 			{
-				case Target.AnyShip:
-					toStringBuilder.Append("target ship");
-					break;
 				case Target.AttachedShip:
-					toStringBuilder.Append("the attached ship");
+					if (capitalize)
+					{
+						toStringBuilder.Append("The attached ship ");
+					}
+					else
+					{
+						toStringBuilder.Append("the attached ship ");
+					}
 					break;
 				default:
-					throw new InvalidOperationException("Unsupported Target for ExhaustEffect.");
+					throw new InvalidOperationException("Unsupported Target for TapDownEffect.");
 			}
+
+			toStringBuilder.Append("does not recharge during its controller's recharge step");
 
 			return toStringBuilder.ToString();
 		}
