@@ -1388,5 +1388,40 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Remote Shutoff",
+		"energyCost": 3,
+		"alignment": "Cryo",
+		"influenceRequirement": 2,
+		"supertype": "Device",
+		"subtype": "Upgrade",
+		"abilities": [
+			{
+				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "ExhaustEffect:#FleetHackers.Cards.Effects",
+					"target": "AttachedShip",
+					"optional": false
+				}
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "TapDownEffect:#FleetHackers.Cards.Effects",
+					"target": "AttachedShip"
+				}
+			}
+		]
 	}
 ]
