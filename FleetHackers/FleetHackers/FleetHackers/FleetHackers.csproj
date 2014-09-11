@@ -110,6 +110,7 @@
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />
     <Compile Include="Cards\Effects\RechargeEffect.cs" />
     <Compile Include="Cards\Effects\RemoveCounterEffect.cs" />
+    <Compile Include="Cards\Effects\RestoreEffect.cs" />
     <Compile Include="Cards\Effects\ScryEffect.cs" />
     <Compile Include="Cards\Effects\StaticCostReductionEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpForCountersEffect.cs" />
