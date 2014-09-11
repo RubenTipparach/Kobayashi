@@ -34,17 +34,34 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
+		[DataMember(Name = "optional")]
+		public bool Optional { get; set; }
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
 
-			if (capitalize)
+			if (Optional)
 			{
-				toStringBuilder.Append("Return ");
+				if (capitalize)
+				{
+					toStringBuilder.Append("You may return ");
+				}
+				else
+				{
+					toStringBuilder.Append("you may return ");
+				}
 			}
 			else
 			{
-				toStringBuilder.Append("return ");
+				if (capitalize)
+				{
+					toStringBuilder.Append("Return ");
+				}
+				else
+				{
+					toStringBuilder.Append("return ");
+				}
 			}
 
 			switch (Target)

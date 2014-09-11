@@ -1423,5 +1423,32 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Reparation Minion",
+		"energyCost": 5,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Minion",
+		"range": 2,
+		"attack": 2,
+		"defense": 3,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "RestoreEffect:#FleetHackers.Cards.Effects",
+					"target": "AnyShip",
+					"optional": "true"
+				}
+			}
+		]
 	}
 ]
