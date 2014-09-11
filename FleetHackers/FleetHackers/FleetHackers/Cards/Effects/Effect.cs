@@ -32,6 +32,7 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(FogEffect))]
 	[KnownType(typeof(LifeLossEffect))]
 	[KnownType(typeof(RechargeEffect))]
+	[KnownType(typeof(RestoreEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }
