@@ -22,18 +22,49 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
-		public Target Target { get; set; }
-
-		[DataMember(Name = "target")]
-		public string TargetString
+		private readonly List<Target> _targets = new List<Target>();
+		private ReadOnlyCollection<Target> _targetsView;
+		public ReadOnlyCollection<Target> Targets
 		{
 			get
 			{
-				return Target.ToString();
+				if (_targetsView == null)
+				{
+					_targetsView = new ReadOnlyCollection<Target>(_targets);
+				}
+				return _targetsView;
+			}
+		}
+
+		[DataMember(Name = "targets")]
+		private List<String> TargetsStrings
+		{
+			get
+			{
+				List<string> stringList = new List<string>();
+				foreach (Target tgt in _targets)
+				{
+					stringList.Add(tgt.ToString());
+				}
+				return stringList;
 			}
 			set
 			{
-				Target = (Target)Enum.Parse(typeof(Target), value);
+				_targets.Clear();
+				foreach (string str in value)
+				{
+					_targets.Add((Target)Enum.Parse(typeof(Target), str));
+				}
+			}
+		}
+
+		[OnDeserializing]
+		private void OnDeserializing(StreamingContext c)
+		{
+			if (_targets == null)
+			{
+				var field = GetType().GetField("_targets", BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.NonPublic);
+				field.SetValue(this, new List<Target>());
 			}
 		}
 
@@ -89,23 +120,37 @@ namespace FleetHackers.Cards.Effects
 			}
 
 			string targetOwns = string.Empty;
-			switch (Target)
+
+			List<string> targetStrings = new List<string>();
+			foreach (Target target in _targets)
 			{
-				case Target.AnyDevice:
-					toStringBuilder.Append("target device");
-					targetOwns = "that device's";
-					break;
-				case Target.OtherDevice:
-					toStringBuilder.Append("another target device");
-					targetOwns = "that device's";
-					break;
-				case Target.AnyShip:
-					toStringBuilder.Append("target ship");
-					targetOwns = "that ship's";
-					break;
-				default:
-					throw new InvalidOperationException("Unsupported Target for AnnihilateEffect.");
+				switch (target)
+				{
+					case Target.AnyDevice:
+						targetStrings.Add("target device");
+						targetOwns = "that device's";
+						break;
+					case Target.OtherDevice:
+						targetStrings.Add("another target device");
+						targetOwns = "that device's";
+						break;
+					case Target.AnyShip:
+						targetStrings.Add("target ship");
+						targetOwns = "that ship's";
+						break;
+					case Target.This:
+						targetStrings.Add(card.Title);
+						targetOwns = card.Title + "'s";
+						break;
+					case Target.AttackingShips:
+						targetStrings.Add("all attacking ships");
+						targetOwns = string.Empty;
+						break;
+					default:
+						throw new InvalidOperationException("Unsupported Target for AnnihilateEffect.");
+				}
 			}
+			toStringBuilder.Append(string.Join(" and ", targetStrings));
 
 			if (Condition != null)
 			{
