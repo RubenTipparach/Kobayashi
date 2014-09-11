@@ -192,14 +192,14 @@
 				[
 					{
 						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
-						"target": "AnyDevice"
+						"targets": [ "AnyDevice" ]
 					},
 					{
 						"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
 						"winEffect":
 						{
 							"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
-							"target": "OtherDevice",
+							"targets": [ "OtherDevice" ],
 							"optional": true
 						},
 						"loseEffect": null
@@ -576,7 +576,7 @@
 				[
 					{
 						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
-						"target": "AnyShip",
+						"targets": [ "AnyShip" ],
 						"condition":
 						{
 							"attribute": "Attack",
@@ -628,7 +628,7 @@
 				[
 					{
 						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
-						"target": "AnyShip",
+						"targets": [ "AnyShip" ],
 						"condition":
 						{
 							"attribute": "Attack",
@@ -1087,7 +1087,7 @@
 				[
 					{
 						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
-						"target": "AnyShip"
+						"targets": [ "AnyShip" ]
 					},
 					{
 						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
@@ -1112,7 +1112,7 @@
 				[
 					{
 						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
-						"target": "AnyShip",
+						"targets": [ "AnyShip" ],
 						"variableBinding":
 						{
 							"variable": "X",
@@ -1447,6 +1447,35 @@
 					"__type": "RestoreEffect:#FleetHackers.Cards.Effects",
 					"target": "AnyShip",
 					"optional": "true"
+				}
+			}
+		]
+	},
+	{
+		"title": "Sacrificial Lawkeeper",
+		"energyCost": 3,
+		"alignment": "Shadow",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Lawkeeper",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Interception",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+					"targets": [
+						"This",
+						"AttackingShips"
+					]
 				}
 			}
 		]
