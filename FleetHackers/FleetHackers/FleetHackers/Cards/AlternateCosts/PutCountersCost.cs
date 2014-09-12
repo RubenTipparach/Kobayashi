@@ -51,7 +51,7 @@ namespace FleetHackers.Cards.AlternateCosts
 
 			if (NumCounters == 1)
 			{
-				toStringBuilder.Append(" a counter on ");
+				toStringBuilder.Append("a counter on ");
 			}
 			else
 			{

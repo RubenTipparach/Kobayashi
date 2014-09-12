@@ -666,12 +666,14 @@
 			},
 			{
 				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
-				"additionalCost":
-				{
-					"__type": "RemoveCountersCost:#FleetHackers.Cards.AlternateCosts",
-					"target": "This",
-					"numCounters": 2
-				},
+				"additionalCosts":
+				[
+					{
+						"__type": "RemoveCountersCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "This",
+						"numCounters": 2
+					}
+				],
 				"effect":
 				{
 					"__type": "BounceEffect:#FleetHackers.Cards.Effects",
@@ -749,13 +751,15 @@
 			{
 				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
 				"energyCost": 1,
-				"additionalCost":
-				{
-					"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
-					"target": "YourChargedShips",
-					"numTargetsType": "Numeric",
-					"numTargets": 1
-				},
+				"additionalCosts":
+				[
+					{
+						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "YourChargedShips",
+						"numTargetsType": "Numeric",
+						"numTargets": 1
+					}
+				],
 				"effect":
 				{
 					"__type": "AttachToShipEffect:#FleetHackers.Cards.Effects",
@@ -989,13 +993,15 @@
 		"abilities": [
 			{
 				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
-				"additionalCost":
-				{
-					"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
-					"target": "This",
-					"numTargetsType": "Numeric",
-					"numTargets": 1
-				},
+				"additionalCosts":
+				[
+					{
+						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "This",
+						"numTargetsType": "Numeric",
+						"numTargets": 1
+					}
+				],
 				"effect":
 				{
 					"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
@@ -1142,11 +1148,13 @@
 		"abilities": [
 			{
 				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
-				"additionalCost":
-				{
-					"__type": "DiscardCost:#FleetHackers.Cards.AlternateCosts",
-					"numCards": 1
-				},
+				"additionalCosts":
+				[
+					{
+						"__type": "DiscardCost:#FleetHackers.Cards.AlternateCosts",
+						"numCards": 1
+					}
+				],
 				"effect":
 				{
 					"__type": "CloakEffect:#FleetHackers.Cards.Effects",
@@ -1355,12 +1363,14 @@
 			{
 				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
 				"energyCost": 1,
-				"additionalCost":
-				{
-					"__type": "PutCountersCost:#FleetHackers.Cards.AlternateCosts",
-					"target": "This",
-					"numCounters": 1
-				},
+				"additionalCosts":
+				[
+					{
+						"__type": "PutCountersCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "This",
+						"numCounters": 1
+					}
+				],
 				"effect":
 				{
 					"__type": "RechargeEffect:#FleetHackers.Cards.Effects",
@@ -1546,11 +1556,13 @@
 		"abilities": [
 			{
 				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
-				"additionalCost":
-				{
-					"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
-					"target": "This"
-				},
+				"additionalCosts":
+				[
+					{
+						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "This"
+					}
+				],
 				"effect":
 				{
 					"__type": "RemoveCounterEffect:#FleetHackers.Cards.Effects",
@@ -1560,6 +1572,49 @@
 					"numTargets": 1,
 					"targetsExact": true,
 					"target": "YourNonInfluence"
+				}
+			}
+		]
+	},
+	{
+		"title": "Trader Ship",
+		"energyCost": 3,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Trader",
+		"range": 3,
+		"attack": 2,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"attackPump": -1,
+					"defensePump": -1
+				}
+			},
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"additionalCosts":
+				[
+					{
+						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "This"
+					},
+					{
+						"__type": "PutCountersCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "This",
+						"numCounters": 1
+					}
+				],
+				"effect":
+				{
+					"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+					"numCards": 1
 				}
 			}
 		]
