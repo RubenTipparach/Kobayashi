@@ -1618,5 +1618,33 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Wingship Medic",
+		"energyCost": 5,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Wingship",
+		"range": 2,
+		"attack": 2,
+		"defense": 4,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "LifeGainEffect:#FleetHackers.Cards.Effects",
+					"amountType": "Numeric",
+					"amount": 4,
+					"target": "You"
+				}
+			}
+		]
 	}
 ]
