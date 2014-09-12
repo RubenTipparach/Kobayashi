@@ -1506,5 +1506,31 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Strategic Flagship",
+		"energyCost": 1,
+		"alignment": "Shadow",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Flagship, Hani",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "LeavesTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+					"numCards": 1
+				}
+			}
+		]
 	}
 ]
