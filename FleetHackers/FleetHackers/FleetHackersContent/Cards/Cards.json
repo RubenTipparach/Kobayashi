@@ -1532,5 +1532,36 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Trader Hani",
+		"energyCost": 2,
+		"alignment": "Shadow",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Trader, Hani",
+		"range": 3,
+		"attack": 1,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"additionalCost":
+				{
+					"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+					"target": "This"
+				},
+				"effect":
+				{
+					"__type": "RemoveCounterEffect:#FleetHackers.Cards.Effects",
+					"numCounters": 1,
+					"divideMethod": "None",
+					"countersExact": true,
+					"numTargets": 1,
+					"targetsExact": true,
+					"target": "YourNonInfluence"
+				}
+			}
+		]
 	}
 ]
