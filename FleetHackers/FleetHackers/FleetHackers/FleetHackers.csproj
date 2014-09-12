@@ -105,6 +105,7 @@
     <Compile Include="Cards\Effects\DiscardEffect.cs" />
     <Compile Include="Cards\Effects\FogEffect.cs" />
     <Compile Include="Cards\Effects\FreePlayEffect.cs" />
+    <Compile Include="Cards\Effects\HealthLossReductionEffect.cs" />
     <Compile Include="Cards\Effects\LifeGainEffect.cs" />
     <Compile Include="Cards\Effects\LifeLossEffect.cs" />
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />
