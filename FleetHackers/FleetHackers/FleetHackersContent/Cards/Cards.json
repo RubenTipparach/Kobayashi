@@ -1646,5 +1646,32 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Wise Defense",
+		"energyCost": 2,
+		"alignment": "Crystal",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+						"attackPump": 0,
+						"defensePump": 4,
+						"effectEnds": "BeginningOfYourTurn",
+						"target": "AnyShip"
+					},
+					{
+						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"numCards": 1
+					}
+				]
+			}
+		]
 	}
 ]
