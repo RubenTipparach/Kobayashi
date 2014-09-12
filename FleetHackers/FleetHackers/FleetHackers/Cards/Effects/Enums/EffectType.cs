@@ -33,6 +33,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		LifeLoss,
 		Recharge,
 		Restore,
-		TapDown
+		TapDown,
+		HealthLossReduction
 	}
 }

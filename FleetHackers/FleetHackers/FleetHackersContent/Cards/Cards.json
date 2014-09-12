@@ -1479,5 +1479,32 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Shielding Lawkeeper",
+		"energyCost": 2,
+		"alignment": "Shadow",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Lawkeeper, Hani",
+		"range": 3,
+		"attack": 1,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "LifeLoss",
+					"actor": "You"
+				},
+				"effect":
+				{
+					"__type": "HealthLossReductionEffect:#FleetHackers.Cards.Effects",
+					"amountType": "Numeric",
+					"amount": 1
+				}
+			}
+		]
 	}
 ]

@@ -44,7 +44,7 @@ namespace FleetHackers.Cards.Abilities
 				{
 					toStringBuilder.Append("When ");
 				}
-				else if (Trigger.TriggerType == TriggerType.Attack || Trigger.TriggerType == TriggerType.Interception)
+				else if (Trigger.TriggerType == TriggerType.Attack || Trigger.TriggerType == TriggerType.Interception || Trigger.TriggerType == TriggerType.LifeLoss)
 				{
 					toStringBuilder.Append("Whenever ");
 				}

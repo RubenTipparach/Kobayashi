@@ -104,6 +104,9 @@ namespace FleetHackers.Cards.Abilities
 					break;
 				case Target.None:
 					break;
+				case Target.You:
+					toStringBuilder.Append("your home base ");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Actor for Trigger.");
 			}
@@ -127,6 +130,9 @@ namespace FleetHackers.Cards.Abilities
 					break;
 				case TriggerType.Annihilated:
 					toStringBuilder.Append("is annihilated");
+					break;
+				case TriggerType.LifeLoss:
+					toStringBuilder.Append("loses health");
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported TriggerType for Trigger.");
