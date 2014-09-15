@@ -1739,5 +1739,38 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Ambush Destroyer",
+		"energyCost": 2,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Destroyer",
+		"range": 3,
+		"attack": 1,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "AmbushAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"attackPump": 1,
+					"defensePump": 1,
+					"effectEnds": "BeginningOfYourTurn",
+					"target": "AnyShip",
+					"optional": true
+				}
+			}
+		]
 	}
 ]
