@@ -37,6 +37,12 @@ namespace FleetHackers.Cards.Abilities
 				toStringBuilder.Append(", ");
 			}
 			toStringBuilder.Append(Effect.ToString(card, Condition == null));
+			toStringBuilder.Append(".");
+
+			if (Effect.HasReminderText)
+			{
+				toStringBuilder.Append(" " + Effect.ReminderText);
+			}
 
 			return toStringBuilder.ToString();
 		}

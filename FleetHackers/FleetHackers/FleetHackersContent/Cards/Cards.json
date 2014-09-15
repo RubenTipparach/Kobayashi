@@ -1708,5 +1708,36 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Adroit Pirate",
+		"energyCost": 4,
+		"alignment": "Pyre",
+		"influenceRequirement": 3,
+		"supertype": "Ship",
+		"subtype": "Pirate",
+		"range": 3,
+		"attack": 2,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"condition":
+				{
+					"attribute": "None",
+					"activePlayerAttribute": "OpponentJunkyardCount",
+					"comparison": "GreaterThanOrEqual",
+					"value": 10
+				},
+				"effect":
+				{
+					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"attackPump": 3,
+					"defensePump": 3,
+					"effectEnds": "None",
+					"target": "This"
+				}
+			}
+		]
 	}
 ]

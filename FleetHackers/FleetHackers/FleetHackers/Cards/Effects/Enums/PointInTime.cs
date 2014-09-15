@@ -7,6 +7,7 @@ namespace FleetHackers.Cards.Effects.Enums
 {
 	public enum PointInTime
 	{
+		None,
 		EndOfTurn,
 		BeginningOfYourTurn
 	}

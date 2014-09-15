@@ -10,6 +10,9 @@ namespace FleetHackers.Cards.Enums
 		None,
 
 		[Description("you control {0} ships")]
-		NumShipsYouControl
+		NumShipsYouControl,
+
+		[Description("an opponent has {0} cards in his or her junkyard")]
+		OpponentJunkyardCount
 	}
 }
