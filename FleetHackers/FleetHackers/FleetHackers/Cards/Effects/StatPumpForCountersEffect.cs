@@ -94,7 +94,7 @@ namespace FleetHackers.Cards.Effects
 			}
 			toStringBuilder.Append(DefensePump.ToString());
 
-			toStringBuilder.Append(" for each counter on it.");
+			toStringBuilder.Append(" for each counter on it");
 
 			return toStringBuilder.ToString();
 		}

@@ -122,10 +122,26 @@ namespace FleetHackers.Cards.Effects.Conditions
 			else
 			{
 				string comparisonString = string.Empty;
+
+				if (!(Comparison == Comparison.IsEven || Comparison == Comparison.IsOdd))
+				{
+					if (ValueType == AmountType.Numeric)
+					{
+						comparisonString = Value.ToString();
+					}
+					else
+					{
+						comparisonString = Description.ToDescription(ValueVar);
+					}
+				}
+
 				switch (Comparison)
 				{
 					case Comparison.IsEven:
 						comparisonString = "an even number of";
+						break;
+					case Comparison.GreaterThanOrEqual:
+						comparisonString = "at least " + comparisonString;
 						break;
 					default:
 						throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");

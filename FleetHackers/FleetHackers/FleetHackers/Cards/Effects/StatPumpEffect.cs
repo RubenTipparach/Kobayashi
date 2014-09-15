@@ -99,6 +99,8 @@ namespace FleetHackers.Cards.Effects
 
 			switch (EffectEnds)
 			{
+				case PointInTime.None:
+					break;
 				case PointInTime.EndOfTurn:
 					toStringBuilder.Append(" until end of turn");
 					break;

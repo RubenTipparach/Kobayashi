@@ -61,9 +61,19 @@ namespace FleetHackers.Cards.Effects
 
 			toStringBuilder.Append("are reduced by {");
 			toStringBuilder.Append(ReductionAmount.ToString());
-			toStringBuilder.Append("}, to a minimum of {1}. (Maneuvers with energy cost {0} still cost {0}.)");
+			toStringBuilder.Append("}, to a minimum of {1}");
 
 			return toStringBuilder.ToString();
+		}
+
+		public override bool HasReminderText { get { return true; } }
+
+		public override string ReminderText
+		{
+			get
+			{
+				return "(Maneuvers with energy cost {0} still cost {0}.)";
+			}
 		}
 	}
 }
