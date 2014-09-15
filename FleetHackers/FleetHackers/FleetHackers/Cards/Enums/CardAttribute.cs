@@ -22,6 +22,9 @@ namespace FleetHackers.Cards.Enums
 		EnergyCost,
 
 		[Description("the combined defense of any opposing ships")]
-		OpposingShipDefense
+		OpposingShipDefense,
+
+		[Description("the number of cards in {0} controller's junkyard")]
+		ConrollersJunkyardCount
 	}
 }
