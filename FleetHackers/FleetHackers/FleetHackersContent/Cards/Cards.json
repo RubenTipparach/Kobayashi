@@ -1673,5 +1673,40 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Accumulate Junk",
+		"energyCost": 2,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"targets": [ "AnyShip" ],
+						"condition":
+						{
+							"attribute": "Defense",
+							"comparison": "LessThanOrEqual",
+							"valueType": "Variable",
+							"valueVar": "X"
+						},
+						"varDefinitions":
+						[
+							{
+								"variable": "X",
+								"valueType": "Attribute",
+								"valueAttribute": "ConrollersJunkyardCount"
+							}
+						]
+					}
+				]
+			}
+		]
 	}
 ]

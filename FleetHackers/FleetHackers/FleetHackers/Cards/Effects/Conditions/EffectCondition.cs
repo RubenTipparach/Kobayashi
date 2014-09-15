@@ -113,7 +113,7 @@ namespace FleetHackers.Cards.Effects.Conditions
 				switch (Comparison)
 				{
 					case Comparison.LessThanOrEqual:
-						toStringBuilder.Append(" or less ");
+						toStringBuilder.Append(" or less");
 						break;
 					default:
 						throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
