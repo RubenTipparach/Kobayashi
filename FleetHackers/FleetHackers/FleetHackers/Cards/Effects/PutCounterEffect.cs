@@ -68,14 +68,21 @@ namespace FleetHackers.Cards.Effects
 				toStringBuilder.Append("up to ");
 			}
 
-			if (NumCounters == 1)
+			if ((NumCounters == 1) && CountersExact)
 			{
 				toStringBuilder.Append("a counter ");
 			}
 			else
 			{
 				toStringBuilder.Append(NumCounters.ToString());
-				toStringBuilder.Append(" counters ");
+				if (NumCounters == 1)
+				{
+					toStringBuilder.Append(" counter ");
+				}
+				else
+				{
+					toStringBuilder.Append(" counters ");
+				}
 			}
 
 			switch (DivideMethod)
@@ -118,6 +125,9 @@ namespace FleetHackers.Cards.Effects
 					break;
 				case Target.YourNonInfluence:
 					toStringBuilder.Append("target non-influence card you control");
+					break;
+				case Target.This:
+					toStringBuilder.Append(card.Title);
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for PutCounterEffect.");
