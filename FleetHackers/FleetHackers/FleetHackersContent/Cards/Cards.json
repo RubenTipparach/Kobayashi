@@ -1772,5 +1772,51 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Bipolar Minion",
+		"energyCost": 4,
+		"alignment": "Pyre",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Minion",
+		"range": 4,
+		"attack": 2,
+		"defense": 3,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
+					"winEffect":
+					{
+						"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+						"numCounters": 1,
+						"divideMethod": "None",
+						"countersExact": true,
+						"numTargets": 1,
+						"targetsExact": true,
+						"target": "This"
+					},
+					"loseEffect": null
+				}
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"attackPump": 1,
+					"defensePump": 1
+				}
+			}
+		]
 	}
 ]
