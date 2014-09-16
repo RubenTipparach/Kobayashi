@@ -17,6 +17,7 @@ namespace FleetHackers.Cards.Abilities
 		Static,
 		AttachToShip,
 		SingleAttack,
-		Ambush
+		Ambush,
+		Hexproof
 	}
 }

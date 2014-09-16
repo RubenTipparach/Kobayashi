@@ -88,6 +88,7 @@
     <Compile Include="Cards\Abilities\AttachToShipAbility.cs" />
     <Compile Include="Cards\Abilities\CloakAbility.cs" />
     <Compile Include="Cards\Abilities\EntersWithCountersAbility.cs" />
+    <Compile Include="Cards\Abilities\HexproofAbility.cs" />
     <Compile Include="Cards\Abilities\ImmediateAbility.cs" />
     <Compile Include="Cards\Abilities\SingleAttackAbility.cs" />
     <Compile Include="Cards\Abilities\StaticAbility.cs" />

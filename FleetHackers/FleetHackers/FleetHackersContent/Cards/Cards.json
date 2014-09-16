@@ -1818,5 +1818,21 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Budoka Trainee",
+		"energyCost": 3,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Budoka",
+		"range": 4,
+		"attack": 2,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "HexproofAbility:#FleetHackers.Cards.Abilities"
+			}
+		]
 	}
 ]

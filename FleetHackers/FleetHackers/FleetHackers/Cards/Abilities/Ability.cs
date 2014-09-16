@@ -17,6 +17,7 @@ namespace FleetHackers.Cards.Abilities
 	[KnownType(typeof(AttachToShipAbility))]
 	[KnownType(typeof(SingleAttackAbility))]
 	[KnownType(typeof(AmbushAbility))]
+	[KnownType(typeof(HexproofAbility))]
 	public abstract class Ability
 	{
 		public abstract AbilityType AbilityType { get; }
