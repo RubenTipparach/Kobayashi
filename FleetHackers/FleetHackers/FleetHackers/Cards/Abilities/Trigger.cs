@@ -86,6 +86,9 @@ namespace FleetHackers.Cards.Abilities
 			set { Condition = (Condition)Enum.Parse(typeof(Condition), value); }
 		}
 
+		[DataMember(Name = "variableBinding")]
+		public VariableBinding VariableBinding { get; set; }
+
 		public string ToString(Card card)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -107,32 +110,43 @@ namespace FleetHackers.Cards.Abilities
 				case Target.You:
 					toStringBuilder.Append("your home base ");
 					break;
+				case Target.YourShip:
+					toStringBuilder.Append("a ship you control ");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Actor for Trigger.");
 			}
 
+			string actorOwns = string.Empty;
 			switch (TriggerType)
 			{
 				case TriggerType.Attack:
 					toStringBuilder.Append("attacks");
+					actorOwns = "the attacking ship's";
 					break;
 				case TriggerType.Interception:
 					toStringBuilder.Append("intercepts");
+					actorOwns = "the intercepting ship's";
 					break;
 				case TriggerType.EntersTheBattleZone:
 					toStringBuilder.Append("enters the battle zone");
+					actorOwns = "that card's";
 					break;
 				case TriggerType.EndOfYourTurn:
 					toStringBuilder.Append("At the end of your turn");
+					actorOwns = card.Title + "'s";
 					break;
 				case TriggerType.LeavesTheBattleZone:
 					toStringBuilder.Append("leaves the battle zone");
+					actorOwns = "that card's";
 					break;
 				case TriggerType.Annihilated:
 					toStringBuilder.Append("is annihilated");
+					actorOwns = "the annihilated ship's";
 					break;
 				case TriggerType.LifeLoss:
 					toStringBuilder.Append("loses health");
+					actorOwns = "that home base's controller's";
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported TriggerType for Trigger.");
@@ -172,8 +186,20 @@ namespace FleetHackers.Cards.Abilities
 				case Condition.DuringCombat:
 					toStringBuilder.Append(" during a battle");
 					break;
+				case Condition.ByAttack:
+					toStringBuilder.Append(" by an attack");
+					break;
 				default:
 						throw new InvalidOperationException("Unsupported Condition for Trigger.");
+			}
+
+			if (VariableBinding != null)
+			{
+				toStringBuilder.Append(", ");
+				toStringBuilder.Append(Description.ToDescription(VariableBinding.Variable));
+				toStringBuilder.Append(" is ");
+				string attributeDescription = Description.ToDescription(VariableBinding.Attribute);
+				toStringBuilder.Append(string.Format(Description.ToDescription(VariableBinding.ValueModifier), actorOwns + " " + attributeDescription));
 			}
 
 			return toStringBuilder.ToString();

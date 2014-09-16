@@ -31,7 +31,14 @@ namespace FleetHackers.Cards.Abilities
 			{
 				StringBuilder toStringBuilder = new StringBuilder("The next time ");
 				toStringBuilder.Append(Trigger.ToString(card));
-				toStringBuilder.Append(", ");
+				if (Trigger.VariableBinding == null)
+				{
+					toStringBuilder.Append(", ");
+				}
+				else
+				{
+					toStringBuilder.Append(". ");
+				}
 				toStringBuilder.Append(Effect.ToString(card));
 				toStringBuilder.Append(".");
 
@@ -54,7 +61,14 @@ namespace FleetHackers.Cards.Abilities
 				}
 
 				toStringBuilder.Append(Trigger.ToString(card));
-				toStringBuilder.Append(", ");
+				if (Trigger.VariableBinding == null)
+				{
+					toStringBuilder.Append(", ");
+				}
+				else
+				{
+					toStringBuilder.Append(". ");
+				}
 				toStringBuilder.Append(Effect.ToString(card));
 				toStringBuilder.Append(".");
 

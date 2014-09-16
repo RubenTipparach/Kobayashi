@@ -14,6 +14,9 @@ namespace FleetHackers.Cards.Enums
 		HalfRoundedUp,
 
 		[Description("half {0}, rounded down")]
-		HalfRoundedDown
+		HalfRoundedDown,
+
+		[Description("twice {0}")]
+		Twice
 	}
 }

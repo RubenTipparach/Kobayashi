@@ -9,6 +9,7 @@ namespace FleetHackers.Cards.Enums
 	{
 		None,
 		OneOtherShip,
-		DuringCombat
+		DuringCombat,
+		ByAttack
 	}
 }
