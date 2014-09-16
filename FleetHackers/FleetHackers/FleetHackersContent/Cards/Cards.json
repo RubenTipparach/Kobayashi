@@ -1834,5 +1834,44 @@
 				"__type": "HexproofAbility:#FleetHackers.Cards.Abilities"
 			}
 		]
+	},
+	{
+		"title": "Corbomite Trap",
+		"energyCost": 3,
+		"alignment": "Pyre",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"subtype": "Trap",
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Annihilated",
+					"actor": "YourShip",
+					"condition": "ByAttack",
+					"variableBinding":
+					{
+						"variable": "X",
+						"attribute": "Attack",
+						"valueModifier": "Twice"
+					}
+				},
+				"effect":
+				{
+					"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+					"actor": "This",
+					"divideMethod": "None",
+					"amountType": "Variable",
+					"amountVar": "X",
+					"exact": true,
+					"targets":
+					[
+						"AttackingShip"
+					]
+				}
+			}
+		]
 	}
 ]

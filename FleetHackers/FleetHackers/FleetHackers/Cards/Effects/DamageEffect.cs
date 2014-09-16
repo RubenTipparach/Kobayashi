@@ -147,7 +147,7 @@ namespace FleetHackers.Cards.Effects
 
 			if (AmountType == AmountType.Variable)
 			{
-				toStringBuilder.Append(Description.ToDescription(AmountType));
+				toStringBuilder.Append(Description.ToDescription(AmountVar));
 			}
 			else
 			{
@@ -186,6 +186,9 @@ namespace FleetHackers.Cards.Effects
 						break;
 					case Target.InterceptingShip:
 						targetStrings.Add("target intercepting ship");
+						break;
+					case Target.AttackingShip:
+						targetStrings.Add("the attacking ship");
 						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for DamageEffect.");
