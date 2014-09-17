@@ -1873,5 +1873,42 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Counting Privateer",
+		"energyCost": 3,
+		"alignment": "Pyre",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Privateer",
+		"range": 3,
+		"attack": 2,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effect":
+				{
+					"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
+					"winEffect":
+					{
+						"__type": "MillEffect:#FleetHackers.Cards.Effects",
+						"target": "Opponent",
+						"numCards": 3
+					},
+					"loseEffect":
+					{
+						"__type": "MillEffect:#FleetHackers.Cards.Effects",
+						"target": "Opponent",
+						"numCards": 2
+					}
+				}
+			}
+		]
 	}
 ]

@@ -34,6 +34,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		Recharge,
 		Restore,
 		TapDown,
-		HealthLossReduction
+		HealthLossReduction,
+		Mill
 	}
 }

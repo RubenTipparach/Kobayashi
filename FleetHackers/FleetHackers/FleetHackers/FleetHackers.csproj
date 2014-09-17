@@ -110,6 +110,7 @@
     <Compile Include="Cards\Effects\HealthLossReductionEffect.cs" />
     <Compile Include="Cards\Effects\LifeGainEffect.cs" />
     <Compile Include="Cards\Effects\LifeLossEffect.cs" />
+    <Compile Include="Cards\Effects\MillEffect.cs" />
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />
     <Compile Include="Cards\Effects\RechargeEffect.cs" />
     <Compile Include="Cards\Effects\RemoveCounterEffect.cs" />
