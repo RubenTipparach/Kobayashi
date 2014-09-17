@@ -13,6 +13,7 @@ namespace FleetHackers.Cards.Abilities
 		EndOfYourTurn,
 		LeavesTheBattleZone,
 		Annihilated,
-		LifeLoss
+		LifeLoss,
+		Damage
 	}
 }

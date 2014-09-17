@@ -138,6 +138,10 @@ namespace FleetHackers.Cards.Effects
 						targetStrings.Add("target ship");
 						targetOwns = "that ship's";
 						break;
+					case Target.ThatShip:
+						targetStrings.Add("that ship");
+						targetOwns = "that ship's";
+						break;
 					case Target.This:
 						targetStrings.Add(card.Title);
 						targetOwns = card.Title + "'s";
