@@ -5,6 +5,7 @@ using System.Text;
 using FleetHackers.Cards.Effects;
 using System.Runtime.Serialization;
 using FleetHackers.Cards.Enums;
+using System.Collections.ObjectModel;
 
 namespace FleetHackers.Cards.Abilities
 {
@@ -22,8 +23,20 @@ namespace FleetHackers.Cards.Abilities
 		[DataMember(Name="trigger")]
 		public Trigger Trigger { get; set; }
 
-		[DataMember(Name="effect")]
-		public Effect Effect { get; set; }
+		[DataMember(Name = "effects")]
+		private readonly List<Effect> _effects = new List<Effect>();
+		private ReadOnlyCollection<Effect> _effectsView;
+		public ReadOnlyCollection<Effect> Effects
+		{
+			get
+			{
+				if (_effectsView == null)
+				{
+					_effectsView = new ReadOnlyCollection<Effect>(_effects);
+				}
+				return _effectsView;
+			}
+		}
 
 		public override string ToString(Card card)
 		{
@@ -39,8 +52,14 @@ namespace FleetHackers.Cards.Abilities
 				{
 					toStringBuilder.Append(". ");
 				}
-				toStringBuilder.Append(Effect.ToString(card));
-				toStringBuilder.Append(".");
+				List<string> effectStrings = new List<string>();
+				bool ucase = false;
+				foreach (Effect effect in Effects)
+				{
+					effectStrings.Add(effect.ToString(card, ucase) + "." + (effect.HasReminderText ? " " + effect.ReminderText : string.Empty));
+					ucase = true;
+				}
+				toStringBuilder.Append(string.Join(" ", effectStrings));
 
 				return toStringBuilder.ToString();
 			}
@@ -69,8 +88,14 @@ namespace FleetHackers.Cards.Abilities
 				{
 					toStringBuilder.Append(". ");
 				}
-				toStringBuilder.Append(Effect.ToString(card));
-				toStringBuilder.Append(".");
+				List<string> effectStrings = new List<string>();
+				bool ucase = false;
+				foreach (Effect effect in Effects)
+				{
+					effectStrings.Add(effect.ToString(card, ucase) + "." + (effect.HasReminderText ? " " + effect.ReminderText : string.Empty));
+					ucase = true;
+				}
+				toStringBuilder.Append(string.Join(" ", effectStrings));
 
 				return toStringBuilder.ToString();
 			}
