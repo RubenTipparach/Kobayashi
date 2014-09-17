@@ -35,6 +35,7 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(RestoreEffect))]
 	[KnownType(typeof(TapDownEffect))]
 	[KnownType(typeof(HealthLossReductionEffect))]
+	[KnownType(typeof(MillEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }
