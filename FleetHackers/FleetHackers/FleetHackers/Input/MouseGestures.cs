@@ -45,36 +45,46 @@ namespace FleetHackers.Input
 			if (mouseState.LeftButton == ButtonState.Pressed)
 			{
 				Ray pickRay = RayPick.GetPickRay(camera, graphicsDevice);
-
+				Nullable<float> result = new Nullable<float>();
 				// Ray collides with a model.
 				foreach (BasicModel model in models)
 				{
-					Nullable<float> result = pickRay.Intersects(model.BoundingSphere);
+					result = pickRay.Intersects(model.BoundingSphere);
 					float selectedDistance = float.MaxValue;
 
-					if (result.HasValue)
+					if (result.HasValue && mouseDataReporter.traveling == false)
 					{
 						selectedDistance = result.Value;
 
-						Console.WriteLine(string.Format("Slected ship, {0} units away.", selectedDistance));
+						// Do something to get more ship collided information
+						mouseDataReporter.PlayerShipSelected["blueship"] = true;
+						Console.WriteLine(string.Format("Slected ship, {0}.", "blueship"));
+						mouseDataReporter.traveling = false;
 						return mouseDataReporter;
 					}
 				}
 
-				// Ray collides with the game board's plane.
-				float collisionAt = float.MaxValue;
-				Nullable<float> boardCollision = pickRay.Intersects(boardPlane);
-
-				if (boardCollision.HasValue)
+				if (!result.HasValue)
 				{
-					collisionAt = boardCollision.Value;
-					Vector3 pointOfContact = pickRay.Position + pickRay.Direction * boardCollision.Value;
-					
-					mouseDataReporter.traveling = true;
-					mouseDataReporter.newCoordinates = pointOfContact;
+					// Ray collides with the game board's plane.
+					float collisionAt = float.MaxValue;
+					Nullable<float> boardCollision = pickRay.Intersects(boardPlane);
 
-					Console.WriteLine(string.Format("Slected board space, {0} units away. At position {1}", collisionAt, pointOfContact));
-					return mouseDataReporter;
+					// prototype hardcodeing
+					if (boardCollision.HasValue && mouseDataReporter.traveling == false && mouseDataReporter.PlayerShipSelected["blueship"] == true)
+					{
+
+						collisionAt = boardCollision.Value;
+						Vector3 pointOfContact = pickRay.Position + pickRay.Direction * boardCollision.Value;
+
+						mouseDataReporter.traveling = true;
+						mouseDataReporter.PlayerShipSelected["blueship"] = false;
+
+						mouseDataReporter.newCoordinates = pointOfContact;
+
+						// Console.WriteLine(string.Format("Slected board space, {0} units away. At position {1}", collisionAt, pointOfContact));
+						return mouseDataReporter;
+					}
 				}
 			}
 

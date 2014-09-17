@@ -121,6 +121,7 @@ namespace FleetHackers
 
 			_movementDataReporter.traveling = false;
 			_movementDataReporter.newCoordinates = Vector3.Zero;
+			_movementDataReporter.PlayerShipSelected = new Dictionary<string, bool>();
 
 			base.Initialize();
 		}
@@ -157,6 +158,7 @@ namespace FleetHackers
 					Quaternion.Identity,
 					new Vector3(.01f),
 					GraphicsDevice));
+			_movementDataReporter.PlayerShipSelected.Add("blueship", false);
 
 			//Load sky box.
 			_skybox = new Skybox(Content, GraphicsDevice, Content.Load<TextureCube>("Textures\\bluestreak"));

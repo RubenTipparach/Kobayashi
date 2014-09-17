@@ -20,5 +20,7 @@ namespace FleetHackers.EngineStructs
 		/// The new coordinates.
 		/// </summary>
 		public Vector3 newCoordinates;
+
+		public Dictionary<string, bool> PlayerShipSelected;
 	}
 }

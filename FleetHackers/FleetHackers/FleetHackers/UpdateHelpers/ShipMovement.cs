@@ -26,6 +26,18 @@ namespace FleetHackers.UpdateHelpers
 		/// <returns></returns>
 		public static MovementReport MoveShip(MovementReport movementDataReporter, GameTime gameTime, ref BasicModel model)
 		{
+			// something to control which ships move
+			string[] moveShips = new string[movementDataReporter.PlayerShipSelected.Count];
+
+			foreach (KeyValuePair<string, bool> ps in movementDataReporter.PlayerShipSelected)
+			{
+				if (ps.Value == true)
+				{
+					moveShips[0] = ps.Key;
+				}
+			}
+
+			// now check if we need to move teh ship.
 			if (movementDataReporter.traveling)
 			{
 				Vector3 flatNewCoords = new Vector3(movementDataReporter.newCoordinates.X, model.Position.Y, movementDataReporter.newCoordinates.Z);
@@ -50,7 +62,7 @@ namespace FleetHackers.UpdateHelpers
 
 				model.Position = Vector3.Lerp(model.Position, movementDataReporter.newCoordinates, .01f);
 
-				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 10)
+				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 50)
 				{
 					movementDataReporter.traveling = false;
 				}
