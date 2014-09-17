@@ -33,14 +33,21 @@ namespace FleetHackers.UpdateHelpers
 				_source = model.Position;
 				_destination = movementDataReporter.newCoordinates;
 				_point = flatNewCoords;
-
-				Matrix rotationTo = Matrix.Invert(Matrix.CreateLookAt(model.Position, flatNewCoords, Vector3.Up));
 				
-				Quaternion sample = Quaternion.CreateFromRotationMatrix(rotationTo);
+				// Metod 1
+				// Matrix rotationTo = Matrix.Invert(Matrix.CreateLookAt(model.Position, flatNewCoords, Vector3.Up));
+				// Quaternion.CreateFromRotationMatrix(rotationTo);
 
+				// Method 2 (more efficient)
+				Vector3 target =  Vector3.Normalize(model.Position - flatNewCoords);
+				float angle = (float)Math.Atan2(target.X, target.Z);
+				Quaternion sample = Quaternion.CreateFromAxisAngle(Vector3.Up, angle);
+				
+				// Method 3 Cross Product, then ACos(A dot B), then Q.CreateFrom(Angle, Axis);
+
+				// Do the interpolations.
 				model.Rotation = Quaternion.Slerp(model.Rotation, sample, .2f);
 
-				//model.Position += Vector3.Transform(Vector3.Forward, model.Rotation) * (float)gameTime.ElapsedGameTime.TotalMilliseconds * .5f;
 				model.Position = Vector3.Lerp(model.Position, movementDataReporter.newCoordinates, .01f);
 
 				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 10)
