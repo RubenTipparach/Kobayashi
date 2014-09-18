@@ -116,6 +116,9 @@ namespace FleetHackers.Cards.Abilities
 				case Target.AnySource:
 					toStringBuilder.Append("any source ");
 					break;
+				case Target.AttachedShip:
+					toStringBuilder.Append("attached ship ");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Actor for Trigger.");
 			}
@@ -152,7 +155,11 @@ namespace FleetHackers.Cards.Abilities
 					actorOwns = "that home base's controller's";
 					break;
 				case TriggerType.Damage:
-					toStringBuilder.Append("deals damage to");
+					toStringBuilder.Append("inflicts damage to");
+					actorOwns = "that ship's";
+					break;
+				case TriggerType.AssaultDamage:
+					toStringBuilder.Append("inflicts assault damage to");
 					actorOwns = "that ship's";
 					break;
 				default:
@@ -175,6 +182,9 @@ namespace FleetHackers.Cards.Abilities
 						break;
 					case Target.This:
 						targetStrings.Add(card.Title);
+						break;
+					case Target.AnyShip:
+						targetStrings.Add("a ship");
 						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for Trigger.");

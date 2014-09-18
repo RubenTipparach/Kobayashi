@@ -2033,5 +2033,54 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Lethal Cannon",
+		"energyCost": 3,
+		"alignment": "Pyre",
+		"influenceRequirement": 1,
+		"supertype": "Device",
+		"subtype": "Upgrade",
+		"abilities": [
+			{
+				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "AssaultDamage",
+					"actor": "AttachedShip",
+					"targets":
+					[
+						"AnyShip"
+					]
+				},
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"targets": [ "DamagedShip" ]
+					}
+				]
+			},
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"additionalCosts":
+				[
+					{
+						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "YourChargedShips",
+						"numTargetsType": "Numeric",
+						"numTargets": 1
+					}
+				],
+				"effect":
+				{
+					"__type": "AttachToShipEffect:#FleetHackers.Cards.Effects",
+					"target": "TargettedShip"
+				}
+			}
+		]
 	}
 ]

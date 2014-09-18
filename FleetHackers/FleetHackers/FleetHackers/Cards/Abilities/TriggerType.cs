@@ -14,6 +14,7 @@ namespace FleetHackers.Cards.Abilities
 		LeavesTheBattleZone,
 		Annihilated,
 		LifeLoss,
-		Damage
+		Damage,
+		AssaultDamage
 	}
 }
