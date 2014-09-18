@@ -2082,5 +2082,34 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Long-Range Pirate",
+		"energyCost": 2,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Privateer",
+		"range": 4,
+		"attack": 2,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "MillEffect:#FleetHackers.Cards.Effects",
+						"target": "Opponent",
+						"numCards": 2
+					}
+				]
+			}
+		]
 	}
 ]
