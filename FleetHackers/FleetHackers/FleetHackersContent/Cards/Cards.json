@@ -2122,5 +2122,16 @@
 		"range": 4,
 		"attack": 2,
 		"defense": 2
+	},
+	{
+		"title": "Long-Range Sentinel",
+		"energyCost": 7,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Sentinel",
+		"range": 4,
+		"attack": 5,
+		"defense": 4
 	}
 ]
