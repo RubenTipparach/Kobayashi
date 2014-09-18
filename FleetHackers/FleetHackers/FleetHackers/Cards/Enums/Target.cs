@@ -30,6 +30,7 @@ namespace FleetHackers.Cards.Enums
 		TargetShipController,
 		AttackingShip,
 		AnySource,
-		ThatShip
+		ThatShip,
+		DamagedShip
 	}
 }
