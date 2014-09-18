@@ -11,13 +11,13 @@ using FleetHackers.Cards.Enums;
 namespace FleetHackers.Cards.Effects
 {
 	[DataContract]
-	public class StatPumpEffect : Effect
+	public class RangePumpEffect : Effect
 	{
 		public override EffectType EffectType
 		{
 			get
 			{
-				return EffectType.StatPump;
+				return EffectType.RangePump;
 			}
 		}
 
@@ -30,14 +30,8 @@ namespace FleetHackers.Cards.Effects
 			set { Target = (Target)Enum.Parse(typeof(Target), value); }
 		}
 
-		[DataMember(Name = "attackPump")]
-		public int AttackPump { get; set; }
-
-		[DataMember(Name = "defensePump")]
-		public int DefensePump { get; set; }
-
-		[DataMember(Name = "also")]
-		public bool Also { get; set; }
+		[DataMember(Name = "rangePump")]
+		public int RangePump { get; set; }
 
 		public PointInTime EffectEnds { get; set; }
 
@@ -61,52 +55,13 @@ namespace FleetHackers.Cards.Effects
 				case Target.AnyShip:
 					toStringBuilder.Append(capitalize ? "Target ship " : "target ship ");
 					break;
-				case Target.TargettedShip:
-					toStringBuilder.Append(capitalize ? "That ship " : "that ship ");
-					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for StatPumpEffect.");
 			}
 
-			if (Also)
-			{
-				toStringBuilder.Append("also ");
-			}
-
-			toStringBuilder.Append("gets ");
-			if (AttackPump > 0)
-			{
-				toStringBuilder.Append("+");
-			}
-			else if(AttackPump == 0)
-			{
-				if (DefensePump < 0)
-				{
-					toStringBuilder.Append("-");
-				}
-				else
-				{
-					toStringBuilder.Append("+");
-				}
-			}
-			toStringBuilder.Append(AttackPump.ToString());
-			toStringBuilder.Append("/");
-			if (DefensePump > 0)
-			{
-				toStringBuilder.Append("+");
-			}
-			else if (DefensePump == 0)
-			{
-				if (AttackPump < 0)
-				{
-					toStringBuilder.Append("-");
-				}
-				else
-				{
-					toStringBuilder.Append("+");
-				}
-			}
-			toStringBuilder.Append(DefensePump.ToString());
+			toStringBuilder.Append("gains ");
+			toStringBuilder.Append(RangePump.ToString());
+			toStringBuilder.Append(" range");
 
 			switch (EffectEnds)
 			{
