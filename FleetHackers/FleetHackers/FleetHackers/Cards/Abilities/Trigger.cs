@@ -186,6 +186,9 @@ namespace FleetHackers.Cards.Abilities
 					case Target.AnyShip:
 						targetStrings.Add("a ship");
 						break;
+					case Target.AnyHomeBase:
+						targetStrings.Add("a home base");
+						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for Trigger.");
 				}

@@ -50,17 +50,34 @@ namespace FleetHackers.Cards.Effects
 			set { DivideMethod = (DivideMethod)Enum.Parse(typeof(DivideMethod), value); }
 		}
 
+		[DataMember(Name = "optional")]
+		public bool Optional { get; set; }
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
 
-			if (capitalize)
+			if (Optional)
 			{
-				toStringBuilder.Append("Put ");
+				if (capitalize)
+				{
+					toStringBuilder.Append("You may put ");
+				}
+				else
+				{
+					toStringBuilder.Append("you may put ");
+				}
 			}
 			else
 			{
-				toStringBuilder.Append("put ");
+				if (capitalize)
+				{
+					toStringBuilder.Append("Put ");
+				}
+				else
+				{
+					toStringBuilder.Append("put ");
+				}
 			}
 
 			if (!CountersExact)
