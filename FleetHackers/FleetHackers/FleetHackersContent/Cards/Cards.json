@@ -2089,7 +2089,7 @@
 		"alignment": "Pyre",
 		"influenceRequirement": 2,
 		"supertype": "Ship",
-		"subtype": "Privateer",
+		"subtype": "Pirate",
 		"range": 4,
 		"attack": 2,
 		"defense": 1,
@@ -2111,5 +2111,16 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Long-Range Privateer",
+		"energyCost": 3,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Privateer",
+		"range": 4,
+		"attack": 2,
+		"defense": 2
 	}
 ]
