@@ -2167,5 +2167,53 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Short-Range Minion",
+		"energyCost": 3,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Pirate",
+		"range": 2,
+		"attack": 2,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Damage",
+					"actor": "This",
+					"targets":
+					[
+						"AnyHomeBase"
+					]
+				},
+				"effects":
+				[
+					{
+						"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+						"numCounters": 1,
+						"divideMethod": "None",
+						"countersExact": true,
+						"numTargets": 1,
+						"targetsExact": true,
+						"target": "This",
+						"optional": true
+					}
+				]
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"attackPump": 1,
+					"defensePump": 1
+				}
+			}
+		]
 	}
 ]
