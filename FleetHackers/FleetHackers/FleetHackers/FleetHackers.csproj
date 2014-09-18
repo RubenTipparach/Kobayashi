@@ -142,7 +142,9 @@
     <Compile Include="Cards\Effects\ForfeitEffect.cs" />
     <Compile Include="Cards\Effects\Enums\PointInTime.cs" />
     <Compile Include="Cards\Effects\PutCounterEffect.cs" />
+    <Compile Include="Cards\Enums\Position.cs" />
     <Compile Include="Cards\Enums\ValueModifier.cs" />
+    <Compile Include="Cards\Enums\Zone.cs" />
     <Compile Include="Cards\StateCheck.cs" />
     <Compile Include="Cards\Effects\StateCheckEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpEffect.cs" />

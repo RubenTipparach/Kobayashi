@@ -5,12 +5,10 @@ using System.Text;
 
 namespace FleetHackers.Cards.Enums
 {
-	public enum CheckStateType
+	public enum Position
 	{
 		None,
-		SummoningSick,
-		AttackedThisTurn,
-		Exhausted,
-		AttackingInTheSameDirection
+		AdjacentToAttacking,
+		AdjacentToHomeworld
 	}
 }

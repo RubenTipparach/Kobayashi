@@ -1427,7 +1427,9 @@
 				[
 					{
 						"__type": "RestoreEffect:#FleetHackers.Cards.Effects",
-						"target": "AnyShip"
+						"target": "AnyShip",
+						"junkyardOwner": "You",
+						"targetZone": "YourHand"
 					}
 				]
 			}
@@ -1493,7 +1495,9 @@
 					{
 						"__type": "RestoreEffect:#FleetHackers.Cards.Effects",
 						"target": "AnyShip",
-						"optional": "true"
+						"optional": "true",
+						"junkyardOwner": "You",
+						"targetZone": "YourHand"
 					}
 				]
 			}
@@ -2133,5 +2137,35 @@
 		"range": 4,
 		"attack": 5,
 		"defense": 4
+	},
+	{
+		"title": "Ruinous Treason",
+		"energyCost": 5,
+		"alignment": "Pyre",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"subtype": "Trap",
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Attack",
+					"actor": "YourShip"
+				},
+				"effects":
+				[
+					{
+						"__type": "RestoreEffect:#FleetHackers.Cards.Effects",
+						"target": "AnyShip",
+						"junkyardOwner": "Opponent",
+						"targetZone": "BattleZone",
+						"position": "AdjacentToAttacking",
+						"states": [ "Exhausted", "AttackingInTheSameDirection" ]
+					}
+				]
+			}
+		]
 	}
 ]
