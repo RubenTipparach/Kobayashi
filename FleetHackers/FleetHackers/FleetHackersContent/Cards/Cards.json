@@ -1998,5 +1998,40 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Increase Range",
+		"energyCost": 2,
+		"alignment": "Pyre",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+						"rangePump": 1,
+						"effectEnds": "BeginningOfYourTurn",
+						"target": "AnyShip"
+					},
+					{
+						"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
+						"winEffect":
+						{
+							"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+							"attackPump": 1,
+							"defensePump": 0,
+							"effectEnds": "BeginningOfYourTurn",
+							"target": "TargettedShip",
+							"also": true
+						},
+						"loseEffect": null
+					}
+				]
+			}
+		]
 	}
 ]
