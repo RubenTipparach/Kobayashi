@@ -2215,5 +2215,49 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Speedwarp Criminal",
+		"energyCost": 2,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Criminal",
+		"range": 4,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"additionalCosts":
+				[
+					{
+						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "This",
+						"numTargetsType": "Numeric",
+						"numTargets": 1
+					}
+				],
+				"effect":
+				{
+					"__type": "ModalEffect:#FleetHackers.Cards.Effects",
+					"effects":
+					[
+						{
+							"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+							"rangePump": 1,
+							"effectEnds": "BeginningOfYourTurn",
+							"target": "AnyShip"
+						},
+						{
+							"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+							"rangePump": -1,
+							"effectEnds": "BeginningOfYourTurn",
+							"target": "AnyShip"
+						}
+					]
+				}
+			}
+		]
 	}
 ]

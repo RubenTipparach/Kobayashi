@@ -36,6 +36,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		TapDown,
 		HealthLossReduction,
 		Mill,
-		RangePump
+		RangePump,
+		Modal
 	}
 }

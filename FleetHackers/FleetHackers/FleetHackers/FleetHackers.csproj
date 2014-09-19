@@ -111,6 +111,7 @@
     <Compile Include="Cards\Effects\LifeGainEffect.cs" />
     <Compile Include="Cards\Effects\LifeLossEffect.cs" />
     <Compile Include="Cards\Effects\MillEffect.cs" />
+    <Compile Include="Cards\Effects\ModalEffect.cs" />
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />
     <Compile Include="Cards\Effects\RangePumpEffect.cs" />
     <Compile Include="Cards\Effects\RechargeEffect.cs" />
