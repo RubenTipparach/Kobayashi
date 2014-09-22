@@ -2358,5 +2358,55 @@
 		"range": 5,
 		"attack": 3,
 		"defense": 3
+	},
+	{
+		"title": "Unexpected Destroyer",
+		"energyCost": 4,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Destroyer",
+		"range": 4,
+		"attack": 3,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "AmbushAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "StateCheckEffect:#FleetHackers.Cards.Effects",
+						"target": "None",
+						"checks":
+						[
+							{
+								"state": "YourTurn",
+								"test": false
+							}
+						],
+						"resultEffect":
+						{
+							"__type": "ForfeitEffect:#FleetHackers.Cards.Effects",
+							"target": "This",
+							"alternateCosts":
+							[
+								{
+									"__type": "DiscardCost:#FleetHackers.Cards.AlternateCosts",
+									"numCards": 1
+								}
+							]
+						}
+					}
+				]
+			}
+		]
 	}
 ]

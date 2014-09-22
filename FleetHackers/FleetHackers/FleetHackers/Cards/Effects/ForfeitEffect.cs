@@ -5,6 +5,8 @@ using System.Text;
 using System.Runtime.Serialization;
 using FleetHackers.Cards.Effects.Enums;
 using FleetHackers.Cards.Enums;
+using FleetHackers.Cards.AlternateCosts;
+using System.Collections.ObjectModel;
 
 namespace FleetHackers.Cards.Effects
 {
@@ -34,6 +36,28 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
+		[DataMember(Name = "alternateCosts")]
+		private readonly List<AlternateCost> _alternateCosts = new List<AlternateCost>();
+		private ReadOnlyCollection<AlternateCost> _alternateCostsView;
+		public ReadOnlyCollection<AlternateCost> AlternateCosts
+		{
+			get
+			{
+				if (_alternateCosts == null)
+				{
+					return null;
+				}
+				if (_alternateCostsView == null)
+				{
+					_alternateCostsView = new ReadOnlyCollection<AlternateCost>(_alternateCosts);
+				}
+				return _alternateCostsView;
+			}
+		}
+
+		[DataMember(Name = "AlternateEnergyCost")]
+		public int AlternateEnergyCost { get; set; }
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -56,6 +80,25 @@ namespace FleetHackers.Cards.Effects
 					throw new InvalidOperationException("Unsupported Target for ForfeitEffect.");
 			}
 
+			if (((_alternateCosts != null) && (_alternateCosts.Count > 0)) || (AlternateEnergyCost > 0))
+			{
+				toStringBuilder.Append(" unless you ");
+
+				List<string> alternateCostStrings = new List<string>();
+				if (AlternateEnergyCost > 0)
+				{
+					alternateCostStrings.Add(string.Format("pay {{{0}}}", AlternateEnergyCost));
+				}
+				if ((_alternateCosts != null) && (_alternateCosts.Count > 0))
+				{
+					foreach (AlternateCost cost in _alternateCosts)
+					{
+						alternateCostStrings.Add(cost.ToString(card, false));
+					}
+				}
+				toStringBuilder.Append(string.Join(" and ", alternateCostStrings));
+			}
+			
 			return toStringBuilder.ToString();
 		}
 	}

@@ -70,12 +70,13 @@ namespace FleetHackers.Cards.Effects
 			{
 				case Target.This:
 					toStringBuilder.Append(card.Title);
+					toStringBuilder.Append(" ");
+					break;
+				case Target.None:
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for StateCheckEffect.");
 			}
-
-			toStringBuilder.Append(" ");
 
 			List<string> checkStrings = new List<string>();
 			foreach (StateCheck check in Checks)
@@ -100,6 +101,16 @@ namespace FleetHackers.Cards.Effects
 						else
 						{
 							checkStrings.Add("didn't attack this turn");
+						}
+						break;
+					case CheckStateType.YourTurn:
+						if (check.Test)
+						{
+							checkStrings.Add("it's your turn");
+						}
+						else
+						{
+							checkStrings.Add("it's not your turn");
 						}
 						break;
 					default:
