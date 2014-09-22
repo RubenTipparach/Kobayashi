@@ -2347,5 +2347,16 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Ultra-Range Minion",
+		"energyCost": 5,
+		"alignment": "Pyre",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Minion",
+		"range": 5,
+		"attack": 3,
+		"defense": 3
 	}
 ]
