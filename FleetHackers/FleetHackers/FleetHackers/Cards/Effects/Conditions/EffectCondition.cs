@@ -121,16 +121,22 @@ namespace FleetHackers.Cards.Effects.Conditions
 			}
 			else
 			{
+				string plural = string.Empty;
 				string comparisonString = string.Empty;
 
 				if (!(Comparison == Comparison.IsEven || Comparison == Comparison.IsOdd))
 				{
 					if (ValueType == AmountType.Numeric)
 					{
+						if (Value != 1)
+						{
+							plural = "s";
+						}
 						comparisonString = Value.ToString();
 					}
 					else
 					{
+						plural = "s";
 						comparisonString = Description.ToDescription(ValueVar);
 					}
 				}
@@ -141,13 +147,20 @@ namespace FleetHackers.Cards.Effects.Conditions
 						comparisonString = "an even number of";
 						break;
 					case Comparison.GreaterThanOrEqual:
-						comparisonString = "at least " + comparisonString;
+						if ((ValueType == AmountType.Numeric) && (Value == 1))
+						{
+							comparisonString = "a";
+						}
+						else
+						{
+							comparisonString = "at least " + comparisonString;
+						}
 						break;
 					default:
 						throw new InvalidOperationException("Unsupported Comparison for EffectCondition.");
 				}
 
-				toStringBuilder.Append(string.Format(Description.ToDescription(ActivePlayerAttribute), comparisonString));
+				toStringBuilder.Append(string.Format(Description.ToDescription(ActivePlayerAttribute), comparisonString, plural));
 			}
 
 			return toStringBuilder.ToString();

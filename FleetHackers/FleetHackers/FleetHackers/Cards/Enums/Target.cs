@@ -32,6 +32,10 @@ namespace FleetHackers.Cards.Enums
 		AnySource,
 		ThatShip,
 		DamagedShip,
-		AnyHomeBase
+		AnyHomeBase,
+		ThatPlayer,
+		HomeBaseController,
+		DeviceChooserControls,
+		ChosenDevice
 	}
 }

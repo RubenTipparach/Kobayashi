@@ -38,6 +38,9 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(MillEffect))]
 	[KnownType(typeof(RangePumpEffect))]
 	[KnownType(typeof(ModalEffect))]
+	[KnownType(typeof(UnblockableEffect))]
+	[KnownType(typeof(ChooseTargetEffect))]
+	[KnownType(typeof(GainControlEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }

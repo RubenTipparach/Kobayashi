@@ -2259,5 +2259,66 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Thieving Privateer",
+		"energyCost": 1,
+		"alignment": "Pyre",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Privateer",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"condition":
+				{
+					"attribute": "None",
+					"activePlayerAttribute": "NumDevicesOpponentControls",
+					"comparison": "GreaterThanOrEqual",
+					"valueType": "Numeric",
+					"value": 1
+				},
+				"effect":
+				{
+					"__type": "UnblockableEffect:#FleetHackers.Cards.Effects",
+					"target": "This",
+					"subject": "ThatPlayer"
+				}
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "AssaultDamage",
+					"actor": "This",
+					"targets":
+					[
+						"AnyHomeBase"
+					]
+				},
+				"effects":
+				[
+					{
+						"__type": "ChooseTargetEffect:#FleetHackers.Cards.Effects",
+						"target": "DeviceChooserControls",
+						"chooser": "HomeBaseController",
+						"successEffects":
+						[
+							{
+								"__type": "ForfeitEffect:#FleetHackers.Cards.Effects",
+								"target": "This"
+							},
+							{
+								"__type": "GainControlEffect:#FleetHackers.Cards.Effects",
+								"target": "ChosenDevice"
+							}
+						]
+					}
+				]
+			}
+		]
 	}
 ]
