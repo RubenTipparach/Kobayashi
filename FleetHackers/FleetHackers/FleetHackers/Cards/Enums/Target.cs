@@ -36,6 +36,7 @@ namespace FleetHackers.Cards.Enums
 		ThatPlayer,
 		HomeBaseController,
 		DeviceChooserControls,
-		ChosenDevice
+		ChosenDevice,
+		ExhaustedShip
 	}
 }

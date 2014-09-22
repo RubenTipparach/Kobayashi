@@ -154,6 +154,10 @@ namespace FleetHackers.Cards.Effects
 						targetStrings.Add("the damaged ship");
 						targetOwns = "that ship's";
 						break;
+					case Target.ExhaustedShip:
+						targetStrings.Add("target exhausted ship");
+						targetOwns = "that ship's";
+						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for AnnihilateEffect.");
 				}

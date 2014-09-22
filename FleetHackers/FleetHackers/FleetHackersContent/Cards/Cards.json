@@ -2320,5 +2320,32 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Time to Kill",
+		"energyCost": 3,
+		"alignment": "Pyre",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"targets": [ "ExhaustedShip" ],
+						"condition":
+						{
+							"attribute": "Defense",
+							"comparison": "LessThanOrEqual",
+							"valueType": "Numeric",
+							"value": 4
+						}
+					}
+				]
+			}
+		]
 	}
 ]
