@@ -11,6 +11,7 @@ namespace FleetHackers.Cards.Enums
 		SummoningSick,
 		AttackedThisTurn,
 		Exhausted,
-		AttackingInTheSameDirection
+		AttackingInTheSameDirection,
+		YourTurn
 	}
 }
