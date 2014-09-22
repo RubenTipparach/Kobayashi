@@ -37,6 +37,9 @@ namespace FleetHackers.Cards.Effects.Enums
 		HealthLossReduction,
 		Mill,
 		RangePump,
-		Modal
+		Modal,
+		Unblockable,
+		ChooseTarget,
+		GainControl
 	}
 }
