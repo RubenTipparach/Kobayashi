@@ -92,6 +92,21 @@ namespace FleetHackers.Cards.Effects
 		[DataMember(Name = "variableBinding")]
 		public VariableBinding VariableBinding { get; set; }
 
+		public Subtype Subtype { get; set; }
+
+		[DataMember(Name = "subtype")]
+		public string SubtypeString
+		{
+			get
+			{
+				return Subtype.ToString();
+			}
+			set
+			{
+				Subtype = (Subtype)Enum.Parse(typeof(Subtype), value);
+			}
+		}
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -157,6 +172,10 @@ namespace FleetHackers.Cards.Effects
 					case Target.ExhaustedShip:
 						targetStrings.Add("target exhausted ship");
 						targetOwns = "that ship's";
+						break;
+					case Target.OtherShipsOfType:
+						targetStrings.Add(string.Format("all other {0} ships", Subtype.ToString()));
+						targetOwns = "those ships'";
 						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for AnnihilateEffect.");

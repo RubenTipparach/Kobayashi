@@ -49,6 +49,21 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
+		public Subtype CardSubtype { get; set; }
+
+		[DataMember(Name = "cardSubtype")]
+		public string CardSubtypeString
+		{
+			get
+			{
+				return CardSubtype.ToString();
+			}
+			set
+			{
+				CardSubtype = (Subtype)Enum.Parse(typeof(Subtype), value);
+			}
+		}
+
 		[DataMember(Name = "optional")]
 		public bool Optional { get; set; }
 
@@ -89,8 +104,16 @@ namespace FleetHackers.Cards.Effects
 				toStringBuilder.Append("put target ");
 			}
 
-			toStringBuilder.Append(CardType.ToString().ToLower());
-			toStringBuilder.Append(" from your deck into your hand");
+			if (CardSubtype != Subtype.None)
+			{
+				toStringBuilder.Append(CardSubtype.ToString());
+			}
+			if (CardType != Supertype.None)
+			{
+				toStringBuilder.Append(CardType.ToString().ToLower());
+			}
+
+			toStringBuilder.Append(" card from your deck into your hand");
 
 			return toStringBuilder.ToString();
 		}
