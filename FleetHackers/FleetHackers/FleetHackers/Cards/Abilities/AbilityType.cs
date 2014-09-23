@@ -19,6 +19,7 @@ namespace FleetHackers.Cards.Abilities
 		SingleAttack,
 		Ambush,
 		Hexproof,
-		Haste
+		Haste,
+		ConditionalPlay
 	}
 }

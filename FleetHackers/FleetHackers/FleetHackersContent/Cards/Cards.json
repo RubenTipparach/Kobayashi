@@ -2473,5 +2473,28 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Beefy Tinker",
+		"energyCost": 2,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Tinker",
+		"range": 3,
+		"attack": 4,
+		"defense": 4,
+		"abilities": [
+			{
+				"__type": "ConditionalPlayAbility:#FleetHackers.Cards.Abilities",
+				"condition":
+				{
+					"attribute": "None",
+					"activePlayerAttribute": "OtherNonInfluenceCardsPlayedThisTurn",
+					"comparison": "GreaterThanOrEqual",
+					"value": 2
+				}
+			}
+		]
 	}
 ]
