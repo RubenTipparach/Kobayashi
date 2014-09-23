@@ -2496,5 +2496,31 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Counterlash",
+		"energyCost": 3,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"subtype": "Trap",
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Attack",
+					"actor": "OpponentShip"
+				},
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"targets": [ "AttackingShip" ]
+					}
+				]
+			}
+		]
 	}
 ]
