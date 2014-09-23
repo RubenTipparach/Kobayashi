@@ -107,6 +107,7 @@
     <Compile Include="Cards\Effects\CloakEffect.cs" />
     <Compile Include="Cards\Effects\Conditions\Comparison.cs" />
     <Compile Include="Cards\Effects\Conditions\EffectCondition.cs" />
+    <Compile Include="Cards\Effects\CostReductionEffect.cs" />
     <Compile Include="Cards\Effects\DiscardEffect.cs" />
     <Compile Include="Cards\Effects\FogEffect.cs" />
     <Compile Include="Cards\Effects\FreePlayEffect.cs" />

@@ -42,6 +42,7 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(ChooseTargetEffect))]
 	[KnownType(typeof(GainControlEffect))]
 	[KnownType(typeof(MicrodroneEffect))]
+	[KnownType(typeof(CostReductionEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }

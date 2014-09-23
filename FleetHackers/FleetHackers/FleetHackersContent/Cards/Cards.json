@@ -2576,5 +2576,30 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Elite Maneuver",
+		"energyCost": 3,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "CostReductionEffect:#FleetHackers.Cards.Effects",
+						"target": "NextCardYouPlayThisTurn",
+						"reductionAmount": 4
+					},
+					{
+						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"numCards": 1
+					}
+				]
+			}
+		]
 	}
 ]
