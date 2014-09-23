@@ -87,6 +87,7 @@
     <Compile Include="Cards\Abilities\AmbushAbility.cs" />
     <Compile Include="Cards\Abilities\AttachToShipAbility.cs" />
     <Compile Include="Cards\Abilities\CloakAbility.cs" />
+    <Compile Include="Cards\Abilities\ConditionalPlayAbility.cs" />
     <Compile Include="Cards\Abilities\EntersWithCountersAbility.cs" />
     <Compile Include="Cards\Abilities\HasteAbility.cs" />
     <Compile Include="Cards\Abilities\HexproofAbility.cs" />

@@ -16,6 +16,9 @@ namespace FleetHackers.Cards.Enums
 		OpponentJunkyardCount,
 
 		[Description("an opponent controls {0} device{1}")]
-		NumDevicesOpponentControls
+		NumDevicesOpponentControls,
+
+		[Description("you have played {0} other non-influence card{1} this turn")]
+		OtherNonInfluenceCardsPlayedThisTurn
 	}
 }
