@@ -72,7 +72,7 @@ namespace FleetHackers.Cards.Effects
 		{
 			get
 			{
-				return "(Maneuvers with energy cost {0} still cost {0}.)";
+				return "(" + CardType.ToString() + "s with energy cost {0} still cost {0}.)";
 			}
 		}
 	}
