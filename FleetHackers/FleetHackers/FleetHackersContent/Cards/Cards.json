@@ -986,6 +986,7 @@
 						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
 						"target": "You",
 						"cardType": "Maneuver",
+						"cardSubtype": "None",
 						"optional": "true"
 					}
 				]
@@ -1249,6 +1250,7 @@
 						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
 						"target": "You",
 						"cardType": "Influence",
+						"cardSubtype": "None",
 						"optional": "false"
 					}
 				]
@@ -2422,6 +2424,53 @@
 		"abilities": [
 			{
 				"__type": "HasteAbility:#FleetHackers.Cards.Abilities"
+			}
+		]
+	},
+	{
+		"title": "Basic Whyr",
+		"energyCost": 1,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Whyr",
+		"range": 4,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+						"target": "You",
+						"cardType": "None",
+						"cardSubtype": "Whyr",
+						"optional": "false"
+					}
+				]
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Annihilated",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"targets": [ "OtherShipsOfType" ],
+						"subtype": "Whyr"
+					}
+				]
 			}
 		]
 	}
