@@ -114,6 +114,7 @@
     <Compile Include="Cards\Effects\HealthLossReductionEffect.cs" />
     <Compile Include="Cards\Effects\LifeGainEffect.cs" />
     <Compile Include="Cards\Effects\LifeLossEffect.cs" />
+    <Compile Include="Cards\Effects\MicrodroneEffect.cs" />
     <Compile Include="Cards\Effects\MillEffect.cs" />
     <Compile Include="Cards\Effects\ModalEffect.cs" />
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />

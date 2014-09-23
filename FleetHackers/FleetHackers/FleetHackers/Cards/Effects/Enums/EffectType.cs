@@ -40,6 +40,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		Modal,
 		Unblockable,
 		ChooseTarget,
-		GainControl
+		GainControl,
+		Microdrone
 	}
 }
