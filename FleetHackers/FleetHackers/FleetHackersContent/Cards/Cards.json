@@ -2408,5 +2408,21 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Ambush Tinker",
+		"energyCost": 4,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Defender, Tinker",
+		"range": 3,
+		"attack": 3,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "HasteAbility:#FleetHackers.Cards.Abilities"
+			}
+		]
 	}
 ]
