@@ -2547,5 +2547,34 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Drone Constructor",
+		"energyCost": 2,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Science",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "MicrodroneEffect:#FleetHackers.Cards.Effects",
+						"optional": true,
+						"count": 1
+					}
+				]
+			}
+		]
 	}
 ]
