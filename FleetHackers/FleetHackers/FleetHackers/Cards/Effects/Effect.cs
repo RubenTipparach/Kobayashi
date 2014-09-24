@@ -45,6 +45,7 @@ namespace FleetHackers.Cards.Effects
 	[KnownType(typeof(CostReductionEffect))]
 	[KnownType(typeof(AddEnergyCrystalEffect))]
 	[KnownType(typeof(RechargeCrystalsEffect))]
+	[KnownType(typeof(RemoveDamageEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }

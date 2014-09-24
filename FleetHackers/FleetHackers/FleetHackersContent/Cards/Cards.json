@@ -2703,5 +2703,41 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Hidden Decoy",
+		"energyCost": 3,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Device",
+		"subtype": "Upgrade",
+		"abilities": [
+			{
+				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "SecretTechAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Annihilated",
+					"actor": "AttachedShip",
+					"replacement": true
+				},
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"targets": [ "This" ]
+					},
+					{
+						"__type": "RemoveDamageEffect:#FleetHackers.Cards.Effects",
+						"target": "AttachedShip"
+					}
+				]
+			}
+		]
 	}
 ]

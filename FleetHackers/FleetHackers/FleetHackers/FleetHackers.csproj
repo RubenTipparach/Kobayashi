@@ -92,6 +92,7 @@
     <Compile Include="Cards\Abilities\HasteAbility.cs" />
     <Compile Include="Cards\Abilities\HexproofAbility.cs" />
     <Compile Include="Cards\Abilities\ImmediateAbility.cs" />
+    <Compile Include="Cards\Abilities\SecretTechAbility.cs" />
     <Compile Include="Cards\Abilities\SingleAttackAbility.cs" />
     <Compile Include="Cards\Abilities\StaticAbility.cs" />
     <Compile Include="Cards\Abilities\TruefireAbility.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Cards\Effects\RechargeCrystalsEffect.cs" />
     <Compile Include="Cards\Effects\RechargeEffect.cs" />
     <Compile Include="Cards\Effects\RemoveCounterEffect.cs" />
+    <Compile Include="Cards\Effects\RemoveDamageEffect.cs" />
     <Compile Include="Cards\Effects\RestoreEffect.cs" />
     <Compile Include="Cards\Effects\ScryEffect.cs" />
     <Compile Include="Cards\Effects\StaticCostReductionEffect.cs" />

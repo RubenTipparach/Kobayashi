@@ -89,6 +89,9 @@ namespace FleetHackers.Cards.Abilities
 		[DataMember(Name = "variableBinding")]
 		public VariableBinding VariableBinding { get; set; }
 
+		[DataMember(Name = "replacement")]
+		public bool Replacement { get; set; }
+
 		public string ToString(Card card)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -147,7 +150,14 @@ namespace FleetHackers.Cards.Abilities
 					actorOwns = "that card's";
 					break;
 				case TriggerType.Annihilated:
-					toStringBuilder.Append("is annihilated");
+					if (Replacement)
+					{
+						toStringBuilder.Append("would be annihilated");
+					}
+					else
+					{
+						toStringBuilder.Append("is annihilated");
+					}
 					actorOwns = "the annihilated ship's";
 					break;
 				case TriggerType.LifeLoss:

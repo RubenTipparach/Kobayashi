@@ -44,6 +44,7 @@ namespace FleetHackers.Cards.Effects.Enums
 		Microdrone,
 		CostReduction,
 		AddEnergyCrystal,
-		RechargeCrystals
+		RechargeCrystals,
+		RemoveDamage
 	}
 }

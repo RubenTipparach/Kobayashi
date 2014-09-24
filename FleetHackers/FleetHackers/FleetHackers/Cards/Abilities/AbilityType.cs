@@ -20,6 +20,7 @@ namespace FleetHackers.Cards.Abilities
 		Ambush,
 		Hexproof,
 		Haste,
-		ConditionalPlay
+		ConditionalPlay,
+		SecretTech
 	}
 }
