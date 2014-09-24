@@ -101,6 +101,7 @@
     <Compile Include="Cards\AlternateCosts\ExhaustShipCost.cs" />
     <Compile Include="Cards\AlternateCosts\PutCountersCost.cs" />
     <Compile Include="Cards\AlternateCosts\RemoveCountersCost.cs" />
+    <Compile Include="Cards\Effects\AddEnergyCrystalEffect.cs" />
     <Compile Include="Cards\Effects\AttachToShipEffect.cs" />
     <Compile Include="Cards\Effects\BounceEffect.cs" />
     <Compile Include="Cards\Effects\ChooseTargetEffect.cs" />

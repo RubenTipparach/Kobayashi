@@ -64,8 +64,14 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
+		[DataMember(Name = "cardTitle")]
+		public string CardTitle { get; set; }
+
 		[DataMember(Name = "optional")]
 		public bool Optional { get; set; }
+
+		[DataMember(Name = "playImmediate")]
+		public bool PlayImmediate { get; set; }
 
 		public override string ToString(Card card, bool capitalize = false)
 		{
@@ -107,13 +113,32 @@ namespace FleetHackers.Cards.Effects
 			if (CardSubtype != Subtype.None)
 			{
 				toStringBuilder.Append(CardSubtype.ToString());
+				toStringBuilder.Append(" ");
 			}
 			if (CardType != Supertype.None)
 			{
 				toStringBuilder.Append(CardType.ToString().ToLower());
+				toStringBuilder.Append(" ");
 			}
 
-			toStringBuilder.Append(" card from your deck into your hand");
+			toStringBuilder.Append("card");
+
+			if (!string.IsNullOrWhiteSpace(CardTitle))
+			{
+				toStringBuilder.Append(" named ");
+				toStringBuilder.Append(CardTitle);
+			}
+
+			toStringBuilder.Append(" from your deck into ");
+
+			if (PlayImmediate)
+			{
+				toStringBuilder.Append("the battle zone");
+			}
+			else
+			{
+				toStringBuilder.Append("your hand");
+			}
 
 			return toStringBuilder.ToString();
 		}
