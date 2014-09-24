@@ -2636,5 +2636,72 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Heavy Hull Plating",
+		"energyCost": 6,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Device",
+		"subtype": "Upgrade",
+		"abilities": [
+			{
+				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "RechargeCrystalsEffect:#FleetHackers.Cards.Effects",
+						"numCrystals": 2,
+						"exact": false,
+						"optional": true
+					}
+				]
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"target": "AttachedShip",
+					"attackPump": 4,
+					"defensePump": 4
+				}
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+					"rangePump": -1,
+					"target": "AttachedShip"
+				}
+			},
+			{
+				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"energyCost": 5,
+				"additionalCosts":
+				[
+					{
+						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"target": "YourChargedShips",
+						"numTargetsType": "Numeric",
+						"numTargets": 1
+					}
+				],
+				"effect":
+				{
+					"__type": "AttachToShipEffect:#FleetHackers.Cards.Effects",
+					"target": "TargettedShip"
+				}
+			}
+		]
 	}
 ]

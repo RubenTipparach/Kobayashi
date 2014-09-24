@@ -55,12 +55,23 @@ namespace FleetHackers.Cards.Effects
 				case Target.AnyShip:
 					toStringBuilder.Append(capitalize ? "Target ship " : "target ship ");
 					break;
+				case Target.AttachedShip:
+					toStringBuilder.Append(capitalize ? "Attached ship " : "attached ship ");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for StatPumpEffect.");
 			}
 
-			toStringBuilder.Append("gains ");
-			toStringBuilder.Append(RangePump.ToString());
+			if (RangePump < 0)
+			{
+				toStringBuilder.Append("loses ");
+			}
+			else
+			{
+				toStringBuilder.Append("gains ");
+			}
+
+			toStringBuilder.Append(Math.Abs(RangePump).ToString());
 			toStringBuilder.Append(" range");
 
 			switch (EffectEnds)
