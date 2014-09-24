@@ -95,6 +95,10 @@ namespace FleetHackers.Cards.Abilities
 					effectStrings.Add(effect.ToString(card, ucase) + "." + (effect.HasReminderText ? " " + effect.ReminderText : string.Empty));
 					ucase = true;
 				}
+				if (Trigger.Replacement)
+				{
+					toStringBuilder.Append("instead ");
+				}
 				toStringBuilder.Append(string.Join(" ", effectStrings));
 
 				return toStringBuilder.ToString();
