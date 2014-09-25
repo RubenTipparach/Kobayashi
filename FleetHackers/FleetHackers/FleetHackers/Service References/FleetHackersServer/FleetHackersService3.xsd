@@ -10,27 +10,6 @@
     <xs:sequence />
   </xs:complexType>
   <xs:element name="AlternateCost" nillable="true" type="tns:AlternateCost" />
-  <xs:complexType name="PutCountersCost">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AlternateCost">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="numCounters" type="xs:int" />
-          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="PutCountersCost" nillable="true" type="tns:PutCountersCost" />
-  <xs:complexType name="DiscardCost">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AlternateCost">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="numCards" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="DiscardCost" nillable="true" type="tns:DiscardCost" />
   <xs:complexType name="ExhaustShipCost">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AlternateCost">
@@ -55,4 +34,25 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="RemoveCountersCost" nillable="true" type="tns:RemoveCountersCost" />
+  <xs:complexType name="DiscardCost">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlternateCost">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numCards" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DiscardCost" nillable="true" type="tns:DiscardCost" />
+  <xs:complexType name="PutCountersCost">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlternateCost">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numCounters" type="xs:int" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PutCountersCost" nillable="true" type="tns:PutCountersCost" />
 </xs:schema>

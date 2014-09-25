@@ -118,11 +118,40 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
+    <None Include="Service References\FleetHackersServer\FleetHackersService.disco" />
     <None Include="Service References\FleetHackersServer\FleetHackers.FleetHackersServer.Card.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\FleetHackersServer\FleetHackers.FleetHackersServer.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService.wsdl" />
+    <None Include="Service References\FleetHackersServer\FleetHackersService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersServer\FleetHackersService8.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\FleetHackersServer\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
@@ -164,34 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\FleetHackersServer\Service1.wsdl" />
-    <None Include="Service References\FleetHackersServer\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetHackersServer\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetHackersServer\Service12.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetHackersServer\Service13.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetHackersServer\Service14.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetHackersServer\Service15.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetHackersServer\Service16.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetHackersServer\Service17.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FleetHackersServer\Service18.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\FleetHackersServer\" />

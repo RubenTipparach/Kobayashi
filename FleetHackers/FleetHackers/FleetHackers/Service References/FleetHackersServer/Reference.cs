@@ -331,10 +331,10 @@ namespace FleetHackers.FleetHackersServer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AlternateCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.PutCountersCost))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.DiscardCost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ExhaustShipCost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RemoveCountersCost))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.DiscardCost))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.PutCountersCost))]
     public partial class AlternateCost : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -364,20 +364,20 @@ namespace FleetHackers.FleetHackersServer {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Ability", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.CloakAbility))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ActivatedAbility))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.AttachToShipAbility))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.SingleAttackAbility))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.AmbushAbility))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.HexproofAbility))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.HasteAbility))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ConditionalPlayAbility))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.SecretTechAbility))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.StaticAbility))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.TriggeredAbility))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ImmediateAbility))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.TruefireAbility))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.CloakAbility))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.EntersWithCountersAbility))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.HexproofAbility))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.AttachToShipAbility))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.SecretTechAbility))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.AmbushAbility))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.SingleAttackAbility))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.HasteAbility))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ConditionalPlayAbility))]
     public partial class Ability : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -401,6 +401,13 @@ namespace FleetHackers.FleetHackersServer {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CloakAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.SerializableAttribute()]
+    public partial class CloakAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -456,6 +463,71 @@ namespace FleetHackers.FleetHackersServer {
                 }
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AttachToShipAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.SerializableAttribute()]
+    public partial class AttachToShipAbility : FleetHackers.FleetHackersServer.Ability {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SingleAttackAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.SerializableAttribute()]
+    public partial class SingleAttackAbility : FleetHackers.FleetHackersServer.Ability {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AmbushAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.SerializableAttribute()]
+    public partial class AmbushAbility : FleetHackers.FleetHackersServer.Ability {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HexproofAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.SerializableAttribute()]
+    public partial class HexproofAbility : FleetHackers.FleetHackersServer.Ability {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HasteAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.SerializableAttribute()]
+    public partial class HasteAbility : FleetHackers.FleetHackersServer.Ability {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConditionalPlayAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.SerializableAttribute()]
+    public partial class ConditionalPlayAbility : FleetHackers.FleetHackersServer.Ability {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FleetHackers.FleetHackersServer.EffectCondition conditionField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FleetHackers.FleetHackersServer.EffectCondition condition {
+            get {
+                return this.conditionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.conditionField, value) != true)) {
+                    this.conditionField = value;
+                    this.RaisePropertyChanged("condition");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SecretTechAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.SerializableAttribute()]
+    public partial class SecretTechAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -568,13 +640,6 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CloakAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
-    [System.SerializableAttribute()]
-    public partial class CloakAbility : FleetHackers.FleetHackersServer.Ability {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntersWithCountersAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class EntersWithCountersAbility : FleetHackers.FleetHackersServer.Ability {
@@ -598,100 +663,34 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HexproofAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
-    [System.SerializableAttribute()]
-    public partial class HexproofAbility : FleetHackers.FleetHackersServer.Ability {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AttachToShipAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
-    [System.SerializableAttribute()]
-    public partial class AttachToShipAbility : FleetHackers.FleetHackersServer.Ability {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SecretTechAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
-    [System.SerializableAttribute()]
-    public partial class SecretTechAbility : FleetHackers.FleetHackersServer.Ability {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AmbushAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
-    [System.SerializableAttribute()]
-    public partial class AmbushAbility : FleetHackers.FleetHackersServer.Ability {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleAttackAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
-    [System.SerializableAttribute()]
-    public partial class SingleAttackAbility : FleetHackers.FleetHackersServer.Ability {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HasteAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
-    [System.SerializableAttribute()]
-    public partial class HasteAbility : FleetHackers.FleetHackersServer.Ability {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConditionalPlayAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
-    [System.SerializableAttribute()]
-    public partial class ConditionalPlayAbility : FleetHackers.FleetHackersServer.Ability {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FleetHackers.FleetHackersServer.EffectCondition conditionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FleetHackers.FleetHackersServer.EffectCondition condition {
-            get {
-                return this.conditionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.conditionField, value) != true)) {
-                    this.conditionField = value;
-                    this.RaisePropertyChanged("condition");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Effect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RangePumpEffect))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.FreePlayEffect))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.HealthLossReductionEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.TutorEffect))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.FreePlayEffect))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.CloakEffect))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.LifeGainEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RemoveCounterEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.FogEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.LifeLossEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RechargeEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RestoreEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.TapDownEffect))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.HealthLossReductionEffect))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.DamageEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.MillEffect))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RangePumpEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ModalEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.UnblockableEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ChooseTargetEffect))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.PacifismEffect))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.GainControlEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.MicrodroneEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.CostReductionEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.AddEnergyCrystalEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RechargeCrystalsEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RemoveDamageEffect))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.LifeGainEffect))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.DamageEffect))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.CloakEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.StatPumpEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.AnnihilateEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.CoinFlipEffect))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.GainControlEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ExhaustEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ForfeitEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.StateCheckEffect))]
@@ -703,6 +702,7 @@ namespace FleetHackers.FleetHackersServer {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.AttachToShipEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.StatPumpForCountersEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ScryEffect))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.PacifismEffect))]
     public partial class Effect : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -724,68 +724,6 @@ namespace FleetHackers.FleetHackersServer {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PutCountersCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
-    [System.SerializableAttribute()]
-    public partial class PutCountersCost : FleetHackers.FleetHackersServer.AlternateCost {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int numCountersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string targetField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int numCounters {
-            get {
-                return this.numCountersField;
-            }
-            set {
-                if ((this.numCountersField.Equals(value) != true)) {
-                    this.numCountersField = value;
-                    this.RaisePropertyChanged("numCounters");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string target {
-            get {
-                return this.targetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.targetField, value) != true)) {
-                    this.targetField = value;
-                    this.RaisePropertyChanged("target");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DiscardCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
-    [System.SerializableAttribute()]
-    public partial class DiscardCost : FleetHackers.FleetHackersServer.AlternateCost {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int numCardsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int numCards {
-            get {
-                return this.numCardsField;
-            }
-            set {
-                if ((this.numCardsField.Equals(value) != true)) {
-                    this.numCardsField = value;
-                    this.RaisePropertyChanged("numCards");
-                }
             }
         }
     }
@@ -902,57 +840,48 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RangePumpEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DiscardCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
     [System.SerializableAttribute()]
-    public partial class RangePumpEffect : FleetHackers.FleetHackersServer.Effect {
+    public partial class DiscardCost : FleetHackers.FleetHackersServer.AlternateCost {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string effectEndsField;
+        private int numCardsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int numCards {
+            get {
+                return this.numCardsField;
+            }
+            set {
+                if ((this.numCardsField.Equals(value) != true)) {
+                    this.numCardsField = value;
+                    this.RaisePropertyChanged("numCards");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PutCountersCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
+    [System.SerializableAttribute()]
+    public partial class PutCountersCost : FleetHackers.FleetHackersServer.AlternateCost {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int rangePumpField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string subtypeField;
+        private int numCountersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string targetField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string effectEnds {
+        public int numCounters {
             get {
-                return this.effectEndsField;
+                return this.numCountersField;
             }
             set {
-                if ((object.ReferenceEquals(this.effectEndsField, value) != true)) {
-                    this.effectEndsField = value;
-                    this.RaisePropertyChanged("effectEnds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int rangePump {
-            get {
-                return this.rangePumpField;
-            }
-            set {
-                if ((this.rangePumpField.Equals(value) != true)) {
-                    this.rangePumpField = value;
-                    this.RaisePropertyChanged("rangePump");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string subtype {
-            get {
-                return this.subtypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.subtypeField, value) != true)) {
-                    this.subtypeField = value;
-                    this.RaisePropertyChanged("subtype");
+                if ((this.numCountersField.Equals(value) != true)) {
+                    this.numCountersField = value;
+                    this.RaisePropertyChanged("numCounters");
                 }
             }
         }
@@ -973,38 +902,54 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FreePlayEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HealthLossReductionEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
     [System.SerializableAttribute()]
-    public partial class FreePlayEffect : FleetHackers.FleetHackersServer.Effect {
+    public partial class HealthLossReductionEffect : FleetHackers.FleetHackersServer.Effect {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FleetHackers.FleetHackersServer.EffectCondition conditionField;
+        private int amountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string targetField;
+        private string amountTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string amountVarField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FleetHackers.FleetHackersServer.EffectCondition condition {
+        public int amount {
             get {
-                return this.conditionField;
+                return this.amountField;
             }
             set {
-                if ((object.ReferenceEquals(this.conditionField, value) != true)) {
-                    this.conditionField = value;
-                    this.RaisePropertyChanged("condition");
+                if ((this.amountField.Equals(value) != true)) {
+                    this.amountField = value;
+                    this.RaisePropertyChanged("amount");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string target {
+        public string amountType {
             get {
-                return this.targetField;
+                return this.amountTypeField;
             }
             set {
-                if ((object.ReferenceEquals(this.targetField, value) != true)) {
-                    this.targetField = value;
-                    this.RaisePropertyChanged("target");
+                if ((object.ReferenceEquals(this.amountTypeField, value) != true)) {
+                    this.amountTypeField = value;
+                    this.RaisePropertyChanged("amountType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string amountVar {
+            get {
+                return this.amountVarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.amountVarField, value) != true)) {
+                    this.amountVarField = value;
+                    this.RaisePropertyChanged("amountVar");
                 }
             }
         }
@@ -1108,6 +1053,171 @@ namespace FleetHackers.FleetHackersServer {
                 if ((object.ReferenceEquals(this.targetField, value) != true)) {
                     this.targetField = value;
                     this.RaisePropertyChanged("target");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FreePlayEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.SerializableAttribute()]
+    public partial class FreePlayEffect : FleetHackers.FleetHackersServer.Effect {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FleetHackers.FleetHackersServer.EffectCondition conditionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string targetField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FleetHackers.FleetHackersServer.EffectCondition condition {
+            get {
+                return this.conditionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.conditionField, value) != true)) {
+                    this.conditionField = value;
+                    this.RaisePropertyChanged("condition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string target {
+            get {
+                return this.targetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.targetField, value) != true)) {
+                    this.targetField = value;
+                    this.RaisePropertyChanged("target");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CloakEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.SerializableAttribute()]
+    public partial class CloakEffect : FleetHackers.FleetHackersServer.Effect {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string effectEndsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string targetField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string effectEnds {
+            get {
+                return this.effectEndsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.effectEndsField, value) != true)) {
+                    this.effectEndsField = value;
+                    this.RaisePropertyChanged("effectEnds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string target {
+            get {
+                return this.targetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.targetField, value) != true)) {
+                    this.targetField = value;
+                    this.RaisePropertyChanged("target");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LifeGainEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.SerializableAttribute()]
+    public partial class LifeGainEffect : FleetHackers.FleetHackersServer.Effect {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int amountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string amountTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string amountVarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string targetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<FleetHackers.FleetHackersServer.VariableDefinition> varDefinitionsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                if ((this.amountField.Equals(value) != true)) {
+                    this.amountField = value;
+                    this.RaisePropertyChanged("amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string amountType {
+            get {
+                return this.amountTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.amountTypeField, value) != true)) {
+                    this.amountTypeField = value;
+                    this.RaisePropertyChanged("amountType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string amountVar {
+            get {
+                return this.amountVarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.amountVarField, value) != true)) {
+                    this.amountVarField = value;
+                    this.RaisePropertyChanged("amountVar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string target {
+            get {
+                return this.targetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.targetField, value) != true)) {
+                    this.targetField = value;
+                    this.RaisePropertyChanged("target");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<FleetHackers.FleetHackersServer.VariableDefinition> varDefinitions {
+            get {
+                return this.varDefinitionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.varDefinitionsField, value) != true)) {
+                    this.varDefinitionsField = value;
+                    this.RaisePropertyChanged("varDefinitions");
                 }
             }
         }
@@ -1477,9 +1587,12 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HealthLossReductionEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DamageEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
     [System.SerializableAttribute()]
-    public partial class HealthLossReductionEffect : FleetHackers.FleetHackersServer.Effect {
+    public partial class DamageEffect : FleetHackers.FleetHackersServer.Effect {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string actorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int amountField;
@@ -1489,6 +1602,31 @@ namespace FleetHackers.FleetHackersServer {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string amountVarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string divideMethodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool exactField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool optionalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<string> targetsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string actor {
+            get {
+                return this.actorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.actorField, value) != true)) {
+                    this.actorField = value;
+                    this.RaisePropertyChanged("actor");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int amount {
@@ -1528,6 +1666,58 @@ namespace FleetHackers.FleetHackersServer {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string divideMethod {
+            get {
+                return this.divideMethodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.divideMethodField, value) != true)) {
+                    this.divideMethodField = value;
+                    this.RaisePropertyChanged("divideMethod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool exact {
+            get {
+                return this.exactField;
+            }
+            set {
+                if ((this.exactField.Equals(value) != true)) {
+                    this.exactField = value;
+                    this.RaisePropertyChanged("exact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool optional {
+            get {
+                return this.optionalField;
+            }
+            set {
+                if ((this.optionalField.Equals(value) != true)) {
+                    this.optionalField = value;
+                    this.RaisePropertyChanged("optional");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<string> targets {
+            get {
+                return this.targetsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.targetsField, value) != true)) {
+                    this.targetsField = value;
+                    this.RaisePropertyChanged("targets");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1551,6 +1741,77 @@ namespace FleetHackers.FleetHackersServer {
                 if ((this.numCardsField.Equals(value) != true)) {
                     this.numCardsField = value;
                     this.RaisePropertyChanged("numCards");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string target {
+            get {
+                return this.targetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.targetField, value) != true)) {
+                    this.targetField = value;
+                    this.RaisePropertyChanged("target");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RangePumpEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.SerializableAttribute()]
+    public partial class RangePumpEffect : FleetHackers.FleetHackersServer.Effect {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string effectEndsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int rangePumpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string subtypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string targetField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string effectEnds {
+            get {
+                return this.effectEndsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.effectEndsField, value) != true)) {
+                    this.effectEndsField = value;
+                    this.RaisePropertyChanged("effectEnds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int rangePump {
+            get {
+                return this.rangePumpField;
+            }
+            set {
+                if ((this.rangePumpField.Equals(value) != true)) {
+                    this.rangePumpField = value;
+                    this.RaisePropertyChanged("rangePump");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string subtype {
+            get {
+                return this.subtypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.subtypeField, value) != true)) {
+                    this.subtypeField = value;
+                    this.RaisePropertyChanged("subtype");
                 }
             }
         }
@@ -1704,12 +1965,28 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PacifismEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GainControlEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
     [System.SerializableAttribute()]
-    public partial class PacifismEffect : FleetHackers.FleetHackersServer.Effect {
+    public partial class GainControlEffect : FleetHackers.FleetHackersServer.Effect {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string effectEndsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string targetField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string effectEnds {
+            get {
+                return this.effectEndsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.effectEndsField, value) != true)) {
+                    this.effectEndsField = value;
+                    this.RaisePropertyChanged("effectEnds");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string target {
@@ -1889,267 +2166,6 @@ namespace FleetHackers.FleetHackersServer {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string targetField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string target {
-            get {
-                return this.targetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.targetField, value) != true)) {
-                    this.targetField = value;
-                    this.RaisePropertyChanged("target");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LifeGainEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
-    [System.SerializableAttribute()]
-    public partial class LifeGainEffect : FleetHackers.FleetHackersServer.Effect {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int amountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string amountTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string amountVarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string targetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<FleetHackers.FleetHackersServer.VariableDefinition> varDefinitionsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int amount {
-            get {
-                return this.amountField;
-            }
-            set {
-                if ((this.amountField.Equals(value) != true)) {
-                    this.amountField = value;
-                    this.RaisePropertyChanged("amount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string amountType {
-            get {
-                return this.amountTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.amountTypeField, value) != true)) {
-                    this.amountTypeField = value;
-                    this.RaisePropertyChanged("amountType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string amountVar {
-            get {
-                return this.amountVarField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.amountVarField, value) != true)) {
-                    this.amountVarField = value;
-                    this.RaisePropertyChanged("amountVar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string target {
-            get {
-                return this.targetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.targetField, value) != true)) {
-                    this.targetField = value;
-                    this.RaisePropertyChanged("target");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<FleetHackers.FleetHackersServer.VariableDefinition> varDefinitions {
-            get {
-                return this.varDefinitionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.varDefinitionsField, value) != true)) {
-                    this.varDefinitionsField = value;
-                    this.RaisePropertyChanged("varDefinitions");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DamageEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
-    [System.SerializableAttribute()]
-    public partial class DamageEffect : FleetHackers.FleetHackersServer.Effect {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string actorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int amountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string amountTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string amountVarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string divideMethodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool exactField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool optionalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<string> targetsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string actor {
-            get {
-                return this.actorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.actorField, value) != true)) {
-                    this.actorField = value;
-                    this.RaisePropertyChanged("actor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int amount {
-            get {
-                return this.amountField;
-            }
-            set {
-                if ((this.amountField.Equals(value) != true)) {
-                    this.amountField = value;
-                    this.RaisePropertyChanged("amount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string amountType {
-            get {
-                return this.amountTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.amountTypeField, value) != true)) {
-                    this.amountTypeField = value;
-                    this.RaisePropertyChanged("amountType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string amountVar {
-            get {
-                return this.amountVarField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.amountVarField, value) != true)) {
-                    this.amountVarField = value;
-                    this.RaisePropertyChanged("amountVar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string divideMethod {
-            get {
-                return this.divideMethodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.divideMethodField, value) != true)) {
-                    this.divideMethodField = value;
-                    this.RaisePropertyChanged("divideMethod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool exact {
-            get {
-                return this.exactField;
-            }
-            set {
-                if ((this.exactField.Equals(value) != true)) {
-                    this.exactField = value;
-                    this.RaisePropertyChanged("exact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool optional {
-            get {
-                return this.optionalField;
-            }
-            set {
-                if ((this.optionalField.Equals(value) != true)) {
-                    this.optionalField = value;
-                    this.RaisePropertyChanged("optional");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<string> targets {
-            get {
-                return this.targetsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.targetsField, value) != true)) {
-                    this.targetsField = value;
-                    this.RaisePropertyChanged("targets");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CloakEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
-    [System.SerializableAttribute()]
-    public partial class CloakEffect : FleetHackers.FleetHackersServer.Effect {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string effectEndsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string targetField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string effectEnds {
-            get {
-                return this.effectEndsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.effectEndsField, value) != true)) {
-                    this.effectEndsField = value;
-                    this.RaisePropertyChanged("effectEnds");
-                }
-            }
-        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string target {
@@ -2485,45 +2501,6 @@ namespace FleetHackers.FleetHackersServer {
                 if ((object.ReferenceEquals(this.winEffectField, value) != true)) {
                     this.winEffectField = value;
                     this.RaisePropertyChanged("winEffect");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GainControlEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
-    [System.SerializableAttribute()]
-    public partial class GainControlEffect : FleetHackers.FleetHackersServer.Effect {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string effectEndsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string targetField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string effectEnds {
-            get {
-                return this.effectEndsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.effectEndsField, value) != true)) {
-                    this.effectEndsField = value;
-                    this.RaisePropertyChanged("effectEnds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string target {
-            get {
-                return this.targetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.targetField, value) != true)) {
-                    this.targetField = value;
-                    this.RaisePropertyChanged("target");
                 }
             }
         }
@@ -3072,6 +3049,29 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PacifismEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.SerializableAttribute()]
+    public partial class PacifismEffect : FleetHackers.FleetHackersServer.Effect {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string targetField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string target {
+            get {
+                return this.targetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.targetField, value) != true)) {
+                    this.targetField = value;
+                    this.RaisePropertyChanged("target");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EffectCondition", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions")]
     [System.SerializableAttribute()]
     public partial class EffectCondition : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3552,43 +3552,43 @@ namespace FleetHackers.FleetHackersServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FleetHackersServer.IService1")]
-    public interface IService1 {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FleetHackersServer.IFleetHackersService")]
+    public interface IFleetHackersService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetHackersService/GetData", ReplyAction="http://tempuri.org/IFleetHackersService/GetDataResponse")]
         string GetData(int value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetHackersService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IFleetHackersService/GetDataUsingDataContractResponse")]
         FleetHackers.FleetHackersServer.CompositeType GetDataUsingDataContract(FleetHackers.FleetHackersServer.CompositeType composite);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCardData", ReplyAction="http://tempuri.org/IService1/GetCardDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetHackersService/GetCardData", ReplyAction="http://tempuri.org/IFleetHackersService/GetCardDataResponse")]
         System.Collections.Generic.List<FleetHackers.FleetHackersServer.Card> GetCardData(System.Collections.Generic.List<FleetHackers.FleetHackersServer.Card> clientCards);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : FleetHackers.FleetHackersServer.IService1, System.ServiceModel.IClientChannel {
+    public interface IFleetHackersServiceChannel : FleetHackers.FleetHackersServer.IFleetHackersService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<FleetHackers.FleetHackersServer.IService1>, FleetHackers.FleetHackersServer.IService1 {
+    public partial class FleetHackersServiceClient : System.ServiceModel.ClientBase<FleetHackers.FleetHackersServer.IFleetHackersService>, FleetHackers.FleetHackersServer.IFleetHackersService {
         
-        public Service1Client() {
+        public FleetHackersServiceClient() {
         }
         
-        public Service1Client(string endpointConfigurationName) : 
+        public FleetHackersServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
+        public FleetHackersServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public FleetHackersServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public FleetHackersServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

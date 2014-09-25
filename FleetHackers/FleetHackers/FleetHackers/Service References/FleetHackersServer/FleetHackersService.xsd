@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" />
+  <xs:complexType name="ArrayOfAbility">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ability" nillable="true" type="tns:Ability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAbility" nillable="true" type="tns:ArrayOfAbility" />
+  <xs:complexType name="Ability">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Ability" nillable="true" type="tns:Ability" />
+  <xs:complexType name="CloakAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CloakAbility" nillable="true" type="tns:CloakAbility" />
+  <xs:complexType name="ActivatedAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" minOccurs="0" name="additionalCosts" nillable="true" type="q1:ArrayOfAlternateCost" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" minOccurs="0" name="effect" nillable="true" type="q2:Effect" />
+          <xs:element minOccurs="0" name="energyCost" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActivatedAbility" nillable="true" type="tns:ActivatedAbility" />
+  <xs:complexType name="AttachToShipAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttachToShipAbility" nillable="true" type="tns:AttachToShipAbility" />
+  <xs:complexType name="SingleAttackAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleAttackAbility" nillable="true" type="tns:SingleAttackAbility" />
+  <xs:complexType name="AmbushAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AmbushAbility" nillable="true" type="tns:AmbushAbility" />
+  <xs:complexType name="HexproofAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HexproofAbility" nillable="true" type="tns:HexproofAbility" />
+  <xs:complexType name="HasteAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HasteAbility" nillable="true" type="tns:HasteAbility" />
+  <xs:complexType name="ConditionalPlayAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" minOccurs="0" name="condition" nillable="true" type="q3:EffectCondition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConditionalPlayAbility" nillable="true" type="tns:ConditionalPlayAbility" />
+  <xs:complexType name="SecretTechAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecretTechAbility" nillable="true" type="tns:SecretTechAbility" />
+  <xs:complexType name="StaticAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" minOccurs="0" name="condition" nillable="true" type="q4:EffectCondition" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" minOccurs="0" name="effect" nillable="true" type="q5:Effect" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StaticAbility" nillable="true" type="tns:StaticAbility" />
+  <xs:complexType name="TriggeredAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" minOccurs="0" name="effects" nillable="true" type="q6:ArrayOfEffect" />
+          <xs:element minOccurs="0" name="trigger" nillable="true" type="tns:Trigger" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TriggeredAbility" nillable="true" type="tns:TriggeredAbility" />
+  <xs:complexType name="Trigger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="condition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="replacement" type="xs:boolean" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="targets" nillable="true" type="q7:ArrayOfstring" />
+      <xs:element minOccurs="0" name="triggerType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="variableBinding" nillable="true" type="q8:VariableBinding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Trigger" nillable="true" type="tns:Trigger" />
+  <xs:complexType name="ImmediateAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" minOccurs="0" name="effects" nillable="true" type="q9:ArrayOfEffect" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImmediateAbility" nillable="true" type="tns:ImmediateAbility" />
+  <xs:complexType name="TruefireAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TruefireAbility" nillable="true" type="tns:TruefireAbility" />
+  <xs:complexType name="EntersWithCountersAbility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ability">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numCounters" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntersWithCountersAbility" nillable="true" type="tns:EntersWithCountersAbility" />
+</xs:schema>

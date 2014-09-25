@@ -21,10 +21,10 @@ namespace FleetHackersServer
 		CompositeType GetDataUsingDataContract(CompositeType composite);
 
 		[OperationContract]
-		[WebInvoke(Method = "GET",
-			ResponseFormat = WebMessageFormat.Json,
-			BodyStyle = WebMessageBodyStyle.Wrapped,
-			UriTemplate = "json/{id}")]
+		//[WebInvoke(Method = "GET",
+		//    ResponseFormat = WebMessageFormat.Json,
+		//    BodyStyle = WebMessageBodyStyle.Wrapped,
+		//    UriTemplate = "json/{id}")] disabling JSON.
 		List<Card> GetCardData(List<Card> clientCards);
 		// TODO: Add your service operations here
 	}
