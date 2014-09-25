@@ -25,6 +25,9 @@ namespace FleetHackers.Cards.Enums
 		OpposingShipDefense,
 
 		[Description("the number of cards in {0} controller's junkyard")]
-		ConrollersJunkyardCount
+		ConrollersJunkyardCount,
+
+		[Description("the number of other {1} ships in the battle zone")]
+		OtherShipsOfTypeCount
 	}
 }

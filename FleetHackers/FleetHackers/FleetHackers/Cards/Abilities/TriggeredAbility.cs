@@ -76,7 +76,14 @@ namespace FleetHackers.Cards.Abilities
 				}
 				else if (Trigger.TriggerType == TriggerType.Annihilated)
 				{
-					toStringBuilder.Append("If ");
+					if (Trigger.Condition == Condition.None)
+					{
+						toStringBuilder.Append("When ");
+					}
+					else
+					{
+						toStringBuilder.Append("If ");
+					}
 				}
 
 				toStringBuilder.Append(Trigger.ToString(card));

@@ -56,5 +56,20 @@ namespace FleetHackers.Cards
 				ValueAttribute = (CardAttribute)Enum.Parse(typeof(CardAttribute), value);
 			}
 		}
+
+		public Subtype Subtype { get; set; }
+
+		[DataMember(Name = "subtype")]
+		public string SubtypeString
+		{
+			get
+			{
+				return Subtype.ToString();
+			}
+			set
+			{
+				Subtype = (Subtype)Enum.Parse(typeof(Subtype), value);
+			}
+		}
 	}
 }
