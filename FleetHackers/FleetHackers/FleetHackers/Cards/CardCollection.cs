@@ -24,5 +24,16 @@ namespace FleetHackers.Cards
 				return new CardCollection(obj);
 			}
 		}
+
+		public static List<Card> DeserializeToListOfCards(string json)
+		{
+			List<Card> obj = Activator.CreateInstance<List<Card>>();
+			using (var memoryStream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+			{
+				var serializer = new DataContractJsonSerializer(obj.GetType());
+				obj = (List<Card>)serializer.ReadObject(memoryStream);
+				return obj;
+			}
+		}
 	}
 }

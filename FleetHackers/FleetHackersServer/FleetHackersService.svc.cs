@@ -33,15 +33,15 @@ namespace FleetHackersServer
 
 		public List<Card> GetCardData(List<Card> clientCards)
 		{
-			// TEST DESERIALIZATION
-			List<Card> cards = clientCards; ;
-			foreach (Card c in cards)
-			{
-				Debug.WriteLine(c.Title);
-				Debug.WriteLine(c.RulesText);
-			}
+			//// TEST DESERIALIZATION
+			//List<Card> cards = clientCards; ;
+			//foreach (Card c in cards)
+			//{
+			//    Debug.WriteLine(c.Title);
+			//    Debug.WriteLine(c.RulesText);
+			//}
 
-			return cards;
+			return clientCards;
 		}
 	}
 }

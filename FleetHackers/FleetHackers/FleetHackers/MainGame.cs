@@ -181,7 +181,19 @@ namespace FleetHackers
 
 				
 			// TEST DESERIALIZATION
-			CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
+			//CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
+			List<Card> cards = CardCollection.DeserializeToListOfCards(File.ReadAllText("Content/Cards/Cards.json"));
+
+			FleetHackersServiceClient fhClient = new FleetHackersServiceClient();
+			string result = fhClient.GetData(1223); //this test works.
+			
+			//Appears we're experiencing some schema issues here. Will track down what the issue is.
+			cards = fhClient.GetCardData(new List<Card>()); 
+
+			//cards = fhClient.GetCardData(cards); // This stuff needs fixing. JSON is disabled in the meantime.
+
+			fhClient.Close();
+
 			foreach (Card c in cards)
 			{
 				Debug.WriteLine(c.title);

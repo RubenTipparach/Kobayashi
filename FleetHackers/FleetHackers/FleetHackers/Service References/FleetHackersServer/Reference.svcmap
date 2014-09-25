@@ -20,19 +20,20 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:54767/Service1.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/FleetHackersServer/FleetHackersService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="a959929b-2e24-49a4-9366-bf99eee1d420" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="73da32a2-325f-446e-841d-21f852a06437" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd5" />
-    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="ff0c954b-094e-43d0-921e-cba54a15107d" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="cf81d9bf-d1ec-4e89-8bc0-57e7fe1ba87d" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd7" />
-    <MetadataFile FileName="Service14.xsd" MetadataType="Schema" ID="0fd21edb-9ef2-46f8-9ba6-ad1882f9bda8" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd8" />
-    <MetadataFile FileName="Service15.xsd" MetadataType="Schema" ID="0af54eb5-8236-4011-8cc4-e660d66e4a4c" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service16.xsd" MetadataType="Schema" ID="6771ecc3-ddb9-4a2a-8b8b-2c4da2bf7617" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd4" />
-    <MetadataFile FileName="Service17.xsd" MetadataType="Schema" ID="fd7e4828-dae1-406b-b59c-9a92e048d96c" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd3" />
-    <MetadataFile FileName="Service18.xsd" MetadataType="Schema" ID="67ba9242-732d-48b0-9efe-6697e7e4a51e" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?xsd=xsd6" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="236cd3c6-97fc-418c-8d09-7c5875c990a5" SourceId="1" SourceUrl="http://localhost:54767/Service1.svc?wsdl" />
+    <MetadataFile FileName="FleetHackersService.xsd" MetadataType="Schema" ID="5354b03f-61c2-4222-b352-d0afaa78f019" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd4" />
+    <MetadataFile FileName="FleetHackersService1.xsd" MetadataType="Schema" ID="9de9e611-f96b-4324-9768-05cf9cf2af86" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FleetHackersService.disco" MetadataType="Disco" ID="a9351f9f-df39-4369-aafa-3d12fbd0ebed" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?disco" />
+    <MetadataFile FileName="FleetHackersService2.xsd" MetadataType="Schema" ID="746a36fb-b41f-4b3a-8217-c9a11a99016f" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd6" />
+    <MetadataFile FileName="FleetHackersService3.xsd" MetadataType="Schema" ID="4ab0b0c6-c156-4cfb-9382-5db1ba25c15c" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" />
+    <MetadataFile FileName="FleetHackersService4.xsd" MetadataType="Schema" ID="3a9b046f-6737-4e16-a465-63a5c68965db" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FleetHackersService5.xsd" MetadataType="Schema" ID="58ddb113-f90f-4860-9c90-9a93f5cfc2ae" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FleetHackersService6.xsd" MetadataType="Schema" ID="d0c3fcc3-154b-475d-8a40-3479aee45f51" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd7" />
+    <MetadataFile FileName="FleetHackersService7.xsd" MetadataType="Schema" ID="cec4b308-d573-4db8-bfc0-387d655f2082" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd8" />
+    <MetadataFile FileName="FleetHackersService8.xsd" MetadataType="Schema" ID="f7e4c27c-e3d8-4cd9-9f5e-7076d34cec1f" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FleetHackersService.wsdl" MetadataType="Wsdl" ID="8de1ecb2-22bf-4361-a4b3-dce6244b069f" SourceId="1" SourceUrl="http://localhost/FleetHackersServer/FleetHackersService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

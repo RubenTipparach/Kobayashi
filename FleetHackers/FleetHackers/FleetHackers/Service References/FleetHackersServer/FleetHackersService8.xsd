@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:54767/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" />
-  <xs:import schemaLocation="http://localhost:54767/Service1.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" />
   <xs:complexType name="ArrayOfCard">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Card" nillable="true" type="tns:Card" />
