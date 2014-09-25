@@ -108,7 +108,6 @@
     <Compile Include="Cards\AlternateCosts\PutCountersCost.cs" />
     <Compile Include="Cards\AlternateCosts\RemoveCountersCost.cs" />
     <Compile Include="Cards\Card.cs" />
-    <Compile Include="Cards\Cards\CardCollection.cs" />
     <Compile Include="Cards\Effects\AddEnergyCrystalEffect.cs" />
     <Compile Include="Cards\Effects\AnnihilateEffect.cs" />
     <Compile Include="Cards\Effects\AttachToShipEffect.cs" />
