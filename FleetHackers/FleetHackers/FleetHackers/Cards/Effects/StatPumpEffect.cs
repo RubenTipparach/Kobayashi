@@ -36,6 +36,42 @@ namespace FleetHackers.Cards.Effects
 		[DataMember(Name = "defensePump")]
 		public int DefensePump { get; set; }
 
+		public AmountType AttackPumpType { get; set; }
+
+		[DataMember(Name = "attackPumpType")]
+		public string AttackPumpTypeString
+		{
+			get { return AttackPumpType.ToString(); }
+			set { AttackPumpType = (AmountType)Enum.Parse(typeof(AmountType), value); }
+		}
+
+		public AmountType DefensePumpType { get; set; }
+
+		[DataMember(Name = "defensePumpType")]
+		public string DefensePumpTypeString
+		{
+			get { return DefensePumpType.ToString(); }
+			set { DefensePumpType = (AmountType)Enum.Parse(typeof(AmountType), value); }
+		}
+
+		public Variable AttackPumpVar { get; set; }
+
+		[DataMember(Name = "attackPumpVar")]
+		public string AttackPumpVarString
+		{
+			get { return AttackPumpVar.ToString(); }
+			set { AttackPumpVar = (Variable)Enum.Parse(typeof(Variable), value); }
+		}
+
+		public Variable DefensePumpVar { get; set; }
+
+		[DataMember(Name = "defensePumpVar")]
+		public string DefensePumpVarString
+		{
+			get { return DefensePumpVar.ToString(); }
+			set { DefensePumpVar = (Variable)Enum.Parse(typeof(Variable), value); }
+		}
+
 		[DataMember(Name = "also")]
 		public bool Also { get; set; }
 
@@ -63,29 +99,50 @@ namespace FleetHackers.Cards.Effects
 			}
 		}
 
+		[DataMember(Name = "varDefinitions")]
+		private readonly List<VariableDefinition> _varDefinitions = new List<VariableDefinition>();
+		private ReadOnlyCollection<VariableDefinition> _varDefinitionsView;
+		public ReadOnlyCollection<VariableDefinition> VarDefinitions
+		{
+			get
+			{
+				if (_varDefinitionsView == null)
+				{
+					_varDefinitionsView = new ReadOnlyCollection<VariableDefinition>(_varDefinitions);
+				}
+				return _varDefinitionsView;
+			}
+		}
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
 
+			string targetOwns = string.Empty;
 			switch (Target)
 			{
 				case Target.This:
 					toStringBuilder.Append(card.Title);
 					toStringBuilder.Append(" ");
+					targetOwns = "its";
 					break;
 				case Target.AnyShip:
 					toStringBuilder.Append(capitalize ? "Target ship " : "target ship ");
+					targetOwns = "that ship's";
 					break;
 				case Target.TargettedShip:
 					toStringBuilder.Append(capitalize ? "That ship " : "that ship ");
+					targetOwns = "that ship's";
 					break;
 				case Target.OtherShipsOfType:
 					toStringBuilder.Append(capitalize ? "Other " : "other ");
 					toStringBuilder.Append(Subtype.ToString());
 					toStringBuilder.Append(" ships ");
+					targetOwns = string.Empty;
 					break;
 				case Target.AttachedShip:
 					toStringBuilder.Append(capitalize ? "Attached ship " : "attached ship ");
+					targetOwns = "attached ship's";
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for StatPumpEffect.");
@@ -97,13 +154,9 @@ namespace FleetHackers.Cards.Effects
 			}
 
 			toStringBuilder.Append("gets ");
-			if (AttackPump > 0)
+			if (AttackPumpType == AmountType.Variable)
 			{
-				toStringBuilder.Append("+");
-			}
-			else if(AttackPump == 0)
-			{
-				if (DefensePump < 0)
+				if (AttackPump == -1)
 				{
 					toStringBuilder.Append("-");
 				}
@@ -111,16 +164,33 @@ namespace FleetHackers.Cards.Effects
 				{
 					toStringBuilder.Append("+");
 				}
+
+				toStringBuilder.Append(Description.ToDescription(AttackPumpVar));
 			}
-			toStringBuilder.Append(AttackPump.ToString());
+			else
+			{
+				if (AttackPump > 0)
+				{
+					toStringBuilder.Append("+");
+				}
+				else if (AttackPump == 0)
+				{
+					if (DefensePump < 0)
+					{
+						toStringBuilder.Append("-");
+					}
+					else
+					{
+						toStringBuilder.Append("+");
+					}
+				}
+
+				toStringBuilder.Append(AttackPump.ToString());
+			}
 			toStringBuilder.Append("/");
-			if (DefensePump > 0)
+			if (DefensePumpType == AmountType.Variable)
 			{
-				toStringBuilder.Append("+");
-			}
-			else if (DefensePump == 0)
-			{
-				if (AttackPump < 0)
+				if (DefensePump == -1)
 				{
 					toStringBuilder.Append("-");
 				}
@@ -128,8 +198,28 @@ namespace FleetHackers.Cards.Effects
 				{
 					toStringBuilder.Append("+");
 				}
+
+				toStringBuilder.Append(Description.ToDescription(DefensePumpVar));
 			}
-			toStringBuilder.Append(DefensePump.ToString());
+			else
+			{
+				if (DefensePump > 0)
+				{
+					toStringBuilder.Append("+");
+				}
+				else if (DefensePump == 0)
+				{
+					if (AttackPump < 0)
+					{
+						toStringBuilder.Append("-");
+					}
+					else
+					{
+						toStringBuilder.Append("+");
+					}
+				}
+				toStringBuilder.Append(DefensePump.ToString());
+			}
 
 			switch (EffectEnds)
 			{
@@ -143,6 +233,36 @@ namespace FleetHackers.Cards.Effects
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported EffectEnds for StatPumpEffect.");
+			}
+
+			if (_varDefinitions != null)
+			{
+				bool firstDef = true;
+				foreach (VariableDefinition def in _varDefinitions)
+				{
+					if (firstDef)
+					{
+						toStringBuilder.Append(", where ");
+
+						firstDef = false;
+					}
+					else
+					{
+						toStringBuilder.Append(" and ");
+					}
+
+					toStringBuilder.Append(Description.ToDescription(def.Variable));
+					toStringBuilder.Append(" is ");
+
+					switch (def.ValueType)
+					{
+						case AmountType.Attribute:
+							toStringBuilder.Append(string.Format(Description.ToDescription(def.ValueAttribute), targetOwns, def.Subtype.ToString()));
+							break;
+						default:
+							throw new InvalidOperationException("Unsupported AmountType for VariableDefinition.");
+					}
+				}
 			}
 
 			return toStringBuilder.ToString();

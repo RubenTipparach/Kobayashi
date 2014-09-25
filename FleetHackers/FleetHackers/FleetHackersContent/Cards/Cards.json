@@ -2739,5 +2739,74 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Hub Whyr",
+		"energyCost": 3,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Whyr",
+		"range": 3,
+		"attack": 2,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+						"target": "You",
+						"cardType": "None",
+						"cardSubtype": "Whyr",
+						"optional": "false"
+					}
+				]
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Annihilated",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"targets": [ "OtherShipsOfType" ],
+						"subtype": "Whyr"
+					}
+				]
+			},
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"attackPumpType": "Variable",
+					"defensePumpType": "Variable",
+					"attackPumpVar": "X",
+					"defensePumpVar": "X",
+					"effectEnds": "None",
+					"target": "This",
+					"varDefinitions":
+					[
+						{
+							"variable": "X",
+							"valueType": "Attribute",
+							"valueAttribute": "OtherShipsOfTypeCount",
+							"subtype": "Whyr"
+						}
+					]
+				}
+			}
+		]
 	}
 ]
