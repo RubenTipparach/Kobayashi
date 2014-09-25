@@ -42,6 +42,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,6 +61,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service References\FleetHackersCardsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,11 +97,64 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\FleetHackersCardsService\CardEditor.FleetHackersCardsService.Card.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\CardEditor.FleetHackersCardsService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service1.wsdl" />
+    <None Include="Service References\FleetHackersCardsService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FleetHackersCardsService\Service18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FleetHackersCardsService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetHackersCardsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetHackersCardsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FleetHackersCardsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

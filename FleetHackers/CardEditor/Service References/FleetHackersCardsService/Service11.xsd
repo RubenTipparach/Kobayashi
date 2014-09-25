@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54767/Service1.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" />
+  <xs:import schemaLocation="http://localhost:54767/Service1.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:54767/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" />
+  <xs:import schemaLocation="http://localhost:54767/Service1.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" />
+  <xs:complexType name="ArrayOfEffect">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Effect" nillable="true" type="tns:Effect" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEffect" nillable="true" type="tns:ArrayOfEffect" />
+  <xs:complexType name="Effect">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Effect" nillable="true" type="tns:Effect" />
+  <xs:complexType name="AnnihilateEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" minOccurs="0" name="condition" nillable="true" type="q1:EffectCondition" />
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+          <xs:element minOccurs="0" name="subtype" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="targets" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q3:ArrayOfVariableDefinition" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="variableBinding" nillable="true" type="q4:VariableBinding" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AnnihilateEffect" nillable="true" type="tns:AnnihilateEffect" />
+  <xs:complexType name="PacifismEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PacifismEffect" nillable="true" type="tns:PacifismEffect" />
+  <xs:complexType name="TutorEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cardSubtype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cardTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cardType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+          <xs:element minOccurs="0" name="playImmediate" type="xs:boolean" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TutorEffect" nillable="true" type="tns:TutorEffect" />
+  <xs:complexType name="RechargeEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RechargeEffect" nillable="true" type="tns:RechargeEffect" />
+  <xs:complexType name="RestoreEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="junkyardOwner" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+          <xs:element minOccurs="0" name="position" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="states" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="targetZone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RestoreEffect" nillable="true" type="tns:RestoreEffect" />
+  <xs:complexType name="LifeLossEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:int" />
+          <xs:element minOccurs="0" name="amountType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="amountVar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LifeLossEffect" nillable="true" type="tns:LifeLossEffect" />
+  <xs:complexType name="FogEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="effectEnds" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FogEffect" nillable="true" type="tns:FogEffect" />
+  <xs:complexType name="RemoveCounterEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="countersExact" type="xs:boolean" />
+          <xs:element minOccurs="0" name="divideMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numCounters" type="xs:int" />
+          <xs:element minOccurs="0" name="numTargets" type="xs:int" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="targetsExact" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveCounterEffect" nillable="true" type="tns:RemoveCounterEffect" />
+  <xs:complexType name="StatPumpEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="also" type="xs:boolean" />
+          <xs:element minOccurs="0" name="attackPump" type="xs:int" />
+          <xs:element minOccurs="0" name="attackPumpType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attackPumpVar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="defensePump" type="xs:int" />
+          <xs:element minOccurs="0" name="defensePumpType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="defensePumpVar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="effectEnds" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subtype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q6:ArrayOfVariableDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatPumpEffect" nillable="true" type="tns:StatPumpEffect" />
+  <xs:complexType name="CoinFlipEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="loseEffect" nillable="true" type="tns:Effect" />
+          <xs:element minOccurs="0" name="winEffect" nillable="true" type="tns:Effect" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CoinFlipEffect" nillable="true" type="tns:CoinFlipEffect" />
+  <xs:complexType name="RemoveDamageEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveDamageEffect" nillable="true" type="tns:RemoveDamageEffect" />
+  <xs:complexType name="ForfeitEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlternateEnergyCost" type="xs:int" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" minOccurs="0" name="alternateCosts" nillable="true" type="q7:ArrayOfAlternateCost" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ForfeitEffect" nillable="true" type="tns:ForfeitEffect" />
+  <xs:complexType name="StateCheckEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="checks" nillable="true" type="q8:ArrayOfStateCheck" />
+          <xs:element minOccurs="0" name="resultEffect" nillable="true" type="tns:Effect" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StateCheckEffect" nillable="true" type="tns:StateCheckEffect" />
+  <xs:complexType name="CardDrawEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numCards" type="xs:int" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CardDrawEffect" nillable="true" type="tns:CardDrawEffect" />
+  <xs:complexType name="PutCounterEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="countersExact" type="xs:boolean" />
+          <xs:element minOccurs="0" name="divideMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numCounters" type="xs:int" />
+          <xs:element minOccurs="0" name="numTargets" type="xs:int" />
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="targetsExact" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PutCounterEffect" nillable="true" type="tns:PutCounterEffect" />
+  <xs:complexType name="BounceEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BounceEffect" nillable="true" type="tns:BounceEffect" />
+  <xs:complexType name="DiscardEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cardRestriction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="chooseMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="variableBinding" nillable="true" type="q9:VariableBinding" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DiscardEffect" nillable="true" type="tns:DiscardEffect" />
+  <xs:complexType name="StaticCostReductionEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cardType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reductionAmount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StaticCostReductionEffect" nillable="true" type="tns:StaticCostReductionEffect" />
+  <xs:complexType name="AttachToShipEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttachToShipEffect" nillable="true" type="tns:AttachToShipEffect" />
+  <xs:complexType name="StatPumpForCountersEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attackPump" type="xs:int" />
+          <xs:element minOccurs="0" name="defensePump" type="xs:int" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatPumpForCountersEffect" nillable="true" type="tns:StatPumpForCountersEffect" />
+  <xs:complexType name="ScryEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numCards" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScryEffect" nillable="true" type="tns:ScryEffect" />
+  <xs:complexType name="FreePlayEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" minOccurs="0" name="condition" nillable="true" type="q10:EffectCondition" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FreePlayEffect" nillable="true" type="tns:FreePlayEffect" />
+  <xs:complexType name="CloakEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="effectEnds" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CloakEffect" nillable="true" type="tns:CloakEffect" />
+  <xs:complexType name="LifeGainEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:int" />
+          <xs:element minOccurs="0" name="amountType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="amountVar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q11:ArrayOfVariableDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LifeGainEffect" nillable="true" type="tns:LifeGainEffect" />
+  <xs:complexType name="DamageEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="amount" type="xs:int" />
+          <xs:element minOccurs="0" name="amountType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="amountVar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="divideMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="exact" type="xs:boolean" />
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="targets" nillable="true" type="q12:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DamageEffect" nillable="true" type="tns:DamageEffect" />
+  <xs:complexType name="ExhaustEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExhaustEffect" nillable="true" type="tns:ExhaustEffect" />
+  <xs:complexType name="TapDownEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TapDownEffect" nillable="true" type="tns:TapDownEffect" />
+  <xs:complexType name="HealthLossReductionEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:int" />
+          <xs:element minOccurs="0" name="amountType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="amountVar" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HealthLossReductionEffect" nillable="true" type="tns:HealthLossReductionEffect" />
+  <xs:complexType name="MillEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numCards" type="xs:int" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MillEffect" nillable="true" type="tns:MillEffect" />
+  <xs:complexType name="RangePumpEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="effectEnds" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rangePump" type="xs:int" />
+          <xs:element minOccurs="0" name="subtype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RangePumpEffect" nillable="true" type="tns:RangePumpEffect" />
+  <xs:complexType name="ModalEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="effects" nillable="true" type="tns:ArrayOfEffect" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModalEffect" nillable="true" type="tns:ModalEffect" />
+  <xs:complexType name="UnblockableEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="effectEnds" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnblockableEffect" nillable="true" type="tns:UnblockableEffect" />
+  <xs:complexType name="ChooseTargetEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chooser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="successEffects" nillable="true" type="tns:ArrayOfEffect" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChooseTargetEffect" nillable="true" type="tns:ChooseTargetEffect" />
+  <xs:complexType name="GainControlEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="effectEnds" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GainControlEffect" nillable="true" type="tns:GainControlEffect" />
+  <xs:complexType name="MicrodroneEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="count" type="xs:int" />
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MicrodroneEffect" nillable="true" type="tns:MicrodroneEffect" />
+  <xs:complexType name="CostReductionEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="reductionAmount" type="xs:int" />
+          <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CostReductionEffect" nillable="true" type="tns:CostReductionEffect" />
+  <xs:complexType name="AddEnergyCrystalEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="depleted" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddEnergyCrystalEffect" nillable="true" type="tns:AddEnergyCrystalEffect" />
+  <xs:complexType name="RechargeCrystalsEffect">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Effect">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="exact" type="xs:boolean" />
+          <xs:element minOccurs="0" name="numCrystals" type="xs:int" />
+          <xs:element minOccurs="0" name="optional" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RechargeCrystalsEffect" nillable="true" type="tns:RechargeCrystalsEffect" />
+</xs:schema>

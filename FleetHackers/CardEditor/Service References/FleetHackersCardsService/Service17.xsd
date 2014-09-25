@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54767/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" />
+  <xs:import schemaLocation="http://localhost:54767/Service1.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" />
+  <xs:complexType name="ArrayOfCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Card" nillable="true" type="tns:Card" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCard" nillable="true" type="tns:ArrayOfCard" />
+  <xs:complexType name="Card">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" minOccurs="0" name="abilities" nillable="true" type="q1:ArrayOfAbility" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" minOccurs="0" name="additionalCost" nillable="true" type="q2:AlternateCost" />
+      <xs:element minOccurs="0" name="alignment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="attack" type="xs:int" />
+      <xs:element minOccurs="0" name="defense" type="xs:int" />
+      <xs:element minOccurs="0" name="energyCost" type="xs:int" />
+      <xs:element minOccurs="0" name="energyCostType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="energyCostVar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="influenceRequirement" type="xs:int" />
+      <xs:element minOccurs="0" name="range" type="xs:int" />
+      <xs:element minOccurs="0" name="subtype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="supertype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Card" nillable="true" type="tns:Card" />
+  <xs:complexType name="ArrayOfVariableDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VariableDefinition" nillable="true" type="tns:VariableDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariableDefinition" nillable="true" type="tns:ArrayOfVariableDefinition" />
+  <xs:complexType name="VariableDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="subtype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valueAttribute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valueType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="variable" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariableDefinition" nillable="true" type="tns:VariableDefinition" />
+  <xs:complexType name="VariableBinding">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="attribute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valueModifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="variable" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariableBinding" nillable="true" type="tns:VariableBinding" />
+  <xs:complexType name="ArrayOfStateCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StateCheck" nillable="true" type="tns:StateCheck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStateCheck" nillable="true" type="tns:ArrayOfStateCheck" />
+  <xs:complexType name="StateCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="test" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateCheck" nillable="true" type="tns:StateCheck" />
+</xs:schema>
