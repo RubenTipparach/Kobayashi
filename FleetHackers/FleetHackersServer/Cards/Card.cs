@@ -97,6 +97,8 @@ namespace FleetHackers.Cards
 		}
 
 		private string _rulesText;
+
+		[DataMember(Name = "rulesText")]
 		public string RulesText
 		{
 			get

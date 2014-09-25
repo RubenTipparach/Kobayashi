@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetHackers", "FleetHackers\FleetHackers\FleetHackers.csproj", "{F0725170-A25F-4BD4-BF5E-CC9A12C94EB2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{786565D1-E4EE-4C10-9F76-9C5D8726B754} = {786565D1-E4EE-4C10-9F76-9C5D8726B754}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetHackersContent", "FleetHackers\FleetHackersContent\FleetHackersContent.contentproj", "{9234A657-8830-4EF0-89C4-619BD2D754F3}"
 EndProject
@@ -61,6 +64,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipEditor", "ShipEditor\ShipEditor.csproj", "{49BC5DFF-0ADD-4A48-9D67-3B29AB14C5DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardEditor", "CardEditor\CardEditor.csproj", "{A3FD1AA0-65A4-4192-A3BF-00F210847B6D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{786565D1-E4EE-4C10-9F76-9C5D8726B754} = {786565D1-E4EE-4C10-9F76-9C5D8726B754}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelEditor", "LevelEditor\LevelEditor.csproj", "{2352A3BA-86A3-412C-873E-9FA8BDD1C8E5}"
 EndProject

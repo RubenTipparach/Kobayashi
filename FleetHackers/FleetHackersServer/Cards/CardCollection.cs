@@ -5,7 +5,6 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Json;
-using FleetHackers.FleetHackersServer;
 
 namespace FleetHackers.Cards
 {

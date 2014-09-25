@@ -18,6 +18,7 @@ using FleetHackers.EngineEnums;
 using FleetHackers.EngineStructs;
 using FleetHackers.Input;
 using FleetHackers.UpdateHelpers;
+using FleetHackers.FleetHackersServer;
 
 namespace FleetHackers
 {
@@ -183,8 +184,8 @@ namespace FleetHackers
 			CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
 			foreach (Card c in cards)
 			{
-				Debug.WriteLine(c.Title);
-				Debug.WriteLine(c.RulesText);
+				Debug.WriteLine(c.title);
+				Debug.WriteLine(c.rulesText);
 			}
 
 			//initialize debug stuff
