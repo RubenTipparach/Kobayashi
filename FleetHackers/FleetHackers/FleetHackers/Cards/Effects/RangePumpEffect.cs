@@ -42,6 +42,21 @@ namespace FleetHackers.Cards.Effects
 			set { EffectEnds = (PointInTime)Enum.Parse(typeof(PointInTime), value); }
 		}
 
+		public Subtype Subtype { get; set; }
+
+		[DataMember(Name = "subtype")]
+		public string SubtypeString
+		{
+			get
+			{
+				return Subtype.ToString();
+			}
+			set
+			{
+				Subtype = (Subtype)Enum.Parse(typeof(Subtype), value);
+			}
+		}
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -57,6 +72,11 @@ namespace FleetHackers.Cards.Effects
 					break;
 				case Target.AttachedShip:
 					toStringBuilder.Append(capitalize ? "Attached ship " : "attached ship ");
+					break;
+				case Target.OtherShipsOfType:
+					toStringBuilder.Append(capitalize ? "Other " : "other ");
+					toStringBuilder.Append(Subtype.ToString());
+					toStringBuilder.Append(" ships ");
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for StatPumpEffect.");

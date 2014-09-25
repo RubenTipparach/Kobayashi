@@ -2808,5 +2808,29 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Long-Range Megadrone",
+		"energyCost": 1,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Megadrone",
+		"range": 4,
+		"attack": 1,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"effect":
+				{
+					"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+					"rangePump": 1,
+					"effectEnds": "None",
+					"target": "OtherShipsOfType",
+					"subtype": "Megadrone"
+				}
+			}
+		]
 	}
 ]
