@@ -18,7 +18,7 @@ using FleetHackers.EngineEnums;
 using FleetHackers.EngineStructs;
 using FleetHackers.Input;
 using FleetHackers.UpdateHelpers;
-using FleetHackers.FleetHackersServer;
+//using FleetHackers.FleetHackersServer;
 
 namespace FleetHackers
 {
@@ -184,11 +184,11 @@ namespace FleetHackers
 			//CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
 			List<Card> cards = CardCollection.DeserializeToListOfCards(File.ReadAllText("Content/Cards/Cards.json"));
 
-			FleetHackersServiceClient fhClient = new FleetHackersServiceClient();
+			FleetHackers.FleetHackersServer.FleetHackersServiceClient fhClient = new FleetHackers.FleetHackersServer.FleetHackersServiceClient();
 			string result = fhClient.GetData(1223); //this test works.
 			
 			//Appears we're experiencing some schema issues here. Will track down what the issue is.
-			cards = fhClient.GetCardData(new List<Card>()); 
+			//cards = fhClient.GetCardData(new List<Card>()); 
 
 			//cards = fhClient.GetCardData(cards); // This stuff needs fixing. JSON is disabled in the meantime.
 
@@ -196,8 +196,8 @@ namespace FleetHackers
 
 			foreach (Card c in cards)
 			{
-				Debug.WriteLine(c.title);
-				Debug.WriteLine(c.rulesText);
+				Debug.WriteLine(c.Title);
+				Debug.WriteLine(c.RulesText);
 			}
 
 			//initialize debug stuff
