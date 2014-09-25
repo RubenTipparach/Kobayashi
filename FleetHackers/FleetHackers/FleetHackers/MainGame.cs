@@ -182,7 +182,7 @@ namespace FleetHackers
 				
 			// TEST DESERIALIZATION
 			//CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
-			List<Card> cards = CardCollection.DeserializeToListOfCards(File.ReadAllText("Content/Cards/Cards.json"));
+			CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
 
 			FleetHackers.FleetHackersServer.FleetHackersServiceClient fhClient = new FleetHackers.FleetHackersServer.FleetHackersServiceClient();
 			string result = fhClient.GetData(1223); //this test works.
