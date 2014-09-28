@@ -18,6 +18,7 @@ using FleetHackers.EngineEnums;
 using FleetHackers.EngineStructs;
 using FleetHackers.Input;
 using FleetHackers.UpdateHelpers;
+using System.Text;
 //using FleetHackers.FleetHackersServer;
 
 namespace FleetHackers
@@ -96,6 +97,16 @@ namespace FleetHackers
 		private MovementReport _movementDataReporter;
 
 		/// <summary>
+		/// The card texture.
+		/// </summary>
+		private Texture2D _cardTexture;
+
+		/// <summary>
+		/// The basic font.
+		/// </summary>
+		private SpriteFont _basicFont;
+
+		/// <summary>
 		/// Constructor for this class.
 		/// </summary>
 		public MainGame()
@@ -151,7 +162,13 @@ namespace FleetHackers
 						GraphicsDevice);
 			}
 
-			//Load models.
+			// Load Card texture.
+			_cardTexture = Content.Load<Texture2D>("Cards\\defaultCard");
+
+			// Load some fonts.
+			_basicFont = Content.Load<SpriteFont>("Fonts\\SpriteFont1");
+
+			// Load models.
 			_models.Add(
 				new BasicModel(
 					Content.Load<Model>("blueship"),
@@ -278,7 +295,52 @@ namespace FleetHackers
 
 			_stars.Draw(_camera.View, _camera.Projection, _camera.Up, _camera.Right);
 
+			// Draw cards *this should always appear at the end so its on top
+			_spriteBatch.Begin();			
+			float scale = .4f;
+
+			string someRandomText = "Some random card test text.";
+			someRandomText = WrapText(_basicFont, someRandomText, _cardTexture.Width * scale - 20);
+
+			Rectangle retval = new Rectangle(
+				0 + 10,
+				GraphicsDevice.Viewport.Height - (int)(_cardTexture.Height * scale) - 10,
+				(int)(_cardTexture.Width * scale),
+				(int)(_cardTexture.Height * scale));
+
+			_spriteBatch.Draw(_cardTexture, retval, Color.White);
+			_spriteBatch.DrawString(_basicFont, someRandomText,
+				new Vector2(0 + 27, GraphicsDevice.Viewport.Height - (int)(_cardTexture.Height/2 * scale) + 22),
+				Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+			_spriteBatch.End();
+
 			base.Draw(gameTime);
+		}
+
+		private string WrapText(SpriteFont spriteFont, string text, float maxLineWidth)
+		{
+			string[] words = text.Split(' ');
+			StringBuilder stringBuilder = new StringBuilder();
+			float lineWidth = 0f;
+			float spaceWidth = spriteFont.MeasureString(" ").X;
+
+			foreach (string word in words)
+			{
+				Vector2 size = spriteFont.MeasureString(word);
+
+				if (lineWidth + size.X < maxLineWidth)
+				{
+					stringBuilder.Append(word + " ");
+					lineWidth += size.X + spaceWidth;
+				}
+				else
+				{
+					stringBuilder.Append("\n" + word + " ");
+					lineWidth = size.X + spaceWidth;
+				}
+			}
+
+			return stringBuilder.ToString();
 		}
 	}
 }
