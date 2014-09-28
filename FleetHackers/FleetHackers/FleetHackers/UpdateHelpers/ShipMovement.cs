@@ -51,19 +51,22 @@ namespace FleetHackers.UpdateHelpers
 				// Quaternion.CreateFromRotationMatrix(rotationTo);
 
 				// Method 2 (more efficient)
-				Vector3 target =  Vector3.Normalize(model.Position - flatNewCoords);
+				Vector3 target = Vector3.Normalize(model.Position - flatNewCoords);
 				float angle = (float)Math.Atan2(target.X, target.Z);
 				Quaternion sample = Quaternion.CreateFromAxisAngle(Vector3.Up, angle);
-				
+
 				// Method 3 Cross Product, then ACos(A dot B), then Q.CreateFrom(Angle, Axis);
 
 				// Do the interpolations.
-				model.Rotation = Quaternion.Slerp(model.Rotation, sample, .2f);
+				model.Rotation = Quaternion.Slerp(model.Rotation, sample, .8f);
 
-				model.Position = Vector3.Lerp(model.Position, movementDataReporter.newCoordinates, .01f);
 
-				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 50)
+
+				model.Position = Vector3.Lerp(model.Position, movementDataReporter.newCoordinates, .5f);
+				
+				if (Vector3.Distance(model.Position, movementDataReporter.newCoordinates) < 100)
 				{
+					model.Position = movementDataReporter.newCoordinates;
 					movementDataReporter.traveling = false;
 				}
 			}
