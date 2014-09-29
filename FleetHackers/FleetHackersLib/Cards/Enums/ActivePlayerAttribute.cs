@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FleetHackers.Cards.Enums
+namespace FleetHackersLib.Cards.Enums
 {
 	public enum ActivePlayerAttribute
 	{

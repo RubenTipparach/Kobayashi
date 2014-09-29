@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace FleetHackers.Cards.AlternateCosts
+namespace FleetHackersLib.Cards.AlternateCosts
 {
 	[DataContract]
 	[KnownType(typeof(ExhaustShipCost))]

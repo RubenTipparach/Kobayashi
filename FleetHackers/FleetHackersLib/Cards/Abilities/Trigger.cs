@@ -5,9 +5,9 @@ using System.Text;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using System.Reflection;
-using FleetHackers.Cards.Enums;
+using FleetHackersLib.Cards.Enums;
 
-namespace FleetHackers.Cards.Abilities
+namespace FleetHackersLib.Cards.Abilities
 {
 	[DataContract]
 	public class Trigger

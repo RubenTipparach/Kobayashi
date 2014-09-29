@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace FleetHackers.Cards.Enums
+namespace FleetHackersLib.Cards.Enums
 {
 	public enum Alignment
 	{

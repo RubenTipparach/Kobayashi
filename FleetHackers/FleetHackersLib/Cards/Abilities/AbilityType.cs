@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FleetHackers.Cards.Abilities
+namespace FleetHackersLib.Cards.Abilities
 {
 	public enum AbilityType
 	{

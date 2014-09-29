@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" />
-  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects.Conditions" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" />
   <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts" />
   <xs:complexType name="Effect">
     <xs:sequence />
   </xs:complexType>
@@ -39,7 +39,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Effect">
         <xs:sequence>
-          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" minOccurs="0" name="condition" nillable="true" type="q1:EffectCondition" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects.Conditions" minOccurs="0" name="condition" nillable="true" type="q1:EffectCondition" />
           <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -65,7 +65,7 @@
           <xs:element minOccurs="0" name="amountType" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="amountVar" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
-          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q2:ArrayOfVariableDefinition" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q2:ArrayOfVariableDefinition" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -305,7 +305,7 @@
           <xs:element minOccurs="0" name="effectEnds" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="subtype" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
-          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q5:ArrayOfVariableDefinition" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q5:ArrayOfVariableDefinition" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -315,12 +315,12 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Effect">
         <xs:sequence>
-          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" minOccurs="0" name="condition" nillable="true" type="q6:EffectCondition" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects.Conditions" minOccurs="0" name="condition" nillable="true" type="q6:EffectCondition" />
           <xs:element minOccurs="0" name="optional" type="xs:boolean" />
           <xs:element minOccurs="0" name="subtype" nillable="true" type="xs:string" />
           <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="targets" nillable="true" type="q7:ArrayOfstring" />
-          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q8:ArrayOfVariableDefinition" />
-          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="variableBinding" nillable="true" type="q9:VariableBinding" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" minOccurs="0" name="varDefinitions" nillable="true" type="q8:ArrayOfVariableDefinition" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" minOccurs="0" name="variableBinding" nillable="true" type="q9:VariableBinding" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -353,7 +353,7 @@
       <xs:extension base="tns:Effect">
         <xs:sequence>
           <xs:element minOccurs="0" name="AlternateEnergyCost" type="xs:int" />
-          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" minOccurs="0" name="alternateCosts" nillable="true" type="q10:ArrayOfAlternateCost" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts" minOccurs="0" name="alternateCosts" nillable="true" type="q10:ArrayOfAlternateCost" />
           <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -364,7 +364,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Effect">
         <xs:sequence>
-          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="checks" nillable="true" type="q11:ArrayOfStateCheck" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" minOccurs="0" name="checks" nillable="true" type="q11:ArrayOfStateCheck" />
           <xs:element minOccurs="0" name="resultEffect" nillable="true" type="tns:Effect" />
           <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -416,7 +416,7 @@
           <xs:element minOccurs="0" name="cardRestriction" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="chooseMethod" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
-          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" minOccurs="0" name="variableBinding" nillable="true" type="q12:VariableBinding" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" minOccurs="0" name="variableBinding" nillable="true" type="q12:VariableBinding" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

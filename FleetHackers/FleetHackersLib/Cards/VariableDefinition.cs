@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
-using FleetHackers.Cards.Enums;
+using FleetHackersLib.Cards.Enums;
 
-namespace FleetHackers.Cards
+namespace FleetHackersLib.Cards
 {
 	[DataContract]
 	public class VariableDefinition

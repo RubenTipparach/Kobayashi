@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
-using FleetHackers.Cards.Effects.Enums;
-using FleetHackers.Cards.Enums;
-using FleetHackers.Cards.AlternateCosts;
+using FleetHackersLib.Cards.Effects.Enums;
+using FleetHackersLib.Cards.Enums;
+using FleetHackersLib.Cards.AlternateCosts;
 using System.Collections.ObjectModel;
 
-namespace FleetHackers.Cards.Effects
+namespace FleetHackersLib.Cards.Effects
 {
 	[DataContract]
 	public class RemoveDamageEffect : Effect

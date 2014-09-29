@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using FleetHackers.Cards;
+using FleetHackersLib.Cards;
 using System.Diagnostics;
 
 namespace FleetHackersServer

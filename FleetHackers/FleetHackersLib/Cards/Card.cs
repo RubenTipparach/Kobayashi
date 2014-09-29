@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
-using FleetHackers.Cards.Abilities;
+using FleetHackersLib.Cards.Abilities;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Json;
-using FleetHackers.Cards.Enums;
-using FleetHackers.Cards.AlternateCosts;
+using FleetHackersLib.Cards.Enums;
+using FleetHackersLib.Cards.AlternateCosts;
 
-namespace FleetHackers.Cards
+namespace FleetHackersLib.Cards
 {
 	[DataContract]
 	public class Card

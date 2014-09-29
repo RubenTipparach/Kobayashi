@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FleetHackers.Cards.Enums;
+using FleetHackersLib.Cards.Enums;
 using System.Runtime.Serialization;
 
-namespace FleetHackers.Cards.Effects.Conditions
+namespace FleetHackersLib.Cards.Effects.Conditions
 {
 	[DataContract]
 	public class EffectCondition

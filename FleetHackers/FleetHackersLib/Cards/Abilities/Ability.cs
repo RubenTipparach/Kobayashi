@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace FleetHackers.Cards.Abilities
+namespace FleetHackersLib.Cards.Abilities
 {
 	[DataContract]
 	[KnownType(typeof(TriggeredAbility))]
