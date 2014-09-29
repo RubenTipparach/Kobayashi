@@ -129,8 +129,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cards\defaultCard.png">
-      <Name>defaultCard</Name>
+    <Compile Include="Cards\Images\shadow-card.png">
+      <Name>shadow-card</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
