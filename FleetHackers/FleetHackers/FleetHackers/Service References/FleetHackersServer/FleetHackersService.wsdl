@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FleetHackersServer" />
-      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" />
-      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" />
-      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" />
-      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects" />
-      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions" />
+      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" />
+      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities" />
+      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts" />
+      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects" />
+      <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects.Conditions" />
       <xsd:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>

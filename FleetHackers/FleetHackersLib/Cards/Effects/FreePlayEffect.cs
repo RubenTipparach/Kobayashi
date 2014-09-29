@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
-using FleetHackers.Cards.Effects.Conditions;
-using FleetHackers.Cards.Enums;
-using FleetHackers.Cards.Effects.Enums;
+using FleetHackersLib.Cards.Effects.Conditions;
+using FleetHackersLib.Cards.Enums;
+using FleetHackersLib.Cards.Effects.Enums;
 
-namespace FleetHackers.Cards.Effects
+namespace FleetHackersLib.Cards.Effects
 {
 	[DataContract]
 	public class FreePlayEffect : Effect

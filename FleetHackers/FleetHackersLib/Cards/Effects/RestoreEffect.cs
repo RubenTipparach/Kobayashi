@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FleetHackers.Cards.Effects.Enums;
+using FleetHackersLib.Cards.Effects.Enums;
 using System.Runtime.Serialization;
-using FleetHackers.Cards.Enums;
+using FleetHackersLib.Cards.Enums;
 using System.Collections.ObjectModel;
 using System.Reflection;
 
-namespace FleetHackers.Cards.Effects
+namespace FleetHackersLib.Cards.Effects
 {
 	[DataContract]
 	public class RestoreEffect : Effect

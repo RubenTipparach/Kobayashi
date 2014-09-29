@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Json;
 
-namespace FleetHackers.Cards
+namespace FleetHackersLib.Cards
 {
 	[DataContract]
 	public class CardCollection : List<Card>

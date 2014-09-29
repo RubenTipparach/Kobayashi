@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" />
-  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities" />
+  <xs:import schemaLocation="http://localhost/FleetHackersServer/FleetHackersService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts" />
   <xs:complexType name="ArrayOfCard">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Card" nillable="true" type="tns:Card" />
@@ -10,8 +10,8 @@
   <xs:element name="ArrayOfCard" nillable="true" type="tns:ArrayOfCard" />
   <xs:complexType name="Card">
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities" minOccurs="0" name="abilities" nillable="true" type="q1:ArrayOfAbility" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts" minOccurs="0" name="additionalCost" nillable="true" type="q2:AlternateCost" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities" minOccurs="0" name="abilities" nillable="true" type="q1:ArrayOfAbility" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts" minOccurs="0" name="additionalCost" nillable="true" type="q2:AlternateCost" />
       <xs:element minOccurs="0" name="alignment" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="attack" type="xs:int" />
       <xs:element minOccurs="0" name="defense" type="xs:int" />

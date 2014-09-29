@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
-using FleetHackers.Cards.Effects.Enums;
+using FleetHackersLib.Cards.Effects.Enums;
 
-namespace FleetHackers.Cards.Effects
+namespace FleetHackersLib.Cards.Effects
 {
 	[DataContract]
 	[KnownType(typeof(DamageEffect))]

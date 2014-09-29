@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FleetHackers.Cards.Effects.Enums
+namespace FleetHackersLib.Cards.Effects.Enums
 {
 	public enum ChooseMethod
 	{

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
-using FleetHackers.Cards.Effects;
+using FleetHackersLib.Cards.Effects;
 using System.Collections.ObjectModel;
-using FleetHackers.Cards.Enums;
-using FleetHackers.Cards.Effects.Conditions;
+using FleetHackersLib.Cards.Enums;
+using FleetHackersLib.Cards.Effects.Conditions;
 
-namespace FleetHackers.Cards.Abilities
+namespace FleetHackersLib.Cards.Abilities
 {
 	[DataContract]
 	public class ConditionalPlayAbility : Ability

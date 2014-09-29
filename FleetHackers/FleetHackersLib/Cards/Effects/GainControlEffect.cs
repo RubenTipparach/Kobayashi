@@ -5,10 +5,10 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.ObjectModel;
 using System.Reflection;
-using FleetHackers.Cards.Effects.Enums;
-using FleetHackers.Cards.Enums;
+using FleetHackersLib.Cards.Effects.Enums;
+using FleetHackersLib.Cards.Enums;
 
-namespace FleetHackers.Cards.Effects
+namespace FleetHackersLib.Cards.Effects
 {
 	[DataContract]
 	public class GainControlEffect : Effect

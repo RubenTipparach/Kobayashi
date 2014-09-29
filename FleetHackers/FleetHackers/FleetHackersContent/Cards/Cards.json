@@ -20,7 +20,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Attack",
@@ -34,7 +34,7 @@
 				"effects":
 				[
 					{
-						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "YouChooseAny",
 						"amount": 3,
@@ -72,7 +72,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Interception",
@@ -85,7 +85,7 @@
 				"effects":
 				[
 					{
-						"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+						"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 						"attackPump": 2,
 						"defensePump": 2,
 						"effectEnds": "EndOfTurn",
@@ -104,11 +104,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+						"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 						"attackPump": 5,
 						"defensePump": 0,
 						"effectEnds": "BeginningOfYourTurn",
@@ -128,11 +128,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "None",
 						"amountType": "Variable",
@@ -160,7 +160,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -169,7 +169,7 @@
 				"effects":
 				[
 					{
-						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "YouChooseAny",
 						"amount": 2,
@@ -193,18 +193,18 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "AnyDevice" ]
 					},
 					{
-						"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
+						"__type": "CoinFlipEffect:#FleetHackersLib.Cards.Effects",
 						"winEffect":
 						{
-							"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+							"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 							"targets": [ "OtherDevice" ],
 							"optional": true
 						},
@@ -227,7 +227,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Attack",
@@ -236,7 +236,7 @@
 				"effects":
 				[
 					{
-						"__type": "ExhaustEffect:#FleetHackers.Cards.Effects",
+						"__type": "ExhaustEffect:#FleetHackersLib.Cards.Effects",
 						"target": "AnyShip",
 						"optional": true
 					}
@@ -257,7 +257,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Attack",
@@ -267,7 +267,7 @@
 				"effects":
 				[
 					{
-						"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+						"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 						"target": "This",
 						"attackPump": 1,
 						"defensePump": 1,
@@ -290,7 +290,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -299,7 +299,7 @@
 				"effects":
 				[
 					{
-						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "None",
 						"amount": 1,
@@ -327,7 +327,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EndOfYourTurn",
@@ -336,7 +336,7 @@
 				"effects":
 				[
 					{
-						"__type": "StateCheckEffect:#FleetHackers.Cards.Effects",
+						"__type": "StateCheckEffect:#FleetHackersLib.Cards.Effects",
 						"target": "This",
 						"checks":
 						[
@@ -351,7 +351,7 @@
 						],
 						"resultEffect":
 						{
-							"__type": "ForfeitEffect:#FleetHackers.Cards.Effects",
+							"__type": "ForfeitEffect:#FleetHackersLib.Cards.Effects",
 							"target": "This"
 						}
 					}
@@ -380,7 +380,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Interception",
@@ -393,7 +393,7 @@
 				"effects":
 				[
 					{
-						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "None",
 						"amount": 3,
@@ -431,7 +431,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TruefireAbility:#FleetHackers.Cards.Abilities"
+				"__type": "TruefireAbility:#FleetHackersLib.Cards.Abilities"
 			}
 		]
 	},
@@ -466,11 +466,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "None",
 						"amount": 2,
@@ -493,11 +493,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "None",
 						"amount": 1,
@@ -523,7 +523,7 @@
 		"defense": 4,
 		"abilities": [
 			{
-				"__type": "CloakAbility:#FleetHackers.Cards.Abilities"
+				"__type": "CloakAbility:#FleetHackersLib.Cards.Abilities"
 			}
 		]
 	},
@@ -536,11 +536,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+						"__type": "PutCounterEffect:#FleetHackersLib.Cards.Effects",
 						"numCounters": 2,
 						"divideMethod": "YouChooseAny",
 						"countersExact": false,
@@ -549,7 +549,7 @@
 						"target": "NonInfluence"
 					},
 					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 1
 					}
 				]
@@ -568,7 +568,7 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "CloakAbility:#FleetHackers.Cards.Abilities"
+				"__type": "CloakAbility:#FleetHackersLib.Cards.Abilities"
 			}
 		]
 	},
@@ -579,7 +579,7 @@
 		"influenceRequirement": 2,
 		"supertype": "Maneuver",
 		"additionalCost": {
-			"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+			"__type": "ExhaustShipCost:#FleetHackersLib.Cards.AlternateCosts",
 			"target": "YourChargedShips",
 			"numTargetsType": "Variable",
 			"numTargetsVar": "X"
@@ -587,11 +587,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "AnyShip" ],
 						"condition":
 						{
@@ -614,15 +614,15 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "BounceEffect:#FleetHackers.Cards.Effects",
+						"__type": "BounceEffect:#FleetHackersLib.Cards.Effects",
 						"target": "NonInfluence"
 					},
 					{
-						"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+						"__type": "DiscardEffect:#FleetHackersLib.Cards.Effects",
 						"target": "Opponent",
 						"chooseMethod": "YouChoose"
 					}
@@ -639,11 +639,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "AnyShip" ],
 						"condition":
 						{
@@ -677,22 +677,22 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "EntersWithCountersAbility:#FleetHackers.Cards.Abilities",
+				"__type": "EntersWithCountersAbility:#FleetHackersLib.Cards.Abilities",
 				"numCounters": 2
 			},
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"additionalCosts":
 				[
 					{
-						"__type": "RemoveCountersCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "RemoveCountersCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "This",
 						"numCounters": 2
 					}
 				],
 				"effect":
 				{
-					"__type": "BounceEffect:#FleetHackers.Cards.Effects",
+					"__type": "BounceEffect:#FleetHackersLib.Cards.Effects",
 					"target": "NonInfluence"
 				}
 			}
@@ -710,7 +710,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"condition":
 				{
 					"attribute": "None",
@@ -719,7 +719,7 @@
 				},
 				"effect":
 				{
-					"__type": "StaticCostReductionEffect:#FleetHackers.Cards.Effects",
+					"__type": "StaticCostReductionEffect:#FleetHackersLib.Cards.Effects",
 					"cardType": "Maneuver",
 					"reductionAmount": 1
 				}
@@ -735,10 +735,10 @@
 		"subtype": "Upgrade",
 		"abilities": [
 			{
-				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+				"__type": "AttachToShipAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -747,7 +747,7 @@
 				"effects":
 				[
 					{
-						"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+						"__type": "PutCounterEffect:#FleetHackersLib.Cards.Effects",
 						"numCounters": 1,
 						"countersExact": true,
 						"numTargets": 0,
@@ -757,22 +757,22 @@
 				]
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpForCountersEffect:#FleetHackersLib.Cards.Effects",
 					"target": "AttachedShip",
 					"attackPump": 1,
 					"defensePump": 1
 				}
 			},
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"energyCost": 1,
 				"additionalCosts":
 				[
 					{
-						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "ExhaustShipCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "YourChargedShips",
 						"numTargetsType": "Numeric",
 						"numTargets": 1
@@ -780,7 +780,7 @@
 				],
 				"effect":
 				{
-					"__type": "AttachToShipEffect:#FleetHackers.Cards.Effects",
+					"__type": "AttachToShipEffect:#FleetHackersLib.Cards.Effects",
 					"target": "TargettedShip"
 				}
 			}
@@ -799,7 +799,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -808,7 +808,7 @@
 				"effects":
 				[
 					{
-						"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+						"__type": "PutCounterEffect:#FleetHackersLib.Cards.Effects",
 						"numCounters": 2,
 						"divideMethod": "None",
 						"countersExact": true,
@@ -829,11 +829,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "BounceEffect:#FleetHackers.Cards.Effects",
+						"__type": "BounceEffect:#FleetHackersLib.Cards.Effects",
 						"target": "AnyShip"
 					}
 				]
@@ -849,15 +849,15 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "ScryEffect:#FleetHackers.Cards.Effects",
+						"__type": "ScryEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 3
 					},
 					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 1
 					}
 				]
@@ -873,13 +873,13 @@
 		"subtype": "Upgrade",
 		"abilities": [
 			{
-				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+				"__type": "AttachToShipAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "PacifismEffect:#FleetHackers.Cards.Effects",
+					"__type": "PacifismEffect:#FleetHackersLib.Cards.Effects",
 					"target": "AttachedShip"
 				}
 			}
@@ -898,7 +898,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "LeavesTheBattleZone",
@@ -907,7 +907,7 @@
 				"effects":
 				[
 					{
-						"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+						"__type": "DiscardEffect:#FleetHackersLib.Cards.Effects",
 						"target": "Opponent",
 						"chooseMethod": "TargetChooses"
 					}
@@ -928,7 +928,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -937,14 +937,14 @@
 				"effects":
 				[
 					{
-						"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+						"__type": "DiscardEffect:#FleetHackersLib.Cards.Effects",
 						"target": "Opponent",
 						"chooseMethod": "TargetChooses"
 					}
 				]
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "LeavesTheBattleZone",
@@ -953,7 +953,7 @@
 				"effects":
 				[
 					{
-						"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+						"__type": "DiscardEffect:#FleetHackersLib.Cards.Effects",
 						"target": "Opponent",
 						"chooseMethod": "TargetChooses"
 					}
@@ -974,7 +974,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -983,7 +983,7 @@
 				"effects":
 				[
 					{
-						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+						"__type": "TutorEffect:#FleetHackersLib.Cards.Effects",
 						"target": "You",
 						"cardType": "Maneuver",
 						"cardSubtype": "None",
@@ -1005,7 +1005,7 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "CloakAbility:#FleetHackers.Cards.Abilities"
+				"__type": "CloakAbility:#FleetHackersLib.Cards.Abilities"
 			}
 		]
 	},
@@ -1021,11 +1021,11 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"additionalCosts":
 				[
 					{
-						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "ExhaustShipCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "This",
 						"numTargetsType": "Numeric",
 						"numTargets": 1
@@ -1033,7 +1033,7 @@
 				],
 				"effect":
 				{
-					"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+					"__type": "PutCounterEffect:#FleetHackersLib.Cards.Effects",
 					"numCounters": 1,
 					"divideMethod": "None",
 					"countersExact": true,
@@ -1053,11 +1053,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "DiscardEffect:#FleetHackers.Cards.Effects",
+						"__type": "DiscardEffect:#FleetHackersLib.Cards.Effects",
 						"target": "Opponent",
 						"chooseMethod": "YouChoose",
 						"cardRestriction": "NonInfluence",
@@ -1069,7 +1069,7 @@
 						}
 					},
 					{
-						"__type": "FreePlayEffect:#FleetHackers.Cards.Effects",
+						"__type": "FreePlayEffect:#FleetHackersLib.Cards.Effects",
 						"target": "NonInfluence",
 						"condition":
 						{
@@ -1092,16 +1092,16 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "CloakEffect:#FleetHackers.Cards.Effects",
+						"__type": "CloakEffect:#FleetHackersLib.Cards.Effects",
 						"effectEnds": "BeginningOfYourTurn",
 						"target": "AnyShip"
 					},
 					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 1
 					}
 				]
@@ -1117,15 +1117,15 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "AnyShip" ]
 					},
 					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 1,
 						"target": "TargetShipController"
 					}
@@ -1142,11 +1142,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "AnyShip" ],
 						"variableBinding":
 						{
@@ -1155,7 +1155,7 @@
 						}
 					},
 					{
-						"__type": "LifeGainEffect:#FleetHackers.Cards.Effects",
+						"__type": "LifeGainEffect:#FleetHackersLib.Cards.Effects",
 						"amountType": "Variable",
 						"amountVar": "X",
 						"target": "Opponent"
@@ -1176,17 +1176,17 @@
 		"defense": 3,
 		"abilities": [
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"additionalCosts":
 				[
 					{
-						"__type": "DiscardCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "DiscardCost:#FleetHackersLib.Cards.AlternateCosts",
 						"numCards": 1
 					}
 				],
 				"effect":
 				{
-					"__type": "CloakEffect:#FleetHackers.Cards.Effects",
+					"__type": "CloakEffect:#FleetHackersLib.Cards.Effects",
 					"effectEnds": "BeginningOfYourTurn",
 					"target": "This"
 				}
@@ -1205,25 +1205,25 @@
 		"defense": 4,
 		"abilities": [
 			{
-				"__type": "EntersWithCountersAbility:#FleetHackers.Cards.Abilities",
+				"__type": "EntersWithCountersAbility:#FleetHackersLib.Cards.Abilities",
 				"numCounters": 2
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpForCountersEffect:#FleetHackersLib.Cards.Effects",
 					"target": "This",
 					"attackPump": -1,
 					"defensePump": -1
 				}
 			},
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"energyCost": 2,
 				"effect":
 				{
-					"__type": "RemoveCounterEffect:#FleetHackers.Cards.Effects",
+					"__type": "RemoveCounterEffect:#FleetHackersLib.Cards.Effects",
 					"numCounters": 1,
 					"divideMethod": "None",
 					"countersExact": true,
@@ -1243,11 +1243,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+						"__type": "TutorEffect:#FleetHackersLib.Cards.Effects",
 						"target": "You",
 						"cardType": "Influence",
 						"cardSubtype": "None",
@@ -1266,11 +1266,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "FogEffect:#FleetHackers.Cards.Effects",
+						"__type": "FogEffect:#FleetHackersLib.Cards.Effects",
 						"effectEnds": "BeginningOfYourTurn"
 					}
 				]
@@ -1289,7 +1289,7 @@
 		"defense": 3,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -1298,7 +1298,7 @@
 				"effects":
 				[
 					{
-						"__type": "LifeLossEffect:#FleetHackers.Cards.Effects",
+						"__type": "LifeLossEffect:#FleetHackersLib.Cards.Effects",
 						"amountType": "Numeric",
 						"amount": 2,
 						"target": "You"
@@ -1306,7 +1306,7 @@
 				]
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Annihilated",
@@ -1316,7 +1316,7 @@
 				"effects":
 				[
 					{
-						"__type": "LifeGainEffect:#FleetHackers.Cards.Effects",
+						"__type": "LifeGainEffect:#FleetHackersLib.Cards.Effects",
 						"amountType": "Variable",
 						"amountVar": "X",
 						"target": "You",
@@ -1367,7 +1367,7 @@
 		"defense": 5,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -1376,7 +1376,7 @@
 				"effects":
 				[
 					{
-						"__type": "LifeLossEffect:#FleetHackers.Cards.Effects",
+						"__type": "LifeLossEffect:#FleetHackersLib.Cards.Effects",
 						"amountType": "Numeric",
 						"amount": 3,
 						"target": "You"
@@ -1384,32 +1384,32 @@
 				]
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpForCountersEffect:#FleetHackersLib.Cards.Effects",
 					"target": "This",
 					"attackPump": -1,
 					"defensePump": -1
 				}
 			},
 			{
-				"__type": "SingleAttackAbility:#FleetHackers.Cards.Abilities"
+				"__type": "SingleAttackAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"energyCost": 1,
 				"additionalCosts":
 				[
 					{
-						"__type": "PutCountersCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "PutCountersCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "This",
 						"numCounters": 1
 					}
 				],
 				"effect":
 				{
-					"__type": "RechargeEffect:#FleetHackers.Cards.Effects",
+					"__type": "RechargeEffect:#FleetHackersLib.Cards.Effects",
 					"target": "This"
 				}
 			}
@@ -1424,11 +1424,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "RestoreEffect:#FleetHackers.Cards.Effects",
+						"__type": "RestoreEffect:#FleetHackersLib.Cards.Effects",
 						"target": "AnyShip",
 						"junkyardOwner": "You",
 						"targetZone": "YourHand"
@@ -1446,10 +1446,10 @@
 		"subtype": "Upgrade",
 		"abilities": [
 			{
-				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+				"__type": "AttachToShipAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -1458,17 +1458,17 @@
 				"effects":
 				[
 					{
-						"__type": "ExhaustEffect:#FleetHackers.Cards.Effects",
+						"__type": "ExhaustEffect:#FleetHackersLib.Cards.Effects",
 						"target": "AttachedShip",
 						"optional": false
 					}
 				]
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "TapDownEffect:#FleetHackers.Cards.Effects",
+					"__type": "TapDownEffect:#FleetHackersLib.Cards.Effects",
 					"target": "AttachedShip"
 				}
 			}
@@ -1486,7 +1486,7 @@
 		"defense": 3,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -1495,7 +1495,7 @@
 				"effects":
 				[
 					{
-						"__type": "RestoreEffect:#FleetHackers.Cards.Effects",
+						"__type": "RestoreEffect:#FleetHackersLib.Cards.Effects",
 						"target": "AnyShip",
 						"optional": "true",
 						"junkyardOwner": "You",
@@ -1517,7 +1517,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Interception",
@@ -1526,7 +1526,7 @@
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [
 							"This",
 							"AttackingShips"
@@ -1548,7 +1548,7 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "LifeLoss",
@@ -1557,7 +1557,7 @@
 				"effects":
 				[
 					{
-						"__type": "HealthLossReductionEffect:#FleetHackers.Cards.Effects",
+						"__type": "HealthLossReductionEffect:#FleetHackersLib.Cards.Effects",
 						"amountType": "Numeric",
 						"amount": 1
 					}
@@ -1577,7 +1577,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "LeavesTheBattleZone",
@@ -1586,7 +1586,7 @@
 				"effects":
 				[
 					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 1
 					}
 				]
@@ -1605,17 +1605,17 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"additionalCosts":
 				[
 					{
-						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "ExhaustShipCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "This"
 					}
 				],
 				"effect":
 				{
-					"__type": "RemoveCounterEffect:#FleetHackers.Cards.Effects",
+					"__type": "RemoveCounterEffect:#FleetHackersLib.Cards.Effects",
 					"numCounters": 1,
 					"divideMethod": "None",
 					"countersExact": true,
@@ -1638,32 +1638,32 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpForCountersEffect:#FleetHackersLib.Cards.Effects",
 					"target": "This",
 					"attackPump": -1,
 					"defensePump": -1
 				}
 			},
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"additionalCosts":
 				[
 					{
-						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "ExhaustShipCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "This"
 					},
 					{
-						"__type": "PutCountersCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "PutCountersCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "This",
 						"numCounters": 1
 					}
 				],
 				"effect":
 				{
-					"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+					"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 					"numCards": 1
 				}
 			}
@@ -1681,7 +1681,7 @@
 		"defense": 4,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -1690,7 +1690,7 @@
 				"effects":
 				[
 					{
-						"__type": "LifeGainEffect:#FleetHackers.Cards.Effects",
+						"__type": "LifeGainEffect:#FleetHackersLib.Cards.Effects",
 						"amountType": "Numeric",
 						"amount": 4,
 						"target": "You"
@@ -1708,18 +1708,18 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+						"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 						"attackPump": 0,
 						"defensePump": 4,
 						"effectEnds": "BeginningOfYourTurn",
 						"target": "AnyShip"
 					},
 					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 1
 					}
 				]
@@ -1735,11 +1735,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "AnyShip" ],
 						"condition":
 						{
@@ -1773,7 +1773,7 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"condition":
 				{
 					"attribute": "None",
@@ -1783,7 +1783,7 @@
 				},
 				"effect":
 				{
-					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 					"attackPump": 3,
 					"defensePump": 3,
 					"effectEnds": "None",
@@ -1804,10 +1804,10 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "AmbushAbility:#FleetHackers.Cards.Abilities"
+				"__type": "AmbushAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -1816,7 +1816,7 @@
 				"effects":
 				[
 					{
-						"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+						"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 						"attackPump": 1,
 						"defensePump": 1,
 						"effectEnds": "BeginningOfYourTurn",
@@ -1839,7 +1839,7 @@
 		"defense": 3,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -1848,10 +1848,10 @@
 				"effects":
 				[
 					{
-						"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
+						"__type": "CoinFlipEffect:#FleetHackersLib.Cards.Effects",
 						"winEffect":
 						{
-							"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+							"__type": "PutCounterEffect:#FleetHackersLib.Cards.Effects",
 							"numCounters": 1,
 							"divideMethod": "None",
 							"countersExact": true,
@@ -1864,10 +1864,10 @@
 				]
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpForCountersEffect:#FleetHackersLib.Cards.Effects",
 					"target": "This",
 					"attackPump": 1,
 					"defensePump": 1
@@ -1887,7 +1887,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "HexproofAbility:#FleetHackers.Cards.Abilities"
+				"__type": "HexproofAbility:#FleetHackersLib.Cards.Abilities"
 			}
 		]
 	},
@@ -1901,7 +1901,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Annihilated",
@@ -1917,7 +1917,7 @@
 				"effects":
 				[
 					{
-						"__type": "DamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
 						"divideMethod": "None",
 						"amountType": "Variable",
@@ -1944,7 +1944,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -1953,16 +1953,16 @@
 				"effects":
 				[
 					{
-						"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
+						"__type": "CoinFlipEffect:#FleetHackersLib.Cards.Effects",
 						"winEffect":
 						{
-							"__type": "MillEffect:#FleetHackers.Cards.Effects",
+							"__type": "MillEffect:#FleetHackersLib.Cards.Effects",
 							"target": "Opponent",
 							"numCards": 3
 						},
 						"loseEffect":
 						{
-							"__type": "MillEffect:#FleetHackers.Cards.Effects",
+							"__type": "MillEffect:#FleetHackersLib.Cards.Effects",
 							"target": "Opponent",
 							"numCards": 2
 						}
@@ -1981,7 +1981,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Damage",
@@ -1994,11 +1994,11 @@
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "ThatShip" ]
 					},
 					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 1
 					}
 				]
@@ -2014,20 +2014,20 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+						"__type": "RangePumpEffect:#FleetHackersLib.Cards.Effects",
 						"rangePump": 1,
 						"effectEnds": "BeginningOfYourTurn",
 						"target": "AnyShip"
 					},
 					{
-						"__type": "CoinFlipEffect:#FleetHackers.Cards.Effects",
+						"__type": "CoinFlipEffect:#FleetHackersLib.Cards.Effects",
 						"winEffect":
 						{
-							"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+							"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 							"attackPump": 1,
 							"defensePump": 0,
 							"effectEnds": "BeginningOfYourTurn",
@@ -2049,10 +2049,10 @@
 		"subtype": "Upgrade",
 		"abilities": [
 			{
-				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+				"__type": "AttachToShipAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "AssaultDamage",
@@ -2065,17 +2065,17 @@
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "DamagedShip" ]
 					}
 				]
 			},
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"additionalCosts":
 				[
 					{
-						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "ExhaustShipCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "YourChargedShips",
 						"numTargetsType": "Numeric",
 						"numTargets": 1
@@ -2083,7 +2083,7 @@
 				],
 				"effect":
 				{
-					"__type": "AttachToShipEffect:#FleetHackers.Cards.Effects",
+					"__type": "AttachToShipEffect:#FleetHackersLib.Cards.Effects",
 					"target": "TargettedShip"
 				}
 			}
@@ -2101,7 +2101,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -2110,7 +2110,7 @@
 				"effects":
 				[
 					{
-						"__type": "MillEffect:#FleetHackers.Cards.Effects",
+						"__type": "MillEffect:#FleetHackersLib.Cards.Effects",
 						"target": "Opponent",
 						"numCards": 2
 					}
@@ -2150,7 +2150,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Attack",
@@ -2159,7 +2159,7 @@
 				"effects":
 				[
 					{
-						"__type": "RestoreEffect:#FleetHackers.Cards.Effects",
+						"__type": "RestoreEffect:#FleetHackersLib.Cards.Effects",
 						"target": "AnyShip",
 						"junkyardOwner": "Opponent",
 						"targetZone": "BattleZone",
@@ -2182,7 +2182,7 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Damage",
@@ -2195,7 +2195,7 @@
 				"effects":
 				[
 					{
-						"__type": "PutCounterEffect:#FleetHackers.Cards.Effects",
+						"__type": "PutCounterEffect:#FleetHackersLib.Cards.Effects",
 						"numCounters": 1,
 						"divideMethod": "None",
 						"countersExact": true,
@@ -2207,10 +2207,10 @@
 				]
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpForCountersEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpForCountersEffect:#FleetHackersLib.Cards.Effects",
 					"target": "This",
 					"attackPump": 1,
 					"defensePump": 1
@@ -2230,11 +2230,11 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"additionalCosts":
 				[
 					{
-						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "ExhaustShipCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "This",
 						"numTargetsType": "Numeric",
 						"numTargets": 1
@@ -2242,17 +2242,17 @@
 				],
 				"effect":
 				{
-					"__type": "ModalEffect:#FleetHackers.Cards.Effects",
+					"__type": "ModalEffect:#FleetHackersLib.Cards.Effects",
 					"effects":
 					[
 						{
-							"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+							"__type": "RangePumpEffect:#FleetHackersLib.Cards.Effects",
 							"rangePump": 1,
 							"effectEnds": "BeginningOfYourTurn",
 							"target": "AnyShip"
 						},
 						{
-							"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+							"__type": "RangePumpEffect:#FleetHackersLib.Cards.Effects",
 							"rangePump": -1,
 							"effectEnds": "BeginningOfYourTurn",
 							"target": "AnyShip"
@@ -2274,7 +2274,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"condition":
 				{
 					"attribute": "None",
@@ -2285,13 +2285,13 @@
 				},
 				"effect":
 				{
-					"__type": "UnblockableEffect:#FleetHackers.Cards.Effects",
+					"__type": "UnblockableEffect:#FleetHackersLib.Cards.Effects",
 					"target": "This",
 					"subject": "ThatPlayer"
 				}
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "AssaultDamage",
@@ -2304,17 +2304,17 @@
 				"effects":
 				[
 					{
-						"__type": "ChooseTargetEffect:#FleetHackers.Cards.Effects",
+						"__type": "ChooseTargetEffect:#FleetHackersLib.Cards.Effects",
 						"target": "DeviceChooserControls",
 						"chooser": "HomeBaseController",
 						"successEffects":
 						[
 							{
-								"__type": "ForfeitEffect:#FleetHackers.Cards.Effects",
+								"__type": "ForfeitEffect:#FleetHackersLib.Cards.Effects",
 								"target": "This"
 							},
 							{
-								"__type": "GainControlEffect:#FleetHackers.Cards.Effects",
+								"__type": "GainControlEffect:#FleetHackersLib.Cards.Effects",
 								"target": "ChosenDevice"
 							}
 						]
@@ -2332,11 +2332,11 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "ExhaustedShip" ],
 						"condition":
 						{
@@ -2373,10 +2373,10 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "AmbushAbility:#FleetHackers.Cards.Abilities"
+				"__type": "AmbushAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -2385,7 +2385,7 @@
 				"effects":
 				[
 					{
-						"__type": "StateCheckEffect:#FleetHackers.Cards.Effects",
+						"__type": "StateCheckEffect:#FleetHackersLib.Cards.Effects",
 						"target": "None",
 						"checks":
 						[
@@ -2396,12 +2396,12 @@
 						],
 						"resultEffect":
 						{
-							"__type": "ForfeitEffect:#FleetHackers.Cards.Effects",
+							"__type": "ForfeitEffect:#FleetHackersLib.Cards.Effects",
 							"target": "This",
 							"alternateCosts":
 							[
 								{
-									"__type": "DiscardCost:#FleetHackers.Cards.AlternateCosts",
+									"__type": "DiscardCost:#FleetHackersLib.Cards.AlternateCosts",
 									"numCards": 1
 								}
 							]
@@ -2423,7 +2423,7 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "HasteAbility:#FleetHackers.Cards.Abilities"
+				"__type": "HasteAbility:#FleetHackersLib.Cards.Abilities"
 			}
 		]
 	},
@@ -2439,7 +2439,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -2448,7 +2448,7 @@
 				"effects":
 				[
 					{
-						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+						"__type": "TutorEffect:#FleetHackersLib.Cards.Effects",
 						"target": "You",
 						"cardType": "None",
 						"cardSubtype": "Whyr",
@@ -2457,7 +2457,7 @@
 				]
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Annihilated",
@@ -2466,7 +2466,7 @@
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "OtherShipsOfType" ],
 						"subtype": "Whyr"
 					}
@@ -2486,7 +2486,7 @@
 		"defense": 4,
 		"abilities": [
 			{
-				"__type": "ConditionalPlayAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ConditionalPlayAbility:#FleetHackersLib.Cards.Abilities",
 				"condition":
 				{
 					"attribute": "None",
@@ -2507,7 +2507,7 @@
 		"abilities":
 		[
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Attack",
@@ -2516,7 +2516,7 @@
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "AttackingShip" ]
 					}
 				]
@@ -2535,10 +2535,10 @@
 		"defense": 3,
 		"abilities": [
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 					"attackPump": 0,
 					"defensePump": 1,
 					"effectEnds": "None",
@@ -2560,7 +2560,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -2569,7 +2569,7 @@
 				"effects":
 				[
 					{
-						"__type": "MicrodroneEffect:#FleetHackers.Cards.Effects",
+						"__type": "MicrodroneEffect:#FleetHackersLib.Cards.Effects",
 						"optional": true,
 						"count": 1
 					}
@@ -2586,16 +2586,16 @@
 		"abilities":
 		[
 			{
-				"__type": "ImmediateAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
 				"effects":
 				[
 					{
-						"__type": "CostReductionEffect:#FleetHackers.Cards.Effects",
+						"__type": "CostReductionEffect:#FleetHackersLib.Cards.Effects",
 						"target": "NextCardYouPlayThisTurn",
 						"reductionAmount": 4
 					},
 					{
-						"__type": "CardDrawEffect:#FleetHackers.Cards.Effects",
+						"__type": "CardDrawEffect:#FleetHackersLib.Cards.Effects",
 						"numCards": 1
 					}
 				]
@@ -2614,7 +2614,7 @@
 		"defense": 1,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -2623,14 +2623,14 @@
 				"effects":
 				[
 					{
-						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+						"__type": "TutorEffect:#FleetHackersLib.Cards.Effects",
 						"target": "You",
 						"cardTitle": "Xeno Influence",
 						"optional": true,
 						"playImmediate": true
 					},
 					{
-						"__type": "AddEnergyCrystalEffect:#FleetHackers.Cards.Effects",
+						"__type": "AddEnergyCrystalEffect:#FleetHackersLib.Cards.Effects",
 						"depleted": true
 					}
 				]
@@ -2646,10 +2646,10 @@
 		"subtype": "Upgrade",
 		"abilities": [
 			{
-				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+				"__type": "AttachToShipAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -2658,7 +2658,7 @@
 				"effects":
 				[
 					{
-						"__type": "RechargeCrystalsEffect:#FleetHackers.Cards.Effects",
+						"__type": "RechargeCrystalsEffect:#FleetHackersLib.Cards.Effects",
 						"numCrystals": 2,
 						"exact": false,
 						"optional": true
@@ -2666,31 +2666,31 @@
 				]
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 					"target": "AttachedShip",
 					"attackPump": 4,
 					"defensePump": 4
 				}
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+					"__type": "RangePumpEffect:#FleetHackersLib.Cards.Effects",
 					"rangePump": -1,
 					"target": "AttachedShip"
 				}
 			},
 			{
-				"__type": "ActivatedAbility:#FleetHackers.Cards.Abilities",
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
 				"energyCost": 5,
 				"additionalCosts":
 				[
 					{
-						"__type": "ExhaustShipCost:#FleetHackers.Cards.AlternateCosts",
+						"__type": "ExhaustShipCost:#FleetHackersLib.Cards.AlternateCosts",
 						"target": "YourChargedShips",
 						"numTargetsType": "Numeric",
 						"numTargets": 1
@@ -2698,7 +2698,7 @@
 				],
 				"effect":
 				{
-					"__type": "AttachToShipEffect:#FleetHackers.Cards.Effects",
+					"__type": "AttachToShipEffect:#FleetHackersLib.Cards.Effects",
 					"target": "TargettedShip"
 				}
 			}
@@ -2713,13 +2713,13 @@
 		"subtype": "Upgrade",
 		"abilities": [
 			{
-				"__type": "AttachToShipAbility:#FleetHackers.Cards.Abilities"
+				"__type": "AttachToShipAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "SecretTechAbility:#FleetHackers.Cards.Abilities"
+				"__type": "SecretTechAbility:#FleetHackersLib.Cards.Abilities"
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Annihilated",
@@ -2729,11 +2729,11 @@
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "This" ]
 					},
 					{
-						"__type": "RemoveDamageEffect:#FleetHackers.Cards.Effects",
+						"__type": "RemoveDamageEffect:#FleetHackersLib.Cards.Effects",
 						"target": "AttachedShip"
 					}
 				]
@@ -2752,7 +2752,7 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "EntersTheBattleZone",
@@ -2761,7 +2761,7 @@
 				"effects":
 				[
 					{
-						"__type": "TutorEffect:#FleetHackers.Cards.Effects",
+						"__type": "TutorEffect:#FleetHackersLib.Cards.Effects",
 						"target": "You",
 						"cardType": "None",
 						"cardSubtype": "Whyr",
@@ -2770,7 +2770,7 @@
 				]
 			},
 			{
-				"__type": "TriggeredAbility:#FleetHackers.Cards.Abilities",
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
 					"triggerType": "Annihilated",
@@ -2779,17 +2779,17 @@
 				"effects":
 				[
 					{
-						"__type": "AnnihilateEffect:#FleetHackers.Cards.Effects",
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
 						"targets": [ "OtherShipsOfType" ],
 						"subtype": "Whyr"
 					}
 				]
 			},
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "StatPumpEffect:#FleetHackers.Cards.Effects",
+					"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
 					"attackPumpType": "Variable",
 					"defensePumpType": "Variable",
 					"attackPumpVar": "X",
@@ -2821,10 +2821,10 @@
 		"defense": 2,
 		"abilities": [
 			{
-				"__type": "StaticAbility:#FleetHackers.Cards.Abilities",
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
 				"effect":
 				{
-					"__type": "RangePumpEffect:#FleetHackers.Cards.Effects",
+					"__type": "RangePumpEffect:#FleetHackersLib.Cards.Effects",
 					"rangePump": 1,
 					"effectEnds": "None",
 					"target": "OtherShipsOfType",

@@ -76,7 +76,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Card", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Card", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards")]
     [System.SerializableAttribute()]
     public partial class Card : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -329,7 +329,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AlternateCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AlternateCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ExhaustShipCost))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.RemoveCountersCost))]
@@ -362,7 +362,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Ability", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ability", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.CloakAbility))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.ActivatedAbility))]
@@ -405,14 +405,14 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CloakAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CloakAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class CloakAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ActivatedAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ActivatedAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class ActivatedAbility : FleetHackers.FleetHackersServer.Ability {
         
@@ -467,42 +467,42 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AttachToShipAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AttachToShipAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class AttachToShipAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SingleAttackAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SingleAttackAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class SingleAttackAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AmbushAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AmbushAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class AmbushAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HexproofAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HexproofAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class HexproofAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HasteAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HasteAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class HasteAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConditionalPlayAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConditionalPlayAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class ConditionalPlayAbility : FleetHackers.FleetHackersServer.Ability {
         
@@ -525,14 +525,14 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SecretTechAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SecretTechAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class SecretTechAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StaticAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StaticAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class StaticAbility : FleetHackers.FleetHackersServer.Ability {
         
@@ -571,7 +571,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TriggeredAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TriggeredAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class TriggeredAbility : FleetHackers.FleetHackersServer.Ability {
         
@@ -610,7 +610,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImmediateAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImmediateAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class ImmediateAbility : FleetHackers.FleetHackersServer.Ability {
         
@@ -633,14 +633,14 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TruefireAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TruefireAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class TruefireAbility : FleetHackers.FleetHackersServer.Ability {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntersWithCountersAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntersWithCountersAbility", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class EntersWithCountersAbility : FleetHackers.FleetHackersServer.Ability {
         
@@ -663,7 +663,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Effect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Effect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.HealthLossReductionEffect))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FleetHackers.FleetHackersServer.TutorEffect))]
@@ -730,7 +730,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExhaustShipCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExhaustShipCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts")]
     [System.SerializableAttribute()]
     public partial class ExhaustShipCost : FleetHackers.FleetHackersServer.AlternateCost {
         
@@ -801,7 +801,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveCountersCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveCountersCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts")]
     [System.SerializableAttribute()]
     public partial class RemoveCountersCost : FleetHackers.FleetHackersServer.AlternateCost {
         
@@ -840,7 +840,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DiscardCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DiscardCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts")]
     [System.SerializableAttribute()]
     public partial class DiscardCost : FleetHackers.FleetHackersServer.AlternateCost {
         
@@ -863,7 +863,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PutCountersCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.AlternateCosts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PutCountersCost", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.AlternateCosts")]
     [System.SerializableAttribute()]
     public partial class PutCountersCost : FleetHackers.FleetHackersServer.AlternateCost {
         
@@ -902,7 +902,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HealthLossReductionEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HealthLossReductionEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class HealthLossReductionEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -957,7 +957,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TutorEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TutorEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class TutorEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1060,7 +1060,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FreePlayEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FreePlayEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class FreePlayEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1099,7 +1099,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CloakEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CloakEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class CloakEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1138,7 +1138,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LifeGainEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LifeGainEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class LifeGainEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1225,7 +1225,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveCounterEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveCounterEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class RemoveCounterEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1328,7 +1328,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FogEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FogEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class FogEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1351,7 +1351,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LifeLossEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LifeLossEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class LifeLossEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1422,7 +1422,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RechargeEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RechargeEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class RechargeEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1461,7 +1461,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RestoreEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RestoreEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class RestoreEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1564,7 +1564,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TapDownEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TapDownEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class TapDownEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1587,7 +1587,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DamageEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DamageEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class DamageEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1722,7 +1722,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MillEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MillEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class MillEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1761,7 +1761,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RangePumpEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RangePumpEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class RangePumpEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1832,7 +1832,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ModalEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ModalEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class ModalEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1855,7 +1855,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UnblockableEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UnblockableEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class UnblockableEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1910,7 +1910,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ChooseTargetEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ChooseTargetEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class ChooseTargetEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -1965,7 +1965,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GainControlEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GainControlEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class GainControlEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2004,7 +2004,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MicrodroneEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MicrodroneEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class MicrodroneEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2043,7 +2043,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CostReductionEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CostReductionEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class CostReductionEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2082,7 +2082,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AddEnergyCrystalEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AddEnergyCrystalEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class AddEnergyCrystalEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2105,7 +2105,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RechargeCrystalsEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RechargeCrystalsEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class RechargeCrystalsEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2160,7 +2160,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveDamageEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveDamageEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class RemoveDamageEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2183,7 +2183,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StatPumpEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StatPumpEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class StatPumpEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2366,7 +2366,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AnnihilateEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AnnihilateEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class AnnihilateEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2469,7 +2469,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CoinFlipEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CoinFlipEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class CoinFlipEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2508,7 +2508,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExhaustEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExhaustEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class ExhaustEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2547,7 +2547,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ForfeitEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ForfeitEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class ForfeitEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2602,7 +2602,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StateCheckEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StateCheckEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class StateCheckEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2657,7 +2657,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardDrawEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardDrawEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class CardDrawEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2696,7 +2696,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PutCounterEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PutCounterEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class PutCounterEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2815,7 +2815,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BounceEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BounceEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class BounceEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2838,7 +2838,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DiscardEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DiscardEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class DiscardEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2909,7 +2909,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StaticCostReductionEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StaticCostReductionEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class StaticCostReductionEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2948,7 +2948,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AttachToShipEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AttachToShipEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class AttachToShipEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -2971,7 +2971,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StatPumpForCountersEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StatPumpForCountersEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class StatPumpForCountersEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -3026,7 +3026,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScryEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ScryEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class ScryEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -3049,7 +3049,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PacifismEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PacifismEffect", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects")]
     [System.SerializableAttribute()]
     public partial class PacifismEffect : FleetHackers.FleetHackersServer.Effect {
         
@@ -3072,7 +3072,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EffectCondition", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Effects.Conditions")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EffectCondition", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Effects.Conditions")]
     [System.SerializableAttribute()]
     public partial class EffectCondition : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3197,7 +3197,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableDefinition", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableDefinition", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards")]
     [System.SerializableAttribute()]
     public partial class VariableDefinition : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3290,7 +3290,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VariableBinding", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VariableBinding", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards")]
     [System.SerializableAttribute()]
     public partial class VariableBinding : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3367,7 +3367,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StateCheck", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StateCheck", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards")]
     [System.SerializableAttribute()]
     public partial class StateCheck : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3428,7 +3428,7 @@ namespace FleetHackers.FleetHackersServer {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Trigger", Namespace="http://schemas.datacontract.org/2004/07/FleetHackers.Cards.Abilities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Trigger", Namespace="http://schemas.datacontract.org/2004/07/FleetHackersLib.Cards.Abilities")]
     [System.SerializableAttribute()]
     public partial class Trigger : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

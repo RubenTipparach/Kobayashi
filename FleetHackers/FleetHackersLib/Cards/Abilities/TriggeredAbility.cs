@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FleetHackers.Cards.Effects;
+using FleetHackersLib.Cards.Effects;
 using System.Runtime.Serialization;
-using FleetHackers.Cards.Enums;
+using FleetHackersLib.Cards.Enums;
 using System.Collections.ObjectModel;
 
-namespace FleetHackers.Cards.Abilities
+namespace FleetHackersLib.Cards.Abilities
 {
 	[DataContract]
 	public class TriggeredAbility : Ability
