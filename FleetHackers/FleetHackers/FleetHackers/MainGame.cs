@@ -163,7 +163,7 @@ namespace FleetHackers
 			}
 
 			// Load Card texture.
-			_cardTexture = Content.Load<Texture2D>("Cards\\Images\\shadow-card");
+			_cardTexture = Content.Load<Texture2D>("Cards\\Images\\cardlayout-2");
 
 			// Load some fonts.
 			_basicFont = Content.Load<SpriteFont>("Fonts\\SpriteFont1");
