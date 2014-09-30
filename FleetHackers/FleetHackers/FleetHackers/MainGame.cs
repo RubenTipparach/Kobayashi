@@ -331,8 +331,8 @@ namespace FleetHackers
 
 			// Note: this is arbitrary rules text for testing...
 			string someRandomText = "Other Megadrone ships gain 1 range.";
-			Vector2 textSize;
-			someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth * scale, out textSize);
+			someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth * scale);
+			Vector2 textSize = _rulesTextFont.MeasureString(someRandomText);
 
 			Rectangle retval = new Rectangle(
 				0 + 10,
@@ -350,9 +350,8 @@ namespace FleetHackers
 			base.Draw(gameTime);
 		}
 
-		private string WrapText(SpriteFont spriteFont, string text, float maxLineWidth, out Vector2 size)
+		private string WrapText(SpriteFont spriteFont, string text, float maxLineWidth)
 		{
-			size = new Vector2();
 			string[] words = text.Split(' ');
 			StringBuilder stringBuilder = new StringBuilder();
 			float lineWidth = 0f;
@@ -360,7 +359,7 @@ namespace FleetHackers
 
 			foreach (string word in words)
 			{
-				size = spriteFont.MeasureString(word);
+				Vector2 size = spriteFont.MeasureString(word);
 
 				if (lineWidth + size.X < maxLineWidth)
 				{
