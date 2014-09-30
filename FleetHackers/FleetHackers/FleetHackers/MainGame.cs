@@ -107,6 +107,36 @@ namespace FleetHackers
 		private SpriteFont _basicFont;
 
 		/// <summary>
+		/// The width of the rules text box on a card.
+		/// </summary>
+		private int _cardRulesWidth = 618;
+
+		/// <summary>
+		/// The height of the rules text box on a card.
+		/// </summary>
+		private int _cardRulesHeight = 306;
+
+		/// <summary>
+		/// The left-most x coordinate of the rules text box on a card.
+		/// </summary>
+		private int _cardRulesLeftX = 67;
+
+		/// <summary>
+		/// The top-most y coordinate of the rules text box on a card.
+		/// </summary>
+		private int _cardRulesTopY = 682;
+
+		/// <summary>
+		/// The font used for normal text in the rules text box.
+		/// </summary>
+		private SpriteFont _rulesTextFont;
+
+		/// <summary>
+		/// The font used for italic text in the rules text box.
+		/// </summary>
+		private SpriteFont _rulesTextItalicFont;
+
+		/// <summary>
 		/// Constructor for this class.
 		/// </summary>
 		public MainGame()
@@ -167,6 +197,8 @@ namespace FleetHackers
 
 			// Load some fonts.
 			_basicFont = Content.Load<SpriteFont>("Fonts\\SpriteFont1");
+			_rulesTextFont = Content.Load<SpriteFont>("Fonts\\RulesTextFont");
+			_rulesTextItalicFont = Content.Load<SpriteFont>("Fonts\\RulesTextItalicFont");
 
 			// Load models.
 			_models.Add(
@@ -271,8 +303,6 @@ namespace FleetHackers
 		{
 			GraphicsDevice.Clear(Color.Black);
 
-			
-
 			_skybox.Draw(_camera.View, _camera.Projection, _camera.Position);
 
 			foreach (BasicModel model in _models)
@@ -299,8 +329,8 @@ namespace FleetHackers
 			_spriteBatch.Begin();			
 			float scale = .4f;
 
-			string someRandomText = "Some random card test text.";
-			someRandomText = WrapText(_basicFont, someRandomText, _cardTexture.Width * scale - 20);
+			string someRandomText = "Other Megadrone ships gain 1 range.";
+			someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth * scale);
 
 			Rectangle retval = new Rectangle(
 				0 + 10,
@@ -308,9 +338,10 @@ namespace FleetHackers
 				(int)(_cardTexture.Width * scale),
 				(int)(_cardTexture.Height * scale));
 
+			// Note: Clamp string position to INT before render...it looks nicer
 			_spriteBatch.Draw(_cardTexture, retval, Color.White);
-			_spriteBatch.DrawString(_basicFont, someRandomText,
-				new Vector2(0 + 27, GraphicsDevice.Viewport.Height - (int)(_cardTexture.Height/2 * scale) + 22),
+			_spriteBatch.DrawString(_rulesTextFont, someRandomText,
+				new Vector2((int)(retval.X + _cardRulesLeftX * scale), (int)(retval.Y + _cardRulesTopY * scale)),
 				Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 			_spriteBatch.End();
 
