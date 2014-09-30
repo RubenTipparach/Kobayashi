@@ -32,6 +32,9 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.XImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.AudioImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Nuclex.Fonts.Content.TrueTypeImporter">
+      <HintPath>Nuclex\Nuclex.Fonts.Content.TrueTypeImporter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="blue.png">
@@ -130,12 +133,12 @@
     <Compile Include="Fonts\RulesTextFont.spritefont">
       <Name>RulesTextFont</Name>
       <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
+      <Processor>NuclexSpriteFontDescriptionProcessor</Processor>
     </Compile>
     <Compile Include="Fonts\RulesTextItalicFont.spritefont">
       <Name>RulesTextItalicFont</Name>
       <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
+      <Processor>NuclexSpriteFontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +147,160 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Nuclex\LzmaSharp.dll">
+      <Name>LzmaSharp</Name>
+    </None>
+    <None Include="Nuclex\LzmaSharp.xml">
+      <Name>LzmaSharp</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\NMock.StrongNamed.dll">
+      <Name>NMock.StrongNamed</Name>
+    </None>
+    <None Include="Nuclex\NMock.StrongNamed.xml">
+      <Name>NMock.StrongNamed</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Audio.dll">
+      <Name>Nuclex.Audio</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Audio.xml">
+      <Name>Nuclex.Audio</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Fonts.Content.TrueTypeImporter.dll">
+      <Name>Nuclex.Fonts.Content.TrueTypeImporter</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Fonts.Content.TrueTypeImporter.xml">
+      <Name>Nuclex.Fonts.Content.TrueTypeImporter</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Fonts.dll">
+      <Name>Nuclex.Fonts</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Fonts.xml">
+      <Name>Nuclex.Fonts</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Game.ContentCompressor.exe">
+      <Name>Nuclex.Game.ContentCompressor</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Game.ContentCompressor.xml">
+      <Name>Nuclex.Game.ContentCompressor</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Game.dll">
+      <Name>Nuclex.Game</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Game.xml">
+      <Name>Nuclex.Game</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Geometry.dll">
+      <Name>Nuclex.Geometry</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Geometry.xml">
+      <Name>Nuclex.Geometry</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Graphics.dll">
+      <Name>Nuclex.Graphics</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Graphics.SpecialEffects.dll">
+      <Name>Nuclex.Graphics.SpecialEffects</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Graphics.SpecialEffects.xml">
+      <Name>Nuclex.Graphics.SpecialEffects</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Graphics.xml">
+      <Name>Nuclex.Graphics</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Input.dll">
+      <Name>Nuclex.Input</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Input.xml">
+      <Name>Nuclex.Input</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Math.dll">
+      <Name>Nuclex.Math</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Math.xml">
+      <Name>Nuclex.Math</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Networking.dll">
+      <Name>Nuclex.Networking</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Networking.xml">
+      <Name>Nuclex.Networking</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Support.dll">
+      <Name>Nuclex.Support</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Support.xml">
+      <Name>Nuclex.Support</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Testing.Xna.dll">
+      <Name>Nuclex.Testing.Xna</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Testing.Xna.xml">
+      <Name>Nuclex.Testing.Xna</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.UserInterface.dll">
+      <Name>Nuclex.UserInterface</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.UserInterface.xml">
+      <Name>Nuclex.UserInterface</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\Nuclex.Windows.Forms.dll">
+      <Name>Nuclex.Windows.Forms</Name>
+    </None>
+    <None Include="Nuclex\Nuclex.Windows.Forms.xml">
+      <Name>Nuclex.Windows.Forms</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\nunit.framework.dll">
+      <Name>nunit.framework</Name>
+    </None>
+    <None Include="Nuclex\nunit.framework.xml">
+      <Name>nunit.framework</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="Nuclex\SlimDX.DirectInput.dll">
+      <Name>SlimDX.DirectInput</Name>
+    </None>
+    <None Include="Nuclex\SlimDX.DirectInput.xml">
+      <Name>SlimDX.DirectInput</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
