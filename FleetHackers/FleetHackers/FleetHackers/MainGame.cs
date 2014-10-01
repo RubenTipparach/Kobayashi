@@ -102,6 +102,11 @@ namespace FleetHackers
 		private Texture2D _cardTexture;
 
 		/// <summary>
+		/// Object that will hold the card definitions.
+		/// </summary>
+		private CardCollection _cards;
+
+		/// <summary>
 		/// The basic font.
 		/// </summary>
 		private SpriteFont _basicFont;
@@ -261,8 +266,8 @@ namespace FleetHackers
 
 				
 			// TEST DESERIALIZATION
-			//CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
-			CardCollection cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
+			//_cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
+			_cards = CardCollection.Deserialize(File.ReadAllText("Content/Cards/Cards.json"));
 
 			FleetHackers.FleetHackersServer.FleetHackersServiceClient fhClient = new FleetHackers.FleetHackersServer.FleetHackersServiceClient();
 			string result = fhClient.GetData(1223); //this test works.
@@ -274,7 +279,7 @@ namespace FleetHackers
 
 			fhClient.Close();
 
-			foreach (Card c in cards)
+			foreach (Card c in _cards)
 			{
 				Debug.WriteLine(c.Title);
 				Debug.WriteLine(c.RulesText);
@@ -364,12 +369,17 @@ namespace FleetHackers
 				GraphicsDevice.SetRenderTarget(_renderedCardBuffer);
 				GraphicsDevice.Clear(Color.Transparent);
 
-				// Note: this is arbitrary rules text for testing...
-				string someRandomText = "Other Megadrone ships gain 1 range.";
+				// Choosing a random card for testing...
+				Random r = new Random();
+				Card c = _cards[r.Next(_cards.Count)];
+
+				//Debug.WriteLine("!!!!!!! -- " + c.Title);
+
+				string someRandomText = c.RulesText;
 				someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth);
 				Vector2 textSize = _rulesTextFont.MeasureString(someRandomText);
 
-				string titleString = "Long-Range Megadrone";
+				string titleString = c.Title;
 				Vector2 titleSize = _titleFont.MeasureString(titleString);
 
 				Rectangle cardRect = new Rectangle(
@@ -384,7 +394,7 @@ namespace FleetHackers
 					new Vector2(_cardRulesLeftX, (int)(_cardRulesTopY + (_cardRulesHeight - textSize.Y) / 2)),
 					Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 
-				float textScale = 0;
+				float textScale = 1;
 				if (titleSize.X > _cardTitleWidth)
 				{
 					textScale = _cardTitleWidth / titleSize.X;
