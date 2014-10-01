@@ -372,8 +372,15 @@ namespace FleetHackers
 				// Choosing a random card for testing...
 				Random r = new Random();
 				Card c = _cards[r.Next(_cards.Count)];
-
-				//Debug.WriteLine("!!!!!!! -- " + c.Title);
+				/*Card c = null;
+				foreach (Card cx in _cards)
+				{
+					if (cx.Title == "Anesthetic Maneuver")
+					{
+						c = cx;
+						break;
+					}
+				}*/
 
 				string someRandomText = c.RulesText;
 				someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth);
@@ -433,8 +440,17 @@ namespace FleetHackers
 			float lineWidth = 0f;
 			float spaceWidth = spriteFont.MeasureString(" ").X;
 
-			foreach (string word in words)
+			foreach (string w in words)
 			{
+				string word = w;
+				string word2 = null;
+				if (word.Contains(Environment.NewLine))
+				{
+					string[] newLineWords = word.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+					word = newLineWords[0];
+					word2 = newLineWords[1];
+				}
+
 				Vector2 size = spriteFont.MeasureString(word);
 
 				if (lineWidth + size.X < maxLineWidth)
@@ -444,7 +460,14 @@ namespace FleetHackers
 				}
 				else
 				{
-					stringBuilder.Append("\n" + word + " ");
+					stringBuilder.Append(Environment.NewLine + word + " ");
+					lineWidth = size.X + spaceWidth;
+				}
+
+				if (word2 != null)
+				{
+					size = spriteFont.MeasureString(word2);
+					stringBuilder.Append(Environment.NewLine + word2 + " ");
 					lineWidth = size.X + spaceWidth;
 				}
 			}
