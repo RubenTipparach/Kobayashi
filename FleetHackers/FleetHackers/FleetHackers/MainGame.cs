@@ -109,22 +109,42 @@ namespace FleetHackers
 		/// <summary>
 		/// The width of the rules text box on a card.
 		/// </summary>
-		private int _cardRulesWidth = 618;
+		private int _cardRulesWidth = 608;
 
 		/// <summary>
 		/// The height of the rules text box on a card.
 		/// </summary>
-		private int _cardRulesHeight = 306;
+		private int _cardRulesHeight = 302;
 
 		/// <summary>
 		/// The left-most x coordinate of the rules text box on a card.
 		/// </summary>
-		private int _cardRulesLeftX = 67;
+		private int _cardRulesLeftX = 73;
 
 		/// <summary>
 		/// The top-most y coordinate of the rules text box on a card.
 		/// </summary>
-		private int _cardRulesTopY = 682;
+		private int _cardRulesTopY = 684;
+
+		/// <summary>
+		/// The width of the title box on a card.
+		/// </summary>
+		private int _cardTitleWidth = 459;
+
+		/// <summary>
+		/// The height of the title box on a card.
+		/// </summary>
+		private int _cardTitleHeight = 57;
+
+		/// <summary>
+		/// The left-most x coordinate of the title box on a card.
+		/// </summary>
+		private int _cardTitleLeftX = 216;
+
+		/// <summary>
+		/// The top-most y coordinate of the title box on a card.
+		/// </summary>
+		private int _cardTitleTopY = 65;
 
 		/// <summary>
 		/// The font used for normal text in the rules text box.
@@ -135,6 +155,16 @@ namespace FleetHackers
 		/// The font used for italic text in the rules text box.
 		/// </summary>
 		private SpriteFont _rulesTextItalicFont;
+
+		/// <summary>
+		/// The font used for the title on a card.
+		/// </summary>
+		private SpriteFont _titleFont;
+
+		/// <summary>
+		/// A buffer to hold a pre-rendered card so we don't have to re-draw it each time.
+		/// </summary>
+		private RenderTarget2D _renderedCardBuffer;
 
 		/// <summary>
 		/// Constructor for this class.
@@ -199,6 +229,7 @@ namespace FleetHackers
 			_basicFont = Content.Load<SpriteFont>("Fonts\\SpriteFont1");
 			_rulesTextFont = Content.Load<SpriteFont>("Fonts\\RulesTextFont");
 			_rulesTextItalicFont = Content.Load<SpriteFont>("Fonts\\RulesTextItalicFont");
+			_titleFont = Content.Load<SpriteFont>("Fonts\\TitleFont");
 
 			// Load models.
 			_models.Add(
@@ -325,26 +356,61 @@ namespace FleetHackers
 
 			_stars.Draw(_camera.View, _camera.Projection, _camera.Up, _camera.Right);
 
+			// if rendered card buffer is null, initialize it here
+			if (_renderedCardBuffer == null)
+			{
+				_renderedCardBuffer = new RenderTarget2D(GraphicsDevice, _cardTexture.Width, _cardTexture.Height, false,
+					GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24);
+				GraphicsDevice.SetRenderTarget(_renderedCardBuffer);
+				GraphicsDevice.Clear(Color.Transparent);
+
+				// Note: this is arbitrary rules text for testing...
+				string someRandomText = "Other Megadrone ships gain 1 range.";
+				someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth);
+				Vector2 textSize = _rulesTextFont.MeasureString(someRandomText);
+
+				string titleString = "Long-Range Megadrone";
+				Vector2 titleSize = _titleFont.MeasureString(titleString);
+
+				Rectangle cardRect = new Rectangle(
+					0,
+					0,
+					_cardTexture.Width,
+					_cardTexture.Height);
+
+				_spriteBatch.Begin();
+				_spriteBatch.Draw(_cardTexture, cardRect, Color.White);
+				_spriteBatch.DrawString(_rulesTextFont, someRandomText,
+					new Vector2(_cardRulesLeftX, (int)(_cardRulesTopY + (_cardRulesHeight - textSize.Y) / 2)),
+					Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+
+				float textScale = 0;
+				if (titleSize.X > _cardTitleWidth)
+				{
+					textScale = _cardTitleWidth / titleSize.X;
+				}
+				_spriteBatch.DrawString(_titleFont, titleString,
+					new Vector2((int)(_cardTitleLeftX + (_cardTitleWidth - titleSize.X * textScale) / 2), (int)(_cardTitleTopY + (_cardTitleHeight - titleSize.Y * textScale) / 2)),
+					Color.Black, 0, Vector2.Zero, textScale, SpriteEffects.None, 0);
+
+				_spriteBatch.End();
+
+				GraphicsDevice.SetRenderTarget(null);
+			}
+
 			// Draw cards *this should always appear at the end so its on top
 			_spriteBatch.Begin();			
 			float scale = .4f;
 
 			// Note: this is arbitrary rules text for testing...
-			string someRandomText = "Other Megadrone ships gain 1 range.";
-			someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth * scale);
-			Vector2 textSize = _rulesTextFont.MeasureString(someRandomText);
-
 			Rectangle retval = new Rectangle(
 				0 + 10,
 				GraphicsDevice.Viewport.Height - (int)(_cardTexture.Height * scale) - 10,
 				(int)(_cardTexture.Width * scale),
 				(int)(_cardTexture.Height * scale));
 
-			// Note: Clamp string position to INT before render...it looks nicer
-			_spriteBatch.Draw(_cardTexture, retval, Color.White);
-			_spriteBatch.DrawString(_rulesTextFont, someRandomText,
-				new Vector2((int)(retval.X + _cardRulesLeftX * scale), (int)(retval.Y + _cardRulesTopY * scale + (_cardRulesHeight * scale - textSize.Y) / 2)),
-				Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+			_spriteBatch.Draw(_renderedCardBuffer, retval, Color.White);
+
 			_spriteBatch.End();
 
 			base.Draw(gameTime);
