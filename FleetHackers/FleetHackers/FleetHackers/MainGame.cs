@@ -19,6 +19,7 @@ using FleetHackers.EngineStructs;
 using FleetHackers.Input;
 using FleetHackers.UpdateHelpers;
 using System.Text;
+using Dhpoware;
 //using FleetHackers.FleetHackersServer;
 
 namespace FleetHackers
@@ -364,11 +365,6 @@ namespace FleetHackers
 			// if rendered card buffer is null, initialize it here
 			if (_renderedCardBuffer == null)
 			{
-				_renderedCardBuffer = new RenderTarget2D(GraphicsDevice, _cardTexture.Width, _cardTexture.Height, false,
-					GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24);
-				GraphicsDevice.SetRenderTarget(_renderedCardBuffer);
-				GraphicsDevice.Clear(Color.Transparent);
-
 				// Choosing a random card for testing...
 				Random r = new Random();
 				Card c = _cards[r.Next(_cards.Count)];
@@ -395,17 +391,55 @@ namespace FleetHackers
 					_cardTexture.Width,
 					_cardTexture.Height);
 
+				float textScale = 1;
+				if (titleSize.X > _cardTitleWidth)
+				{
+					textScale = _cardTitleWidth / titleSize.X;
+				}
+
+				// render the title text's shadow
+				RenderTarget2D titleShadowTarget = new RenderTarget2D(GraphicsDevice, _cardTitleWidth, _cardTitleHeight, false,
+					GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24);
+				GraphicsDevice.SetRenderTarget(titleShadowTarget);
+				GraphicsDevice.Clear(Color.Transparent);
+				_spriteBatch.Begin();
+				_spriteBatch.DrawString(_titleFont, titleString,
+					new Vector2((int)((_cardTitleWidth - titleSize.X * textScale) / 2), (int)((_cardTitleHeight - titleSize.Y * textScale) / 2)),
+					Color.White, 0, Vector2.Zero, textScale, SpriteEffects.None, 0);
+				_spriteBatch.End();
+
+				// do blur
+				GaussianBlur gaussianBlur = new GaussianBlur(this);
+				gaussianBlur.ComputeKernel(4, 2);
+				int renderTargetWidth = titleShadowTarget.Width / 2;
+				int renderTargetHeight = titleShadowTarget.Height / 2;
+				RenderTarget2D rt1 = new RenderTarget2D(GraphicsDevice,
+					renderTargetWidth, renderTargetHeight, false,
+					GraphicsDevice.PresentationParameters.BackBufferFormat,
+					DepthFormat.None);
+				RenderTarget2D rt2 = new RenderTarget2D(GraphicsDevice,
+					renderTargetWidth, renderTargetHeight, false,
+					GraphicsDevice.PresentationParameters.BackBufferFormat,
+					DepthFormat.None);
+				gaussianBlur.ComputeOffsets(renderTargetWidth, renderTargetHeight);
+				Texture2D shadowResult = gaussianBlur.PerformGaussianBlur(titleShadowTarget, rt1, rt2, _spriteBatch);
+
+				// render the card
+				_renderedCardBuffer = new RenderTarget2D(GraphicsDevice, _cardTexture.Width, _cardTexture.Height, false,
+					GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24);
+				GraphicsDevice.SetRenderTarget(_renderedCardBuffer);
+				GraphicsDevice.Clear(Color.Transparent);
+
 				_spriteBatch.Begin();
 				_spriteBatch.Draw(_cardTexture, cardRect, Color.White);
 				_spriteBatch.DrawString(_rulesTextFont, someRandomText,
 					new Vector2(_cardRulesLeftX, (int)(_cardRulesTopY + (_cardRulesHeight - textSize.Y) / 2)),
 					Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 
-				float textScale = 1;
-				if (titleSize.X > _cardTitleWidth)
-				{
-					textScale = _cardTitleWidth / titleSize.X;
-				}
+				_spriteBatch.Draw(shadowResult,
+					new Rectangle((int)(_cardTitleLeftX + (_cardTitleWidth - shadowResult.Width * 2) / 2), (int)(_cardTitleTopY + (_cardTitleHeight - shadowResult.Height * 2) / 2), shadowResult.Width * 2, shadowResult.Height * 2),
+					new Rectangle(0, 0, shadowResult.Width, shadowResult.Height),
+					Color.White);
 				_spriteBatch.DrawString(_titleFont, titleString,
 					new Vector2((int)(_cardTitleLeftX + (_cardTitleWidth - titleSize.X * textScale) / 2), (int)(_cardTitleTopY + (_cardTitleHeight - titleSize.Y * textScale) / 2)),
 					Color.Black, 0, Vector2.Zero, textScale, SpriteEffects.None, 0);

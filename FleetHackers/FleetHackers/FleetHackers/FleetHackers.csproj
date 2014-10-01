@@ -85,6 +85,7 @@
     <Compile Include="DrawingHelpers\DebugDraw.cs" />
     <Compile Include="DrawingHelpers\HexagonCoordinates.cs" />
     <Compile Include="DrawingHelpers\LineDrawer.cs" />
+    <Compile Include="Effects\GaussianBlur.cs" />
     <Compile Include="EngineEnums\CameraType.cs" />
     <Compile Include="EngineStructs\MovementReport.cs" />
     <Compile Include="Input\MouseGestures.cs" />
