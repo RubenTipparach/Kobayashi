@@ -21,7 +21,7 @@ namespace FleetHackersLib.Cards.Abilities
 
 		public override string ToString(Card card)
 		{
-			return "When " + card.Title + " attacks, you may choose to assign its battle damage as though it wasn’t intercepted.";
+			return "When " + card.Title + " attacks, you may choose to assign its battle damage as though it wasn't intercepted.";
 		}
 	}
 }
