@@ -153,6 +153,26 @@ namespace FleetHackers
 		private int _cardTitleTopY = 65;
 
 		/// <summary>
+		/// The width of the type box on a card.
+		/// </summary>
+		private int _cardTypeWidth = 423;
+
+		/// <summary>
+		/// The height of the type box on a card.
+		/// </summary>
+		private int _cardTypeHeight = 36;
+
+		/// <summary>
+		/// The left-most x coordinate of the type box on a card.
+		/// </summary>
+		private int _cardTypeLeftX = 262;
+
+		/// <summary>
+		/// The top-most y coordinate of the type box on a card.
+		/// </summary>
+		private int _cardTypeTopY = 142;
+
+		/// <summary>
 		/// The font used for normal text in the rules text box.
 		/// </summary>
 		private SpriteFont _rulesTextFont;
@@ -166,6 +186,11 @@ namespace FleetHackers
 		/// The font used for the title on a card.
 		/// </summary>
 		private SpriteFont _titleFont;
+
+		/// <summary>
+		/// The font used for the type on a card.
+		/// </summary>
+		private SpriteFont _typeFont;
 
 		/// <summary>
 		/// A buffer to hold a pre-rendered card so we don't have to re-draw it each time.
@@ -236,6 +261,7 @@ namespace FleetHackers
 			_rulesTextFont = Content.Load<SpriteFont>("Fonts\\RulesTextFont");
 			_rulesTextItalicFont = Content.Load<SpriteFont>("Fonts\\RulesTextItalicFont");
 			_titleFont = Content.Load<SpriteFont>("Fonts\\TitleFont");
+			_typeFont = Content.Load<SpriteFont>("Fonts\\TypeFont");
 
 			// Load models.
 			_models.Add(
@@ -385,16 +411,30 @@ namespace FleetHackers
 				string titleString = c.Title;
 				Vector2 titleSize = _titleFont.MeasureString(titleString);
 
+				string typeString = c.Supertype.ToString();
+				string subtypeString = c.Subtype.ToString();
+				if (subtypeString != "None")
+				{
+					typeString = typeString + " - " + c.Subtype.ToString();
+				}
+				Vector2 typeSize = _typeFont.MeasureString(typeString);
+
 				Rectangle cardRect = new Rectangle(
 					0,
 					0,
 					_cardTexture.Width,
 					_cardTexture.Height);
 
-				float textScale = 1;
+				float titleScale = 1;
 				if (titleSize.X > _cardTitleWidth)
 				{
-					textScale = _cardTitleWidth / titleSize.X;
+					titleScale = _cardTitleWidth / titleSize.X;
+				}
+
+				float typeScale = 1;
+				if (typeSize.X > _cardTypeWidth)
+				{
+					typeScale = _cardTypeWidth / titleSize.X;
 				}
 
 				// render the title text's shadow
@@ -404,8 +444,8 @@ namespace FleetHackers
 				GraphicsDevice.Clear(Color.Transparent);
 				_spriteBatch.Begin();
 				_spriteBatch.DrawString(_titleFont, titleString,
-					new Vector2((int)((_cardTitleWidth - titleSize.X * textScale) / 2), (int)((_cardTitleHeight - titleSize.Y * textScale) / 2)),
-					Color.White, 0, Vector2.Zero, textScale, SpriteEffects.None, 0);
+					new Vector2((int)((_cardTitleWidth - titleSize.X * titleScale) / 2), (int)((_cardTitleHeight - titleSize.Y * titleScale) / 2)),
+					Color.White, 0, Vector2.Zero, titleScale, SpriteEffects.None, 0);
 				_spriteBatch.End();
 
 				// do blur
@@ -422,7 +462,32 @@ namespace FleetHackers
 					GraphicsDevice.PresentationParameters.BackBufferFormat,
 					DepthFormat.None);
 				gaussianBlur.ComputeOffsets(renderTargetWidth, renderTargetHeight);
-				Texture2D shadowResult = gaussianBlur.PerformGaussianBlur(titleShadowTarget, rt1, rt2, _spriteBatch);
+				Texture2D titleShadowResult = gaussianBlur.PerformGaussianBlur(titleShadowTarget, rt1, rt2, _spriteBatch);
+
+				// render the type text's shadow
+				RenderTarget2D typeShadowTarget = new RenderTarget2D(GraphicsDevice, _cardTypeWidth, _cardTypeHeight, false,
+					GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24);
+				GraphicsDevice.SetRenderTarget(typeShadowTarget);
+				GraphicsDevice.Clear(Color.Transparent);
+				_spriteBatch.Begin();
+				_spriteBatch.DrawString(_typeFont, typeString,
+					new Vector2((int)((_cardTypeWidth - typeSize.X * typeScale) / 2), (int)((_cardTypeHeight - typeSize.Y * typeScale) / 2)),
+					Color.White, 0, Vector2.Zero, typeScale, SpriteEffects.None, 0);
+				_spriteBatch.End();
+
+				// do blur
+				renderTargetWidth = typeShadowTarget.Width / 2;
+				renderTargetHeight = typeShadowTarget.Height / 2;
+				rt1 = new RenderTarget2D(GraphicsDevice,
+					renderTargetWidth, renderTargetHeight, false,
+					GraphicsDevice.PresentationParameters.BackBufferFormat,
+					DepthFormat.None);
+				rt2 = new RenderTarget2D(GraphicsDevice,
+					renderTargetWidth, renderTargetHeight, false,
+					GraphicsDevice.PresentationParameters.BackBufferFormat,
+					DepthFormat.None);
+				gaussianBlur.ComputeOffsets(renderTargetWidth, renderTargetHeight);
+				Texture2D typeShadowResult = gaussianBlur.PerformGaussianBlur(typeShadowTarget, rt1, rt2, _spriteBatch);
 
 				// render the card
 				_renderedCardBuffer = new RenderTarget2D(GraphicsDevice, _cardTexture.Width, _cardTexture.Height, false,
@@ -436,13 +501,20 @@ namespace FleetHackers
 					new Vector2(_cardRulesLeftX, (int)(_cardRulesTopY + (_cardRulesHeight - textSize.Y) / 2)),
 					Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 
-				_spriteBatch.Draw(shadowResult,
-					new Rectangle((int)(_cardTitleLeftX + (_cardTitleWidth - shadowResult.Width * 2) / 2), (int)(_cardTitleTopY + (_cardTitleHeight - shadowResult.Height * 2) / 2), shadowResult.Width * 2, shadowResult.Height * 2),
-					new Rectangle(0, 0, shadowResult.Width, shadowResult.Height),
+				_spriteBatch.Draw(titleShadowResult,
+					new Rectangle((int)(_cardTitleLeftX + (_cardTitleWidth - titleShadowResult.Width * 2) / 2), (int)(_cardTitleTopY + (_cardTitleHeight - titleShadowResult.Height * 2) / 2), titleShadowResult.Width * 2, titleShadowResult.Height * 2),
+					new Rectangle(0, 0, titleShadowResult.Width, titleShadowResult.Height),
+					Color.White);
+				_spriteBatch.Draw(typeShadowResult,
+					new Rectangle((int)(_cardTypeLeftX + (_cardTypeWidth - typeShadowResult.Width * 2) / 2), (int)(_cardTypeTopY + (_cardTypeHeight - typeShadowResult.Height * 2) / 2), typeShadowResult.Width * 2, typeShadowResult.Height * 2),
+					new Rectangle(0, 0, typeShadowResult.Width, typeShadowResult.Height),
 					Color.White);
 				_spriteBatch.DrawString(_titleFont, titleString,
-					new Vector2((int)(_cardTitleLeftX + (_cardTitleWidth - titleSize.X * textScale) / 2), (int)(_cardTitleTopY + (_cardTitleHeight - titleSize.Y * textScale) / 2)),
-					Color.Black, 0, Vector2.Zero, textScale, SpriteEffects.None, 0);
+					new Vector2((int)(_cardTitleLeftX + (_cardTitleWidth - titleSize.X * titleScale) / 2), (int)(_cardTitleTopY + (_cardTitleHeight - titleSize.Y * titleScale) / 2)),
+					Color.Black, 0, Vector2.Zero, titleScale, SpriteEffects.None, 0);
+				_spriteBatch.DrawString(_typeFont, typeString,
+					new Vector2((int)(_cardTypeLeftX + (_cardTypeWidth - typeSize.X * typeScale) / 2), (int)(_cardTypeTopY + (_cardTypeHeight - typeSize.Y * typeScale) / 2)),
+					Color.Black, 0, Vector2.Zero, typeScale, SpriteEffects.None, 0);
 
 				_spriteBatch.End();
 
