@@ -434,7 +434,7 @@ namespace FleetHackers
 				float typeScale = 1;
 				if (typeSize.X > _cardTypeWidth)
 				{
-					typeScale = _cardTypeWidth / titleSize.X;
+					typeScale = _cardTypeWidth / typeSize.X;
 				}
 
 				// render the title text's shadow
