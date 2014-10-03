@@ -156,7 +156,7 @@ namespace FleetHackers
 		/// <summary>
 		/// The width of the type box on a card.
 		/// </summary>
-		private int _cardTypeWidth = 423;
+		private int _cardTypeWidth = 415;
 
 		/// <summary>
 		/// The height of the type box on a card.
@@ -166,7 +166,7 @@ namespace FleetHackers
 		/// <summary>
 		/// The left-most x coordinate of the type box on a card.
 		/// </summary>
-		private int _cardTypeLeftX = 262;
+		private int _cardTypeLeftX = 266;
 
 		/// <summary>
 		/// The top-most y coordinate of the type box on a card.
@@ -176,7 +176,7 @@ namespace FleetHackers
 		/// <summary>
 		/// The width of the energy cost area on a card.
 		/// </summary>
-		private int _cardCostWidth = 113;
+		private int _cardCostWidth = 105;
 
 		/// <summary>
 		/// The height of the energy cost area on a card.
@@ -186,7 +186,7 @@ namespace FleetHackers
 		/// <summary>
 		/// The left-most x coordinate of the energy cost area on a card.
 		/// </summary>
-		private int _cardCostLeftX = 37;
+		private int _cardCostLeftX = 41;
 
 		/// <summary>
 		/// The top-most y coordinate of the energy cost area on a card.
@@ -424,7 +424,7 @@ namespace FleetHackers
 				/*Card c = null;
 				foreach (Card cx in _cards)
 				{
-					if (cx.Title == "Anesthetic Maneuver")
+					if (cx.Title == "Energy Blaze")
 					{
 						c = cx;
 						break;
@@ -450,7 +450,7 @@ namespace FleetHackers
 				}
 				Vector2 typeSize = _typeFont.MeasureString(typeString);
 
-				string costString = (c.EnergyCostType == AmountType.Variable) ? Description.ToDescription(c.EnergyCostVar) : c.EnergyCost.ToString();
+				string costString = (c.EnergyCostType == AmountType.Variable) ? Description.ToDescription(c.EnergyCostVar).Replace("+", string.Empty) : c.EnergyCost.ToString();
 				Vector2 costSize = _statFont.MeasureString(costString);
 
 				Rectangle cardRect = new Rectangle(
@@ -469,6 +469,12 @@ namespace FleetHackers
 				if (typeSize.X > _cardTypeWidth)
 				{
 					typeScale = _cardTypeWidth / typeSize.X;
+				}
+
+				float costScale = 1;
+				if (costSize.X > _cardCostWidth)
+				{
+					costScale = _cardCostWidth / costSize.X;
 				}
 
 				// render the title text's shadow
@@ -550,8 +556,8 @@ namespace FleetHackers
 					new Vector2((int)(_cardTypeLeftX + (_cardTypeWidth - typeSize.X * typeScale) / 2), (int)(_cardTypeTopY + (_cardTypeHeight - typeSize.Y * typeScale) / 2)),
 					Color.Black, 0, Vector2.Zero, typeScale, SpriteEffects.None, 0);
 				_spriteBatch.DrawString(_statFont, costString,
-					new Vector2((int)(_cardCostLeftX + (_cardCostWidth - costSize.X) / 2), (int)(_cardCostTopY + (_cardCostHeight - costSize.Y) / 2)),
-					Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+					new Vector2((int)(_cardCostLeftX + (_cardCostWidth - costSize.X * costScale) / 2), (int)(_cardCostTopY + (_cardCostHeight - costSize.Y * costScale) / 2)),
+					Color.Black, 0, Vector2.Zero, costScale, SpriteEffects.None, 0);
 
 				_spriteBatch.End();
 
