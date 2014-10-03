@@ -20,6 +20,7 @@ using FleetHackers.Input;
 using FleetHackers.UpdateHelpers;
 using System.Text;
 using Dhpoware;
+using FleetHackersLib.Cards.Enums;
 //using FleetHackers.FleetHackersServer;
 
 namespace FleetHackers
@@ -173,6 +174,26 @@ namespace FleetHackers
 		private int _cardTypeTopY = 142;
 
 		/// <summary>
+		/// The width of the energy cost area on a card.
+		/// </summary>
+		private int _cardCostWidth = 113;
+
+		/// <summary>
+		/// The height of the energy cost area on a card.
+		/// </summary>
+		private int _cardCostHeight = 101;
+
+		/// <summary>
+		/// The left-most x coordinate of the energy cost area on a card.
+		/// </summary>
+		private int _cardCostLeftX = 37;
+
+		/// <summary>
+		/// The top-most y coordinate of the energy cost area on a card.
+		/// </summary>
+		private int _cardCostTopY = 49;
+
+		/// <summary>
 		/// The font used for normal text in the rules text box.
 		/// </summary>
 		private SpriteFont _rulesTextFont;
@@ -191,6 +212,11 @@ namespace FleetHackers
 		/// The font used for the type on a card.
 		/// </summary>
 		private SpriteFont _typeFont;
+
+		/// <summary>
+		/// The font used for statistics on cards.
+		/// </summary>
+		private SpriteFont _statFont;
 
 		/// <summary>
 		/// A buffer to hold a pre-rendered card so we don't have to re-draw it each time.
@@ -262,6 +288,7 @@ namespace FleetHackers
 			_rulesTextItalicFont = Content.Load<SpriteFont>("Fonts\\RulesTextItalicFont");
 			_titleFont = Content.Load<SpriteFont>("Fonts\\TitleFont");
 			_typeFont = Content.Load<SpriteFont>("Fonts\\TypeFont");
+			_statFont = Content.Load<SpriteFont>("Fonts\\StatFont");
 
 			// Load models.
 			_models.Add(
@@ -407,6 +434,10 @@ namespace FleetHackers
 				string someRandomText = c.RulesText;
 				someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth);
 				Vector2 textSize = _rulesTextFont.MeasureString(someRandomText);
+				if (textSize.Y > _cardRulesHeight)
+				{
+					float textScale = _cardRulesHeight / textSize.Y;
+				}
 
 				string titleString = c.Title;
 				Vector2 titleSize = _titleFont.MeasureString(titleString);
@@ -418,6 +449,9 @@ namespace FleetHackers
 					typeString = typeString + " - " + c.Subtype.ToString();
 				}
 				Vector2 typeSize = _typeFont.MeasureString(typeString);
+
+				string costString = (c.EnergyCostType == AmountType.Variable) ? Description.ToDescription(c.EnergyCostVar) : c.EnergyCost.ToString();
+				Vector2 costSize = _statFont.MeasureString(costString);
 
 				Rectangle cardRect = new Rectangle(
 					0,
@@ -515,6 +549,9 @@ namespace FleetHackers
 				_spriteBatch.DrawString(_typeFont, typeString,
 					new Vector2((int)(_cardTypeLeftX + (_cardTypeWidth - typeSize.X * typeScale) / 2), (int)(_cardTypeTopY + (_cardTypeHeight - typeSize.Y * typeScale) / 2)),
 					Color.Black, 0, Vector2.Zero, typeScale, SpriteEffects.None, 0);
+				_spriteBatch.DrawString(_statFont, costString,
+					new Vector2((int)(_cardCostLeftX + (_cardCostWidth - costSize.X) / 2), (int)(_cardCostTopY + (_cardCostHeight - costSize.Y) / 2)),
+					Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 
 				_spriteBatch.End();
 
