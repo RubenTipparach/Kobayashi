@@ -2843,5 +2843,14 @@
 		"range": 3,
 		"attack": 8,
 		"defense": 6
+	},
+	{
+		"title": "Microdrone",
+		"alignment": "Xeno",
+		"supertype": "Token, Ship",
+		"subtype": "Drone",
+		"range": 3,
+		"attack": 1,
+		"defense": 1
 	}
 ]
