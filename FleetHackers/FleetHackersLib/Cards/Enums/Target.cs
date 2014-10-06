@@ -39,6 +39,7 @@ namespace FleetHackersLib.Cards.Enums
 		ChosenDevice,
 		ExhaustedShip,
 		OtherShipsOfType,
-		NextCardYouPlayThisTurn
+		NextCardYouPlayThisTurn,
+		InterceptedShip
 	}
 }

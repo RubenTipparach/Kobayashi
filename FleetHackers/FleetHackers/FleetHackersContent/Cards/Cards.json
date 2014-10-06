@@ -2912,5 +2912,61 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Spacewarp Drone",
+		"energyCost": 5,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Drone",
+		"range": 1,
+		"attack": 4,
+		"defense": 4,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Interception",
+					"actor": "AnyShip",
+					"targets":
+					[
+						"This"
+					]
+				},
+				"effects":
+				[
+					{
+						"__type": "RangePumpEffect:#FleetHackersLib.Cards.Effects",
+						"rangePump": -1,
+						"effectEnds": "EndOfTurn",
+						"target": "InterceptingShip"
+					}
+				]
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Interception",
+					"actor": "This",
+					"targets":
+					[
+						"AnyShip"
+					]
+				},
+				"effects":
+				[
+					{
+						"__type": "RangePumpEffect:#FleetHackersLib.Cards.Effects",
+						"rangePump": -1,
+						"effectEnds": "EndOfTurn",
+						"target": "InterceptedShip"
+					}
+				]
+			}
+		]
 	}
 ]
