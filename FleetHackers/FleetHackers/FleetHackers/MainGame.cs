@@ -424,7 +424,7 @@ namespace FleetHackers
 				/*Card c = null;
 				foreach (Card cx in _cards)
 				{
-					if (cx.Title == "Energy Blaze")
+					if (cx.Title == "Microdrone")
 					{
 						c = cx;
 						break;
