@@ -2852,5 +2852,30 @@
 		"range": 3,
 		"attack": 1,
 		"defense": 1
+	},
+	{
+		"title": "Offensive Megadrone",
+		"energyCost": 3,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Megadrone",
+		"range": 3,
+		"attack": 2,
+		"defense": 2,
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
+				"effect":
+				{
+					"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
+					"attackPump": 1,
+					"defensePump": 0,
+					"effectEnds": "None",
+					"target": "OtherShipsOfType",
+					"subtype": "Megadrone"
+				}
+			}
+		]
 	}
 ]
