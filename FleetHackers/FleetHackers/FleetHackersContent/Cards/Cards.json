@@ -2832,5 +2832,16 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Manifold Drone",
+		"energyCost": 7,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Drone",
+		"range": 3,
+		"attack": 8,
+		"defense": 6
 	}
 ]
