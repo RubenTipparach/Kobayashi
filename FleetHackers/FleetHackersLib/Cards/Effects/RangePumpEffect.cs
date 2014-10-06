@@ -78,8 +78,14 @@ namespace FleetHackersLib.Cards.Effects
 					toStringBuilder.Append(Subtype.ToString());
 					toStringBuilder.Append(" ships ");
 					break;
+				case Target.InterceptingShip:
+					toStringBuilder.Append(capitalize ? "The intercepting ship " : "the intercepting ship ");
+					break;
+				case Target.InterceptedShip:
+					toStringBuilder.Append(capitalize ? "The intercepted ship " : "the intercepted ship ");
+					break;
 				default:
-					throw new InvalidOperationException("Unsupported Target for StatPumpEffect.");
+					throw new InvalidOperationException("Unsupported Target for RangePumpEffect.");
 			}
 
 			if (RangePump < 0)
