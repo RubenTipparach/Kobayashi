@@ -2877,5 +2877,40 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Patrol Drone",
+		"energyCost": 6,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Ship",
+		"subtype": "Drone",
+		"range": 2,
+		"attack": 3,
+		"defense": 6,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "Attack",
+					"actor": "OpponentShip",
+					"targets":
+					[
+						"YourShip",
+						"YourHomeBase"
+					]
+				},
+				"effects":
+				[
+					{
+						"__type": "RechargeEffect:#FleetHackersLib.Cards.Effects",
+						"target": "This",
+						"optional": true
+					}
+				]
+			}
+		]
 	}
 ]
