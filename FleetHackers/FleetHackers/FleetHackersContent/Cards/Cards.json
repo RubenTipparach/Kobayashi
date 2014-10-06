@@ -2968,5 +2968,35 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Static Matrix",
+		"energyCost": 2,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Device",
+		"subtype": "Upgrade",
+		"abilities": [
+			{
+				"__type": "AttachToShipAbility:#FleetHackersLib.Cards.Abilities"
+			},
+			{
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
+				"effect":
+				{
+					"__type": "NoRulesTextEffect:#FleetHackersLib.Cards.Effects",
+					"target": "AttachedShip"
+				}
+			},
+			{
+				"__type": "ActivatedAbility:#FleetHackersLib.Cards.Abilities",
+				"energyCost": 2,
+				"effect":
+				{
+					"__type": "AttachToShipEffect:#FleetHackersLib.Cards.Effects",
+					"target": "AnyShip"
+				}
+			}
+		]
 	}
 ]

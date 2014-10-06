@@ -45,6 +45,7 @@ namespace FleetHackersLib.Cards.Effects.Enums
 		CostReduction,
 		AddEnergyCrystal,
 		RechargeCrystals,
-		RemoveDamage
+		RemoveDamage,
+		NoRulesText
 	}
 }
