@@ -40,6 +40,7 @@ namespace FleetHackersLib.Cards.Enums
 		ExhaustedShip,
 		OtherShipsOfType,
 		NextCardYouPlayThisTurn,
-		InterceptedShip
+		InterceptedShip,
+		ThatAbility
 	}
 }

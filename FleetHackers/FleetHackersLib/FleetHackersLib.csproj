@@ -56,6 +56,7 @@
     <Compile Include="Cards\Abilities\HasteAbility.cs" />
     <Compile Include="Cards\Abilities\HexproofAbility.cs" />
     <Compile Include="Cards\Abilities\ImmediateAbility.cs" />
+    <Compile Include="Cards\Abilities\NoTrapAbility.cs" />
     <Compile Include="Cards\Abilities\SecretTechAbility.cs" />
     <Compile Include="Cards\Abilities\SingleAttackAbility.cs" />
     <Compile Include="Cards\Abilities\StaticAbility.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Cards\Effects\StatPumpEffect.cs" />
     <Compile Include="Cards\Effects\StatPumpForCountersEffect.cs" />
     <Compile Include="Cards\Effects\TapDownEffect.cs" />
+    <Compile Include="Cards\Effects\TerminateEffect.cs" />
     <Compile Include="Cards\Effects\TutorEffect.cs" />
     <Compile Include="Cards\Effects\UnblockableEffect.cs" />
     <Compile Include="Cards\Enums\ActivePlayerAttribute.cs" />

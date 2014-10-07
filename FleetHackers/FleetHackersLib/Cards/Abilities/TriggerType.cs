@@ -15,6 +15,7 @@ namespace FleetHackersLib.Cards.Abilities
 		Annihilated,
 		LifeLoss,
 		Damage,
-		AssaultDamage
+		AssaultDamage,
+		ActivateShipAbility
 	}
 }
