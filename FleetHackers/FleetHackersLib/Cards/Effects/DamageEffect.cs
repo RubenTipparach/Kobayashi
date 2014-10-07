@@ -160,6 +160,9 @@ namespace FleetHackersLib.Cards.Effects
 				case DivideMethod.YouChooseAny:
 					toStringBuilder.Append("divided however you choose among ");
 					break;
+				case DivideMethod.Random:
+					toStringBuilder.Append("divided randomly among ");
+					break;
 				case DivideMethod.None:
 					toStringBuilder.Append("to ");
 					break;
