@@ -122,6 +122,9 @@ namespace FleetHackersLib.Cards.Abilities
 				case Target.AttachedShip:
 					toStringBuilder.Append("attached ship ");
 					break;
+				case Target.Opponent:
+					toStringBuilder.Append("an opponent ");
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Actor for Trigger.");
 			}
@@ -171,6 +174,14 @@ namespace FleetHackersLib.Cards.Abilities
 				case TriggerType.AssaultDamage:
 					toStringBuilder.Append("inflicts assault damage to");
 					actorOwns = "that ship's";
+					break;
+				case TriggerType.ActivateShipAbility:
+					toStringBuilder.Append("activates an ability of a ship");
+					if (Actor == Target.Opponent)
+					{
+						toStringBuilder.Append(" he or she controls");
+					}
+					actorOwns = "that player's";
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported TriggerType for Trigger.");

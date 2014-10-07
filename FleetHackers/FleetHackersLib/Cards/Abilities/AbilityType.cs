@@ -21,6 +21,7 @@ namespace FleetHackersLib.Cards.Abilities
 		Hexproof,
 		Haste,
 		ConditionalPlay,
-		SecretTech
+		SecretTech,
+		NoTrap
 	}
 }

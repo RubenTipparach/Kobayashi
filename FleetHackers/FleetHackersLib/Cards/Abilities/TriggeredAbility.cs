@@ -70,7 +70,7 @@ namespace FleetHackersLib.Cards.Abilities
 				{
 					toStringBuilder.Append("When ");
 				}
-				else if (Trigger.TriggerType == TriggerType.Attack || Trigger.TriggerType == TriggerType.Interception || Trigger.TriggerType == TriggerType.LifeLoss || Trigger.TriggerType == TriggerType.AssaultDamage || Trigger.TriggerType == TriggerType.Damage)
+				else if (Trigger.TriggerType == TriggerType.Attack || Trigger.TriggerType == TriggerType.Interception || Trigger.TriggerType == TriggerType.LifeLoss || Trigger.TriggerType == TriggerType.AssaultDamage || Trigger.TriggerType == TriggerType.Damage || Trigger.TriggerType == TriggerType.ActivateShipAbility)
 				{
 					toStringBuilder.Append("Whenever ");
 				}

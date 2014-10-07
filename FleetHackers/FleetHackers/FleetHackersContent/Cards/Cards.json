@@ -3058,5 +3058,38 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Unfortunate Misfire",
+		"energyCost": 2,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"subtype": "Trap",
+		"abilities":
+		[
+			{
+				"__type": "NoTrapAbility:#FleetHackersLib.Cards.Abilities"
+			},
+			{
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "ActivateShipAbility",
+					"actor": "Opponent"
+				},
+				"effects":
+				[
+					{
+						"__type": "TerminateEffect:#FleetHackersLib.Cards.Effects",
+						"targets": [ "ThatAbility" ]
+					},
+					{
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
+						"targets": [ "ThatShip" ]
+					}
+				]
+			}
+		]
 	}
 ]
