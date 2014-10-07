@@ -420,18 +420,18 @@ namespace FleetHackers
 			{
 				// Choosing a random card for testing...
 				Random r = new Random();
-				Card c = _cards[r.Next(_cards.Count)];
-				/*Card c = null;
+				//Card c = _cards[r.Next(_cards.Count)];
+				Card c = null;
 				foreach (Card cx in _cards)
 				{
-					if (cx.Title == "Gaining Influence")
+					if (cx.Title == "Engineering Vessel")
 					//if (_rulesTextFont.MeasureString(WrapText(_rulesTextFont, cx.RulesText, _cardRulesWidth)).Y > _cardRulesHeight)
 					{
 						c = cx;
 						//Debug.WriteLine("{0}", _rulesTextFont.MeasureString(WrapText(_rulesTextFont, cx.RulesText, _cardRulesWidth)).Y - _cardRulesHeight);
 						break;
 					}
-				}*/
+				}
 
 				string someRandomText = c.RulesText;
 				someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth);
