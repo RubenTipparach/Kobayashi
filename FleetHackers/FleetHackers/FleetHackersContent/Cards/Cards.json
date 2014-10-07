@@ -2998,5 +2998,25 @@
 				}
 			}
 		]
+	},
+	{
+		"title": "Surgical Sabotage",
+		"energyCost": 3,
+		"alignment": "Xeno",
+		"influenceRequirement": 1,
+		"supertype": "Maneuver",
+		"abilities":
+		[
+			{
+				"__type": "ImmediateAbility:#FleetHackersLib.Cards.Abilities",
+				"effects":
+				[
+					{
+						"__type": "AnnihilateEffect:#FleetHackersLib.Cards.Effects",
+						"targets": [ "AnyDevice" ]
+					}
+				]
+			}
+		]
 	}
 ]
