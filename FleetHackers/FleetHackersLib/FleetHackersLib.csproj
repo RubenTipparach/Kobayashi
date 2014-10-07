@@ -103,6 +103,7 @@
     <Compile Include="Cards\Effects\ModalEffect.cs" />
     <Compile Include="Cards\Effects\NoRulesTextEffect.cs" />
     <Compile Include="Cards\Effects\PacifsmEffect.cs" />
+    <Compile Include="Cards\Effects\ProvidesInfluenceEffect.cs" />
     <Compile Include="Cards\Effects\PutCounterEffect.cs" />
     <Compile Include="Cards\Effects\RangePumpEffect.cs" />
     <Compile Include="Cards\Effects\RechargeCrystalsEffect.cs" />

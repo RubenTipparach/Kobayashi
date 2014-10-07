@@ -47,6 +47,7 @@ namespace FleetHackersLib.Cards.Effects.Enums
 		RechargeCrystals,
 		RemoveDamage,
 		NoRulesText,
-		Terminate
+		Terminate,
+		ProvidesInfluence
 	}
 }

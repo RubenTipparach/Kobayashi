@@ -3091,5 +3091,85 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Crystal Influence",
+		"alignment": "Crystal",
+		"supertype": "Influence",
+		"subtype": "None",
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
+				"effect":
+				{
+					"__type": "ProvidesInfluenceEffect:#FleetHackersLib.Cards.Effects",
+					"influenceAmount": 1
+				}
+			}
+		]
+	},
+	{
+		"title": "Cryo Influence",
+		"alignment": "Cryo",
+		"supertype": "Influence",
+		"subtype": "None",
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
+				"effect":
+				{
+					"__type": "ProvidesInfluenceEffect:#FleetHackersLib.Cards.Effects",
+					"influenceAmount": 1
+				}
+			}
+		]
+	},
+	{
+		"title": "Shadow Influence",
+		"alignment": "Shadow",
+		"supertype": "Influence",
+		"subtype": "None",
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
+				"effect":
+				{
+					"__type": "ProvidesInfluenceEffect:#FleetHackersLib.Cards.Effects",
+					"influenceAmount": 1
+				}
+			}
+		]
+	},
+	{
+		"title": "Pyre Influence",
+		"alignment": "Pyre",
+		"supertype": "Influence",
+		"subtype": "None",
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
+				"effect":
+				{
+					"__type": "ProvidesInfluenceEffect:#FleetHackersLib.Cards.Effects",
+					"influenceAmount": 1
+				}
+			}
+		]
+	},
+	{
+		"title": "Xeno Influence",
+		"alignment": "Xeno",
+		"supertype": "Influence",
+		"subtype": "None",
+		"abilities": [
+			{
+				"__type": "StaticAbility:#FleetHackersLib.Cards.Abilities",
+				"effect":
+				{
+					"__type": "ProvidesInfluenceEffect:#FleetHackersLib.Cards.Effects",
+					"influenceAmount": 1
+				}
+			}
+		]
 	}
 ]
