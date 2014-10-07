@@ -3018,5 +3018,45 @@
 				]
 			}
 		]
+	},
+	{
+		"title": "Toolbox Tinker",
+		"energyCost": 3,
+		"alignment": "Xeno",
+		"influenceRequirement": 2,
+		"supertype": "Ship",
+		"subtype": "Tinker",
+		"range": 3,
+		"attack": 1,
+		"defense": 1,
+		"abilities":
+		[
+			{
+				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
+				"trigger":
+				{
+					"triggerType": "EntersTheBattleZone",
+					"actor": "This"
+				},
+				"effects":
+				[
+					{
+						"__type": "TutorEffect:#FleetHackersLib.Cards.Effects",
+						"target": "You",
+						"cardType": "None",
+						"cardSubtype": "Upgrade",
+						"playImmediate": true,
+						"condition":
+						{
+							"attribute": "EnergyCost",
+							"comparison": "LessThanOrEqual",
+							"valueType": "Numeric",
+							"value": 5
+						},
+						"attachTarget": "This"
+					}
+				]
+			}
+		]
 	}
 ]

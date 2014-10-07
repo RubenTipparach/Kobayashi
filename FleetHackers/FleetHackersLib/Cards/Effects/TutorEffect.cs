@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using FleetHackersLib.Cards.Enums;
 using FleetHackersLib.Cards.Effects.Enums;
+using FleetHackersLib.Cards.Effects.Conditions;
 
 namespace FleetHackersLib.Cards.Effects
 {
@@ -31,6 +32,21 @@ namespace FleetHackersLib.Cards.Effects
 			set
 			{
 				Target = (Target)Enum.Parse(typeof(Target), value);
+			}
+		}
+
+		public Target AttachTarget { get; set; }
+
+		[DataMember(Name = "attachTarget")]
+		public string AttachTargetString
+		{
+			get
+			{
+				return AttachTarget.ToString();
+			}
+			set
+			{
+				AttachTarget = (Target)Enum.Parse(typeof(Target), value);
 			}
 		}
 
@@ -72,6 +88,9 @@ namespace FleetHackersLib.Cards.Effects
 
 		[DataMember(Name = "playImmediate")]
 		public bool PlayImmediate { get; set; }
+
+		[DataMember(Name = "condition")]
+		public EffectCondition Condition { get; set; }
 
 		public override string ToString(Card card, bool capitalize = false)
 		{
@@ -128,12 +147,29 @@ namespace FleetHackersLib.Cards.Effects
 				toStringBuilder.Append(" named ");
 				toStringBuilder.Append(CardTitle);
 			}
+			if (Condition != null)
+			{
+				toStringBuilder.Append(" ");
+				toStringBuilder.Append(Condition.ToString());
+			}
 
 			toStringBuilder.Append(" from your deck into ");
 
 			if (PlayImmediate)
 			{
 				toStringBuilder.Append("the battle zone");
+
+				switch (AttachTarget)
+				{
+					case Target.None:
+						break;
+					case Target.This:
+						toStringBuilder.Append(", attached to ");
+						toStringBuilder.Append(card.Title);
+						break;
+					default:
+						throw new InvalidOperationException("Unsupported AttachTarget for TutorEffect.");
+				}
 			}
 			else
 			{
