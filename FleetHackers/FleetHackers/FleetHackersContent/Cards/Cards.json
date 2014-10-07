@@ -36,9 +36,9 @@
 					{
 						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
-						"divideMethod": "YouChooseAny",
+						"divideMethod": "Random",
 						"amount": 3,
-						"exact": false,
+						"exact": true,
 						"targets":
 						[
 							"AttackingShips"

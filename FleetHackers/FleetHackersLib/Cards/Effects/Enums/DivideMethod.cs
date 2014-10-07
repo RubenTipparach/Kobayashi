@@ -8,6 +8,7 @@ namespace FleetHackersLib.Cards.Effects.Enums
 	public enum DivideMethod
 	{
 		None,
-		YouChooseAny
+		YouChooseAny,
+		Random
 	}
 }
