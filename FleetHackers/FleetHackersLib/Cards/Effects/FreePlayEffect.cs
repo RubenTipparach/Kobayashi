@@ -63,7 +63,7 @@ namespace FleetHackersLib.Cards.Effects
 			}
 
 			toStringBuilder.Append(Condition.ToString());
-			toStringBuilder.Append("without paying its energy costs");
+			toStringBuilder.Append(" without paying its energy costs");
 
 			return toStringBuilder.ToString();
 		}

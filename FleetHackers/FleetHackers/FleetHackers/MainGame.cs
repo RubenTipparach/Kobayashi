@@ -121,7 +121,7 @@ namespace FleetHackers
 		/// <summary>
 		/// The height of the rules text box on a card.
 		/// </summary>
-		private int _cardRulesHeight = 322;
+		private int _cardRulesHeight = 404;
 
 		/// <summary>
 		/// The left-most x coordinate of the rules text box on a card.
@@ -131,7 +131,7 @@ namespace FleetHackers
 		/// <summary>
 		/// The top-most y coordinate of the rules text box on a card.
 		/// </summary>
-		private int _cardRulesTopY = 664;
+		private int _cardRulesTopY = 582;
 
 		/// <summary>
 		/// The width of the title box on a card.
@@ -424,9 +424,11 @@ namespace FleetHackers
 				/*Card c = null;
 				foreach (Card cx in _cards)
 				{
-					if (cx.Title == "Counting Privateer")
+					if (cx.Title == "Stolen Intentions")
+					//if (_rulesTextFont.MeasureString(WrapText(_rulesTextFont, cx.RulesText, _cardRulesWidth)).Y > _cardRulesHeight)
 					{
 						c = cx;
+						//Debug.WriteLine("{0}", _rulesTextFont.MeasureString(WrapText(_rulesTextFont, cx.RulesText, _cardRulesWidth)).Y - _cardRulesHeight);
 						break;
 					}
 				}*/
@@ -434,10 +436,6 @@ namespace FleetHackers
 				string someRandomText = c.RulesText;
 				someRandomText = WrapText(_rulesTextFont, someRandomText, _cardRulesWidth);
 				Vector2 textSize = _rulesTextFont.MeasureString(someRandomText);
-				if (textSize.Y > _cardRulesHeight)
-				{
-					float textScale = _cardRulesHeight / textSize.Y;
-				}
 
 				string titleString = c.Title;
 				Vector2 titleSize = _titleFont.MeasureString(titleString);
