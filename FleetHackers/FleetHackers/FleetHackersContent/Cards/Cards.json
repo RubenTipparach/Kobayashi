@@ -2625,6 +2625,7 @@
 					{
 						"__type": "TutorEffect:#FleetHackersLib.Cards.Effects",
 						"target": "You",
+						"cardType": "Influence",
 						"cardTitle": "Xeno Influence",
 						"optional": true,
 						"playImmediate": true
