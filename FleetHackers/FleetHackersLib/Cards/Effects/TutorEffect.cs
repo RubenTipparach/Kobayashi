@@ -153,7 +153,14 @@ namespace FleetHackersLib.Cards.Effects
 				toStringBuilder.Append(Condition.ToString());
 			}
 
-			toStringBuilder.Append(" from your deck into ");
+			if (CardType == Supertype.Influence)
+			{
+				toStringBuilder.Append(" from the influence pool into ");
+			}
+			else
+			{
+				toStringBuilder.Append(" from your deck into ");
+			}
 
 			if (PlayImmediate)
 			{
