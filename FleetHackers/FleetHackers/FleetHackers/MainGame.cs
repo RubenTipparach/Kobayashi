@@ -424,7 +424,7 @@ namespace FleetHackers
 				/*Card c = null;
 				foreach (Card cx in _cards)
 				{
-					if (cx.Title == "Stolen Intentions")
+					if (cx.Title == "Gaining Influence")
 					//if (_rulesTextFont.MeasureString(WrapText(_rulesTextFont, cx.RulesText, _cardRulesWidth)).Y > _cardRulesHeight)
 					{
 						c = cx;
