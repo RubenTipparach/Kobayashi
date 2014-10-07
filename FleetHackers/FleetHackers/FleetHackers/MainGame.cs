@@ -121,7 +121,7 @@ namespace FleetHackers
 		/// <summary>
 		/// The height of the rules text box on a card.
 		/// </summary>
-		private int _cardRulesHeight = 302;
+		private int _cardRulesHeight = 322;
 
 		/// <summary>
 		/// The left-most x coordinate of the rules text box on a card.
@@ -131,7 +131,7 @@ namespace FleetHackers
 		/// <summary>
 		/// The top-most y coordinate of the rules text box on a card.
 		/// </summary>
-		private int _cardRulesTopY = 684;
+		private int _cardRulesTopY = 664;
 
 		/// <summary>
 		/// The width of the title box on a card.
@@ -424,7 +424,7 @@ namespace FleetHackers
 				/*Card c = null;
 				foreach (Card cx in _cards)
 				{
-					if (cx.Title == "Microdrone")
+					if (cx.Title == "Counting Privateer")
 					{
 						c = cx;
 						break;
