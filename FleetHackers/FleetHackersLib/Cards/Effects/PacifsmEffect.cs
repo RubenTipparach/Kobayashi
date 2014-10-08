@@ -54,7 +54,7 @@ namespace FleetHackersLib.Cards.Effects
 					throw new InvalidOperationException("Unsupported Target for PacifismEffect.");
 			}
 
-			toStringBuilder.Append("can't attack or intercept");
+			toStringBuilder.Append("can't attack and doesn't inflict damage when attacked");
 
 			return toStringBuilder.ToString();
 		}
