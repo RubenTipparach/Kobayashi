@@ -12,6 +12,7 @@ namespace FleetHackersLib.Cards.Enums
 		AttackedThisTurn,
 		Exhausted,
 		AttackingInTheSameDirection,
-		YourTurn
+		YourTurn,
+		CouldHaveAttackedThisTurn
 	}
 }

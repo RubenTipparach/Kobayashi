@@ -83,6 +83,16 @@ namespace FleetHackersLib.Cards.Effects
 			{
 				switch (check.State)
 				{
+					case CheckStateType.CouldHaveAttackedThisTurn:
+						if (check.Test)
+						{
+							checkStrings.Add("could have attacked this turn");
+						}
+						else
+						{
+							checkStrings.Add("couldn't have attacked this turn");
+						}
+						break;
 					case CheckStateType.SummoningSick:
 						if (check.Test)
 						{
