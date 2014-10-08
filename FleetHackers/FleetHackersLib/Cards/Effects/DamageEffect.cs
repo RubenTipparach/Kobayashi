@@ -193,6 +193,9 @@ namespace FleetHackersLib.Cards.Effects
 					case Target.AttackingShip:
 						targetStrings.Add("the attacking ship");
 						break;
+					case Target.DefendingShip:
+						targetStrings.Add("the defending ship");
+						break;
 					default:
 						throw new InvalidOperationException("Unsupported Target for DamageEffect.");
 				}
