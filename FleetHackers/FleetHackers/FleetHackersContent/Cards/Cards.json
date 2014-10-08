@@ -75,11 +75,11 @@
 				"__type": "TriggeredAbility:#FleetHackersLib.Cards.Abilities",
 				"trigger":
 				{
-					"triggerType": "Interception",
-					"actor": "AnyShip",
+					"triggerType": "Attack",
+					"actor": "This",
 					"targets":
 					[
-						"This"
+						"OpponentShip"
 					]
 				},
 				"effects":
