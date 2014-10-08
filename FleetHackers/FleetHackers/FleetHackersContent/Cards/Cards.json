@@ -250,7 +250,7 @@
 		"alignment": "Crystal",
 		"influenceRequirement": 2,
 		"supertype": "Ship",
-		"subtype": "Kamikaze",
+		"subtype": "Trooper",
 		"range": 3,
 		"attack": 2,
 		"defense": 2,
