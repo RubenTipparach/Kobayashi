@@ -225,7 +225,7 @@ namespace FleetHackersLib.Cards.Abilities
 				case Condition.None:
 					break;
 				case Condition.OneOtherShip:
-					toStringBuilder.Append(" with at least 1 other ship");
+					toStringBuilder.Append(" and another ship attacked this turn");
 					break;
 				case Condition.DuringCombat:
 					toStringBuilder.Append(" during a battle");
