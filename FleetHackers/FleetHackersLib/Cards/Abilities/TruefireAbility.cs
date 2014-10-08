@@ -21,7 +21,8 @@ namespace FleetHackersLib.Cards.Abilities
 
 		public override string ToString(Card card)
 		{
-			return "When " + card.Title + " attacks, you may choose to assign its battle damage as though it wasn't intercepted.";
+			return "If " + card.Title + " would inflict enough damage to a ship it attacks to annihilate that ship, you may have " +
+				card.Title + " inflict the rest of its damage to another target in its range.";
 		}
 	}
 }
