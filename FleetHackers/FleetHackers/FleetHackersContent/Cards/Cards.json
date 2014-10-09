@@ -1817,12 +1817,33 @@
 				"effects":
 				[
 					{
-						"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
-						"attackPump": 1,
-						"defensePump": 1,
-						"effectEnds": "BeginningOfYourTurn",
-						"target": "AnyShip",
-						"optional": true
+						"__type": "StateCheckEffect:#FleetHackersLib.Cards.Effects",
+						"target": "None",
+						"checks":
+						[
+							{
+								"state": "YourTurn",
+								"test": true
+							}
+						],
+						"resultEffect":
+						{
+							"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
+							"attackPump": 1,
+							"defensePump": 1,
+							"effectEnds": "BeginningOfYourTurn",
+							"target": "AnyShip",
+							"optional": true
+						},
+						"alternateEffect":
+						{
+							"__type": "StatPumpEffect:#FleetHackersLib.Cards.Effects",
+							"attackPump": 1,
+							"defensePump": 1,
+							"effectEnds": "EndOfTurn",
+							"target": "YourRandomShip",
+							"optional": false
+						}
 					}
 				]
 			}

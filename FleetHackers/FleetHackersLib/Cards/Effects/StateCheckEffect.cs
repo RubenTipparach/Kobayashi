@@ -53,6 +53,9 @@ namespace FleetHackersLib.Cards.Effects
 		[DataMember(Name = "resultEffect")]
 		public Effect ResultEffect { get; set; }
 
+		[DataMember(Name = "alternateEffect")]
+		public Effect AlternateEffect { get; set; }
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -132,6 +135,12 @@ namespace FleetHackersLib.Cards.Effects
 
 			toStringBuilder.Append(", ");
 			toStringBuilder.Append(ResultEffect.ToString(card, false));
+
+			if (AlternateEffect != null)
+			{
+				toStringBuilder.Append(", otherwise ");
+				toStringBuilder.Append(AlternateEffect.ToString(card, false));
+			}
 
 			return toStringBuilder.ToString();
 		}
