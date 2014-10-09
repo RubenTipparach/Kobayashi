@@ -144,6 +144,10 @@ namespace FleetHackersLib.Cards.Effects
 					toStringBuilder.Append(capitalize ? "Attached ship " : "attached ship ");
 					targetOwns = "attached ship's";
 					break;
+				case Target.YourRandomShip:
+					toStringBuilder.Append(capitalize ? "Random ship you control " : "random ship you control ");
+					targetOwns = "that ship's";
+					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for StatPumpEffect.");
 			}

@@ -42,6 +42,7 @@ namespace FleetHackersLib.Cards.Enums
 		NextCardYouPlayThisTurn,
 		InterceptedShip,
 		ThatAbility,
-		DefendingShip
+		DefendingShip,
+		YourRandomShip
 	}
 }
