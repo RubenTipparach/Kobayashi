@@ -1941,13 +1941,13 @@
 					{
 						"__type": "DamageEffect:#FleetHackersLib.Cards.Effects",
 						"actor": "This",
-						"divideMethod": "None",
+						"divideMethod": "Random",
 						"amountType": "Variable",
 						"amountVar": "X",
 						"exact": true,
 						"targets":
 						[
-							"AttackingShip"
+							"AttackingShips"
 						]
 					}
 				]
