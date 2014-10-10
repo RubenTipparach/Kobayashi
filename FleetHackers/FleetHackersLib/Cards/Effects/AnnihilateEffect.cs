@@ -166,7 +166,7 @@ namespace FleetHackersLib.Cards.Effects
 						targetOwns = string.Empty;
 						break;
 					case Target.AttackingShip:
-						targetStrings.Add("target attacking ship");
+						targetStrings.Add("an attacking ship");
 						targetOwns = "that ship's";
 						break;
 					case Target.DamagedShip:
