@@ -65,14 +65,14 @@ namespace FleetHackersLib.Cards.Effects
 					throw new InvalidOperationException("Unsupported Target for UnblockableEffect.");
 			}
 
-			toStringBuilder.Append("can't be intercepted");
+			toStringBuilder.Append("can't be damaged by defending ships");
 
 			switch (Subject)
 			{
 				case Target.None:
 					break;
 				case Target.ThatPlayer:
-					toStringBuilder.Append(" by ships that player controls");
+					toStringBuilder.Append(" that player controls");
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Subject for UnblockableEffect.");

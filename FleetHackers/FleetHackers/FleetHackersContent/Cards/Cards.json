@@ -2326,18 +2326,14 @@
 				"effects":
 				[
 					{
-						"__type": "ChooseTargetEffect:#FleetHackersLib.Cards.Effects",
-						"target": "DeviceChooserControls",
-						"chooser": "HomeBaseController",
+						"__type": "GainControlEffect:#FleetHackersLib.Cards.Effects",
+						"target": "RandomDevice",
+						"controller": "HomeBaseController",
 						"successEffects":
 						[
 							{
 								"__type": "ForfeitEffect:#FleetHackersLib.Cards.Effects",
 								"target": "This"
-							},
-							{
-								"__type": "GainControlEffect:#FleetHackersLib.Cards.Effects",
-								"target": "ChosenDevice"
 							}
 						]
 					}

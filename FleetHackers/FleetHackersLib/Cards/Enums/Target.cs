@@ -43,6 +43,7 @@ namespace FleetHackersLib.Cards.Enums
 		InterceptedShip,
 		ThatAbility,
 		DefendingShip,
-		YourRandomShip
+		YourRandomShip,
+		RandomDevice
 	}
 }
