@@ -48,6 +48,7 @@ namespace FleetHackersLib.Cards.Effects.Enums
 		RemoveDamage,
 		NoRulesText,
 		Terminate,
-		ProvidesInfluence
+		ProvidesInfluence,
+		Fight
 	}
 }

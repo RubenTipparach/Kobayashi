@@ -67,6 +67,12 @@ namespace FleetHackersLib.Cards.Effects
 		[DataMember(Name = "variableBinding")]
 		public VariableBinding VariableBinding { get; set; }
 
+		[DataMember(Name = "successEffect")]
+		public Effect SuccessEffect { get; set; }
+
+		[DataMember(Name = "otherwiseEffect")]
+		public Effect OtherwiseEffect { get; set; }
+
 		public override string ToString(Card card, bool capitalize = false)
 		{
 			StringBuilder toStringBuilder = new StringBuilder();
@@ -83,9 +89,13 @@ namespace FleetHackersLib.Cards.Effects
 					throw new InvalidOperationException("Unsupported CardRestriction for DiscardEffect.");
 			}
 
+			string targetSuccessString = string.Empty;
+			string targetOtherwiseString = string.Empty;
 			switch (Target)
 			{
 				case Target.Opponent:
+					targetSuccessString = "that player does";
+					targetOtherwiseString = "that player doesn't";
 					switch (ChooseMethod)
 					{
 						case ChooseMethod.YouChoose:
@@ -108,7 +118,28 @@ namespace FleetHackersLib.Cards.Effects
 							{
 								toStringBuilder.Append("target ");
 							}
-							toStringBuilder.Append("opponent discards a card");
+							toStringBuilder.Append(string.Format("opponent discards a {0}card", cardRestriction));
+							break;
+						default:
+							throw new InvalidOperationException("Unsupported ChooseMethod for DiscardEffect.");
+					}
+					break;
+				case Target.You:
+					targetSuccessString = "you do";
+					targetOtherwiseString = "you don't";
+					switch (ChooseMethod)
+					{
+						case ChooseMethod.YouChoose:
+						case ChooseMethod.TargetChooses:
+							if (capitalize)
+							{
+								toStringBuilder.Append("D");
+							}
+							else
+							{
+								toStringBuilder.Append("d");
+							}
+							toStringBuilder.Append(string.Format("iscard a {0}card", cardRestriction));
 							break;
 						default:
 							throw new InvalidOperationException("Unsupported ChooseMethod for DiscardEffect.");
@@ -116,6 +147,22 @@ namespace FleetHackersLib.Cards.Effects
 					break;
 				default:
 					throw new InvalidOperationException("Unsupported Target for DiscardEffect.");
+			}
+
+			if (SuccessEffect != null)
+			{
+				toStringBuilder.Append(". If " + targetSuccessString + ", ");
+				toStringBuilder.Append(SuccessEffect.ToString(card, false));
+				if (OtherwiseEffect != null)
+				{
+					toStringBuilder.Append(". Otherwise, ");
+					toStringBuilder.Append(OtherwiseEffect.ToString(card, false));
+				}
+			}
+			else if (OtherwiseEffect != null)
+			{
+				toStringBuilder.Append(". If " + targetOtherwiseString + ", ");
+				toStringBuilder.Append(OtherwiseEffect.ToString(card, false));
 			}
 
 			if (VariableBinding != null)
