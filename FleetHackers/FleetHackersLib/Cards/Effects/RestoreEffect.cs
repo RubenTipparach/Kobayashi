@@ -138,22 +138,22 @@ namespace FleetHackersLib.Cards.Effects
 			{
 				if (capitalize)
 				{
-					toStringBuilder.Append("You may return ");
+					toStringBuilder.Append("You may put ");
 				}
 				else
 				{
-					toStringBuilder.Append("you may return ");
+					toStringBuilder.Append("you may put ");
 				}
 			}
 			else
 			{
 				if (capitalize)
 				{
-					toStringBuilder.Append("Return ");
+					toStringBuilder.Append("Put ");
 				}
 				else
 				{
-					toStringBuilder.Append("return ");
+					toStringBuilder.Append("put ");
 				}
 			}
 
@@ -211,8 +211,8 @@ namespace FleetHackersLib.Cards.Effects
 				{
 					switch (state)
 					{
-						case CheckStateType.AttackingInTheSameDirection:
-							stateStrings.Add("attacking in the same direction");
+						case CheckStateType.AttackingTheSameTarget:
+							stateStrings.Add("attacking the same target");
 							break;
 						case CheckStateType.Exhausted:
 							stateStrings.Add("exhausted");

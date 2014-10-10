@@ -2186,7 +2186,7 @@
 						"junkyardOwner": "Opponent",
 						"targetZone": "BattleZone",
 						"position": "AdjacentToAttacking",
-						"states": [ "Exhausted", "AttackingInTheSameDirection" ]
+						"states": [ "Exhausted", "AttackingTheSameTarget" ]
 					}
 				]
 			}
