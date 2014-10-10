@@ -9,6 +9,7 @@ namespace FleetHackersLib.Cards.Effects.Enums
 	{
 		None,
 		YouChoose,
-		TargetChooses
+		TargetChooses,
+		Random
 	}
 }

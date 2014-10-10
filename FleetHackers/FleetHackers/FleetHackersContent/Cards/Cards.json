@@ -2414,15 +2414,21 @@
 						],
 						"resultEffect":
 						{
-							"__type": "ForfeitEffect:#FleetHackersLib.Cards.Effects",
-							"target": "This",
-							"alternateCosts":
-							[
-								{
-									"__type": "DiscardCost:#FleetHackersLib.Cards.AlternateCosts",
-									"numCards": 1
-								}
-							]
+							"__type": "DiscardEffect:#FleetHackersLib.Cards.Effects",
+							"target": "You",
+							"chooseMethod": "TargetChooses",
+							"successEffect": 
+							{
+								"__type": "FightEffect:#FleetHackersLib.Cards.Effects",
+								"actor": "This",
+								"target": "OpponentShipInRange",
+								"chooseMethod": "Random"
+							},
+							"otherwiseEffect":
+							{
+								"__type": "ForfeitEffect:#FleetHackersLib.Cards.Effects",
+								"target": "This"
+							}
 						}
 					}
 				]

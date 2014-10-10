@@ -44,6 +44,7 @@ namespace FleetHackersLib.Cards.Enums
 		ThatAbility,
 		DefendingShip,
 		YourRandomShip,
-		RandomDevice
+		RandomDevice,
+		OpponentShipInRange
 	}
 }

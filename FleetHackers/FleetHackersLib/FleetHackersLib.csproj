@@ -91,6 +91,7 @@
     <Compile Include="Cards\Effects\Enums\EffectType.cs" />
     <Compile Include="Cards\Effects\Enums\PointInTime.cs" />
     <Compile Include="Cards\Effects\ExhaustEffect.cs" />
+    <Compile Include="Cards\Effects\FightEffect.cs" />
     <Compile Include="Cards\Effects\FogEffect.cs" />
     <Compile Include="Cards\Effects\ForfeitEffect.cs" />
     <Compile Include="Cards\Effects\FreePlayEffect.cs" />

@@ -49,6 +49,7 @@ namespace FleetHackersLib.Cards.Effects
 	[KnownType(typeof(NoRulesTextEffect))]
 	[KnownType(typeof(TerminateEffect))]
 	[KnownType(typeof(ProvidesInfluenceEffect))]
+	[KnownType(typeof(FightEffect))]
 	public abstract class Effect
 	{
 		public abstract EffectType EffectType { get; }
