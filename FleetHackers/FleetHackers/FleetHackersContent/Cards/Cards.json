@@ -2932,7 +2932,7 @@
 					{
 						"__type": "RechargeEffect:#FleetHackersLib.Cards.Effects",
 						"target": "This",
-						"optional": true
+						"optional": false
 					}
 				]
 			}
