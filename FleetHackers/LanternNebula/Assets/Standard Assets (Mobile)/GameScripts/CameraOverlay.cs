@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
-using FleetHackers.DrawingHelpers;
+using FleetHackers.HexagonLibrary;
 using System.Collections.Generic;
 
 public class CameraOverlay : MonoBehaviour {
@@ -71,39 +71,39 @@ public class CameraOverlay : MonoBehaviour {
 
 	public void RenderHexGrid()
 	{
-		HexagonCoordinates hc = new HexagonCoordinates();
+		HexagonMap hc = new HexagonMap();
 
-		AxisCoordinates[] ac = new AxisCoordinates[]{
-			new AxisCoordinates(0,0),
-			new AxisCoordinates(1,0),
-			new AxisCoordinates(2,0),
-			new AxisCoordinates(3,0),
+		AxisCoordinate[] ac = new AxisCoordinate[]{
+			new AxisCoordinate(0,0),
+			new AxisCoordinate(1,0),
+			new AxisCoordinate(2,0),
+			new AxisCoordinate(3,0),
 
-			new AxisCoordinates(0,1),
-			new AxisCoordinates(1,1),
-			new AxisCoordinates(2,1),
-			new AxisCoordinates(3,1),
+			new AxisCoordinate(0,1),
+			new AxisCoordinate(1,1),
+			new AxisCoordinate(2,1),
+			new AxisCoordinate(3,1),
 
-			new AxisCoordinates(-1,2),
-			new AxisCoordinates(0,2),
-			new AxisCoordinates(1,2),
-			new AxisCoordinates(2,2),
+			new AxisCoordinate(-1,2),
+			new AxisCoordinate(0,2),
+			new AxisCoordinate(1,2),
+			new AxisCoordinate(2,2),
 
-			new AxisCoordinates(-1,3),
-			new AxisCoordinates(0,3),
-			new AxisCoordinates(1,3),
-			new AxisCoordinates(2,3),
+			new AxisCoordinate(-1,3),
+			new AxisCoordinate(0,3),
+			new AxisCoordinate(1,3),
+			new AxisCoordinate(2,3),
 		};
 
-		var ac1 = new List<AxisCoordinates>();
+		var ac1 = new List<AxisCoordinate>();
 
-		foreach (AxisCoordinates a in ac)
+		foreach (AxisCoordinate a in ac)
 		{
 			DrawHexagon(a, 10);
 		}
 	}
 
-	public void DrawHexagon(AxisCoordinates axisCorrdinate, float size)
+	public void DrawHexagon(AxisCoordinate axisCorrdinate, float size)
 	{
 		Color color = Color.white;
 
@@ -136,7 +136,7 @@ public class CameraOverlay : MonoBehaviour {
 			var x = gridPosition.x + size * Mathf.Cos(angle);
 			var y = gridPosition.y + size * Mathf.Sin(angle);
 			//var selectedHex = HexagonCoordinates.ConvertPointCoordToAxialCoord(mousePlanePosition.x + 5, mousePlanePosition.z + 10f, diameter);
-			var selectedHex = HexagonCoordinates.ConvertPointCoordToAxialCoord(mousePlanePosition.x + diameter, mousePlanePosition.z + size, diameter, size);
+			var selectedHex = HexagonMap.ConvertPointCoordToAxialCoord(mousePlanePosition.x + diameter, mousePlanePosition.z + size, diameter, size);
 			if (axisCorrdinate.Equals(selectedHex))
 			{
 				crossair = Color.red;
