@@ -233,19 +233,16 @@ namespace FleetHackers.DrawingHelpers
 		}
 
 		#region Misc Conversion code.
-		public static AxisCoordinates ConvertPointCoordToAxialCoord(float x, float y, float hexSize)
+		public static AxisCoordinates ConvertPointCoordToAxialCoord(float x, float y, float halfWidth, float radius)
 		{
-			float halfHexSize = hexSize/2.0f;
-			x = (x - halfHexSize)/ (hexSize * 2.0f);
-
-			float temp1 = y/hexSize;
+			x = (x - halfWidth) / (halfWidth * 2.0f);
+			float temp1 = y/radius;
 			float temp2 = Mathf.Floor(x + temp1);
 			float r = Mathf.Floor((Mathf.Floor(temp1 - x) + temp2) / 3.0f);
-			float q = Mathf.Floor((Mathf.Floor( 2.0f * x + 1) + temp2)/3.0f) - r;
+			float q = Mathf.Floor((Mathf.Floor( 2.0f * x + 1.0f) + temp2) / 3.0f) - r;
 
 			return new AxisCoordinates((int)q, (int)r);
 		}
-
 		#endregion
 	}
 	#region Coordinate structs

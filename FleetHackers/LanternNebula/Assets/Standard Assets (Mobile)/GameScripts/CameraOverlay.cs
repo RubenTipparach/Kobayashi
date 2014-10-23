@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using FleetHackers.DrawingHelpers;
+using System.Collections.Generic;
 
 public class CameraOverlay : MonoBehaviour {
 
@@ -71,17 +72,7 @@ public class CameraOverlay : MonoBehaviour {
 	public void RenderHexGrid()
 	{
 		HexagonCoordinates hc = new HexagonCoordinates();
-		// CubeCoordinates cubeCoordinate = new CubeCoordinates(0,0,0);
-		// DrawHexagon(cubeCoordinate, 10);
-		// cubeCoordinate = hc.MoveInCubeCoordinates(cubeCoordinate, 0);
-		// DrawHexagon(cubeCoordinate, 10);
 
-		//AxisCoordinates ac = new AxisCoordinates(0,0);	
-		//for(int i = 0; i < 10; i++)
-		//{
-		//ac = hc.MoveInAxialCoordinates(ac, 1);
-		//DrawHexagon(ac, 10);
-		//}
 		AxisCoordinates[] ac = new AxisCoordinates[]{
 			new AxisCoordinates(0,0),
 			new AxisCoordinates(1,0),
@@ -103,15 +94,14 @@ public class CameraOverlay : MonoBehaviour {
 			new AxisCoordinates(1,3),
 			new AxisCoordinates(2,3),
 		};
-		AxisCoordinates[] ac1 = new AxisCoordinates[]{
-			new AxisCoordinates(0,0),
-		};
+
+		var ac1 = new List<AxisCoordinates>();
+
 		foreach (AxisCoordinates a in ac)
 		{
 			DrawHexagon(a, 10);
 		}
 	}
-
 
 	public void DrawHexagon(AxisCoordinates axisCorrdinate, float size)
 	{
@@ -125,14 +115,12 @@ public class CameraOverlay : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		float rayDistance;
 		Vector3 mousePlanePosition;
+		Color crossair = Color.white;
+
 
 		if (groundPlane.Raycast(ray, out rayDistance))
 		{
 			mousePlanePosition = ray.GetPoint(rayDistance);
-			//float relativeQ = (1.0f/3.0f * Mathf.Sqrt(3) * gridPosition.x - 1.0f/3.0f * gridPosition.y)/size;
-			//float relativeR = 2.0f/3.0f * gridPosition.y / size;
-			//to find the approximation, converto cube coordinates, round the cube, then convert back to axial for optim.
-			//or not, just use this hack method
 			DrawLine(
 				new Vector3(mousePlanePosition.x + size, 0, mousePlanePosition.z ),
 				new Vector3(mousePlanePosition.x - size, 0, mousePlanePosition.z ), Color.green);
@@ -140,39 +128,47 @@ public class CameraOverlay : MonoBehaviour {
 				new Vector3(mousePlanePosition.x, 0, mousePlanePosition.z + size),
 				new Vector3(mousePlanePosition.x, 0, mousePlanePosition.z - size), Color.green);
 
-			var selectedHex = HexagonCoordinates.ConvertPointCoordToAxialCoord(mousePlanePosition.x + 5, mousePlanePosition.z + 10f, size);
-			//var selectedHex = HexagonCoordinates.ConvertPointCoordToAxialCoord(mousePlanePosition.x, mousePlanePosition.z, size);
+			float angleSideRight = 2 * Mathf.PI / 6 * (1 + 0.5f);
+			float angleSideLeft = 2 * Mathf.PI / 6 * (5 + 0.5f);
+			float diameter = size * (float)Math.Cos(angleSideLeft) - size * (float)Math.Cos(angleSideRight);
+
+			var angle = 2.0f * Mathf.PI / 6.0f * (0.5f);
+			var x = gridPosition.x + size * Mathf.Cos(angle);
+			var y = gridPosition.y + size * Mathf.Sin(angle);
+			//var selectedHex = HexagonCoordinates.ConvertPointCoordToAxialCoord(mousePlanePosition.x + 5, mousePlanePosition.z + 10f, diameter);
+			var selectedHex = HexagonCoordinates.ConvertPointCoordToAxialCoord(mousePlanePosition.x + diameter, mousePlanePosition.z + size, diameter, size);
 			if (axisCorrdinate.Equals(selectedHex))
 			{
-				color = Color.blue;
+				crossair = Color.red;
 			}
 		}
 		
 		Vector3[] hexPoints = new Vector3[6];
 		for (int k = 0; k < 6; k++)
 		{
-			float angle = 2 * Mathf.PI / 6 * (k + 0.5f);
-			float X = gridPosition.x + (size - 1.0f) * (float)Math.Cos(angle);
-			float Y = gridPosition.y + (size - 1.0f) * (float)Math.Sin(angle);
+			var angle = 2.0f * Mathf.PI / 6.0f * (k + 0.5f);
 			
-			hexPoints[k] = new Vector3(X, 0, Y);
-			
-			if (k != 0)
+			var x = gridPosition.x + size * Mathf.Cos(angle);
+			var y = gridPosition.y + size * Mathf.Sin(angle);
+
+			if(k == 0)
 			{
-				DrawLine(hexPoints[k], hexPoints[k - 1], color);
+				hexPoints[0] = new Vector3(x, 0, y);
 			}
-			if (k == 5)
+			else
 			{
-				DrawLine(hexPoints[0], hexPoints[5], color);
-				gridPosition.y += 3 ;
+				hexPoints[k] = new Vector3(x, 0, y);
+				DrawLine(hexPoints[k - 1], hexPoints[k], color);
 			}
 		}
+		DrawLine(hexPoints[5], hexPoints[0], color);
+
 		DrawLine(
-			new Vector3(gridPosition.x + 5, 0, gridPosition.y - 2.5f),
-			new Vector3(gridPosition.x - 5, 0, gridPosition.y - 2.5f), Color.red);
+			new Vector3(gridPosition.x + 5, 0, gridPosition.y),
+			new Vector3(gridPosition.x - 5, 0, gridPosition.y), crossair);
 		DrawLine(
-			new Vector3(gridPosition.x, 0, gridPosition.y + 2.5f),
-			new Vector3(gridPosition.x, 0, gridPosition.y - 7.5f), Color.red);
+			new Vector3(gridPosition.x, 0, gridPosition.y +5 ),
+			new Vector3(gridPosition.x, 0, gridPosition.y - 5), crossair);
 	}
 
 	// TODO: Use hexagon library later. So we can navigate stuff.
